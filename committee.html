@@ -1,0 +1,18 @@
+---
+permalink: "/committee"
+layout: page
+title: "Committee"
+---
+<p>Committee</p>
+
+{% for cohort in site.data.committee %}
+	<h2>{{ cohort.year }}</h2>
+
+	<ul>
+		{% for member in cohort.members %}
+			<li>
+				<strong>{{ member.name }}</strong> - <em>{{ member.role }}</em>
+			</li>
+		{% endfor %}
+	</ul>
+{% endfor %}
