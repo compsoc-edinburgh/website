@@ -10,8 +10,8 @@
 - text: Events
   url: "/events"
 
-- text: Committee
-  url: "/committee"
+- text: Team
+  url: "/team"
 
 - text: Contact
   url: "/contact"
