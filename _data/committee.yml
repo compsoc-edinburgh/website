@@ -10,7 +10,7 @@
 
     - name: Elena Lapė
       role: Vice President
-      # avatar:
+      # avatar: 
       # bio: 
       github: pecoraa
       twitter: https://twitter.com/elena_lape
@@ -18,7 +18,7 @@
 
     - name: Angus Shaw
       role: Secretary
-      avatar: http://imgur.com/buttsbuttsbutts.lol
+      # avatar: 
       # bio: 
 
     - name: Viktorija Lukošiūtė
@@ -49,18 +49,77 @@
       # avatar: 
       # bio: 
 
-    #- name:
+    #- name: 
     #  role: 3<sup>rd</sup> Year Rep
-    #  avatar: http://imgur.com/buttsbuttsbutts.lol
-    #  bio: "...."
+    #  avatar: 
+    #  bio: 
 
-    #- name:
+    #- name: 
     #  role: 4<sup>th</sup> Year Rep
-    #  avatar: http://imgur.com/buttsbuttsbutts.lol
-    #  bio: "...."
+    #  avatar: 
+    #  bio: 
 
     - name: Craig Snowden
       role: Alumni Rep
       # avatar: 
       # bio: 
-    
+
+- year: 2016/17
+  members:
+    - name: Viktorija Lukošiūtė
+      role: President
+      avatar: "https://secure.gravatar.com/avatar/7ad38b14cd24361ef0bf8ed757ce8a83?s=200"
+      # bio: 
+      
+    - name: Aw Young Qingzhuo
+      role: Vice President
+      # avatar:
+      # bio: 
+      
+    - name: Simon Vahr
+      role: Secretary
+      # avatar: 
+      # bio: 
+
+    - name: Martynas Grigonis
+      role: Treasurer
+      # avatar: 
+      # bio: 
+
+    - name: Joshua Green
+      role: Technical Secretary
+      # avatar: 
+      # bio: 
+      
+    - name: Susanne Koster
+      role: Social Secretary
+      # avatar: 
+      # bio: 
+
+    - name: Qais Patankar
+      role: Freshers' Rep
+      avatar: "https://secure.gravatar.com/avatar/7ad38b14cd24361ef0bf8ed757ce8a83?s=200"
+      # bio: 
+      github: qaisjp
+      twitter: qaisjp
+      url: "https://qaisjp.com"
+
+    - name: Benedetta Mussati
+      role: 2<sup>nd</sup> Year Rep
+      # avatar: 
+      # bio: 
+
+    - name: Vesko Stefanov
+      role: 3<sup>rd</sup> Year Rep
+      # avatar: 
+      # bio: 
+
+    - name: James Friel
+      role: 4<sup>th</sup> Year Rep
+      # avatar: 
+      # bio: 
+
+    - name: Kit Barnes
+      role: Alumni Rep
+      # avatar: 
+      # bio: 
