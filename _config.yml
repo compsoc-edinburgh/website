@@ -1,0 +1,7 @@
+description: Welcome to CompSoc Edinburgh. We are the Computer Science and AI society.
+
+sass:
+   sourcemap: true
+
+url: "http://comp-soc.com"
+baseurl: "" # does not include hostname

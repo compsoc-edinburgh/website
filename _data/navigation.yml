@@ -1,0 +1,17 @@
+- text: Home
+  url: "/"
+
+- text: Partners
+  url: "/partners"
+
+- text: Blog
+  url: "/blog"
+
+- text: Events
+  url: "/events"
+
+- text: Committee
+  url: "/committee"
+
+- text: Contact
+  url: "/contact"

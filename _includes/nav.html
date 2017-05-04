@@ -1,0 +1,10 @@
+<nav> 
+	<p>
+		Nav: 
+
+		<!-- This needs to support absolute urls, and not just relative ones -->
+		{% for item in site.data.navigation %}
+			<a href="{{ site.baseurl }}{{ item.url }}">{{ item.text }}</a></li>
+		{% endfor %}
+	</p>
+</nav>
