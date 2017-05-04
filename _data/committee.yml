@@ -1,0 +1,66 @@
+- year: 2017/18
+  members:
+    - name: Qais Patankar
+      position: President
+      avatar: "https://secure.gravatar.com/avatar/7ad38b14cd24361ef0bf8ed757ce8a83?s=200"
+      # bio: 
+      github: qaisjp
+      twitter: qaisjp
+      url: "https://qaisjp.com"
+
+    - name: Elena Lapė
+      position: Vice President 
+      # avatar:
+      # bio: 
+      github: pecoraa
+      twitter: https://twitter.com/elena_lape
+      # url: "http://elenala.pe"
+
+    - name: Angus Shaw
+      position: Secretary
+      avatar: http://imgur.com/buttsbuttsbutts.lol
+      # bio: 
+
+    - name: Viktorija Lukošiūtė
+      position: Treasurer
+      # avatar: 
+      # bio: 
+
+    - name: Harry Reeder
+      position: TechSec
+      avatar: http://www.gravatar.com/avatar/882fea3f994a649328155e5ab2316b7f?s=200
+      bio: "I build stuff"
+      github: hreeder
+      twitter: harry_reeder
+      url: "http://harryreeder.co.uk/"
+
+    - name: Nicholas Lynch
+      position: Social Secretary
+      # avatar: 
+      # bio: 
+
+    #- name:
+    #  position: Freshers' Rep
+    #  avatar: 
+    #  bio: 
+
+    - name: Ginte Petrulionytė
+      position: 2<sup>nd</sup> Year Rep
+      # avatar: 
+      # bio: 
+
+    #- name:
+    #  position: 3<sup>rd</sup> Year Rep
+    #  avatar: http://imgur.com/buttsbuttsbutts.lol
+    #  bio: "...."
+
+    #- name:
+    #  position: 4<sup>th</sup> Year Rep
+    #  avatar: http://imgur.com/buttsbuttsbutts.lol
+    #  bio: "...."
+
+    - name: Craig Snowden
+      position: Alumni Rep
+      # avatar: 
+      # bio: 
+    
