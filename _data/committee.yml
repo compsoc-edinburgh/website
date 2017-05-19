@@ -1,4 +1,4 @@
-- year: 2017/18
+- year: 2017-18
   members:
     - name: Qais Patankar
       role: President
@@ -64,7 +64,7 @@
       # avatar: 
       # bio: 
 
-- year: 2016/17
+- year: 2016-17
   members:
     - name: Viktorija Lukošiūtė
       role: President
@@ -121,5 +121,140 @@
 
     - name: Kit Barnes
       role: Alumni Rep
+      # avatar: 
+      # bio: 
+
+
+- year: 2015-16
+  members:
+    - name: Lisa Xie
+      role: President
+      # avatar: 
+      # bio: 
+      
+    - name: William Mathewson
+      role: Vice President
+      # avatar:
+      # bio: 
+      
+    - name: Harjyot Singh
+      role: Secretary
+      # avatar: 
+      # bio: 
+
+    - name: Andreea Cucu
+      role: Treasurer
+      # avatar: 
+      # bio: 
+
+    - name: Joshua Green
+      role: Technical Secretary
+      # avatar: 
+      # bio: 
+      
+    - name: Craig Ross
+      role: Social Secretary
+      # avatar: 
+      # bio: 
+
+    - name: Viktorija Lukosiute
+      role: Freshers' Rep
+      # avatar: 
+      # bio: 
+
+    - name: Mihai Visuian
+      role: 2<sup>nd</sup> Year Rep
+      # avatar: 
+      # bio: 
+
+    - name: Simon Vahr
+      role: 3<sup>rd</sup> Year Rep
+      # avatar: 
+      # bio: 
+
+    - name: Paul Scherer
+      role: 4<sup>th</sup> Year Rep
+      # avatar: 
+      # bio: 
+
+
+- year: 2014-15
+  members:
+    - name: Angus Pearson
+      role: President
+      # avatar: 
+      # bio: 
+      
+    - name: James Friel
+      role: Vice President
+      # avatar:
+      # bio: 
+      
+    - name: Aseem Narang
+      role: Secretary
+      # avatar: 
+      # bio: 
+
+    - name: Hugh McGrade
+      role: Treasurer
+      # avatar: 
+      # bio: 
+
+    - name: Rob Tully
+      role: Technical Secretary
+      # avatar: 
+      # bio: 
+      
+    - name: Hamish Hutchings
+      role: Social Secretary
+      # avatar: 
+      # bio: 
+
+    - name: Lisa Xie
+      role: Freshers' Rep
+      # avatar: 
+      # bio: 
+
+    - name: Amy Gainford
+      role: 2<sup>nd</sup> Year Rep
+      # avatar: 
+      # bio: 
+
+    - name: Lewis Barker
+      role: 3<sup>rd</sup> Year Rep
+      # avatar: 
+      # bio: 
+
+
+
+- year: 2013-14
+  members:
+    - name: Paul M Scherer
+      role: President
+      # avatar: 
+      # bio: 
+      
+    - name: Chris Swart
+      role: Vice President
+      # avatar:
+      # bio: 
+      
+    - name: Kimberley McCann
+      role: Secretary
+      # avatar: 
+      # bio: 
+
+    - name: Martin Husbyn
+      role: Treasurer
+      # avatar: 
+      # bio: 
+
+    - name: Rikki "Teh Numbers" Guy
+      role: Technical Secretary
+      # avatar: 
+      # bio: 
+      
+    - name: Craig Ross
+      role: Social Secretary
       # avatar: 
       # bio: 
