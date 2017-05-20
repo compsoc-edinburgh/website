@@ -13,5 +13,8 @@
 - text: Team
   url: "/team"
 
+- text: Join
+  url: "https://www.eusa.ed.ac.uk/societies/society/compsoc/join/"
+
 - text: Contact
   url: "/contact"
