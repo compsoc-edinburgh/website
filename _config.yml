@@ -6,8 +6,19 @@ sass:
 url: "http://comp-soc.com"
 baseurl: "" # does not include hostname
 
+collections:
+  minutes:
+    output: true
+    permalink: "/:collection/:path"
+
 defaults:
   - scope:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+
+  - scope:
+      path: ""
+      type: minutes
+    values:
+      layout: minutes # minute page
