@@ -1,18 +1,21 @@
 <nav class="navbar navbar-toggleable-md navbar-light">
     <div class="container">
-        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     
         {% capture homepage %}{{ site.baseurl }}/{% endcapture %}
         {% if page.url != homepage %}
         <a class="navbar-brand" href="{{ site.baseurl }}/">
-            <img src="{{ site.baseurl }}/static/img/compsoc-horizontal.svg" height="45" alt="">
+            <img src="{{ site.baseurl }}/static/img/compsoc-horizontal.svg" alt="" style="margin-left: -32px;">
         </a>
         {% endif %}
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            {% if page.url == homepage %}
+            <div class='container'>
+            {% endif %}
+            <ul class="navbar-nav mr-auto justify-content-center">
                 <!-- This needs to support absolute urls, and not just relative ones -->
                 {% for item in site.data.navigation %}
                     {% capture urlPrefix %}{{ item.url | slice: 0, 4 }}{% endcapture %}
@@ -27,7 +30,9 @@
                     </li>
                 {% endfor %}
             </ul>
+            {% if page.url == homepage %}
+            </div>
+            {% endif %}
         </div>
-
     </div>
 </nav>
