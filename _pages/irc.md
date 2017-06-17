@@ -1,5 +1,4 @@
 ---
-permalink: "/irc"
 short-title: "IRC"
 title: "Internet Relay Chat"
 ---

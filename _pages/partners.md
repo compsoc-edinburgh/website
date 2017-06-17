@@ -1,5 +1,4 @@
 ---
-permalink: "/partners"
 title: "Partners"
 ---
 
