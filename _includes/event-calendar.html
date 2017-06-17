@@ -1,0 +1,22 @@
+<link rel='stylesheet' href='{{ site.baseurl }}/static/fullcalendar/fullcalendar.min.css' />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="{{ site.baseurl }}/static/fullcalendar/fullcalendar.min.js"></script>
+<script src="{{ site.baseurl }}/static/fullcalendar/gcal.min.js"></script>
+<script type='text/javascript'>
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            googleCalendarApiKey: 'AIzaSyAnUQX9d7j3_d5wlJF_PvM02eHOMFbDedw',
+            events: {
+                googleCalendarId: 'comp-soc.com_1k2f1gda8js9nav1ilr5g5h6vk@group.calendar.google.com'
+            },
+
+            defaultView: "list",
+            visibleRange: {
+                start: moment(),
+                end: '2018-03-15',
+            },
+            header: false,
+            height: "auto",
+        });
+    });
+</script>
