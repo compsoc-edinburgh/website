@@ -1,6 +1,5 @@
 ---
 permalink: "/irc"
-layout: page
 short-title: "IRC"
 title: "Internet Relay Chat"
 ---

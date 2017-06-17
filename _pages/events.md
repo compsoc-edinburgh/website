@@ -1,6 +1,5 @@
 ---
 permalink: "/events"
-layout: page
 title: "Events"
 
 # Note that you may also need to edit _includes/event-calender.html

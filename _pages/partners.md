@@ -1,6 +1,5 @@
 ---
 permalink: "/partners"
-layout: page
 title: "Partners"
 ---
 

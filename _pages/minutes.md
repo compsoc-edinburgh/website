@@ -1,6 +1,5 @@
 ---
 permalink: "/minutes/"
-layout: page
 title: "Minutes"
 ---
 
