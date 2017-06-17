@@ -4,7 +4,7 @@ layout: page
 title: "Minutes"
 ---
 
-<p>The committee holds a meeting every two weeks during term time. Meetings are usually held in Forrest Hill.</p>
+The committee holds a meeting every two weeks during term time. Meetings are usually held in Forrest Hill.
 
 <ul>
 {% for meeting in site.minutes reversed %}

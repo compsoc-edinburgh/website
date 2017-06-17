@@ -10,7 +10,10 @@ collections:
   minutes:
     output: true
     permalink: "/:collection/:path"
-
+  pages:
+    output: true
+    permalink: /:path
+    
 defaults:
   - scope:
       path: "" # an empty string here means all files in the project
@@ -22,3 +25,9 @@ defaults:
       type: minutes
     values:
       layout: minutes # minute page
+
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
