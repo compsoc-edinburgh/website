@@ -13,6 +13,9 @@
 - text: Team
   url: "/team"
 
+- text: SIGs
+  url: "/special-interest-groups"
+
 - text: Join
   url: "https://www.eusa.ed.ac.uk/societies/society/compsoc/join/"
 
