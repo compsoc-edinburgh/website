@@ -9,13 +9,17 @@ freshers' rep, third year rep, and the fourth year rep.
 
 
 {% for cohort in site.data.committee %}
-## {{ cohort.year }}
-
-<ul>
-	{% for member in cohort.members %}
-		<li>
-			<strong>{{ member.name }}</strong> - <em>{{ member.role }}</em>
-		</li>
-	{% endfor %}
-</ul>
+<div class="card">
+	<h3 class="card-header">{{ cohort.year }}</h3>
+	<p class="card-text">
+	<ul style="list-style-type: none">
+		{% for member in cohort.members %}
+			<li>
+				<strong>{{ member.name }}</strong> - <em>{{ member.role }}</em>
+			</li>
+		{% endfor %}
+	</ul>
+	</p>
+</div>
+<br/>
 {% endfor %}
