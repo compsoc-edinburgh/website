@@ -1,6 +1,6 @@
 ---
-short-title: "IRC"
-title: "Internet Relay Chat"
+title: "IRC"
+longtitle: "Internet Relay Chat"
 ---
 
 To keep in touch online, we use IRC. We have multiple channels on ImaginaryNet, but our primary one is #compsoc.

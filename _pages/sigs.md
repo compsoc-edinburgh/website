@@ -1,7 +1,7 @@
 ---
 permalink: /special-interest-groups
-short-title: "SIGs"
-title: "Special Interest Groups"
+longtitle: "Special Interest Groups"
+title: "SIGs"
 ---
 
 Are you and your friends interested in a particular field of Informatics? Start a SIG!
