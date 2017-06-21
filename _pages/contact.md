@@ -6,6 +6,8 @@ Interested in CompSoc? Here's how you get in touch with us.
 
 The committee email is <a href="mailto:committee@comp-soc.com">committee@comp-soc.com</a>. Send us an email there if you have any questions or suggestions.
 
+---
+
 ## Keeping up to date
 
 We have a Facebook page with all our official announcements. [Give us a like.](https://fb.me/compsoc)
@@ -14,7 +16,9 @@ We also have two Facebook groups. The primary group is called "[CompSoc Members]
 
 If you're interested in job offers or other interesting deals, you should also join the second group, "[CompSoc Offers](https://facebook.com/groups/compsoc.offers)".
 
-## Have a chat
+----
+
+## Meet the community
 
 We have more than just a Facebook group. We use IRC and Discord. Both are connected to each other, so feel free to join one rather than the other, or both!
 
