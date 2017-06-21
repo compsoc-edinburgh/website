@@ -59,8 +59,8 @@
     #  avatar: 
     #  bio: 
 
-    - name: Craig Snowden
-      role: Alumni Rep
+    - name: "Kit Barnes (c/o Craig Snowden)"
+      role: Old Person Rep
       # avatar: 
       # bio: 
 
@@ -120,7 +120,7 @@
       # bio: 
 
     - name: Kit Barnes
-      role: Alumni Rep
+      role: Old Person Rep
       # avatar: 
       # bio: 
 
