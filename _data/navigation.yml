@@ -5,7 +5,7 @@
   url: "/partners"
 
 - text: Blog
-  url: "/blog"
+  url: "/blog/"
 
 - text: Events
   url: "/events"
