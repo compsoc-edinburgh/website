@@ -13,6 +13,9 @@ collections:
   pages:
     output: true
     permalink: /:path
+  posts:
+    output: true
+    permalink: "/blog/:categories/:year/:month/:day/:title.html"
     
 defaults:
   - scope:
