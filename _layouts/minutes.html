@@ -5,6 +5,8 @@ layout: default
 <!-- See https://gist.github.com/budparr/3e637e575471401d01ec -->
 <!-- Note that commenting in HTML does not actually stop Liquid code from running -->
 <!--
+DO NOT REMOVE WITHOUT READING ABOVE NOTE
+
 {% capture the_collection %}{{page.collection}}{% endcapture %}
 {% if page.collection %}
 	{% assign  document = site[the_collection] %}
@@ -22,6 +24,8 @@ layout: default
   {% endif %}
   {% assign prev = links %}
 {% endfor %}
+
+DO NOT REMOVE WITHOUT READING ABOVE NOTE
 -->
 
 {% if prevurl %}<a href="{{prevurl}}" class="prev">Previous</a>{% endif %}
