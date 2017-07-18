@@ -1,10 +1,15 @@
 ---
 ---
 
+$img: "{{ site.baseurl }}/static/img/"
+
 @import "partners"
+@import "index-jumbotron"
 
 body
     margin-bottom: 20px
+    /* Background pattern from Subtle Patterns */
+    background-image: url( {{ site.baseurl }}/static/img/crossword.png )
 
 a
     transition: all 0.2s ease-in-out
