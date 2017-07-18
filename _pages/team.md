@@ -2,7 +2,7 @@
 title: "The Team"
 ---
 
-We are the team that brings you the best experience in the field of Computer Science.
+We are the team that brings you the best experience in all things Informatics.
 
 Interested in joining us? At our October STMU (an <abbr title="Extraordinary General Meeting">EGM</abbr>) we will be electing the:
 freshers' rep, third year rep, and the fourth year rep.
