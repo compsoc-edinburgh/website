@@ -1,8 +1,6 @@
 # CompSoc website
 
 This is the website for [CompSoc Edinburgh](http://comp-soc.com).
-The _17_ in the repository name comes from the year this website
-started being developed.
 
 ## How to test
 
