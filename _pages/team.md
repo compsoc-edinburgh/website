@@ -4,8 +4,7 @@ title: "The Team"
 
 We are the team that brings you the best experience in all things Informatics.
 
-Interested in joining us? At our October STMU (an <abbr title="Extraordinary General Meeting">EGM</abbr>) we will be electing the:
-freshers' rep, third year rep, and the fourth year rep.
+{% include snippets/join-us.html %}
 
 <div class="row">
 	<div class="col-md-4 push-md-8 col-sm-12">

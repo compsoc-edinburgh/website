@@ -10,11 +10,14 @@
 - text: Events
   url: "/events"
 
-- text: Team
-  url: "/team"
+- text: Community
+  url: "/community"
 
 - text: SIGs
   url: "/special-interest-groups"
+
+- text: Team
+  url: "/team"
 
 - text: Contact
   url: "/contact"
