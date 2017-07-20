@@ -6,7 +6,7 @@ title: "SIGs"
 
 Are you and your friends interested in a particular field of Informatics? Start a SIG!
 
-## Our SIGs
+### Our SIGs
 
 <style>
 .sigs-container {
@@ -42,12 +42,12 @@ Are you and your friends interested in a particular field of Informatics? Start 
 
 ----
 
-## Start a SIG
+### Start a SIG
 CompSoc offers SIGs promotion, some money, support, and a place on the committee! [Send us an email]({{ site.baseurl}}/contact) if you're interested in forming a SIG.
 
 ----
 
-## Defunct SIGs
+### Defunct SIGs
 
 We've previously had special interest groups in these subject areas:
 <ul>
