@@ -10,9 +10,9 @@ freshers' rep, third year rep, and the fourth year rep.
 <div class="row">
 	<div class="col-md-4 push-md-8 col-sm-12">
 		<ul id="cohorts" class="nav flex-column">
-			{% for cohort in site.data.committee %}
+			{% for cohort in site.data.committee reversed %}
 				<li class="nav-item">
-					<a class="nav-link active" href="#cohort-{{ cohort.year }}">{{ cohort.year }}</a>
+					<a class="nav-link active" href="#cohort-{{ cohort[0] }}">{{ cohort[0] | replace: "_", " " }}</a>
 				</li>
 			{% endfor %}
 		</ul>
@@ -20,14 +20,14 @@ freshers' rep, third year rep, and the fourth year rep.
 	<!-- -->
 	<!-- -->
 	<div class="col-md-8 pull-md-4 col-sm-12">
-		{% for cohort in site.data.committee %}
-		<i id="cohort-{{ cohort.year }}"></i>
+		{% for cohort in site.data.committee reversed %}
+		<i id="cohort-{{ cohort[0] }}"></i>
 		<div class="card" style="margin-bottom: 25px;">
-			<h3 class="card-header text-center">{{ cohort.year }}</h3>
+			<h3 class="card-header text-center">{{ cohort[0] | replace: "_", " " }}</h3>
 			<div class="card-block">
 				<table class="table-sm" style="margin: 0 auto;">
 					<tbody>
-						{% for member in cohort.members %}
+						{% for member in cohort[1] %}
 						<tr>
 							<th scope="row">{{ member.role }}</th>
 							<td>{{ member.name }}</td>

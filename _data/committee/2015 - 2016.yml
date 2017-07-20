@@ -1,0 +1,49 @@
+- name: Lisa Xie
+  role: President
+  # avatar: 
+  # bio: 
+  
+- name: William Mathewson
+  role: Vice President
+  # avatar:
+  # bio: 
+  
+- name: Harjyot Singh
+  role: Secretary
+  # avatar: 
+  # bio: 
+
+- name: Andreea Cucu
+  role: Treasurer
+  # avatar: 
+  # bio: 
+
+- name: Joshua Green
+  role: Technical Secretary
+  # avatar: 
+  # bio: 
+  
+- name: Craig Ross
+  role: Social Secretary
+  # avatar: 
+  # bio: 
+
+- name: Viktorija Lukosiute
+  role: Freshers' Rep
+  # avatar: 
+  # bio: 
+
+- name: Mihai Visuian
+  role: 2<sup>nd</sup> Year Rep
+  # avatar: 
+  # bio: 
+
+- name: Simon Vahr
+  role: 3<sup>rd</sup> Year Rep
+  # avatar: 
+  # bio: 
+
+- name: Paul Scherer
+  role: 4<sup>th</sup> Year Rep
+  # avatar: 
+  # bio: 
