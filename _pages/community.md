@@ -6,8 +6,17 @@ title: Community
 {% include snippets/join-us.html %}
 
 <div>
+	<h1>CompSoc Edinburgh</h1>
+	<h2>Facebook Page</h2>
+	<p>
+		... news!
+	</p>
+</div>
+
+
+<div>
 	<h1>CompSoc Members</h1>
-	<h2>Facebook</h2>
+	<h2>Facebook Group</h2>
 	<p>
 		Community page for all CompSoc Members
 	</p>
@@ -15,7 +24,7 @@ title: Community
 
 <div>
 	<h1>CompSoc Offers</h1>
-	<h2>Facebook</h2>
+	<h2>Facebook Group</h2>
 	<p>
 		Job offers
 	</p>
