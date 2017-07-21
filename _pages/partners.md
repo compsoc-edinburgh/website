@@ -6,10 +6,20 @@ Here at CompSoc we are supported by some great companies that are passionate abo
 We are eternally grateful for their support over the years.
 
 <div class="partners">
-	<img src="{{ site.baseurl }}/static/img/partners/amazon.png">
-	<img src="{{ site.baseurl }}/static/img/partners/bloomberg.svg">
-	<img src="{{ site.baseurl }}/static/img/partners/microsoft.png">
-	<img src="{{ site.baseurl }}/static/img/partners/jpmorgan.png">
-	<img src="{{ site.baseurl }}/static/img/partners/king.png">
-	<img src="{{ site.baseurl }}/static/img/partners/sumdog.png">
+	{% for partner in site.data.partners %}
+		{% assign imgStart = partner.img | slice: 0, 4 %}
+		{% assign img = partner.img %}
+
+		{% unless imgStart == "http" %}
+			{% capture img %}{{ site.baseurl }}/{{ img }}{% endcapture %}
+		{% endunless %}
+
+		{% unless partner.url == "" %}
+			<a href="{{ partner.url}}">
+		{% endunless %}
+				<img src="{{ img }}">
+		{% unless partner.url == "" %}
+			</a>
+		{% endunless %}
+	{% endfor %}
 </div>
