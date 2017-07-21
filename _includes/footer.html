@@ -1,16 +1,7 @@
-<div id="footer" class="container">
-    <hr/>
-    <p>Edinburgh University CompSoc 2017 - <a href="">View on GitHub</a></p>
-</div>
-
-<!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-<!-- Page specific js -->
-{% if page.custom_js %}
-  {% for js_file in page.custom_js %}
-  <script src='{{ site.baseurl }}/static/js/{{ js_file }}.js' type="text/javascript"></script>
-  {% endfor %}
-{% endif %}
+<footer class="container text-muted">
+    <hr>
+    CompSoc Edinburgh ♥ You
+    <a class="float-right" href="https://github.com/compsoc-edinburgh/website2017">
+        <img src="{{ site.baseurl }}/static/img/mark-github.svg">
+    </a>
+</footer>
