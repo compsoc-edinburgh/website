@@ -22,4 +22,12 @@
     <!-- Custom CSS -->
     <link href="{{ site.baseurl }}/static/css/main.css?time='{{site.time}}'" rel="stylesheet">
 
+    <!-- Page specific CSS -->
+    {% if page.custom_css %}
+        {% for stylesheet in page.custom_css %}
+        <link rel="stylesheet" href="{{ site.baseurl }}/static/css/{{ stylesheet }}.css" media="screen" type="text/css">
+        {% endfor %}
+    {% endif %}
+
+
 </head>

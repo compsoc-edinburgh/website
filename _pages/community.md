@@ -1,19 +1,16 @@
 ---
 longtitle: "The CompSoc Community"
 title: Community
+
+custom_js:
+    - community
 ---
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=216210952229246";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
 
 {% include snippets/join-us.html %}
-<div class="container">
+<div class="container" id="groupscontainer">
     <div class="row">
         <div class="col-4">
             <ul class="list-group">
@@ -36,7 +33,7 @@ title: Community
             <div class="card card-inverse mb-3 text-center" style="background-color: #7289DA; height: 165px">
                 <div class="card-block">
                     <a href="https://discord.gg/e4y8Vy5">
-                        <img src="{{ site.baseurl }}/static/img/Discord-Logo+Wordmark-White.svg">
+                        <img src="{{ site.baseurl }}/static/img/Discord-Logo+Wordmark-White.svg" height="90px">
                         <p class="card-text">Chat with our community on Discord</p>
                     </a>
                 </div>
@@ -55,7 +52,7 @@ title: Community
             </div>
         </div>
         <div class="col-4">
-            <div class="fb-page" data-href="https://www.facebook.com/pg/compsoc" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/pg/compsoc" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/pg/compsoc">CompSoc Edinburgh</a></blockquote></div>
+            <div id="facebookembed" class="fb-page" data-href="https://www.facebook.com/pg/compsoc" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" style="margin-bottom: 16px;"><blockquote cite="https://www.facebook.com/pg/compsoc" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/pg/compsoc">CompSoc Edinburgh</a></blockquote></div>
         </div>
     </div>
 </div>
