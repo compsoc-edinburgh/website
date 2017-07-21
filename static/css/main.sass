@@ -14,7 +14,26 @@ body
 a
     transition: all 0.2s ease-in-out
 
+.navbar-brand > img
+    height: 30px
+
+// On smaller screens (but not smallest)
+@media (min-width: 576px)
+    .navbar-toggler-with-logo
+        position: absolute
+
+    .navbar-brand
+        display: block
+        > img
+            display: block
+            margin: auto
+
+// On wide screens
 @media (min-width: 992px)
+    .navbar-brand > img
+        margin-left: -32px
+        height: auto
+
     .navbar .nav-link
         position: relative
         &:before
