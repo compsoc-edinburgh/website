@@ -1,49 +1,41 @@
 ---
 ---
 
-$img: "{{ site.baseurl }}/static/img/";
+$img: "{{ site.baseurl }}/static/img/"
 
-@import "partners";
-@import "index-jumbotron";
+@import "partners"
+@import "index-jumbotron"
 
-body{
-    margin-bottom: 20px;
+body
+    margin-bottom: 20px
     /* Background pattern from Subtle Patterns */
-    background-image: url( "{{ site.baseurl }}/static/img/crossword.png" );
-}
+    background-image: url( {{ site.baseurl }}/static/img/crossword.png )
 
-a {
-    transition: all 0.2s ease-in-out;
-}
+a
+    transition: all 0.2s ease-in-out
 
-@media (min-width: 992px){
-    .navbar .nav-link {
-        position: relative;
-        &:before{
-            content: "";
-            position: absolute;
-            left: 20%;
-            bottom: 0;
-            height: 4px;
-            background: #bdc1c4;
-            width: 60%;
-            -webkit-transition: all 0.2s ease-in-out;
-            transition: all 0.2s ease-in-out;
-            -webkit-transform: scaleX(0);
-            -ms-transform: scaleX(0);
-            transform: scaleX(0);
-        }
+@media (min-width: 992px)
+    .navbar .nav-link
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            left: 20%
+            bottom: 0
+            height: 4px
+            background: #bdc1c4
+            width: 60%
+            -webkit-transition: all 0.2s ease-in-out
+            transition: all 0.2s ease-in-out
+            -webkit-transform: scaleX(0)
+            -ms-transform: scaleX(0)
+            transform: scaleX(0)
         
-        &:hover:before {
-            -webkit-transform: scaleX(1);
-            -ms-transform: scaleX(1);
-            transform: scaleX(1);
-        }
-    }
-}
-    
+        &:hover:before
+            -webkit-transform: scaleX(1)
+            -ms-transform: scaleX(1)
+            transform: scaleX(1)
 
 // Needed for fullcalendar
-.fc-scroller {
-    height: auto !important;
-}
+.fc-scroller
+    height: auto !important
