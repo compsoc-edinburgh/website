@@ -28,8 +28,8 @@ DO NOT REMOVE WITHOUT READING ABOVE NOTE
 DO NOT REMOVE WITHOUT READING ABOVE NOTE
 -->
 
-{% if prevurl %}<a href="{{prevurl}}" class="prev">Previous</a>{% endif %}
-{% if nexturl %}<a href="{{nexturl}}" class="nxt">Next</a>{% endif %}
+{% if prevurl %}<a href="{{ site.baseurl }}{{ prevurl }}" class="prev">Previous</a>{% endif %}
+{% if nexturl %}<a href="{{ site.baseurl }}{{ nexturl }}" class="nxt">Next</a>{% endif %}
 
 <h1>{{ page.date | date: "Minutes of Meeting on %D at %l:%M%P" }}</h1>
 {{ content }}
