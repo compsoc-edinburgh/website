@@ -25,5 +25,7 @@ DO NOT REMOVE WITHOUT READING ABOVE NOTE
 DO NOT REMOVE WITHOUT READING ABOVE NOTE
 -->
 
-{% if prevurl %}<a href="{{ site.baseurl }}{{ prevurl }}" class="prev">Previous</a>{% endif %}
-{% if nexturl %}<a href="{{ site.baseurl }}{{ nexturl }}" class="nxt">Next</a>{% endif %}
+<p class="float-right">
+    {% if prevurl %}<a href="{{ site.baseurl }}{{ prevurl }}" class="btn btn-secondary">&laquo; Previous</a>{% endif %}
+    {% if nexturl %}<a href="{{ site.baseurl }}{{ nexturl }}" class="btn btn-secondary">Next &raquo;</a>{% endif %}
+</p>
