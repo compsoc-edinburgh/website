@@ -4,7 +4,9 @@ sass:
    sourcemap: true
 
 url: "http://comp-soc.com"
-baseurl: "/compsoc-website" # does not include hostname
+baseurl: "" # does not include hostname
+
+exclude: ['gulpfile.js', 'docker-run.sh', 'package*.json', 'README.md', 'node_modules']
 
 collections:
   minutes:
@@ -18,25 +20,25 @@ collections:
     permalink: "/blog/:categories/:year/:month/:day/:title.html"
     
 defaults:
-  - scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      layout: "default"
+  # - scope:
+  #     path: "" # an empty string here means all files in the project
+  #   values:
+  #     layout: "default"
 
   - scope:
-      path: ""
+      path: "_minutes"
       type: minutes
     values:
       layout: minutes # minute page
 
   - scope:
-      path: ""
+      path: "_pages"
       type: pages
     values:
       layout: page
 
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
       layout: post
