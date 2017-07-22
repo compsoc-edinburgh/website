@@ -10,9 +10,11 @@ collections:
   minutes:
     output: true
     permalink: "/:collection/:path"
+
   pages:
     output: true
     permalink: /:path
+
   posts:
     output: true
     permalink: "/blog/:categories/:year/:month/:day/:title.html"

@@ -1,35 +1,9 @@
 ---
 layout: default
 ---
-<!-- Here is a bunch of magic to generate previous / next links -->
-<!-- See https://gist.github.com/budparr/3e637e575471401d01ec -->
-<!-- Note that commenting in HTML does not actually stop Liquid code from running -->
-<!--
-DO NOT REMOVE WITHOUT READING ABOVE NOTE
 
-{% capture the_collection %}{{page.collection}}{% endcapture %}
-{% if page.collection %}
-	{% assign  document = site[the_collection] %}
-{% endif %}
-
-{% for links in document %}
-  {% if links.title == page.title %}
-    {% unless forloop.first %}
-      {% assign prevurl = prev.url %}
-    {% endunless %}
-    {% unless forloop.last %}
-      {% assign next = document[forloop.index] %}
-      {% assign nexturl = next.url %}
-    {% endunless %}
-  {% endif %}
-  {% assign prev = links %}
-{% endfor %}
-
-DO NOT REMOVE WITHOUT READING ABOVE NOTE
--->
-
-{% if prevurl %}<a href="{{ site.baseurl }}{{ prevurl }}" class="prev">Previous</a>{% endif %}
-{% if nexturl %}<a href="{{ site.baseurl }}{{ nexturl }}" class="nxt">Next</a>{% endif %}
+{% include navigate-collection.html %}
 
 <h1>{{ page.date | date: "Minutes of Meeting on %D at %l:%M%P" }}</h1>
+
 {{ content }}
