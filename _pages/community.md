@@ -56,13 +56,13 @@ custom_js:
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 hidden-md-down">
+        <!-- Small version -->
+        <div class="col-lg-4 hidden-md-down facebook-card-md">
             <div id="facebookembed" class="fb-page" data-href="https://www.facebook.com/pg/compsoc" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" style="margin-bottom: 16px;"><blockquote cite="https://www.facebook.com/pg/compsoc" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/pg/compsoc">CompSoc Edinburgh</a></blockquote></div>
         </div>
-        <div class="col-8 hidden-lg-up flex-first">
-            <div class="facebook-card-md">
-                <div class="fb-page" data-href="https://www.facebook.com/compsoc/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/compsoc/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/compsoc/">CompSoc Edinburgh</a></blockquote></div>
-            </div>
+        <!-- Long version -->
+        <div class="col-8 hidden-lg-up flex-first facebook-card-sm">
+            <div class="fb-page" data-href="https://www.facebook.com/compsoc/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/compsoc/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/compsoc/">CompSoc Edinburgh</a></blockquote></div>
         </div>
     </div>
 </div>
