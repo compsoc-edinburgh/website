@@ -26,14 +26,22 @@ DO NOT REMOVE WITHOUT READING ABOVE NOTE
 -->
 
 <p class="float-right">
-    <a href="{{ site.baseurl }}{{ prevurl }}" class="btn btn-secondary {% unless prevurl %} disabled {% endunless %}"
-        {% unless prevurl %} aria-disabled="true" {% endunless %}
+    <a class="btn btn-secondary {% unless prevurl %} disabled {% endunless %}"
+        {% if prevurl %}
+            href="{{ site.baseurl }}{{ prevurl }}"
+        {% else %}
+            aria-disabled="true"
+        {% endif %}
     >
         &laquo; Previous
     </a>
 
-    <a href="{{ site.baseurl }}{{ nexturl }}" class="btn btn-secondary {% unless nexturl %} disabled {% endunless %}"
-        {% unless nexturl %} aria-disabled="true" {% endunless %}
+    <a class="btn btn-secondary {% unless nexturl %} disabled {% endunless %}"
+        {% if nexturl %}
+            href="{{ site.baseurl }}{{ nexturl }}"
+        {% else %}
+            aria-disabled="true"
+        {% endif %}
     >
         Next &raquo;
     </a>
