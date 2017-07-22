@@ -6,10 +6,12 @@ We are the team that brings you the best experience in all things Informatics.
 
 {% include snippets/join-us.html %}
 
+{% assign committee = site.data.committee %}
+
 <div class="row">
 	<div class="col-md-4 push-md-8 col-sm-12">
 		<ul id="cohorts" class="nav flex-column">
-			{% for cohort in site.data.committee reversed %}
+			{% for cohort in committee reversed %}
 				<li class="nav-item">
 					<a class="nav-link active" href="#cohort-{{ cohort[0] }}">{{ cohort[1].year }}</a>
 				</li>
@@ -19,7 +21,7 @@ We are the team that brings you the best experience in all things Informatics.
 	<!-- -->
 	<!-- -->
 	<div class="col-md-8 pull-md-4 col-sm-12">
-		{% for cohort in site.data.committee reversed %}
+		{% for cohort in committee reversed %}
 		<i id="cohort-{{ cohort[0] }}"></i>
 		<div class="card" style="margin-bottom: 25px;">
 			<h3 class="card-header text-center">{{ cohort[1].year }}</h3>
