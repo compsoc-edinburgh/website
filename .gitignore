@@ -9,3 +9,6 @@ _site/
 # vscode
 .vscode
 
+# npm/gulp stuff
+node_modules
+package-lock.json
