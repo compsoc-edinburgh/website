@@ -28,8 +28,7 @@
             {% endfor %}
         {% endif %}
         
-        {% capture eventsPage %}{{ site.baseurl }}/events{% endcapture %}
-        {% if page.url == eventsPage %}
+        {% if page.url == "/events" %}
             {% include event-calendar.html %}
         {% endif %}
     </body>
