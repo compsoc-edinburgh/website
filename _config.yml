@@ -18,6 +18,10 @@ collections:
   posts:
     output: true
     permalink: "/blog/:categories/:year/:month/:day/:title.html"
+
+  authors:
+    output: true
+    permalink: /:path
     
 defaults:
   - scope:

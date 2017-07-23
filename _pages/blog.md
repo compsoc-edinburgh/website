@@ -8,8 +8,6 @@ We regularly hold committee meetings to discuss our plans for CompSoc.
 
 <ul>
     {% for post in site.posts %}
-    <li>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </li>
+    	{% include blog-entry.html %}
     {% endfor %}
 </ul>
