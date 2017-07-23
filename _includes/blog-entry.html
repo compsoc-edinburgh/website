@@ -5,8 +5,11 @@
     <h2 class="card-title" style="margin-bottom: 0">
         <a href="{{ url }}" style="color: black;">{{ post.title }}</a>
     </h2>
-    <a href="{{ author.uri }}"><small class="text-muted">{{ author.name }}</small></a>
-    <small class="text-muted"> | {{ post.date | date_to_string }}</small>
+    <small>
+        <a href="{{ author.uri }}" class="text-muted">{{ author.name }}</a>
+        |
+        <a href="{{ url }}" class="text-muted">{{ post.date | date_to_string }}</a>
+    </small>
     <p class="card-text">
         {{ post.excerpt | strip_html | truncatewords: 25 }}
         <a href="{{ url }}" class="text-muted">read on &raquo;</a>
