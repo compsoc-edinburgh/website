@@ -1,10 +1,13 @@
 {% assign author = site.data.authors[post.author] %}
 
 <div style="margin-top: 20px">
-    <h2 class="card-title" style="margin-bottom: 0">{{ post.title }}</h2>
+    <h2 class="card-title" style="margin-bottom: 0">
+        <a href="{{ site.baseurl }}{{ post.url }}" style="color: black;">{{ post.title }}</a>
+    </h2>
     <a href="{{ author.uri }}"><small class="text-muted">{{ author.name }}</small></a>
     <small class="text-muted"> | {{ post.date | date_to_string }}</small>
     <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
     <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+
 </div>
 <hr>
