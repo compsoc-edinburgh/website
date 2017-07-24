@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#facebookembed').attr("data-height", $('#community').height() - 16);
+    $('#facebookembed').attr("data-height", $('.facebook-parent').height() - 16);
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
