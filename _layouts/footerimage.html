@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#">
+
+    {% include head.html %}
+
+    <body id="top">
+        <div class="container">
+            {% include nav.html %}
+        </div>
+
+        <div class="container">
+            {{ content }}
+        </div>
+
+        <div class="footer-image" style="background-image: url('{{ site.baseurl }}/static/img/footers/{{ page.footerimage }}')">
+            <!-- nothing needs to be here -->
+        </div>
+
+        {% if page.url != "/" %}
+            {% include footer.html %}
+        {% endif %}
+
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+        <!-- Page specific js -->
+        {% if page.custom_js %}
+            {% for js_file in page.custom_js %}
+                <script src='{{ site.baseurl }}/static/js/{{ js_file }}.js' type="text/javascript"></script>
+            {% endfor %}
+        {% endif %}
+        
+        {% if page.url == "/events" %}
+            {% include event-calendar.html %}
+        {% endif %}
+    </body>
+
+</html>

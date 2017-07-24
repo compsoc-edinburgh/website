@@ -1,5 +1,8 @@
 ---
 title: "Contact Us"
+
+layout: footerimage
+footerimage: "contact.JPG"
 ---
 
 Do you have any questions, or suggestions?
