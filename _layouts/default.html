@@ -30,6 +30,8 @@
         
         {% if page.url == "/events" %}
             {% include event-calendar.html %}
+        {% else if page.url == "/team" %}
+            {% include sticky-team.html %}
         {% endif %}
     </body>
 
