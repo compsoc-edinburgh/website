@@ -9,12 +9,12 @@ We are the team that brings you the best experience in all things Informatics.
 {% assign committee = (site.data.committee | sort) | reverse %}
 
 <div class="row">
-	<div class="col-md-4 push-md-8 col-sm-12">
-		<ul id="cohorts" class="nav flex-column">
+	<div class="col-md-2 push-md-8 col-sm-12">
+		<ul id="cohorts" class="list-group">
 			{% for cohort in committee %}
 				{% if cohort.year %}
-					<li class="nav-item">
-						<a class="nav-link active" href="#cohort-{{ cohort.year | slugify }}">{{ cohort.year }}</a>
+					<li class="list-group-item">
+						<a class="" href="#cohort-{{ cohort.year | slugify }}">{{ cohort.year }}</a>
 					</li>
 				{% endif %}
 			{% endfor %}
@@ -22,7 +22,7 @@ We are the team that brings you the best experience in all things Informatics.
 	</div>
 	<!-- -->
 	<!-- -->
-	<div class="col-md-8 pull-md-4 col-sm-12">
+	<div class="col-md-8 pull-md-2 col-sm-12">
 		{% for cohort in committee %}
 			{% if cohort.year %}
 				<i id="cohort-{{ cohort.year | slugify }}"></i>
