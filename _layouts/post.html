@@ -44,8 +44,6 @@ layout: default
 <div class="blog-content">
     <h1>{% if page.longtitle %}{{ page.longtitle }}{% else %}{{ page.title }}{% endif %}</h5>
     <h5>{{ page.date | date_to_string }}</h3>
-    <a href="http://compsoc.hgs.club/compsoc-website{{ page.url }}">
-        <small class="text-muted">http://compsoc.hgs.club/compsoc-website{{ page.url }}</small>
-    </a>
+
     {{ content }}
 </div>
