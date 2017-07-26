@@ -2,48 +2,61 @@
 layout: default
 ---
 
-{% include navigate-collection.html %}
 {% assign author = site.data.authors[page.author] %}
-<div class="author-box-lg">
-    {% if author.avatar %}
-        <div class="author-avatar">
-            <img src="{{ author.avatar }}" class="rounded-circle"/>
-        </div>
-    {% endif %}
-    <div class="author-name">
-        <h5 class="text-muted">
-            {% if author.name %}
-                {{ author.name }}
-            {% else %}
-                {{ page.author }}
-            {% endif %}
-        </h5>
-    </div>
-    <div class="author-links">
-        {% if author.uri %}
-            <i class="fa fa-external-link" aria-hidden="true"></i>
-            <a href="{{ author.uri }}"><small class="text-muted">Website</small></a>
-            <br/>
-        {% endif %}
-        {% if author.email %}
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <a href="mailto:{{ author.email }}"><small class="text-muted">Email</small></a>
-            <br/>
-        {% endif %}
-        {% if author.twitter %}
-            <i class="fa fa-twitter-square" aria-hidden="true"></i>
-            <a href="https://twitter.com/{{ author.twitter }}"><small class="text-muted">Twitter</small></a>
-            <br/>
-        {% endif %}
-        {% if author.github %}
-            <i class="fa fa-github-alt" aria-hidden="true"></i>
-            <a href="https://github.com/{{ author.github }}"><small class="text-muted">GitHub</small></a>
-        {% endif %}
-    </div>
-</div>
-<div class="blog-content">
-    <h1>{% if page.longtitle %}{{ page.longtitle }}{% else %}{{ page.title }}{% endif %}</h5>
-    <h5>{{ page.date | date_to_string }}</h3>
 
-    {{ content }}
+<div class="row">
+    <div class="col-xl-2">
+        <div class="hidden-xl-up">
+            {% include navigate-collection.html %}
+        </div>
+
+        <div class="author-box-lg">
+            {% if author.avatar %}
+                <div class="author-avatar">
+                    <img src="{{ author.avatar }}" class="rounded-circle"/>
+                </div>
+            {% endif %}
+            <div class="author-name">
+                <h5 class="text-muted">
+                    {% if author.name %}
+                        {{ author.name }}
+                    {% else %}
+                        {{ page.author }}
+                    {% endif %}
+                </h5>
+            </div>
+            <div class="author-links">
+                {% if author.uri %}
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                    <a href="{{ author.uri }}"><small class="text-muted">Website</small></a>
+                    <br/>
+                {% endif %}
+                {% if author.email %}
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:{{ author.email }}"><small class="text-muted">Email</small></a>
+                    <br/>
+                {% endif %}
+                {% if author.twitter %}
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <a href="https://twitter.com/{{ author.twitter }}"><small class="text-muted">Twitter</small></a>
+                    <br/>
+                {% endif %}
+                {% if author.github %}
+                    <i class="fa fa-github-alt" aria-hidden="true"></i>
+                    <a href="https://github.com/{{ author.github }}"><small class="text-muted">GitHub</small></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-10">
+        <div class="hidden-lg-down">
+            {% include navigate-collection.html %}
+        </div>
+        <h1>{% if page.longtitle %}{{ page.longtitle }}{% else %}{{ page.title }}{% endif %}</h5>
+        <h5>{{ page.date | date_to_string }}</h3>
+
+        <div class="blog-content">
+            {{ content }}
+        </div>
+    </div>
 </div>
