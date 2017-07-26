@@ -25,6 +25,10 @@
         {% if page.has_include %}
             {% include individual/{{ page.path | slugify }}.html %}
         {% endif %}
-    </body>
 
+        {% if page.layout == "post" %}
+            {% include individual/post.html %}
+        {% endif %}
+
+    </body>
 </html>
