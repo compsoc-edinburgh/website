@@ -13,7 +13,7 @@ If you're on Windows, please contribute some instructions. You'll hopefully be a
 ### Running without Docker
 If you have `bundler` installed, type:
 
-- `bundler`, to install the Gemfile packages
+- `bundle`, to install the Gemfile packages
 - `bundle exec jekyll build --watch` to build and watch the directory for changes
 
 # About the SIG
