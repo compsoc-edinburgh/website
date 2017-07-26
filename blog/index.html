@@ -10,7 +10,7 @@ We regularly hold committee meetings to discuss our plans for CompSoc.
     {% include blog-entry.html %}
 {% endfor %}
 
-<nav aria-label="Page navigation example">
+<nav aria-label="Blog list navigation">
     <ul class="pagination">
         {% if paginator.previous_page %}
             <li class="page-item">
@@ -29,9 +29,9 @@ We regularly hold committee meetings to discuss our plans for CompSoc.
         {% endif %}
         {% for i in (2..paginator.total_pages) %}
             {% if paginator.page == i %}
-                <li class="page-item disabled"><a class="page-link" href="{{ site.baseurl }}/blog/page{{ i }}">{{ i }}</a></li>
+                <li class="page-item disabled"><a class="page-link" href="{{ site.baseurl }}/blog/{{ i }}/">{{ i }}</a></li>
             {% else %}
-                <li class="page-item"><a class="page-link" href="{{ site.baseurl }}/blog/page{{ i }}">{{ i }}</a></li>
+                <li class="page-item"><a class="page-link" href="{{ site.baseurl }}/blog/{{ i }}/">{{ i }}</a></li>
             {% endif %}
         {% endfor %}
         {% if paginator.next_page %}
@@ -39,7 +39,7 @@ We regularly hold committee meetings to discuss our plans for CompSoc.
         {% else %}
             <li class="page-item disabled">
         {% endif %}
-            <a class="page-link" href="{{ site.baseurl }}/{{ paginator.next_page_path }}" aria-label="Next">
+            <a class="page-link" href="{{ site.baseurl }}{{ paginator.next_page_path }}" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Next</span>
             </a>
