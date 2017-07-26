@@ -1,4 +1,4 @@
-# SIG: Web - website2016
+# SIG: Web - website2017
 This is the new website for [CompSoc Edinburgh](http://comp-soc.com).
 
 Built by SIG: Web, Making the Web(site) Great Again.
