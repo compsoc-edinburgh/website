@@ -6,6 +6,10 @@ sass:
 url: "http://comp-soc.com"
 baseurl: "/compsoc-website" # does not include hostname
 
+plugins: [jekyll-paginate]
+paginate: 5
+paginate_path: "/blog/page:num/"
+
 collections:
   minutes:
     output: true
