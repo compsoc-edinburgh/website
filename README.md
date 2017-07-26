@@ -1,7 +1,7 @@
 # SIG: Web - website2017
 This is the new website for [CompSoc Edinburgh](http://comp-soc.com).
 
-Built by SIG: Web, Making the Web(site) Great Again.
+Built by SIG: Web.
 
 ## How to test
 It uses Jekyll. It also works nicely with Docker.
