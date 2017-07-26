@@ -21,17 +21,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-        <!-- Page specific js -->
-        {% if page.custom_js %}
-            {% for js_file in page.custom_js %}
-                <script src='{{ site.baseurl }}/static/js/{{ js_file }}.js' type="text/javascript"></script>
-            {% endfor %}
-        {% endif %}
-        
-        {% if page.url == "/events" %}
-            {% include event-calendar.html %}
-        {% else if page.url == "/team" %}
-            {% include sticky-team.html %}
+        <!-- Page specific content -->
+        {% if page.has_include %}
+            {% include individual/{{ page.path | slugify }}.html %}
         {% endif %}
     </body>
 
