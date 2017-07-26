@@ -1,3 +1,9 @@
+{% if page.footer_image %}
+    <div class="footer-image" style="background-image: url('{{ site.baseurl }}/static/img/footers/{{ page.footer_image }}')">
+        <!-- nothing needs to be here -->
+    </div>
+{% endif %}
+
 <footer class="footer">
     <div class="container">
         <span class="text-muted">CompSoc Edinburgh ♥ You</span>
