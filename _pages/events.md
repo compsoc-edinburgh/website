@@ -1,7 +1,7 @@
 ---
 title: "Events"
-
-# Note that you may also need to edit _includes/event-calender.html
+has_include: true
+# Note that you may also need to edit the above include
 ---
 
 Student Tech Meetups (STMUs) are usually every third Wednesday of the month. We also host our annual hackathon: [Hack the Burgh](http://hacktheburgh.com).

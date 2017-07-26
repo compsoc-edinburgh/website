@@ -1,5 +1,7 @@
 ---
 title: "The Team"
+has_include: true
+# Note that you may also need to edit the above include
 ---
 
 We are the team that brings you the best experience in all things Informatics.
