@@ -10,13 +10,22 @@ Fortunately, there are well-established conventions as to what makes an idiomati
 
 **The seven rules of a great Git commit message** - keep in mind: This has all been said before.
 
-    1. Separate subject from body with a blank line
-    2. Limit the subject line to 50 characters
-    3. Capitalize the subject line
-    4. Do not end the subject line with a period
-    5. Use the imperative mood in the subject line
-    6. Wrap the body at 72 characters
-    7. Use the body to explain what and why vs. how
+1. Separate subject from body with a blank line
+2. Limit the subject line to 50 characters
+3. Capitalize the subject line
+4. Do not end the subject line with a period
+5. Use the imperative mood in the subject line
+6. Wrap the body at 72 characters
+7. Use the body to explain what and why vs. how
+
+For example, we want to keep our commit logs looking like this:
+
+    $ git log --oneline -5 --author pwebb --before "Sat Aug 30 2014"
+    5ba3db6 Fix failing CompositePropertySourceTests
+    84564a0 Rework @PropertySource early parsing logic
+    e142fd1 Add tests for ImportSelector meta-data
+    887815f Update docbook dependency and generate epub
+    ac8326d Polish mockito usage
 
 (Source: this [blog post](1) on chris.beams.io)
 
