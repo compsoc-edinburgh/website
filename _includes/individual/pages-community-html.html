@@ -1,0 +1,113 @@
+<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="Join CompSoc" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Join CompSoc</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-md">
+        <h3>Great to hear you'd like to join!</h3>
+        <p>
+          We have two membership prices, our standard membership which is £8 for the year, or a discounted
+          membership of £4 for the year if you are a student at the University of Edinburgh<sup>[1]</sup>. You
+          can pay for your membership online now<sup>[2]</sup> and collect your membership card at one of our
+          events, or you can just pay in person.
+        </p>
+        <div class="row">
+          <div class="col">
+            <button id="standardButton" type="button" class="btn btn-large mb-2 p-3 btn-info buy-btn" width="100%" onClick="openCheckout('1 year standard membership', 800);">
+              Buy Standard Membership
+              <h4>£8</h4>
+            </button>
+          </div>
+          <div class="col">
+            <button id="studentButton" type="button" class="btn btn-large mb-2 p-3 btn-success buy-btn" width="100%" onClick="openCheckout('1 year student membership', 400);">
+              <div class="text">
+                Buy Student Membership
+                <h4>£4</h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Maybe later...</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="Congrats!" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Congrats! You're done :D</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-md">
+        <h3>That's it!</h3>
+        <p>
+          Your payment should now have gone through, and we look forward to seeing you at one of our
+          upcoming events.
+        </p>
+        <p>
+          Remember, CompSoc Edinburgh <span class="heart">♥</span> You</span>
+        </p>
+        <p class="text-muted">Transaction token id: <span id="tokenId">n/a</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Thanks!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<script>
+
+  var checkout;
+
+  function openCheckout(desc, price) {
+    makeCheckout();
+    checkout.open({
+      name: 'Join CompSoc',
+      description: desc,
+      zipCode: true,
+      amount: price,
+      currency: 'GBP',
+      opened: function(){ $('#checkoutModal').modal('hide'); }
+    })
+  }
+
+  function makeCheckout(){
+    if (checkout == null) {
+      checkout = StripeCheckout.configure({
+      key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+      image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
+      locale: 'auto',
+      allowRememberMe: false,
+      token: function(token) {
+          // You can access the token ID with `token.id`.
+          // Get the token ID to your server-side code for use.
+          paymentSuccess(token)
+        }
+      });
+    }
+  }
+
+  // Close Checkout on page navigation:
+  window.addEventListener('popstate', function() {
+    handler.close();
+  });
+
+  function paymentSuccess(token) {
+    $('#successModal').modal('show');
+    $('#tokenId').text(token.id);
+  }
+
+</script>
