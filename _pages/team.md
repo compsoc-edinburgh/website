@@ -15,8 +15,8 @@ We are the team that brings you the best experience in all things Informatics.
 		<ul id="cohorts" class="list-group">
 			{% for cohort in committee %}
 				{% if cohort.year %}
-					<li class="list-group-item">
-						<a class="" href="#cohort-{{ cohort.year | slugify }}">{{ cohort.year }}</a>
+					<li class="list-group-item justify-content-center">
+						<a href="#cohort-{{ cohort.year | slugify }}">{{ cohort.year }}</a>
 					</li>
 				{% endif %}
 			{% endfor %}
