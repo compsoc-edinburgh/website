@@ -12,22 +12,31 @@ We are the team that brings you the best experience in all things Informatics.
 
 <div class="row">
 	<div class="col-xl-2 col-lg-3 push-lg-8 col-sm-12">
-		<ul id="cohorts" class="list-group">
-			{% for cohort in committee %}
-				{% if cohort.year %}
-					<li class="list-group-item justify-content-center">
-						<a href="#cohort-{{ cohort.year | slugify }}">{{ cohort.year }}</a>
-					</li>
-				{% endif %}
-			{% endfor %}
-		</ul>
+		<nav id="cohorts" class="nav nav-pills list-group" role="tablist">
+			{% for cohort in committee %}{% if cohort.year %}
+				<a class="list-group-item justify-content-center"
+						data-toggle="pill"
+						role="pill"
+						href="#cohort-{{ cohort.year | slugify }}"
+						{% if committee[0] == cohort %}
+						class="list-group-item justify-content-center active"
+						aria-expanded="true"
+						{% endif %}
+				>{{ cohort.year }}</a>
+			{% endif %}{% endfor %}
+		</nav>
 	</div>
 	<!-- -->
 	<!-- -->
 	<div class="col-lg-8 pull-lg-3 pull-xl-2 col-sm-12">
+		<div class="tab-content">
 		{% for cohort in committee %}
 			{% if cohort.year %}
-			<i id="cohort-{{ cohort.year | slugify }}"></i>
+			<div
+				class="tab-pane fade {% if committee[0] == cohort %}show active{% endif %}"
+				id="cohort-{{ cohort.year | slugify }}"
+				role="tabpanel"
+			>
 			<ul class="list-group mb-4">
 				<li class="list-group-item justify-content-between">
 					<h5 class="mb-0">{{ cohort.year }}</h5>
@@ -45,7 +54,9 @@ We are the team that brings you the best experience in all things Informatics.
 					</li>
 				{% endfor %}
 			</ul>
+			</div>
 			{% endif %}
 		{% endfor %}
+		</div>
 	</div>
 </div>
