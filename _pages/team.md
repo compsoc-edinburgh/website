@@ -27,22 +27,24 @@ We are the team that brings you the best experience in all things Informatics.
 	<div class="col-lg-8 pull-lg-3 pull-xl-2 col-sm-12">
 		{% for cohort in committee %}
 			{% if cohort.year %}
-				<i id="cohort-{{ cohort.year | slugify }}"></i>
-				<div class="card" style="margin-bottom: 25px;">
-					<h3 class="card-header text-center">{{ cohort.year }}</h3>
-					<div class="card-block">
-						<table class="table-sm" style="margin: 0 auto;">
-							<tbody>
-								{% for member in cohort.members %}
-								<tr>
-									<th scope="row">{{ member.role }}</th>
-									<td>{{ member.name }}</td>
-								</tr>
-								{% endfor %}
-							</tbody>
-						</table>
-					</div>
-				</div>
+			<i id="cohort-{{ cohort.year | slugify }}"></i>
+			<ul class="list-group mb-4">
+				<li class="list-group-item justify-content-between">
+					<h5 class="mb-0">{{ cohort.year }}</h5>
+					<span>
+						<!--<a class="btn disabled btn-sm btn-outline-danger" href="#">Financial Report</a>-->
+						{% if cohort.annual_report %}
+						<a class="btn btn-sm btn-outline-danger" href="https://github.com/compsoc-edinburgh/annual-reports/blob/master/{{ cohort.year | slugify }}.pdf">Annual Report</a>
+						{% endif %}
+					</span>
+				</li>
+				{% for member in cohort.members %}
+					<li class="list-group-item justify-content-between">
+						<strong>{{ member.role }}</strong>
+						<span>{{ member.name }}</span>
+					</li>
+				{% endfor %}
+			</ul>
 			{% endif %}
 		{% endfor %}
 	</div>
