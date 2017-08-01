@@ -15,6 +15,7 @@ members:
     role: Treasurer
 
   - name: Harry Reeder
+    role: Technical Secretary
     url: "http://harryreeder.co.uk/"
 
   #- name:
