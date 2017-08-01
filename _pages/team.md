@@ -50,7 +50,13 @@ We are the team that brings you the best experience in all things Informatics.
 				{% for member in cohort.members %}
 					<li class="list-group-item justify-content-between">
 						<strong>{{ member.role }}</strong>
-						<span>{{ member.name }}</span>
+						<span>
+							{% if member.url %}
+								<a href="{{ member.url }}">{{ member.name }}</a>
+							{% else %}
+								{{ member.name }}
+							{% endif %}
+						</span>
 					</li>
 				{% endfor %}
 			</ul>
