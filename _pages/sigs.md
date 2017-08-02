@@ -8,32 +8,15 @@ Are you and your friends interested in a particular field of Informatics? Start 
 
 ### Our SIGs
 
-<style>
-.sigs-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.sigs-item {
-    width: 200px;
-    height: 250px;
-    outline: black solid 1px;
-    text-align: center;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-</style>
-
 <div class="sigs-container">
-    <div class="sigs-item" style="background-color: black;">
-        <div style="display:inline-block; padding: 25px; ">
-            <a href="http://sigint.xm"><img src="{{ site.baseurl }}/static/img/sigs/sigint-logo.png" height="200px" style="float:left;background-color:black;" /></a>
+    <div class="sigs-item bg-inverse">
+        <div class="d-inline-block" style="padding: 25px; ">
+            <a href="http://sigint.xm"><img src="{{ site.baseurl }}/static/img/sigs/sigint-logo.png" height="200px" class="float-left" /></a>
         </div>
     </div>
-    <div class="sigs-item" style="display:flex; align-items:center; justify-content: center;">
+    <div class="sigs-item d-flex align-items-center justify-content-center">
         <a href="{{ site.baseurl }}/sigs/sigweb">
-        <div class="display:block">
+        <div class="d-block">
             <h1>SIG</h1>
             <h1>Web</h1>
             <p>(webdev)</p>
