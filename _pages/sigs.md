@@ -6,9 +6,10 @@ title: "SIGs"
 
 Are you and your friends interested in a particular field of Informatics? Start a SIG!
 
-### Our SIGs
+CompSoc offers SIGs promotion, some money, support, and a place on the committee. [Send us an email]({{ site.baseurl }}/contact) if you're interested in forming a SIG.
 
-<div class="sigs-container">
+### Our SIGs
+<div class="d-flex flex-wrap justify-content-start mb-2">
     <div class="sigs-item bg-inverse">
         <div class="d-inline-block" style="padding: 25px; ">
             <a href="http://sigint.xm"><img src="{{ site.baseurl }}/static/img/sigs/sigint-logo.png" height="200px" class="float-left" /></a>
@@ -25,18 +26,10 @@ Are you and your friends interested in a particular field of Informatics? Start 
     </div>
 </div>
 
-----
-
-### Start a SIG
-CompSoc offers SIGs promotion, some money, support, and a place on the committee! [Send us an email]({{ site.baseurl}}/contact) if you're interested in forming a SIG.
-
-----
-
 ### Defunct SIGs
-
-We've previously had special interest groups in these subject areas:
+We have previously had special interest groups in these subject areas:
 <ul>
-    <li>Electrical Engineering</li>
     <li>Audio Engineering</li>
+    <li>Electrical Engineering</li>
     <li>Robotics</li>
 </ul>
