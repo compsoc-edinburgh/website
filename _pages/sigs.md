@@ -32,11 +32,13 @@ Are you and your friends interested in a particular field of Informatics? Start 
         </div>
     </div>
     <div class="sigs-item" style="display:flex; align-items:center; justify-content: center;">
+        <a href="{{ site.baseurl }}/sigs/sigweb">
         <div class="display:block">
             <h1>SIG</h1>
             <h1>Web</h1>
             <p>(webdev)</p>
         </div>
+        </a>
     </div>
 </div>
 
