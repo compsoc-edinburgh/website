@@ -5,8 +5,17 @@ title: "Minutes"
 
 The committee holds a meeting every two weeks during term time. Meetings are usually held in Forrest Hill.
 
-<ul>
+<div class="row">
 {% for meeting in site.minutes reversed %}
-	<li><a href="{{ site.baseurl }}{{ meeting.url }}">{{ meeting.date | date: "%a, %d %B %Y" }}</a></li>
+	<a href="{{ site.baseurl }}{{ meeting.url }}" class="list-group-item list-group-item-action" style="width: 10rem; padding: 0; margin-right: 5px; margin-bottom: 5px;">
+		<div class="card-block">
+			<h4 class="card-title">
+				{{ meeting.date | date: "%d %b" }}
+			</h4>
+			<p class="card-text">
+				{{ meeting.date | date: "%a, %Y" }}
+			</p>
+		</div>
+	</a>
 {% endfor %}
-</ul>
+</div>
