@@ -1,8 +1,8 @@
-<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="Join CompSoc" aria-hidden="true">
+<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-label="Join CompSoc" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Join CompSoc</h5>
+        <h5 class="modal-title">Join CompSoc</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -39,11 +39,11 @@
   </div>
 </div>
 
-<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="Congrats!" aria-hidden="true">
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-label="Congrats!" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Congrats! You're done :D</h5>
+        <h5 class="modal-title">Congrats! You're done :D</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -51,13 +51,40 @@
       <div class="modal-body modal-md">
         <h3>That's it!</h3>
         <p>
-          Your payment should now have gone through, and we look forward to seeing you at one of our
-          upcoming events.
+          Your payment of <span id="successModalValueField">[value]</span> with card ending 
+          <span id="successModalLast4Field">####</span> should now have gone through, and we 
+          look forward to seeing you at one of our upcoming events.
         </p>
         <p>
           Remember, CompSoc Edinburgh <span class="heart">♥</span> You</span>
         </p>
-        <p class="text-muted">Transaction token id: <span id="tokenId">n/a</span></p>
+        <p class="text-muted">Transaction charge id: <span id="successModalChargeId">n/a</span>. <span id="successModalMessage"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Thanks!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="Oh dear." aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Oops... That's not right.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-md">
+        <h3>Something's gone wrong. :(</h3>
+        <p>
+          We've had an issue processing your payment. Don't worry, your card won't have been charged.
+        </p>
+        <p>
+          Here's some more information:
+        </p>
+        <code id="failModalDebugInfo">There's nothing here...</code>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Thanks!</button>
@@ -72,42 +99,76 @@
 
   var checkout;
 
-  function openCheckout(desc, price) {
-    makeCheckout();
+  function openCheckout(desc, amount) {
+    payment_desc = desc;
+    payment_amount = amount;
+    if (checkout == null) {
+      checkout = StripeCheckout.configure({
+        key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+        image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
+        locale: 'auto',
+        allowRememberMe: false,
+        token: function(token) { commitPayment(token, amount, desc) }
+      });
+    }
     checkout.open({
       name: 'Join CompSoc',
       description: desc,
       zipCode: true,
-      amount: price,
+      amount: amount,
       currency: 'GBP',
-      opened: function(){ $('#checkoutModal').modal('hide'); }
+      opened: function() { $('#checkoutModal').modal('hide'); },
+      closed: function() { checkout = null; }
     })
   }
 
-  function makeCheckout(){
-    if (checkout == null) {
-      checkout = StripeCheckout.configure({
-      key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-      image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
-      locale: 'auto',
-      allowRememberMe: false,
-      token: function(token) {
-          // You can access the token ID with `token.id`.
-          // Get the token ID to your server-side code for use.
-          paymentSuccess(token)
-        }
-      });
-    }
+  function commitPayment(token, amount, desc) {
+    var request = {
+      amount: amount,
+      desc: desc,
+      token: token
+    };
+    $.ajax({
+      url: 'http://localhost:3000/api/stripe/charge',
+      type: 'POST',
+      data: request,
+      error: function(textStatus) { ajaxFailure(textStatus) },
+      success: function(data) { ajaxSuccess(data) }
+    })
   }
 
-  // Close Checkout on page navigation:
+  function ajaxFailure(data) {
+    $('#failModal').modal('show');
+    $('#failModalDebugInfo').text("Ajax request to API failed:" + data);
+  }
+
+  function ajaxSuccess(data) {
+    if (data.result == "fail") {
+      paymentFail("Stripe processing failed - " + data.err_type + ": " + data.err_msg);
+    } else if (data.result == "charge") {
+      if (data.success) {
+        paymentSuccess(data.amount, data.last4, data.id, data.message);
+      } else {
+        paymentFail("Stripe charge ID " + data.id + " failed with error code \"" + data.failcode + ": " + data.message);
+      }
+    }
+  }
+  
   window.addEventListener('popstate', function() {
     handler.close();
   });
 
-  function paymentSuccess(token) {
+  function paymentSuccess(value, last4, chargeId, msg) {
     $('#successModal').modal('show');
-    $('#tokenId').text(token.id);
+    $('#successModalValueField').text(value);
+    $('#successModalLast4Field').text(last4);
+    $('#successModalChargeId').text(chargeId);
+    $('#successModalMessage').text(msg);
+  }
+
+  function paymentFail(text) {
+    $('#failModal').modal('show');
+    $('#failModalDebugInfo').text(text);
   }
 
 </script>
