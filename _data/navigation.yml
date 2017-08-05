@@ -4,8 +4,8 @@
 - text: Partners
   url: "/partners"
 
-- text: Blog
-  url: "/blog/"
+- text: Minutes
+  url: "/minutes/"
 
 - text: Events
   url: "/events"
