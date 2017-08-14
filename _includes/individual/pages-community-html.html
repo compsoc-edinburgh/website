@@ -51,9 +51,10 @@
       <div class="modal-body modal-md">
         <h3>That's it!</h3>
         <p>
-          Your payment of <span id="successModalValueField">[value]</span> with card ending 
+          Your payment of £<span id="successModalValueField">[value]</span> with card ending 
           <span id="successModalLast4Field">####</span> should now have gone through, and we 
-          look forward to seeing you at one of our upcoming events.
+          look forward to seeing you at one of our upcoming events. You will recieve an email
+          confirmation of your purchase.
         </p>
         <p>
           Remember, CompSoc Edinburgh <span class="heart">♥</span> You</span>
@@ -85,9 +86,12 @@
           Here's some more information:
         </p>
         <code id="failModalDebugInfo">There's nothing here...</code>
+        <p>
+          You can try again later or buy your membership in person at one of our events.
+        </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Thanks!</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Sorry!</button>
       </div>
     </div>
   </div>
@@ -98,6 +102,8 @@
 <script>
 
   var checkout;
+  var req;
+  var resp;
 
   function openCheckout(desc, amount) {
     payment_desc = desc;
@@ -118,34 +124,41 @@
       amount: amount,
       currency: 'GBP',
       opened: function() { $('#checkoutModal').modal('hide'); },
-      closed: function() { checkout = null; }
+      closed: function() { /*checkout = null;*/ }
     })
   }
 
   function commitPayment(token, amount, desc) {
+    console.log("Committing payment of £" + (amount/100) + " to API\nToken: " + token.id );
     var request = {
       amount: amount,
       desc: desc,
       token: token
     };
+    req = request;
     $.ajax({
       url: 'http://localhost:3000/api/stripe/charge',
       type: 'POST',
-      data: request,
+      data: JSON.stringify(request),
+      contentType: 'application/json',
+      dataType: 'json',
       error: function(textStatus) { ajaxFailure(textStatus) },
       success: function(data) { ajaxSuccess(data) }
     })
   }
 
-  function ajaxFailure(data) {
+  function ajaxFailure(textStatus) {
+    console.log("AJAX API request failed.");
     $('#failModal').modal('show');
-    $('#failModalDebugInfo').text("Ajax request to API failed:" + data);
+    $('#failModalDebugInfo').text("Ajax request to API failed: " + textStatus[0]);
   }
 
   function ajaxSuccess(data) {
-    if (data.result == "fail") {
+    console.log("AJAX API request successful with result '" + data.result + "'");
+    console.log(data);
+    if (data.result != "charge") {
       paymentFail("Stripe processing failed - " + data.err_type + ": " + data.err_msg);
-    } else if (data.result == "charge") {
+    } else {
       if (data.success) {
         paymentSuccess(data.amount, data.last4, data.id, data.message);
       } else {
@@ -160,7 +173,7 @@
 
   function paymentSuccess(value, last4, chargeId, msg) {
     $('#successModal').modal('show');
-    $('#successModalValueField').text(value);
+    $('#successModalValueField').text(value/100);
     $('#successModalLast4Field').text(last4);
     $('#successModalChargeId').text(chargeId);
     $('#successModalMessage').text(msg);
