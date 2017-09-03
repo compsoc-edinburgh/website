@@ -1,8 +1,8 @@
 {% assign author = site.data.authors[post.author] %}
 {% capture url %}{{ site.baseurl }}{{ post.url }}{% endcapture %}
 
-<div style="margin-top: 20px">
-    <h2 class="card-title" style="margin-bottom: 0">
+<div class="mt-4">
+    <h2 class="card-title mb-0">
         <a href="{{ url }}" style="color: black;">{{ post.title }}</a>
     </h2>
     <small>
@@ -11,8 +11,10 @@
         <a href="{{ url }}" class="text-muted">{{ post.date | date_to_string }}</a>
     </small>
     <p class="card-text">
-        {{ post.excerpt | strip_html | truncatewords: 25 }}
-        <a href="{{ url }}" class="text-muted">read on &raquo;</a>
+        {{ post.excerpt }}
+
+        <a href="{{ url }}" class="text-muted">Read on &raquo;</a>
     </p>
 </div>
+
 <hr>
