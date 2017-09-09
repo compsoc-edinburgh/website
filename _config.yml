@@ -3,7 +3,7 @@ description: CompSoc is Scotland's best and largest tech society. We do talks, w
 sass:
    sourcemap: true
 
-url: "http://comp-soc.com"
+url: "https://comp-soc.com"
 baseurl: "" # does not include hostname
 
 plugins_dir: [jekyll-paginate]
