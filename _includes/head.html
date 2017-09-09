@@ -7,6 +7,16 @@
     {% capture seo_description %}{{ site.description }}{% endcapture %}
 {% endif %}
 
+{% if page.preview_image %}
+    {% capture seo_image %}{{ page.preview_image }}{% endcapture %}
+    {% capture seo_twitter_card %}summary_large_image{% endcapture %}
+{% else %}
+    {% capture seo_image %}{{ site.url }}/static/img/compsoc-profile-white-fill.png{% endcapture %}
+    {% capture seo_twitter_card %}summary{% endcapture %}
+{% endif %}
+
+{% capture seo_title %}{% if (page.title != "Index") %}{{ page.title }} - {% endif %}CompSoc Edinburgh{% endcapture %}
+
 <head>
 
     <meta charset="utf-8">
@@ -17,16 +27,20 @@
     <meta name="description" content="{{ seo_description }}">
 
     <meta property="og:url" content="{{ site.url }}" />
-    <meta property="og:title" content="CompSoc Edinburgh" />
+    <meta property="og:title" content="{{ seo_title }}" />
 
     <meta property="og:description" content="{{ seo_description }}" />
-    <!-- <meta property="og:image" content="{{ site.url }}/static/img/compsoc-preview.png" /> -->
+    <meta property="og:image" content="{{ seo_image }}" />
 
+    <meta property="twitter:card" content="{{ seo_twitter_card }}" />
+    <meta property="twitter:site" content="@compsoc" />
+    <meta property="twitter:title" content="{{ seo_title }}" />
     <meta property="twitter:description" content="{{ seo_description }}" />
+    <meta property="twitter:image" content="{{ seo_image }}" />
     
     <link rel="icon" href="{{ site.baseurl }}/static/img/compsoc-icon.png" type="image/png">
 
-    <title>{% if (page.title != "Index") %}{{ page.title }} - {% endif %}CompSoc Edinburgh</title>
+    <title>{{ seo_title }}</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
