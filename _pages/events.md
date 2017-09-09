@@ -3,7 +3,7 @@ title: "Events"
 has_include: true
 # Note that you may also need to edit the above include
 
-preview_image: "https://comp-soc.com/static/welcome-week-images/99-poster-UNOPTIMISED.png"
+preview_image: "https://comp-soc.com/static/welcome-week-images/99-poster-min.png"
 ---
 
 Student Tech Meetups (STMUs) are usually every third Wednesday of the month. We also host our annual hackathon: [Hack the Burgh](http://hacktheburgh.com).
