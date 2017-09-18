@@ -5,7 +5,11 @@ title: Chat
 
 CompSoc uses multiple platforms to allow you to chat with the community. All of these are connected to each other so that there is a single community.
 
-At the moment we have Discord and IRC. We already have a Slack server, but we are still working on bridging Slack, so we'll share that later.
+At the moment we have Discord and IRC. We do have a Slack server, but we are still working on bridging Slack, so we'll share that later.
+
+We have rooms for each of the areas that CompSoc focuses on (web development, cyber security, etc.), [Tardis](http://tardis.ed.ac.uk), and rooms for each of the academic years.
+
+It's really worth joining the yearly rooms as they contain past lecturers, tutors and students who are often happy to lend a hand.
 
 <div class="container" id="community">
     <div class="row">
