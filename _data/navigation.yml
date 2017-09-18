@@ -4,6 +4,9 @@
 - text: Partners
   url: "/partners"
 
+- text: Learn
+  url: "/learn"
+
 - text: Minutes
   url: "/minutes/"
 
@@ -21,3 +24,4 @@
 
 - text: Contact
   url: "/contact"
+
