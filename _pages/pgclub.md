@@ -15,4 +15,4 @@ Programming Club is a voluntary, 0-credits course/club for students to get more 
 
 [Join the mailing list.](https://mlist.is.ed.ac.uk/lists/info/pgclub)
 
-The Google [tech dev guide](https://techdevguide.withgoogle.com) is also a great resource to get some practice.
+**Programming Club is looking for demonstrators!** Students in The School of Informatics can [see vacancies here](https://portal.theon.inf.ed.ac.uk/reports/teachsupp/vacancies/TP064_Vacancies_Live/PROG-CLUB.1706.shtml).
