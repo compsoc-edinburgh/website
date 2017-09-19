@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set to the name of the Docker image you want to use
-DOCKER_IMAGE_NAME="compsoc-2017"
+DOCKER_IMAGE_NAME="compsoc-2017-build"
 
 # Stop on first error
 set -e
@@ -16,10 +16,6 @@ else
   # Use an existing Jekyll Docker image
   DOCKER_IMAGE_NAME=grahamc/jekyll
 fi
-
-echo "***********************************************************"
-echo "  Your site will be available at http://localhost:4000"
-echo "***********************************************************"
 
 # Start Jekyll and watch for changes
 docker run --rm \
