@@ -13,7 +13,9 @@ Better Informatics is an academic website run by the students, supported by stud
 
 ### Programming Club
 
-It is quite possible to finish an undergraduate CS degree at Edinburgh without having done a huge amount of programming. Programming Club gives students very important practical skills that make young programmers into extraordinary programmers. [Learn more...](/pgclub)
+{% include pgclub.html %}
+
+It is quite possible to finish an undergraduate CS degree at Edinburgh without having done a huge amount of programming. Programming Club gives students very important practical skills that make novice programmers into extraordinary programmers. [Learn more...](/pgclub)
 
 ### Interested in becoming a programmer?
 
