@@ -7,7 +7,7 @@ permalink: /pgclub
 
 {% include pgclub.html %}
 
-It is quite possible to finish an undergraduate CS degree at Edinburgh without having done a huge amount of programming. The purpose of the course is **not** to turn students into programmers, but rather to give them the very important practical skills that make young programmers into extraordinary programmers.
+It is quite possible to finish an undergraduate CS degree at Edinburgh without having done a huge amount of programming. The purpose of the course is **not** to turn students into programmers, but rather to give them the very important practical skills that make novice programmers into extraordinary programmers.
 
 Informatics' courses leave learning to be an expert in at least one programming language to the students to do in their own time. After all, if we were determined to teach that to students, there wouldn't be any time left over for the theoretical things. Unfortunately, this can lead to a rather rude awakening for students who haven't learned programming on their own time when they go out to try and get a job.
 
