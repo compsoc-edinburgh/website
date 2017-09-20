@@ -1,17 +1,11 @@
 - text: Home
   url: "/"
 
-- text: Partners
-  url: "/partners"
-
-- text: Learn
-  url: "/learn"
+- text: Events
+  url: "/events"
 
 - text: Minutes
   url: "/minutes/"
-
-- text: Events
-  url: "/events"
 
 - text: Community
   url: "/community"
@@ -19,9 +13,14 @@
 - text: SIGs
   url: "/special-interest-groups"
 
+- text: Learn
+  url: "/learn"
+
 - text: Team
   url: "/team"
 
+- text: Partners
+  url: "/partners"
+
 - text: Contact
   url: "/contact"
-
