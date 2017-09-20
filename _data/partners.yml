@@ -1,17 +1,28 @@
-- url: https://careers.jpmorgan.com/
-  img: static/img/partners/jpmorgan.png
+# Use maxwidth to deal with discrepencies in logo whitespace
+-
+  - url: https://careers.jpmorgan.com/
+    img: static/img/partners/jpmorgan.png
+    maxwidth: 390px
 
-- url: https://google.com
-  img: static/img/partners/google.png
+-
+  - url: https://google.com
+    img: static/img/partners/google.png
+    maxwidth: 270px
 
-- url: https://careers.microsoft.com/
-  img: static/img/partners/microsoft.png
+-
+  - url: https://careers.microsoft.com/
+    img: static/img/partners/microsoft.png
+    maxwidth: 315px
 
-- url: https://www.bloomberg.com/careers/
-  img: static/img/partners/bloomberg.svg
+  - url: https://www.bloomberg.com/careers/
+    img: static/img/partners/bloomberg.svg
+    maxwidth: 280px
 
-- url: https://www.blackrock.com/
-  img: static/img/partners/blackrock.png
+-
+  - url: https://www.blackrock.com/
+    img: static/img/partners/blackrock.png
+    maxwidth: 220px
 
-- url: https://www.amazon.jobs/
-  img: static/img/partners/amazon.png
+  - url: https://www.amazon.jobs/
+    img: static/img/partners/amazon.png
+    maxwidth: 220px
