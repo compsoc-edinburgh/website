@@ -20,11 +20,9 @@ Even if you're a complete beginner you should come along to a couple of our even
 
 ### Programming Club
 
-{% include pgclub.html %}
+Programming Club gives students very important practical skills that make novice programmers into extraordinary programmers.
 
-It is quite possible to finish an undergraduate CS degree at Edinburgh without having done a huge amount of programming. Programming Club gives students very important practical skills that make novice programmers into extraordinary programmers.
-
-If you want to help out or just learn more about the club, [click here](/pgclub).
+If you want to help out or just learn more about the club, [click here](http://progclub.inf.ed.ac.uk).
 
 ### Better Informatics
 
