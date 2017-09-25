@@ -11,7 +11,7 @@ We will be electing the following positions at our October STMU:
 - 3rd Year Rep
 - 4th Year Rep
 
-The election process is simple — each candidate prepares a short speech 
+The election process is simple — each candidate prepares a short speech and then the members vote based on those presentations.
 
 To find out more about what each role is responsible for, speak to the current committee members.
 
