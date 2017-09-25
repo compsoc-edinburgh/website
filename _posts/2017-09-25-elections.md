@@ -3,7 +3,7 @@ title: Available Positions in the 2017-18 Committee
 author: elenalape
 ---
 
-We will be electing the following positions at our October STMU:
+We will be electing some positions at our October STMU.
 
 - 1st Year Rep
 - 3rd Year Rep
