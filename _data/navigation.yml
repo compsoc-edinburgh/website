@@ -4,8 +4,8 @@
 - text: Events
   url: "/events"
 
-- text: Minutes
-  url: "/minutes/"
+- text: Blog
+  url: "/blog/"
 
 - text: Community
   url: "/community"
