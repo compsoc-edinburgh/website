@@ -9,7 +9,7 @@ So you're interested in learning more about the field of Informatics? We support
 
 ### Cascaders Evenings
 
-**Every Thursday from 6pm onwards.**
+**Every Thursday from 6pm onwards.** Begins in October.
 
 Preparing for an interview? Trying to learn Python? Just want to chill? Anything goes... as long as it's legal.
 
