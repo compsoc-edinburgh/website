@@ -1,0 +1,45 @@
+---
+layout: page
+longtitle: "Facebook Year Group pages"
+title: "Year Groups"
+years:
+  - 2019
+  - 2018
+  - 2017
+  - 2016
+---
+
+<div class="container">
+    <div class="row facebook-parent">
+        <ul class="list-group">
+            <!-- New Incoming -->
+            <a class="list-group-item list-group-item-action" href="https://www.facebook.com/groups/487413248257663/">
+                <h5 class="mb-1">Incoming 2017/18 &raquo;</h5>
+            </a>
+
+            <a class="list-group-item list-group-item-action" href="https://www.facebook.com/groups/638355673007684/">
+                <h5 class="mb-1">Incoming 2016/17 &raquo;</h5>
+            </a>
+
+            <!-- Classes of 2016-9 -->
+            {% for year in page.years %}
+                <a class="list-group-item list-group-item-action" href="https://www.facebook.com/groups/uoeinformatics{{ year }}">
+                  <h5 class="mb-1">Class of {{ year }} &raquo;</h5>
+                </a>
+            {% endfor %}
+
+            <!-- Other classes -->
+            <a class="list-group-item list-group-item-action" href="https://www.facebook.com/groups/informatics1/">
+                <h5 class="mb-1">Class of 2015 &raquo;</h5>
+            </a>
+
+            <a class="list-group-item list-group-item-action" href="https://www.facebook.com/groups/130466080350248/">
+                <h5 class="mb-1">Class of 2014 &raquo;</h5>
+            </a>
+
+            <a class="list-group-item list-group-item-action" href="https://www.facebook.com/groups/122152054563080/">
+                <h5 class="mb-1">Class of 2013 &raquo;</h5>
+            </a>
+        </ul>
+    </div>
+</div>
