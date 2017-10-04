@@ -43,7 +43,7 @@ title: Community
         <div class="col-lg-4">
             <!-- Discord -->
             <div class="card mb-3 text-center">
-                <a href="{{ site.baseurl }}/chat" class="btn btn-discord btn-block">
+                <a href="{{ site.baseurl }}/chat" class="btn btn-discord btn-block" data-toggle="modal" data-target="#chatModal" style="cursor: pointer;">
                     <img src="{{ site.baseurl }}/static/img/Discord-Logo+Wordmark-White.svg" style="height: 90px; max-width: 100%">
                     <p>Chat with our community</p>
                     <p>We use Discord and IRC.</p>
@@ -140,6 +140,27 @@ title: Community
                 <h5 class="mb-1">Join mailing list &raquo;</h5>
                 <p class="mb-0">Here's how you can get all the news about where and when we play.</p>
             </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Chat Modal -->
+<div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="chatModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="chatModalLabel">Chat with CompSoc</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                {% capture modal %}true{% endcapture %}
+                {% include chat.html modal=modal %}
+                <a class="small text-muted" href="/chat">Permalink</span>
+            </div>
         </div>
     </div>
 </div>
