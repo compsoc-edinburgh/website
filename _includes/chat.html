@@ -1,32 +1,29 @@
-<p>CompSoc uses multiple platforms to allow you to chat with the community. All of these are connected to each other so that there is a single community.</p>
-
-<p>At the moment we have Discord and IRC. We do have a Slack server, but we are still working on bridging Slack, so we'll share that later.</p>
-
-<p>We have rooms for each of the areas that CompSoc focuses on (web development, cyber security, etc.), <a href="http://tardis.ed.ac.uk">Tardis</a>, and rooms for each of the academic years.</p>
-
-<p>It's really worth joining the yearly rooms as they contain past lecturers, tutors and students who are often happy to lend a hand.</p>
-
-{% assign column_size = 4 %}
+{% assign column_size = 6 %}
 {% if modal %}
     {% assign column_size = 12 %}
 {% endif %}
 
-<div class="container" id="community">
-    <div class="row">
-        <div class="col-lg-{{ column_size }}">
-            <!-- Discord -->
-            <div class="card mb-3 text-center">
-                <a href="https://discord.gg/e4y8Vy5" class="btn btn-discord btn-block">
-                    <img src="{{ site.baseurl }}/static/img/Discord-Logo+Wordmark-White.svg" style="height: 90px; max-width: 100%">
-                    <p>Chat with our community on Discord</p>
-                </a>
-            </div>
+<div class="row align-items-center">
+    <div class="col-lg-{{ column_size }}">
+        <p>CompSoc uses multiple platforms to allow you to chat with the community. All of these are connected to each other so that there is a single community.</p>
+        
+        <p>At the moment we have Discord and IRC. We do have a Slack server, but we are still working on bridging Slack, so we'll share that later.</p>
+        
+        <p>We have rooms for each of the areas that CompSoc focuses on (web development, cyber security, etc.), <a href="http://tardis.ed.ac.uk">Tardis</a>, and rooms for each of the academic years.</p>
+        
+        <p>It's really worth joining the yearly rooms as they contain past lecturers, tutors and students who are often happy to lend a hand.</p>
+    </div>
+    <div class="col-lg-{{ column_size }}" id="community">
+        <!-- Discord -->
+        <div class="card mb-3 text-center">
+            <a href="https://discord.gg/e4y8Vy5" class="btn btn-discord btn-block">
+                <img src="{{ site.baseurl }}/static/img/Discord-Logo+Wordmark-White.svg" style="height: 90px; max-width: 100%">
+                <p>Chat with our community on Discord</p>
+            </a>
         </div>
-        <div class="col-lg-{{ column_size }}">
-            <!-- IRC -->
-            <div class="card mb-3 text-center">
-                <a href="{{ site.baseurl }}/irc" class="btn btn-warning btn-lg btn-block">Internet Relay Chat (IRC)</a>
-            </div>
+        <!-- IRC -->
+        <div class="card mb-3 text-center">
+            <a href="{{ site.baseurl }}/irc" class="btn btn-warning btn-lg btn-block">Internet Relay Chat (IRC)</a>
         </div>
     </div>
 </div>
