@@ -143,7 +143,8 @@
       contentType: 'application/json',
       dataType: 'json',
       error: function(textStatus) { ajaxFailure(textStatus) },
-      success: function(data) { ajaxSuccess(data) }
+      success: function(data) { ajaxSuccess(data) },
+      timeout: 3000
     })
   }
 
