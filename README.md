@@ -14,4 +14,4 @@ If you're on Windows, please contribute some instructions. You'll hopefully be a
 If you have `bundler` installed, type:
 
 - `bundle`, to install the Gemfile packages
-- `bundle exec jekyll build --watch` to build and watch the directory for changes
+- `bundle exec jekyll serve` to build and watch the directory for changes
