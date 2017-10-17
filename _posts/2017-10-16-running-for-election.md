@@ -21,7 +21,7 @@ I have three objectives by becoming the year one rep:
 </ul>
 </blockquote>
 
-#### Ege Elgun - running for 1st year rep
+#### Ege Elgun — running for 1st year rep
 <blockquote class="blockquote" style="font-size: initial">
 <p>Champions of CompSoc</p>
 
@@ -37,7 +37,7 @@ I have three objectives by becoming the year one rep:
 
 <p>This message is brought to you by electrons (representing 1s and 0s)...</p>
 </blockquote>
-#### Findlay Smith - running for 1st year rep
+#### Findlay Smith — running for 1st year rep
 
 <blockquote class="blockquote" style="font-size: initial">
 <p>I feel I would be suitable for the role of first year class rep due to a number of reasons. First of all I am enthusiastic about tech and computer science and am already actively involved with comp soc through cascaders evenings. In addition I am approachable and friendly and all set to get started in the role.</p>
