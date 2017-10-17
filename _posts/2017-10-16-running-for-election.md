@@ -47,6 +47,6 @@ I have three objectives by becoming the year one rep:
 
 -----
 
-Some emailed applying for the other year rep roles, but did not provide a manifesto.
+Some applied for the other year rep roles, but did not provide a manifesto.
 
 Best of luck to everyone!
