@@ -16,7 +16,7 @@ Other "channels" we recommend you to join include:
 
 A list of other channels can be found in the topic of the `#compsoc` channel!
 
-## Joining IRC
+## Joining IRC <a href="https://www.irccloud.com/invite?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1" target="_blank"><img src="https://www.irccloud.com/invite-svg?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1"  height="18"></a>
 
 Clients are needed to connect to an IRC server, but you do not need to create an account — these clients can be online
 (e.g, KiwiIRC, or [IRCCloud](https://irccloud.com)) or installed on your computer (HexChat).
