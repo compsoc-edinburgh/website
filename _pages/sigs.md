@@ -22,12 +22,12 @@ CompSoc offers SIGs promotion, some money, support, and a place on the committee
             <p>(webdev)</p>
         </div>
     </a>
-    <span class="sigs-item d-flex list-group-item align-items-center justify-content-center">
+    <a href="{{ site.baseurl }}/sigs/signet" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
         <div class="d-block">
-            <h1>netSIG</h1>
-            <p>coming soon...</p>
+            <h1>SIGnet</h1>
+            <p>(Networking)</p>
         </div>
-    </span>
+    </a>
 </div>
 
 ### Defunct SIGs
