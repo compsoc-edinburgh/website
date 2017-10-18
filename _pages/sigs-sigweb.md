@@ -14,12 +14,10 @@ SIG: Web is a Special Interest Group of CompSoc, centered around re-building the
 ## Sounds good, what now?
 This page lists some first ideas around what we might need/want for the website, until we can put together a first formal meeting.
 
-## Join us <a href="https://www.irccloud.com/invite?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1" target="_blank"><img src="https://www.irccloud.com/invite-svg?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1"  height="18"></a>
-
 #### Meetings
 Meetings will be held on a monthly basis, in person. Meetings will also have a web conference open in the event that a SIG member wishes to join remotely. As such, the meeting venue should be suitable to accommodate this.
 
 #### Online
-We hang out in #sigweb on Imaginarynet (irc.imaginarynet.uk), come say hi, have a chat. For now we're throwing around basic ideas of what technology stacks we should consider, and generally are just getting ideas out to others in the group for discussion at our first meeting, where we will start a formal plan.
+We hang out in [the CompSoc chat]({{ site.baseurl }}/chat), on #sigweb: come say hi, have a chat! For now we're throwing around basic ideas of what technology stacks we should consider, and generally are just getting ideas out to others in the group for discussion at our first meeting, where we will start a formal plan.
 
 More information about Special Interest Groups can be found on [the main SIG page]({{ site.baseurl }}/special-interest-groups).
