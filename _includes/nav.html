@@ -1,4 +1,4 @@
-<nav class="navbar navbar-toggleable-md navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         {% if page.url != "/" %}
             {% assign navbar-class = "navbar-toggler-with-logo" %}
@@ -7,7 +7,7 @@
         <button class="navbar-toggler {{ navbar-class }}" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         {% if page.url != "/" %}
         <a class="navbar-brand" href="{{ site.baseurl }}/">
             <img src="{{ site.baseurl }}/static/img/compsoc-horizontal.svg" alt="CompSoc Edinburgh Logo">
