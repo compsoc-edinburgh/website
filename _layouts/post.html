@@ -6,7 +6,7 @@ layout: default
 
 <div class="row">
     <div class="col-xl-2">
-        <div class="hidden-xl-up">
+        <div class="d-xl-none">
             {% include navigate-collection.html %}
         </div>
 
@@ -49,7 +49,7 @@ layout: default
         </div>
     </div>
     <div class="col-xl-10">
-        <div class="hidden-lg-down">
+        <div class="d-none d-xl-block">
             {% include navigate-collection.html %}
         </div>
         <h1>{% if page.longtitle %}{{ page.longtitle }}{% else %}{{ page.title }}{% endif %}</h5>
