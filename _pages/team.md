@@ -11,15 +11,15 @@ We are the team that brings you the best experience in all things Informatics.
 {% assign committee = (site.data.committee | sort) | reverse %}
 
 <div class="row">
-	<div class="col-xl-2 col-lg-3 push-lg-8 col-sm-12">
+	<div class="col-xl-2 col-lg-3 order-lg-2 col-sm-12">
 		<nav id="cohorts" class="nav nav-pills list-group" role="tablist">
 			{% for cohort in committee %}{% if cohort.year %}
-				<a class="list-group-item justify-content-center"
+				<a class="d-flex list-group-item justify-content-center"
 						data-toggle="pill"
 						role="pill"
 						href="#cohort-{{ cohort.year | slugify }}"
 						{% if committee[0] == cohort %}
-						class="list-group-item justify-content-center active"
+						class="d-flex list-group-item justify-content-center active"
 						aria-expanded="true"
 						{% endif %}
 				>{{ cohort.year }}</a>
@@ -28,7 +28,7 @@ We are the team that brings you the best experience in all things Informatics.
 	</div>
 	<!-- -->
 	<!-- -->
-	<div class="col-lg-8 pull-lg-3 pull-xl-2 col-sm-12">
+	<div class="col-lg-8 pull-lg-3 order-lg-1 col-sm-12">
 		<div class="tab-content">
 		{% for cohort in committee %}
 			{% if cohort.year %}
@@ -38,7 +38,7 @@ We are the team that brings you the best experience in all things Informatics.
 				role="tabpanel"
 			>
 			<ul class="list-group mb-4">
-				<li class="list-group-item justify-content-between">
+				<li class="d-flex list-group-item justify-content-between">
 					<h5 class="mb-0">{{ cohort.year }}</h5>
 					<span>
 						<!--<a class="btn disabled btn-sm btn-outline-danger" href="#">Financial Report</a>-->
@@ -48,7 +48,7 @@ We are the team that brings you the best experience in all things Informatics.
 					</span>
 				</li>
 				{% for member in cohort.members %}
-					<li class="list-group-item justify-content-between">
+					<li class="d-flex list-group-item justify-content-between">
 						<strong>{{ member.role }}</strong>
 						<span>
 							{% if member.url %}
