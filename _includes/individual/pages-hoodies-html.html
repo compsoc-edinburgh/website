@@ -1,0 +1,111 @@
+<script>
+    var hoodies = {
+        college: {
+            unisex: {
+                code: "JH001",
+                id: "3725",
+                colors: ["Airforce Blue","Apple Green","Alien Green","Ash","Arctic White","Baby Pink","Burnt Orange","Bottle Green","Burgundy","Candyfloss Pink","Charcoal","Cornflower Blue","Cranberry","Desert Sand","Sherbet Lemon","Fire Red","Gold","Hawaiian Blue","Heather Grey","Hot Chocolate","Hot Pink","Jade","Jet Black","Kelly Green","Lavender","Lime Green","Lipstick Pink","Magenta Magic","Moondust Grey","Moss Green","Orange Crush","Olive Green","Oxford Navy","Peppermint","Plum","Pinky Purple","Purple","Red Hot Chilli","Royal Blue","Sapphire Blue","Sky Blue","Sunset Red","Steel Grey","Storm Grey","Sun Yellow","Turquoise Surf","True Violet","Vanilla Milkshake","New French Navy","Tropical Blue","Brick Red","Denim Blue","Forest Green","Spring Green","Ultra Violet","Deep Sea Blue","Nude"],
+            },
+
+            womens: {
+                code: "JH01F",
+                id: "7200",
+                colors: ["Arctic White","Airforce Blue","Ash","Bottle Green","Burgundy","Candyfloss Pink","Charcoal","Fire Red","Hawaiian Blue","Heather Grey","Hot Pink","Jade","Jet Black","Kelly Green","Lime","New French Navy","Orange Crush","Plum","Purple","Red Hot Chilli","Royal Blue","Sapphire Blue","Sky Blue","Sun Yellow","Turquoise Surf","Oxford Navy"],
+            },
+        },
+
+        zoodie: {
+            unisex: {
+                code: "JH050",
+                id: "3739",
+                colors: ["Arctic White","Bottle Green","Charcoal","Fire Red","Hawaiian Blue","Heather Grey","Hot Pink","Jet Black","Kelly Green","Oxford Navy","Purple","Red Hot Chilli","Royal Blue","Sapphire Blue","Steel Grey","New French Navy","Burgundy","Forest Green","Orange Crush","Sun Yellow","Ash"],
+            },
+
+            womens: {
+                code: "JH055",
+                id: "3742",
+                colors: ["Arctic White","Baby Pink","Candyfloss Pink","Fire Red","Hawaiian Blue","Heather Grey","Hot Pink","Jet Black","Kelly Green","Purple","Sapphire Blue","New French Navy"],
+            },
+        },
+    };
+
+    $(() => {
+        var logoPrint = $('[name="logopos"][value="print"]');
+        var logoEmbroidered =  $('[name="logopos"][value="embroid"]');
+        var optionSizeXS = $('#option-size-xs');
+        var supplierLink = $('.supplier-url');
+        var colorSelect = $('[name="hoodie-color"]');
+        
+        function getHoodieType() {
+            return $('[name="hoodie-type"]:checked').val();
+        }
+
+        function getSizeType() {
+            return $('[name="size-type"]:checked').val();
+        }
+
+        function updateSize() {
+            var isZoodie = getHoodieType() == "zoodie";
+            var isUnisex = getSizeType() == "unisex";
+            var disabled = isZoodie && isUnisex;
+
+            optionSizeXS.prop('disabled', disabled);
+            optionSizeXS.text(disabled ? "XS (unavailable for unisex zoodies)" : "XS")
+            
+            // if XS selected, and we've disabled it, then
+            // select S
+            if (optionSizeXS.prop("selected") && disabled) {
+                $('#option-size-s').prop("selected", true);
+            }
+        }
+
+        function updateHoodieInfo() {
+            updateSize();
+
+            var hoodieType = getHoodieType();
+            var sizeType = getSizeType();
+            var info = hoodies[hoodieType][sizeType];
+
+            var url = "http://www.promotional-store.com/referredproduct.aspx?id=" + info.id;
+            
+            supplierLink.attr("href", url);
+            supplierLink.text(info.code);
+
+            $('[name="hoodie-code"]').val(info.code);
+
+            var selectedColor = $('[name="hoodie-color"] > option:selected').val();
+
+            colorSelect.children().remove();
+            info.colors.forEach(color => {
+                $("<option></option>", {
+                    text: color,
+                    selected: selectedColor == color,
+                }).appendTo(colorSelect);
+            });
+        }
+
+        // zoodies only support embroidered
+        // also update size (XS)
+        $('[name="hoodie-type"]').change(e => {
+            updateHoodieInfo();
+
+            var checkbox = $(e.target);
+            if (checkbox.val() == "zoodie") {
+                logoEmbroidered.prop("checked", true);
+
+                logoPrint.prop("disabled", true);
+                logoPrint.parent().parent().addClass("disabled");
+            } else {
+
+                logoPrint.prop("disabled", false);
+                logoPrint.parent().parent().removeClass("disabled");
+            }
+        });
+
+        $('[name="size-type"]').change(() => {
+            updateHoodieInfo();
+        });
+
+        updateHoodieInfo();
+    });
+</script>
