@@ -50,7 +50,7 @@
             var disabled = isZoodie && isUnisex;
 
             optionSizeXS.prop('disabled', disabled);
-            optionSizeXS.text(disabled ? "XS (unavailable for unisex zoodies)" : "XS")
+            optionSizeXS.text(disabled ? "XS (unavailable for unisex zipped hoodies)" : "XS")
             
             // if XS selected, and we've disabled it, then
             // select S
@@ -67,7 +67,7 @@
             var info = hoodies[hoodieType][sizeType];
 
             var url = "http://www.promotional-store.com/referredproduct.aspx?id=" + info.id;
-            
+
             supplierLink.attr("href", url);
             supplierLink.text(info.code);
 
