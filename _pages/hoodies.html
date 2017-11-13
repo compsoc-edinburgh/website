@@ -7,13 +7,21 @@ has_include: true
 
 <h1 class="text-center">Get your CompSoc hoodie!</h1>
 
+<style>
+    #himg-zoodie,#himg-college,#himg-back {
+        max-height: 200px;
+    }
+</style>
+
 <form>
     <div class="row">   
         <div class="col-md-5 order-md-2">
             <h4>Preview</h4>
-            <img src="http://www.promotional-store.com/images/thumbs/0194948_100.jpeg" class="img-thumbnail" style="width:100%;">
+            {% include hoodies/zip.svg %}
+            {% include hoodies/front.svg %}
+            {% include hoodies/back.svg %}
             <small class="text-muted">
-                Colors may be different IRL.    
+                Colours may be different IRL. Preview of colour here is an estimate, see link underneath colour selection box.
             </small>
         </div>
 
@@ -123,17 +131,17 @@ has_include: true
             </div>
 
             <div class="form-group row">
-                <label class="col-md-4">ATATAT colour</label>
+                <label class="col-md-4">Back print colour</label>
                 <div class="col-sm-8">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input checked class="form-check-input" type="radio" name="logopos" value="embroid">
+                            <input checked class="form-check-input" type="radio" name="print-color" value="black">
                             Black
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="logopos" value="print">
+                            <input class="form-check-input" type="radio" name="print-color" value="white">
                             White
                         </label>
                     </div>
@@ -177,3 +185,5 @@ has_include: true
         </div>
     </div>
 </form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js" integrity="sha384-8WfvGT4Eaax9aydJKPwo8urxfPKf0rvWe9FwoNxz4kD1iG9upxs9667qzL1AK4Lk" crossorigin="anonymous"></script>
