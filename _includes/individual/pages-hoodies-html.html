@@ -48,6 +48,14 @@
             return $('[name="hoodie-color"] > option:selected');
         }
 
+        function getLogoPosition() {
+            return $('[name="logo-pos"]:checked').val();
+        }
+
+        function getLogoColor() {
+            return $('[name="logo-color"] > option:selected').val();
+        }
+
         function updateSize() {
             var isZoodie = getHoodieType() == "zoodie";
             var isUnisex = getSizeType() == "unisex";
@@ -64,14 +72,14 @@
         }
 
         function updateHoodieColor(color) {
-            $(".cls-1").css("fill", color);
+            $("#college-fabric > path,#zoodie-fabric > path,#back-fabric > path").css("fill", color);
 
             var color = "black";
-            if (tinycolor($(".cls-1").css("fill")).isDark()) {
+            if (tinycolor($("#college-fabric > path,#zoodie-fabric > path,#back-fabric > path").css("fill")).isDark()) {
                 color = "white";
             }
 
-            $(".cls-1").css("stroke", color);
+            $("#college-fabric > path,#zoodie-fabric > path,#back-fabric > path").css("stroke", color);
         }
 
         function onColorUpdate() {
@@ -81,7 +89,31 @@
 
         function onPrintColorUpdate() {
             var color = $('[name="print-color"]:checked').val();
-            $(".cls-2,.cls-3").css("fill", color);
+            $("#himg-text-item > path, #himg-atat path").css("fill", color);
+        }
+
+        function updateLogo() {
+            // console.log(getHoodieType(), getLogoColor(), getLogoPosition())
+
+            $("#Mono, #Inverse, #Regular").hide();
+            $("#"+getLogoColor()).show();
+
+            // Gotta hide them all
+            $("#C-Mono, #C-Inverse, #C-Regular, #CE-Mono, #CE-Inverse, #CE-Regular, #ZE-Mono, #ZE-Inverse, #ZE-Regular").hide();
+
+            // Build className to show
+            var c = "#";
+            c += (getHoodieType() == "zoodie") ? "Z" : "C";
+
+            if (getLogoPosition() == "embroidered") {
+                c += "E"
+            }
+
+            c += "-";
+            c += getLogoColor();
+
+            // Show!
+            $(c).show();
         }
 
         function updateHoodieInfo() {
@@ -131,6 +163,8 @@
                 logoPrint.prop("disabled", false);
                 logoPrint.parent().parent().removeClass("disabled");
             }
+
+            updateLogo();
         }
 
         // zoodies only support embroidered
@@ -149,6 +183,14 @@
 
         $('[name="print-color"]').change(() => {
             onPrintColorUpdate();
+        });
+
+        $('[name="logo-pos"]').change(() => {
+            updateLogo();
+        });
+
+        $('[name="logo-color"]').change(() => {
+            updateLogo();
         });
 
         updateHoodieInfo();
