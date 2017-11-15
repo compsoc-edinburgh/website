@@ -72,6 +72,8 @@
         }
 
         function updateHoodieColor(color) {
+            $("#himg-logo > svg").css("background", color);
+
             $("#college-fabric > path,#zoodie-fabric > path,#back-fabric > path").css("fill", color);
 
             var color = "black";
