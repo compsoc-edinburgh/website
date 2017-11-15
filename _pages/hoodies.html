@@ -8,18 +8,34 @@ has_include: true
 <h1 class="text-center">Get your CompSoc hoodie!</h1>
 
 <style>
-    #himg-zoodie,#himg-college,#himg-back {
+    .hoodie-images svg {
         max-height: 200px;
+    }
+
+    #himg-logo > svg {
+        max-width: 100px;
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
     }
 </style>
 
 <form>
     <div class="row">   
-        <div class="col-md-5 order-md-2">
+        <div class="col-md-5 order-md-2 hoodies">
             <h4>Preview</h4>
-            {% include hoodies/zip.svg %}
-            {% include hoodies/front.svg %}
-            {% include hoodies/back.svg %}
+            <div class="hoodie-images">
+                <span id="himg-logo">
+                    {% include hoodies/logo.svg %}
+                </span>
+                <span id="himg-zoodie">
+                    {% include hoodies/zip.svg %}
+                </span>
+                <span id="himg-college">
+                    {% include hoodies/front.svg %}
+                </span>
+                {% include hoodies/back.svg %}
+            </div>
             <div class="text-center">
                 <a href="" target="_blank" class="btn btn-info supplier-url-no-text">View on supplier's website</a>
             </div>
@@ -50,13 +66,13 @@ has_include: true
                 <div class="col-sm-8">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input checked class="form-check-input" type="radio" name="logopos" value="embroid">
+                            <input checked class="form-check-input" type="radio" name="logo-pos" value="embroidered">
                             Left breast embroidery
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="logopos" value="print">
+                            <input class="form-check-input" type="radio" name="logo-pos" value="printed">
                             Front print
                         </label>
                     </div>
@@ -122,10 +138,10 @@ has_include: true
             <div class="form-group row" id="colorform-unisex-nozip">
                 <label class="col-md-4 col-form-label">Logo colour</label>
                 <div class="col-sm-8">
-                    <select class="form-control">
-                        <option>Black with white filled</option>
-                        <option>Black and red</option>
-                        <option>Inverse (white and red)</option>
+                    <select name="logo-color" class="form-control">
+                        <option value="Mono">Black with white filled</option>
+                        <option value="Regular">Black and red</option>
+                        <option value="Inverse" >Inverse (white and red)</option>
                     </select>
                 </div>
             </div>
