@@ -325,18 +325,17 @@
         product.back_print_color = $('[name="print-color"]:checked').val();;
         product.name = $('[name="print-name"]').val();
         product.customer = $('[name="purchaser-name"]').val();
+        product.description = "CompSoc custom hoodie";
 
         return product;
     }
 
     function callStripe(amount, coupon, prod) {
-        var meta;
-        //meta.product = "hoodie";
-        //meta.productDetail = prod;
-        meta = prod;
+        var meta = prod;
+        meta.product = "hoodie";
         if (checkout == null) {
         checkout = StripeCheckout.configure({
-            key: 'pk_test_EYWwMpI3epGgbrOAbB3PGkfk',
+            key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
             image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
             locale: 'auto',
             allowRememberMe: false,
@@ -353,16 +352,17 @@
             closed: function() { checkout = null; }
         })
     }
-    function commitPayment(amount, token, coupon, meta) {
+    function commitPayment(amount, token, coupon, prod) {
         console.log("Committing payment of £" + (amount/100) + " to API\nToken: " + token.id );
         var request = {
+            amount: amount,
             coupon: coupon,
-            prod: meta,
+            productData: prod,
             token: token
         };
         req = request;
         $.ajax({
-            url: 'https://sales.comp-soc.com/item/hoodies',
+            url: 'http://127.0.0.1:3000/api/sales/charge',
             type: 'POST',
             data: JSON.stringify(request),
             contentType: 'application/json',
@@ -381,7 +381,7 @@
         console.log("AJAX API request successful with result '" + data.result + "'");
         console.log(data);
         if (data.result != "charge") {
-            paymentFail("Stripe processing failed - " + data.err_type + ": " + data.err_msg);
+            paymentFail("Order processing failed - " + data.err_type + ": " + data.err_msg);
         } else {
             if (data.success) {
                 paymentSuccess(data.amount, data.last4, data.id, data.message);
