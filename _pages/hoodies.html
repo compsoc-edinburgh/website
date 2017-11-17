@@ -21,7 +21,7 @@ has_include: true
     }
 </style>
 
-<form>
+<form id="hoodie-configurator">
     <div class="row">   
         <div class="col-md-5 order-md-2 hoodies">
             <h4>Preview</h4>
@@ -168,40 +168,28 @@ has_include: true
             <div class="form-group row">
                 <label class="col-md-4 col-form-label">Name on back</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" placeholder="(optional)">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <h4 class="pt-4">Your Details</h4>
-            <p>Hoodies cannot be bought yet, just customise it for now!</p>
-
-            <label>Name</label>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <input disabled type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="form-group col-md-6">
-                    <input disabled type="text" class="form-control" placeholder="Last name">
+                    <input type="text" name="print-name" class="form-control" placeholder="(optional)">
                 </div>
             </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <!-- <label for="exampleInputPassword1">Discount code</label> -->
-                    <input disabled type="text" class="form-control" name="discount-code" placeholder="Discount code">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Price</h4>                        
                 </div>
-
-                <div class="form-group col-md-6">
-                    <button disabled type="submit" class="btn btn-primary">Buy your hoodie</button>
+                <div class="col-sm-8">
+                    <h3 name="hoodie-price">£xx.xx</h3>     
+                    <h6>or <span name="hoodie-price-discounted">£xx.xx</span> with <span style="text-decoration: underline dotted;" data-toggle="tooltip" title="" data-placement="right" data-original-title="Members registered before 12th November 2017 are eligible to receive a coupon code.">coupon code</span></h6>           
                 </div>
             </div>
-            <!-- <small class="form-text text-muted">*Members registered before 12th November 2017 are eligible to receive a discount code.</small> -->
         </div>
     </div>
 </form>
+
+<div class="row" id="purchasePanelLoader">
+    <p>Hang on a second...</p>
+</div>
+<div class="row" id="purchasePanel" style="display: none">
+    <!-- will be populated by AJAX -->
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js" integrity="sha384-8WfvGT4Eaax9aydJKPwo8urxfPKf0rvWe9FwoNxz4kD1iG9upxs9667qzL1AK4Lk" crossorigin="anonymous"></script>

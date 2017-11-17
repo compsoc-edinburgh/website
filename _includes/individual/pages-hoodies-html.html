@@ -1,3 +1,63 @@
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-label="Congrats!" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Congrats! You're done :D</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-md">
+              <h3>That's it!</h3>
+              <p>
+                Your payment of £<span id="successModalValueField">[value]</span> with card ending 
+                <span id="successModalLast4Field">####</span> should now have gone through, and your
+                order has been placed. You will recieve an email confirmation of your purchase from
+                our payment processor Stripe.
+              </p>
+              <p>
+                Remember, CompSoc Edinburgh <span class="heart">♥</span> You</span>
+              </p>
+              <p class="text-muted">Transaction charge id: <span id="successModalChargeId">n/a</span>. <span id="successModalMessage"></span></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Thanks!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="Oh dear." aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Oops... That's not right.</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-md">
+              <h3>Something's gone wrong. :(</h3>
+              <p>
+                We've had an issue processing your payment. Don't worry, your card won't have been charged.
+              </p>
+              <p>
+                Here's some more information:
+              </p>
+              <code id="failModalDebugInfo">There's nothing here...</code>
+              <p>
+                Please try again later.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Sorry!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
 <script>
     var hoodies = {
         college: {
@@ -158,12 +218,18 @@
 
                 logoPrint.prop("disabled", true);
                 logoPrint.parent().parent().addClass("disabled");
+
+                $('[name="hoodie-price"]').html("£27");
+                $('[name="hoodie-price-discounted"]').html("£22");
             } else {
                 $("#himg-zoodie").hide();
                 $("#himg-college").show();
 
                 logoPrint.prop("disabled", false);
                 logoPrint.parent().parent().removeClass("disabled");
+
+                $('[name="hoodie-price"]').html("£25");
+                $('[name="hoodie-price-discounted"]').html("£20");
             }
 
             updateLogo();
@@ -197,4 +263,147 @@
 
         updateHoodieInfo();
     });
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
+    $(document).ready(loadPurchasePanel("start.html"));
+
+    function loadPurchasePanel(content) {
+        $('#purchasePanel').fadeOut();
+        $('#purchasePanelLoader').fadeIn();
+
+        $.ajax({
+            url: "/static/hoodies/purchasePanel/" + content,
+            success: function(data) {
+                $('#purchasePanel').html(data);
+                $('#purchasePanelLoader').fadeOut();
+                $('#purchasePanel').fadeIn();
+            },
+            error: function(textStatus) {
+                $('#purchasePanel').html("<p>Oops. There was an error: " + textStatus + ". Please try again later.</p>");
+                $('#purchasePanelLoader').fadeOut();
+                $('#purchasePanel').fadeIn();
+            },
+            timeout: 1000
+        })
+    }
+
+    var checkout;
+    var req;
+    var resp;
+
+    function startCheckout() {
+        var prod = buildProduct();
+        var coupon = $('[name="discount-code"]').val();
+        var amount;
+        if (prod.zip) {
+            amount = 2700;
+        } else {
+            amount = 2500;
+        }
+        if (coupon != "") {
+            amount = amount - 500;
+        }
+        loadPurchasePanel("stripeCalled.html");
+        callStripe(amount, coupon, prod);
+    }
+
+    function buildProduct() {
+        var product = { };
+        
+        if ($('[name="hoodie-type"]:checked').val() == "zoodie") { product.zip = true; }
+        else { product.zip = false; }
+
+        product.code = $('[name="hoodie-code"]').val();
+        product.logo_position = $('[name="logo-pos"]:checked').val();
+        product.style = $('[name="size-type"]:checked').val();
+        product.size = $('[name="hoodie-size"]').val();
+        product.colour = $('[name="hoodie-color"]').val();
+        product.logo_color = $('[name="logo-color"]').val();
+        product.back_print_color = $('[name="print-color"]:checked').val();;
+        product.name = $('[name="print-name"]').val();
+        product.customer = $('[name="purchaser-name"]').val();
+
+        return product;
+    }
+
+    function callStripe(amount, coupon, prod) {
+        var meta;
+        //meta.product = "hoodie";
+        //meta.productDetail = prod;
+        meta = prod;
+        if (checkout == null) {
+        checkout = StripeCheckout.configure({
+            key: 'pk_test_EYWwMpI3epGgbrOAbB3PGkfk',
+            image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
+            locale: 'auto',
+            allowRememberMe: false,
+            token: function(token) { commitPayment(amount, token, coupon, meta) }
+        });
+        }
+        checkout.open({
+            name: 'CompSoc Hoodie',
+            description: 'CompSoc branded custom hoodie.',
+            zipCode: true,
+            amount: amount,
+            currency: 'GBP',
+            opened: function() { },
+            closed: function() { checkout = null; }
+        })
+    }
+    function commitPayment(amount, token, coupon, meta) {
+        console.log("Committing payment of £" + (amount/100) + " to API\nToken: " + token.id );
+        var request = {
+            coupon: coupon,
+            prod: meta,
+            token: token
+        };
+        req = request;
+        $.ajax({
+            url: 'https://sales.comp-soc.com/item/hoodies',
+            type: 'POST',
+            data: JSON.stringify(request),
+            contentType: 'application/json',
+            dataType: 'json',
+            error: function(textStatus) { ajaxFailure(textStatus) },
+            success: function(data) { ajaxSuccess(data) },
+            timeout: 3000
+        })
+    }
+    function ajaxFailure(textStatus) {
+        console.log("AJAX API request failed.");
+        $('#failModal').modal('show');
+        $('#failModalDebugInfo').text("AJAX request to API failed: " + textStatus[0]);
+    }
+    function ajaxSuccess(data) {
+        console.log("AJAX API request successful with result '" + data.result + "'");
+        console.log(data);
+        if (data.result != "charge") {
+            paymentFail("Stripe processing failed - " + data.err_type + ": " + data.err_msg);
+        } else {
+            if (data.success) {
+                paymentSuccess(data.amount, data.last4, data.id, data.message);
+            } else {
+                paymentFail("Stripe charge ID " + data.id + " failed with error code \"" + data.failcode + ": " + data.message);
+            }
+        }
+    }
+    
+    window.addEventListener('popstate', function() {
+        handler.close();
+    });
+    function paymentSuccess(value, last4, chargeId, msg) {
+        $('#successModal').modal('show');
+        $('#successModalValueField').text(value/100);
+        $('#successModalLast4Field').text(last4);
+        $('#successModalChargeId').text(chargeId);
+        $('#successModalMessage').text(msg);
+    }
+    function paymentFail(text) {
+        $('#failModal').modal('show');
+        $('#failModalDebugInfo').text(text);
+    }
+
 </script>
