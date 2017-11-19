@@ -264,30 +264,12 @@
         updateHoodieInfo();
     });
 
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    });
+    $('[data-toggle="tooltip"]').tooltip()
+    $('[name="discount-code"]').focusout(function(){ checkCoupon() });
 
-    $(document).ready(loadPurchasePanel("start.html"));
-
-    function loadPurchasePanel(content) {
-        $('#purchasePanel').fadeOut();
-        $('#purchasePanelLoader').fadeIn();
-
-        $.ajax({
-            url: "/static/hoodies/purchasePanel/" + content,
-            success: function(data) {
-                $('#purchasePanel').html(data);
-                $('#purchasePanelLoader').fadeOut();
-                $('#purchasePanel').fadeIn();
-            },
-            error: function(textStatus) {
-                $('#purchasePanel').html("<p>Oops. There was an error: " + textStatus + ". Please try again later.</p>");
-                $('#purchasePanelLoader').fadeOut();
-                $('#purchasePanel').fadeIn();
-            },
-            timeout: 1000
-        })
+    function loadPurchaseDetailsPanel() {
+        $('#purchaseStartPanel').fadeOut();
+        $('#purchaseDetailsPanel').fadeIn();
     }
 
     var checkout;
@@ -306,7 +288,8 @@
         if (coupon != "") {
             amount = amount - 500;
         }
-        loadPurchasePanel("stripeCalled.html");
+        $('#purchaseDetailsPanel').fadeOut();
+        $('#purchaseStripeCalledPanel').fadeIn();
         callStripe(amount, coupon, prod);
     }
 
@@ -335,7 +318,7 @@
         meta.product = "hoodie";
         if (checkout == null) {
         checkout = StripeCheckout.configure({
-            key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+            key: 'pk_test_U9KiI5HDACIVfnnghbHqyD3u',
             image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
             locale: 'auto',
             allowRememberMe: false,
@@ -357,10 +340,10 @@
         var request = {
             amount: amount,
             coupon: coupon,
+            product: 'hoodie',
             productData: prod,
             token: token
         };
-        req = request;
         $.ajax({
             url: 'http://127.0.0.1:3000/api/sales/charge',
             type: 'POST',
@@ -370,7 +353,7 @@
             error: function(textStatus) { ajaxFailure(textStatus) },
             success: function(data) { ajaxSuccess(data) },
             timeout: 3000
-        })
+        });
     }
     function ajaxFailure(textStatus) {
         console.log("AJAX API request failed.");
@@ -379,7 +362,6 @@
     }
     function ajaxSuccess(data) {
         console.log("AJAX API request successful with result '" + data.result + "'");
-        console.log(data);
         if (data.result != "charge") {
             paymentFail("Order processing failed - " + data.err_type + ": " + data.err_msg);
         } else {
@@ -390,10 +372,55 @@
             }
         }
     }
+
+    function checkCoupon() {
+        var request = {
+            item: "hoodie",
+            coupon: $('[name="discount-code"]').val()
+        }
+
+        if (request.coupon != (null || "") ){
+            $.ajax({
+                url: 'http://127.0.0.1:3000/api/sales/coupon',
+                type: 'POST',
+                data: JSON.stringify(request),
+                contentType: 'application/json',
+                dataType: 'json',
+                error: function(textStatus) { console.error("AJAX coupon check failed."); },
+                success: function(data) {
+                    if (!data.success) {
+                        $('[name="discount-alert"]').removeClass("alert-success alert-danger alert-light")
+                            .addClass("alert-light")
+                            .html("Unable to check that coupon at the moment. Sorry.")
+                            .fadeIn();
+                        return;
+                    }
+                    if (data.valid) {
+                        $('[name="discount-alert"]').removeClass("alert-success alert-danger alert-light")
+                            .addClass("alert-success")
+                            .html("Good news! That coupon is valid.")
+                            .fadeIn();
+                        return;
+                    } else {
+                        $('[name="discount-alert"]').removeClass("alert-success alert-danger alert-light")
+                            .addClass("alert-danger")
+                            .html("Oh no. " + data.reason)
+                            .fadeIn();
+                        return;
+                    }
+                },
+                timeout: 3000
+            });
+        } else {
+            $('[name="discount-alert"]').fadeOut();
+            return;
+        }
+    }
     
     window.addEventListener('popstate', function() {
         handler.close();
     });
+
     function paymentSuccess(value, last4, chargeId, msg) {
         $('#successModal').modal('show');
         $('#successModalValueField').text(value/100);
