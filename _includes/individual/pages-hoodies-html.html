@@ -39,14 +39,10 @@
             <div class="modal-body modal-md">
               <h3>Something's gone wrong. :(</h3>
               <p>
-                We've had an issue processing your payment. Don't worry, your card won't have been charged.
+                We've had an issue processing your order. Here's some more information:
               </p>
               <p>
-                Here's some more information:
-              </p>
-              <code id="failModalDebugInfo">There's nothing here...</code>
-              <p>
-                Please try again later.
+                <code id="failModalDebugInfo">There's nothing here...</code>              
               </p>
             </div>
             <div class="modal-footer">
@@ -276,7 +272,31 @@
     var req;
     var resp;
 
-    function startCheckout() {
+    function startCheckout(apialive) {
+        
+        if (!apialive){
+            $.ajax({
+                url: 'http://sales.comp-soc.com:8123/api/alive',
+                type: 'GET',
+                dataType: 'json',
+                error: function(textStatus) { ajaxFailure(["Unable to connect to API endpoint."]); },
+                success: function(data) { 
+                    console.log(data);
+                    if (data.alive){
+                        startCheckout(true);
+                    }
+                    else { ajaxFailure("API endpoint unresponsive."); }
+                },
+                timeout: 3000
+            });
+            return;
+        }
+        
+        var coupon = $('[name="discount-code"]').val();
+        if ($('[name="discount-alert"]').hasClass("alert-danger")) {
+            paymentFail("Your coupon is invalid. Please enter a valid coupon or leave the field blank.");
+            return;
+        }
         var prod = buildProduct();
         var coupon = $('[name="discount-code"]').val();
         var amount;
@@ -345,7 +365,7 @@
             token: token
         };
         $.ajax({
-            url: 'http://127.0.0.1:3000/api/sales/charge',
+            url: 'http://sales.comp-soc.com:8123/api/sales/charge',
             type: 'POST',
             data: JSON.stringify(request),
             contentType: 'application/json',
@@ -356,7 +376,7 @@
         });
     }
     function ajaxFailure(textStatus) {
-        console.log("AJAX API request failed.");
+        console.error("AJAX API request failed.");
         $('#failModal').modal('show');
         $('#failModalDebugInfo').text("AJAX request to API failed: " + textStatus[0]);
     }
@@ -381,12 +401,19 @@
 
         if (request.coupon != (null || "") ){
             $.ajax({
-                url: 'http://127.0.0.1:3000/api/sales/coupon',
+                url: 'http://sales.comp-soc.com:8123/api/sales/coupon',
                 type: 'POST',
                 data: JSON.stringify(request),
                 contentType: 'application/json',
                 dataType: 'json',
-                error: function(textStatus) { console.error("AJAX coupon check failed."); },
+                error: function(textStatus) { 
+                    console.error("AJAX coupon check failed.");
+                    $('[name="discount-alert"]').removeClass("alert-success alert-danger alert-light")
+                        .addClass("alert-light")
+                        .html("Unable to check that coupon at the moment. Error communicating with API. Sorry.")
+                        .fadeIn();
+                    return;
+                    },
                 success: function(data) {
                     if (!data.success) {
                         $('[name="discount-alert"]').removeClass("alert-success alert-danger alert-light")

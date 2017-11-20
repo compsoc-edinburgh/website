@@ -213,7 +213,10 @@ has_include: true
                         <div class="col alert alert-light" role="alert" name="discount-alert" style="display: none">
                             <!-- Placeholder content -->
                         </div>
-                        <small class="col form-text text-muted">Members registered before 12th November 2017 are eligible to receive a discount code.</small>            
+                        <small class="col form-text text-muted">
+                            Members registered before 12th November 2017 are eligible to receive a discount code. Codes are
+                            non-transferrable and tied to your email address.
+                        </small>            
                     </div>
             
                     <div class="form-row">
@@ -225,7 +228,7 @@ has_include: true
         </div>
     </div>
     <div class="row" id="purchaseStripeCalledPanel" style="display: none">
-        <p>Hang on a sec. We're just launching the Stripe payment flow to grab your card details</p>
+        <p>Hang on a sec. We're just launching the Stripe payment flow to grab your card details. Want to reset this form? <a onclick="loadPurchaseDetailsPanel()">Click here</a>.</p>
     </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js" integrity="sha384-8WfvGT4Eaax9aydJKPwo8urxfPKf0rvWe9FwoNxz4kD1iG9upxs9667qzL1AK4Lk" crossorigin="anonymous"></script>
