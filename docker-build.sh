@@ -21,5 +21,5 @@ fi
 docker run --rm \
   --volume=$(pwd):/src:Z \
   $DOCKER_IMAGE_NAME \
-  build
+  jekyll build
 
