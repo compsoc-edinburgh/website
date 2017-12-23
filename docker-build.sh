@@ -14,7 +14,7 @@ if [ -e Dockerfile ]; then
   docker rmi -f $(docker images --filter "dangling=true" -q) > /dev/null 2>&1 || true
 else
   # Use an existing Jekyll Docker image
-  DOCKER_IMAGE_NAME=grahamc/jekyll
+  DOCKER_IMAGE_NAME=jekyll/jekyll
 fi
 
 # Start Jekyll and watch for changes
