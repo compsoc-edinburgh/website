@@ -46,9 +46,35 @@ teams:
 
   - name: Cyber Security Group (SIGINT)
     members:
+      - name: "Harvey"
+        role: President
+
+      - name: Oliver
+        role: Vice President
+
       - name: Joshua Green
         role: Secretary
         img: josh-3.jpg
+
+      - name: Nicholas Lynch
+        role: Hacking Officer
+
+  - name: Law and Technology Group (LATG)
+    members:
+      - name: Katharine Brown
+        role: President
+
+      - name: Cathal Lynam
+        role: Treasurer
+
+      - name: Daniella Negri
+        role: Secretary
+
+      - name: Faye Saunders
+        role: Commercial Director
+
+      - name: Constanza Cecchetti
+        role: Communications Director
 
   - name: Networking Group (SIGnet)
     members:
