@@ -63,6 +63,7 @@ teams:
     members:
       - name: Cameron Sharp
         role: Leader
+        img: cameron-1.jpg
 
   - name: Law and Technology Group (LATG)
     members:
