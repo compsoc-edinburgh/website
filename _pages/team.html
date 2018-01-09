@@ -46,11 +46,11 @@ title: "The Team"
 				>
 
 				{% for team in cohort.teams %}
-					<div class="mb-4" {% if first_cohort %} id="{{ team.name | slugify }}" {% endif %}>
-						<div class="d-flex justify-content-between">
+					<div class="mb-4 d-flex flex-column align-items-center align-items-md-start" {% if first_cohort %} id="{{ team.name | slugify }}" {% endif %}>
+						<div class="d-flex justify-content-center justify-content-md-between">
 							<h4 class="mb-0 font-weight-bold">
 								{% if forloop.first %}
-									{{ cohort.year }}
+									{{ cohort.year }} CompSoc Committee
 								{% else %}
 									{{ team.name }}
 								{% endif %}
@@ -64,9 +64,9 @@ title: "The Team"
 							{% endif %}
 						</div>
 
-						<div>
+						<div class="d-flex flex-column align-items-baseline">
 							{% for member in team.members %}
-								<div class='d-flex mt-3'>
+								<span class='d-flex justify-content-center justify-content-md-start mt-3'>
 									{% if member.img %}
 										<img src="/static/img/team/{{ member.img }}" width=100 height=100 class="team-avatar" alt="{{ member.name }}">
 									{% else %}
@@ -80,7 +80,7 @@ title: "The Team"
 											{% if member.url %}<a class="fa fa-globe text-dark" href="{{ member.url }}"></a>{% endif %}
 										</p>
 									</div>
-								</div>
+								</span>
 							{% endfor %}
 						</div>
 					</div>
