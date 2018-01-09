@@ -51,13 +51,13 @@ title: "The Team"
 
 						<div>
 							{% for member in cohort.members %}
-								{% if member.img %}
-									{% assign img = member.img %}
-								{% else %}
-									{% capture img %}https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-1/c203.238.350.350/s100x100/17191016_10158292360095514_5010506400937383788_n.jpg?oh=4b637e5598a2143052d454a8c1e5fe6f&oe=5AFC9947{%endcapture%}
-								{% endif %}
 								<div class='d-flex mt-3'>
-									<img src="{{ img }}" class="team-avatar" alt="{{ member.name }}">
+									{% if member.img %}
+										<img src="/static/img/team/{{ member.img }}" width=100 height=100 class="team-avatar" alt="{{ member.name }}">
+									{% else %}
+										{% capture dummy-img %}{% cycle 'vintage-concrete.png', 'sakura.png', 'cloudy-day.png', 'sativa.png' %}{% endcapture %}
+										<img src="/static/img/pattern-{{ dummy-img }}" width=100 height=100 class="team-avatar" alt="{{ member.name }}">
+									{% endif %}
 									<div class="d-flex flex-column ml-4 justify-content-center">
 										<h5 class="card-title"><strong>{{ member.role }}</strong></h5>
 										<p class="card-text">
