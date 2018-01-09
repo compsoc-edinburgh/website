@@ -36,3 +36,18 @@ teams:
 
       - name: Kit Barnes
         role: Old Person Rep
+
+  - name: Cyber Security Group (SIGINT)
+    members:
+      - name: "Harvey"
+        role: President
+
+      - name: Oliver
+        role: Vice President
+
+      - name: Joshua Green
+        role: Secretary
+        img: josh-3.jpg
+
+      - name: Nicholas Lynch
+        role: Hacking Officer
