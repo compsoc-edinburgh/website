@@ -1,51 +1,56 @@
 year: 2017 - 2018
-members:
-  - name: Qais Patankar
-    role: President
-    url: "https://qaisjp.com"
-    img: qais-2.jpg
+teams:
+  - members:
+      - name: Qais Patankar
+        role: President
+        url: "https://qaisjp.com"
+        img: qais-2.jpg
 
-  - name: Elena Lapė
-    role: Vice President
-    url: "http://elenala.pe"
-    img: elena-1.jpg
+      - name: Elena Lapė
+        role: Vice President
+        url: "http://elenala.pe"
+        img: elena-1.jpg
 
-  - name: Angus Shaw
-    role: Secretary
-    img: angus-shaw-1.jpg
+      - name: Angus Shaw
+        role: Secretary
+        img: angus-shaw-1.jpg
 
-  - name: Viktorija Lukošiūtė
-    role: Treasurer
-    img: vik-3.jpg
+      - name: Viktorija Lukošiūtė
+        role: Treasurer
+        img: vik-3.jpg
 
-  - name: Harry Reeder
-    role: Technical Secretary
-    url: "http://harryreeder.co.uk/"
-    img: harry-1.png
+      - name: Harry Reeder
+        role: Technical Secretary
+        url: "http://harryreeder.co.uk/"
+        img: harry-1.png
 
-  - name: Nicholas Lynch
-    role: Social Secretary
-    img: nick-lynch-1.jpg
-    
-  - name: Joshua Green
-    role: SIGINT Secretary
-    img: josh-3.jpg
-    
-  - name: Cameron Sharp
-    role: SIGnet President
+      - name: Nicholas Lynch
+        role: Social Secretary
+        img: nick-lynch-1.jpg
 
-  - name: Dylan Oshima
-    role: 1<sup>st</sup> Year Rep
-    img: dylan-oshima-1.jpg
+      - name: Dylan Oshima
+        role: 1<sup>st</sup> Year Rep
+        img: dylan-oshima-1.jpg
 
-  - name: Ginte Petrulionytė
-    role: 2<sup>nd</sup> Year Rep
-    img: ginte-1.jpg
+      - name: Ginte Petrulionytė
+        role: 2<sup>nd</sup> Year Rep
+        img: ginte-1.jpg
 
-  - name: William Mathewson
-    role: 4<sup>th</sup> Year Rep
-    img: will-1.jpg
+      - name: William Mathewson
+        role: 4<sup>th</sup> Year Rep
+        img: will-1.jpg
 
-  - name: "Kit Barnes (c/o Craig Snowden)"
-    role: Old Person Rep
-    img: kit-and-craig-1.jpg
+      - name: "Kit Barnes (c/o Craig Snowden)"
+        role: Old Person Rep
+        img: kit-and-craig-1.jpg
+
+  - name: Cyber Security Group (SIGINT)
+    members:
+      - name: Joshua Green
+        role: Secretary
+        img: josh-3.jpg
+
+  - name: Networking Group (SIGnet)
+    members:
+      - name: Cameron Sharp
+        role: Leader

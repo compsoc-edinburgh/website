@@ -34,23 +34,38 @@ title: "The Team"
 		<div class="tab-content">
 			{% for cohort in committee %}
 				{% if cohort.year %}
+					{% if forloop.first %}
+						{% capture first_cohort %}true{% endcapture %}
+					{% else %}
+						{% capture first_cohort %}false{% endcapture %}
+					{% endif %}
 				<div
 					class="tab-pane fade {% if committee[0] == cohort %}show active{% endif %}"
 					id="cohort-{{ cohort.year | slugify }}"
 					role="tabpanel"
 				>
-					<div>
+
+				{% for team in cohort.teams %}
+					<div class="mb-4" {% if first_cohort %} id="{{ team.name | slugify }}" {% endif %}>
 						<div class="d-flex justify-content-between">
-							<h4 class="mb-0">{{ cohort.year }}</h4>
-							<span>
-								{% if cohort.annual_report %}
-								<a class="btn btn-sm btn-outline-danger" href="https://github.com/compsoc-edinburgh/annual-reports/blob/master/{{ cohort.year | slugify }}.pdf">Annual Report</a>
+							<h4 class="mb-0 font-weight-bold">
+								{% if forloop.first %}
+									{{ cohort.year }}
+								{% else %}
+									{{ team.name }}
 								{% endif %}
-							</span>
+							</h4>
+							{% if forloop.first %}
+								<span>
+									{% if cohort.annual_report %}
+									<a class="btn btn-sm btn-outline-danger" href="https://github.com/compsoc-edinburgh/annual-reports/blob/master/{{ cohort.year | slugify }}.pdf">Annual Report</a>
+									{% endif %}
+								</span>
+							{% endif %}
 						</div>
 
 						<div>
-							{% for member in cohort.members %}
+							{% for member in team.members %}
 								<div class='d-flex mt-3'>
 									{% if member.img %}
 										<img src="/static/img/team/{{ member.img }}" width=100 height=100 class="team-avatar" alt="{{ member.name }}">
@@ -69,6 +84,7 @@ title: "The Team"
 							{% endfor %}
 						</div>
 					</div>
+				{% endfor %}
 				</div>
 				{% endif %}
 			{% endfor %}

@@ -1,34 +1,35 @@
 year: 2015 - 2016
 annual_report: true
-members:
-  - name: Lisa Xie
-    role: President
+teams:
+  - members:
+    - name: Lisa Xie
+      role: President
 
-  - name: William Mathewson
-    role: Vice President
+    - name: William Mathewson
+      role: Vice President
 
-  - name: Harjyot Singh
-    role: Secretary
+    - name: Harjyot Singh
+      role: Secretary
 
-  - name: Andreea Cucu
-    role: Treasurer
+    - name: Andreea Cucu
+      role: Treasurer
 
-  - name: Joshua Green
-    role: Technical Secretary
+    - name: Joshua Green
+      role: Technical Secretary
 
-  - name: Craig Ross
-    role: Social Secretary
+    - name: Craig Ross
+      role: Social Secretary
 
-  - name: Viktorija Lukosiute
-    role: 1<sup>st</sup> Year Rep
-    img: vik-1.jpg
+    - name: Viktorija Lukosiute
+      role: 1<sup>st</sup> Year Rep
+      img: vik-1.jpg
 
-  - name: Mihai Visuian
-    role: 2<sup>nd</sup> Year Rep
+    - name: Mihai Visuian
+      role: 2<sup>nd</sup> Year Rep
 
-  - name: Simon Vahr
-    role: 3<sup>rd</sup> Year Rep
-    url: http://vahr.co.uk/
+    - name: Simon Vahr
+      role: 3<sup>rd</sup> Year Rep
+      url: http://vahr.co.uk/
 
-  - name: Paul Scherer
-    role: 4<sup>th</sup> Year Rep
+    - name: Paul Scherer
+      role: 4<sup>th</sup> Year Rep

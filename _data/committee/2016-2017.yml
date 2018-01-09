@@ -1,37 +1,38 @@
 year: 2016 - 2017
-members:
-  - name: Viktorija Lukošiūtė
-    role: President
+teams:
+  - members:
+      - name: Viktorija Lukošiūtė
+        role: President
 
-  - name: Aw Young Qingzhuo
-    role: Vice President
+      - name: Aw Young Qingzhuo
+        role: Vice President
 
-  - name: Simon Vahr
-    role: Secretary
-    url: http://vahr.co.uk/
+      - name: Simon Vahr
+        role: Secretary
+        url: http://vahr.co.uk/
 
-  - name: Martynas Grigonis
-    role: Treasurer
+      - name: Martynas Grigonis
+        role: Treasurer
 
-  - name: Joshua Green
-    role: Technical Secretary
+      - name: Joshua Green
+        role: Technical Secretary
 
-  - name: Susanne Koster
-    role: Social Secretary
+      - name: Susanne Koster
+        role: Social Secretary
 
-  - name: Qais Patankar
-    role: 1<sup>st</sup> Year Rep
-    url: "https://qaisjp.com"
-    img: qais-1.jpg
+      - name: Qais Patankar
+        role: 1<sup>st</sup> Year Rep
+        url: "https://qaisjp.com"
+        img: qais-1.jpg
 
-  - name: Benedetta Mussati
-    role: 2<sup>nd</sup> Year Rep
+      - name: Benedetta Mussati
+        role: 2<sup>nd</sup> Year Rep
 
-  - name: Vesko Stefanov
-    role: 3<sup>rd</sup> Year Rep
+      - name: Vesko Stefanov
+        role: 3<sup>rd</sup> Year Rep
 
-  - name: James Friel
-    role: 4<sup>th</sup> Year Rep
+      - name: James Friel
+        role: 4<sup>th</sup> Year Rep
 
-  - name: Kit Barnes
-    role: Old Person Rep
+      - name: Kit Barnes
+        role: Old Person Rep
