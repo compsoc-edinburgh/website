@@ -28,6 +28,12 @@ CompSoc offers SIGs promotion, some money, support, and a place on the committee
             <p>(Networking)</p>
         </div>
     </a>
+    <a href="#" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
+        <div class="d-block">
+            <h1>LATG</h1>
+            <p>Law and Technology</p>
+        </div>
+    </a>
 </div>
 
 ### Defunct SIGs
