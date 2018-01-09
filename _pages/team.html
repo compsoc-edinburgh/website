@@ -47,7 +47,7 @@ title: "The Team"
 
 				{% for team in cohort.teams %}
 					<div class="mb-4 d-flex flex-column align-items-center align-items-md-start" {% if first_cohort %} id="{{ team.name | slugify }}" {% endif %}>
-						<div class="d-flex justify-content-center justify-content-md-between">
+						<div class="d-flex">
 							<h4 class="mb-0 font-weight-bold">
 								{% if forloop.first %}
 									{{ cohort.year }} CompSoc Committee
@@ -56,7 +56,7 @@ title: "The Team"
 								{% endif %}
 							</h4>
 							{% if forloop.first %}
-								<span>
+								<span class="pl-3">
 									{% if cohort.annual_report %}
 									<a class="btn btn-sm btn-outline-danger" href="https://github.com/compsoc-edinburgh/annual-reports/blob/master/{{ cohort.year | slugify }}.pdf">Annual Report</a>
 									{% endif %}
