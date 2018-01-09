@@ -1,12 +1,11 @@
 ---
 title: "The Team"
-has_include: true
 # Note that you may also need to edit the above include
 ---
 
-We are the team that brings you the best experience in all things Informatics.
+<p>We are the team that brings you the best experience in all things Informatics.</p>
 
-{% include snippets/join-us.html %}
+<p>{% include snippets/join-us.html %}</p>
 
 {% assign committee = site.data.committee | sort | reverse %}
 
@@ -18,7 +17,7 @@ We are the team that brings you the best experience in all things Informatics.
 
 <div class="row">
 	<div class="col">
-		<div id="cohorts" class="nav nav-pills" role="tablist">
+		<p id="cohorts" class="nav nav-pills" role="tablist">
 			View committees from other years:&nbsp;
 			{% for cohort in committee %}{% if cohort.year %}
 				{% unless forloop.first %}&nbsp;&middot;&nbsp;{% endunless %}
@@ -32,7 +31,7 @@ We are the team that brings you the best experience in all things Informatics.
 						{% endif %}
 				>{{ cohort.year | slice: 0, 4 }}</a>
 			{% endif %}{% endfor %}
-		</div>
+		</p>
 	</div>
 </div>
 <div class="row">
