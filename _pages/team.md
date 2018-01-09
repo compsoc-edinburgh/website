@@ -45,18 +45,18 @@ We are the team that brings you the best experience in all things Informatics.
 				id="cohort-{{ cohort.year | slugify }}"
 				role="tabpanel"
 			>
-			<ul class="list-group mb-4">
-				<li class="d-flex list-group-item justify-content-between">
-					<h5 class="mb-0">{{ cohort.year }}</h5>
+			<div>
+				<div class="d-flex justify-content-between mb-2">
+					<h4 class="mb-0">{{ cohort.year }}</h4>
 					<span>
 						<!--<a class="btn disabled btn-sm btn-outline-danger" href="#">Financial Report</a>-->
 						{% if cohort.annual_report %}
 						<a class="btn btn-sm btn-outline-danger" href="https://github.com/compsoc-edinburgh/annual-reports/blob/master/{{ cohort.year | slugify }}.pdf">Annual Report</a>
 						{% endif %}
 					</span>
-				</li>
+				</div>
 				{% for member in cohort.members %}
-					<li class="d-flex list-group-item justify-content-between">
+					<div class="card" class="">
 						<strong>{{ member.role }}</strong>
 						<span>
 							{% if member.url %}
@@ -65,9 +65,9 @@ We are the team that brings you the best experience in all things Informatics.
 								{{ member.name }}
 							{% endif %}
 						</span>
-					</li>
+					</div>
 				{% endfor %}
-			</ul>
+			</div>
 			</div>
 			{% endif %}
 		{% endfor %}
