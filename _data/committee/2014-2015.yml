@@ -3,9 +3,11 @@ members:
   - name: Angus Pearson
     role: President
     url: http://toaster.cc
+    img: angusp-1.jpg
 
   - name: James Friel
     role: Vice President
+    img: james-friel-1.jpg
 
   - name: Aseem Narang
     role: Secretary
