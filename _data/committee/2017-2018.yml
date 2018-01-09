@@ -59,6 +59,11 @@ teams:
       - name: Nicholas Lynch
         role: Hacking Officer
 
+  - name: Networking Group (SIGnet)
+    members:
+      - name: Cameron Sharp
+        role: Leader
+
   - name: Law and Technology Group (LATG)
     members:
       - name: Katharine Brown
@@ -75,8 +80,3 @@ teams:
 
       - name: Constanza Cecchetti
         role: Communications Director
-
-  - name: Networking Group (SIGnet)
-    members:
-      - name: Cameron Sharp
-        role: Leader
