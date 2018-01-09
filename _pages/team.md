@@ -10,25 +10,33 @@ We are the team that brings you the best experience in all things Informatics.
 
 {% assign committee = site.data.committee | sort | reverse %}
 
+<style>
+	#cohorts > .active {
+		color: #868e96;
+	}
+</style>
+
 <div class="row">
-	<div class="col-xl-2 col-lg-3 order-lg-2 col-sm-12">
-		<nav id="cohorts" class="nav nav-pills list-group" role="tablist">
+	<div class="col">
+		<div id="cohorts" class="nav nav-pills" role="tablist">
+			View committees from other years:&nbsp;
 			{% for cohort in committee %}{% if cohort.year %}
-				<a class="d-flex list-group-item justify-content-center"
+				{% unless forloop.first %}&nbsp;&middot;&nbsp;{% endunless %}
+				<a
 						data-toggle="pill"
 						role="pill"
 						href="#cohort-{{ cohort.year | slugify }}"
 						{% if committee[0] == cohort %}
-						class="d-flex list-group-item justify-content-center active"
+						class="active"
 						aria-expanded="true"
 						{% endif %}
-				>{{ cohort.year }}</a>
+				>{{ cohort.year | slice: 0, 4 }}</a>
 			{% endif %}{% endfor %}
-		</nav>
+		</div>
 	</div>
-	<!-- -->
-	<!-- -->
-	<div class="col-lg-8 pull-lg-3 order-lg-1 col-sm-12">
+</div>
+<div class="row">
+	<div class="col">
 		<div class="tab-content">
 		{% for cohort in committee %}
 			{% if cohort.year %}
