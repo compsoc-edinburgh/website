@@ -9,25 +9,21 @@ title: "The Team"
 
 {% assign committee = site.data.committee | sort | reverse %}
 
-<div class="row">
-	<div class="col">
-		<p id="cohorts" class="nav nav-pills" role="tablist">
-			View committees from other years:&nbsp;
-			{% for cohort in committee %}{% if cohort.year %}
-				{% unless forloop.first %}&nbsp;&middot;&nbsp;{% endunless %}
-				<a
-						data-toggle="pill"
-						role="pill"
-						href="#cohort-{{ cohort.year | slugify }}"
-						{% if committee[0] == cohort %}
-						class="active"
-						aria-expanded="true"
-						{% endif %}
-				>{{ cohort.year | slice: 0, 4 }}</a>
-			{% endif %}{% endfor %}
-		</p>
-	</div>
-</div>
+<p id="cohorts" class="nav nav-pills" role="tablist">
+	View committees from other years:&nbsp;
+	{% for cohort in committee %}{% if cohort.year %}
+		{% unless forloop.first %}&nbsp;&middot;&nbsp;{% endunless %}
+		<a
+				data-toggle="pill"
+				role="pill"
+				href="#cohort-{{ cohort.year | slugify }}"
+				{% if committee[0] == cohort %}
+				class="active"
+				aria-expanded="true"
+				{% endif %}
+		>{{ cohort.year | slice: 0, 4 }}</a>
+	{% endif %}{% endfor %}
+</p>
 
 <div class="row">
 	<div class="col">
