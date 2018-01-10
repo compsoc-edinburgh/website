@@ -36,6 +36,7 @@ teams:
 
       - name: Kit Barnes
         role: Old Person Rep
+        img: kit-1.jpg
 
   - name: Cyber Security Group (SIGINT)
     members:
