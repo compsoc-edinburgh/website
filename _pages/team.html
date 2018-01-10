@@ -9,40 +9,52 @@ title: "The Team"
 
 {% assign committee = site.data.committee | sort | reverse %}
 
-<p id="cohorts" class="nav nav-pills" role="tablist">
-	View committees from other years:&nbsp;
-	{% for cohort in committee %}{% if cohort.year %}
-		{% unless forloop.first %}&nbsp;&middot;&nbsp;{% endunless %}
-		<a
-				data-toggle="pill"
-				role="pill"
-				href="#cohort-{{ cohort.year | slugify }}"
-				{% if committee[0] == cohort %}
-				class="active"
-				aria-expanded="true"
-				{% endif %}
-		>{{ cohort.year | slice: 0, 4 }}</a>
-	{% endif %}{% endfor %}
-</p>
+<small>
+	<p id="cohorts" class="nav nav-pills mb-0" role="tablist">
+		View committees from other years:&nbsp;
+		{% for cohort in committee %}{% if cohort.year %}
+			{% unless forloop.first %}&nbsp;&middot;&nbsp;{% endunless %}
+			<a
+					data-toggle="pill"
+					role="pill"
+					href="#cohort-{{ cohort.year | slugify }}"
+					{% if committee[0] == cohort %}
+					class="active"
+					aria-expanded="true"
+					{% endif %}
+			>{{ cohort.year | slice: 0, 4 }}</a>
+		{% endif %}{% endfor %}
+	</p>
+</small>
 
 <div class="row">
 	<div class="col">
 		<div class="tab-content">
-			{% for cohort in committee %}
-				{% if cohort.year %}
-					{% if forloop.first %}
-						{% capture first_cohort %}true{% endcapture %}
-					{% else %}
-						{% capture first_cohort %}false{% endcapture %}
-					{% endif %}
+			{% for cohort in committee %}{% if cohort.year %}
 				<div
 					class="tab-pane fade {% if committee[0] == cohort %}show active{% endif %}"
 					id="cohort-{{ cohort.year | slugify }}"
 					role="tabpanel"
 				>
 
+				{% if committee[0] == cohort %}
+					<small><p class="mb-0 mt-2">
+						Skip to:&nbsp;
+						{% for team in committee.first.teams %}
+							{% if forloop.first %}
+								<a href="#compsoc-committee">CompSoc Committee</a>
+							{% else %}
+								&nbsp;&middot;&nbsp;
+								<a
+									href="#{{ team.name | slugify }}"
+								>{{ team.name }}</a>
+							{% endif %}
+						{% endfor %}
+					</p></small>
+				{% endif %}
+
 				{% for team in cohort.teams %}
-					<div class="mb-4 d-flex flex-column align-items-center align-items-md-start" {% if first_cohort %} id="{{ team.name | slugify }}" {% endif %}>
+					<div class="mb-4 mt-3 d-flex flex-column align-items-center align-items-md-start" {% if team.name %} id="{{ team.name | slugify }}" {% else %} id="compsoc-committee" {% endif %}>
 						<div class="d-flex">
 							<h4 class="mb-0 font-weight-bold">
 								{% if forloop.first %}
@@ -82,8 +94,7 @@ title: "The Team"
 					</div>
 				{% endfor %}
 				</div>
-				{% endif %}
-			{% endfor %}
+			{% endif %}{% endfor %}
 		</div>
 	</div>
 </div>
