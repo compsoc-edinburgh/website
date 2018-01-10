@@ -11,13 +11,13 @@ teams:
         url: "http://elenalape.com"
         img: elena-1.jpg
 
-      - name: Angus Shaw
-        role: Secretary
-        img: angus-shaw-1.jpg
-
       - name: Viktorija Lukošiūtė
         role: Treasurer
         img: vik-3.jpg
+
+      - name: Angus Shaw
+        role: Secretary
+        img: angus-shaw-1.jpg
 
       - name: Harry Reeder
         role: Technical Secretary
@@ -48,9 +48,11 @@ teams:
     members:
       - name: "Harvey"
         role: President
+        img: sigint-1.png
 
       - name: Oliver
         role: Vice President
+        img: sigint-1.png
 
       - name: Joshua Green
         role: Secretary
@@ -58,6 +60,31 @@ teams:
 
       - name: Nicholas Lynch
         role: Hacking Officer
+        img: sigint-1.png
+
+      - name: Antonio
+        role: Organiser
+        img: sigint-1.png
+
+      - name: Dylan
+        role: Organiser
+        img: sigint-1.png
+
+      - name: Guneet
+        role: Organiser
+        img: sigint-1.png
+
+      - name: Gwion
+        role: Organiser
+        img: sigint-1.png
+
+      - name: Jorge
+        role: Organiser
+        img: sigint-1.png
+
+      - name: Wojciech
+        role: Organiser
+        img: sigint-1.png
 
   - name: Networking Group (SIGnet)
     members:
