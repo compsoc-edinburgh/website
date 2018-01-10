@@ -41,11 +41,11 @@ teams:
     members:
       - name: "Harvey"
         role: President
-        img: sigint-1.jpg
+        img: sigint-1.png
 
       - name: Oliver
         role: Vice President
-        img: sigint-1.jpg
+        img: sigint-1.png
 
       - name: Joshua Green
         role: Secretary
@@ -53,4 +53,4 @@ teams:
 
       - name: Nicholas Lynch
         role: Hacking Officer
-        img: sigint-1.jpg
+        img: sigint-1.png
