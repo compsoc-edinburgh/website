@@ -1,7 +1,7 @@
 ---
 layout: page
-longtitle: "KnowledgeBase"
-title: KnowledgeBase
+longtitle: "Learn"
+title: Learn
 permalink: /learn
 ---
 
