@@ -7,16 +7,6 @@ permalink: /learn
 
 So you're interested in learning more about the field of Informatics? We support some amazing initiatives that can help build your knowledge, no matter your skill level.
 
-### Cascaders Evenings
-
-**Every Thursday from 6pm onwards.** Begins in October.
-
-Preparing for an interview? Trying to learn Python? Just want to chill? Anything goes... as long as it's legal.
-
-Cascaders Evenings is an *informal* student-led weekly meetup. A place to work on your tech projects, share what you're working on, and get answers to whatever questions you may have.
-
-[Check out Cascaders Evenings out on Facebook](https://www.facebook.com/events/114028159346219/).
-
 ### Learning how to code
 
 Becoming a programmer isn't something that can just be taught: you need to put a lot of your own personal time into it.
