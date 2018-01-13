@@ -14,7 +14,7 @@ if [ -e Dockerfile ]; then
   docker rmi -f $(docker images --filter "dangling=true" -q) > /dev/null 2>&1 || true
 else
   # Use an existing Jekyll Docker image
-  DOCKER_IMAGE_NAME=grahamc/jekyll
+  DOCKER_IMAGE_NAME=jekyll/jekyll
 fi
 
 echo "***********************************************************"
@@ -26,5 +26,5 @@ docker run --rm \
   --volume=$(pwd):/src:Z \
   --publish 4000:4000 \
   $DOCKER_IMAGE_NAME \
-  serve --watch --drafts -H 0.0.0.0
+  jekyll serve --watch --drafts -H 0.0.0.0
 

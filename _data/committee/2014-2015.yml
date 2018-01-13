@@ -1,29 +1,32 @@
 year: 2014 - 2015
-members:
-  - name: Angus Pearson
-    role: President
-    url: http://toaster.cc
+teams:
+  - members:
+    - name: Angus Pearson
+      role: President
+      url: http://toaster.cc
+      img: angusp-1.jpg
 
-  - name: James Friel
-    role: Vice President
+    - name: James Friel
+      role: Vice President
+      img: james-friel-1.jpg
 
-  - name: Aseem Narang
-    role: Secretary
+    - name: Aseem Narang
+      role: Secretary
 
-  - name: Hugh McGrade
-    role: Treasurer
+    - name: Hugh McGrade
+      role: Treasurer
 
-  - name: Rob Tully
-    role: Technical Secretary
+    - name: Rob Tully
+      role: Technical Secretary
 
-  - name: Hamish Hutchings
-    role: Social Secretary
+    - name: Hamish Hutchings
+      role: Social Secretary
 
-  - name: Lisa Xie
-    role: 1<sup>st</sup> Year Rep
+    - name: Lisa Xie
+      role: 1<sup>st</sup> Year Rep
 
-  - name: Amy Gainford
-    role: 2<sup>nd</sup> Year Rep
+    - name: Amy Gainford
+      role: 2<sup>nd</sup> Year Rep
 
-  - name: Lewis Barker
-    role: 3<sup>rd</sup> Year Rep
+    - name: Lewis Barker
+      role: 3<sup>rd</sup> Year Rep
