@@ -462,6 +462,9 @@
         console.error("AJAX API request failed.");
         $('#failModal').modal('show');
         $('#failModalDebugInfo').text("AJAX request to API failed: " + textStatus[0]);
+
+        $('#panel-purchase-details').fadeIn();
+        $('#panel-stripe-called').hide();
     }
     function ajaxSuccess(data) {
         console.log("AJAX API request successful with result '" + data.result + "'");
@@ -474,6 +477,9 @@
                 paymentFail("Stripe charge ID " + data.id + " failed with error code \"" + data.failcode + ": " + data.message);
             }
         }
+
+        $('#panel-purchase-details').fadeIn();
+        $('#panel-stripe-called').hide();
     }
 
     function checkCoupon() {
