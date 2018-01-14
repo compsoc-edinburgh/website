@@ -22,27 +22,37 @@ has_include: true
 </style>
 
 <form id="hoodie-configurator">
-    <div class="row">   
-        <div class="col-md-5 order-md-2 hoodies">
-            <h4>Preview</h4>
-            <div class="hoodie-images">
-                <span id="himg-logo">
-                    {% include hoodies/logo.svg %}
-                </span>
-                <span id="himg-zoodie">
-                    {% include hoodies/zip.svg %}
-                </span>
-                <span id="himg-college">
-                    {% include hoodies/front.svg %}
-                </span>
-                {% include hoodies/back.svg %}
+    <div class="row">
+        <div class="col-md-5 order-md-2 mb-4">
+            <div>
+                <h4>Price: <span name="hoodie-price-discounted">£xx.xx</span>
+                    <small>
+                        <span name="hoodie-price">£xx.xx</span>
+                        without discount
+                    </small>
+                </h4>
             </div>
-            <div class="text-center">
-                <a href="" target="_blank" class="btn btn-info supplier-url-no-text">View on supplier's website</a>
+            <div class="hoodies">
+                <h4>Preview</h4>
+                <div class="hoodie-images">
+                    <span id="himg-logo">
+                        {% include hoodies/logo.svg %}
+                    </span>
+                    <span id="himg-zoodie">
+                        {% include hoodies/zip.svg %}
+                    </span>
+                    <span id="himg-college">
+                        {% include hoodies/front.svg %}
+                    </span>
+                    {% include hoodies/back.svg %}
+                </div>
+                <div class="text-center">
+                    <a href="" target="_blank" class="btn btn-info supplier-url-no-text">View on supplier's website</a>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-7">
+        <div id="panel-customise" class="col-md-7">
             <h4>Customise</h4>
             <div class="form-group row">
                 <label class="col-md-4">Hoodie type</label>
@@ -94,16 +104,6 @@ has_include: true
                             <input class="form-check-input" type="radio" name="size-type" value="womens">
                             Womens
                         </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="hoodie-code" class="col-md-4">Hoodie code</label>
-                <div class="col-sm-8">
-                    <div class="form-group">
-                        <a href="" class="supplier-url" target="_blank" style="font-weight: bold"></a>
-                        <input readonly hidden class="form-control-plaintext" type="text" name="hoodie-code" value="ok">
                     </div>
                 </div>
             </div>
@@ -173,63 +173,87 @@ has_include: true
                 </div>
             </div>
 
-            <div class="row">
+            <div class="form-group row">
+                <button class="btn btn-primary btn-lg btn-block" type="button" id="btn-start-purchase">Buy your hoodie!</button>
+                <small class="form-text text-muted"></small>
+            </div>
+        </div>
+
+        <div class="col-md-7" id="panel-purchase-details" style="display: none;">
+            <h4>
+                Your Details
+                <button class="float-right btn btn-sm btn-secondary" type="button" id="btn-go-back">Return to customise</button>
+            </h4>
+            <table class="table table-sm">
+                <tbody>
+                    <tr>
+                        <th scope="row">Hoodie</th>
+                        <td><span id="opt-code"></span>: <span id="vis-zip"></span>, <span id="vis-size-type">Unisex</span>, <span id="opt-size">XS</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hoodie colour</th>
+                        <td id="opt-hoodie-color"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Logo</th>
+                        <td id="opt-logo"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Logo colour</th>
+                        <td id="opt-logo-color"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Back print</th>
+                        <td>ATAT in <span id="opt-back-print-color">white</span></td>
+                    </tr>
+                    <tr id="vis-custom-text">
+                        <th scope="row">Custom text</th>
+                        <td id="opt-custom-text"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-warning">
+                <strong>The colour shown on the preview is just an estimate.</strong>
+                <br>
+                Please double-check the colour you have selected against the
+                list <a class="supplier-url-no-text">here</a>.
+            </div>
+
+            <p>We need some details from you before we pass you to our payment provider.</p>
+
+            <div class="form-group row">
+                <label for="purchaser-name" class="col-md-4 col-form-label">Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="opt-purchaser-name" placeholder="Namey McNameface">
+                </div>
+            </div>
+
+            <div class="form-group row">
                 <div class="col-md-4">
-                    <h4>Price</h4>                        
+                    <p class="form-text"><span style="text-decoration: underline dotted;" data-toggle="tooltip" title="" data-placement="right" data-original-title="Members registered before 12th November 2017 are eligible to receive a coupon code."
+                        >Have a coupon code?</span></p>
                 </div>
                 <div class="col-sm-8">
-                    <h3 name="hoodie-price">£xx.xx</h3>     
-                    <h6>or <span name="hoodie-price-discounted">£xx.xx</span> with <span style="text-decoration: underline dotted;" data-toggle="tooltip" title="" data-placement="right" data-original-title="Members registered before 12th November 2017 are eligible to receive a coupon code.">coupon code</span></h6>           
+                    <input type="text" class="form-control" id="discount-code" placeholder="Discount code">
+                </div>
+            </div>
+
+            <div class="alert alert-light" role="alert" id="discount-alert" style="display: none">
+                <!-- Placeholder content -->
+            </div>
+
+            <div class="form-group row">
+                <div class="form-group col-md-6">
+                    <button type="button" class="btn btn-primary btn-lg" id="btn-start-checkout">Let's go!</button>
                 </div>
             </div>
         </div>
     </div>
-</form>
 
-<div class="row" id="purchaseStartPanel">
-    <div class="col-md-5 offset-md-1 text-center">
-        <h2 class="pt-4 pb-2">Looking good! :)</h4>
-        <button class="btn btn-primary btn-lg btn-block" type="button" onClick="loadPurchaseDetailsPanel()">Buy your hoodie!</button>
-        <small class="form-text text-muted"></small>
-    </div>
-</div>
-<div class="row" id="purchaseDetailsPanel" style="display: none">
-        <div class="col">
-            <h4 class="pt-4">Your Details</h4>
-            <p>Let's grab some details from you before we pass you to Stripe.</p>
-            <form>
-                <div class="form-group row">
-                        <label for="purchaser-name" class="col-md-4 col-form-label">Name</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="purchaser-name" placeholder="Namey McNameface">                        
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-4">
-                            <p class="form-text">Have a coupon code? Enter it here for juicy discounts.</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="discount-code" placeholder="Discount code">                    
-                        </div>
-                        <div class="col alert alert-light" role="alert" name="discount-alert" style="display: none">
-                            <!-- Placeholder content -->
-                        </div>
-                        <small class="col form-text text-muted">
-                            Members registered before 12th November 2017 are eligible to receive a discount code. Codes are
-                            non-transferrable and tied to your email address.
-                        </small>            
-                    </div>
-            
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <button type="button" class="btn btn-primary btn-lg" onClick="startCheckout()">Let's go!</button>
-                        </div>
-                    </div>
-            </form>
-        </div>
-    </div>
     <div class="row" id="purchaseStripeCalledPanel" style="display: none">
-        <p>Hang on a sec. We're just launching the Stripe payment flow to grab your card details. Want to reset this form? <a onclick="loadPurchaseDetailsPanel()">Click here</a>.</p>
+        <p>Hang on a sec. We're just launching the Stripe payment flow to grab your card details. Refresh this page to start over.</p>
     </div>
+</form>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js" integrity="sha384-8WfvGT4Eaax9aydJKPwo8urxfPKf0rvWe9FwoNxz4kD1iG9upxs9667qzL1AK4Lk" crossorigin="anonymous"></script>

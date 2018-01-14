@@ -85,32 +85,44 @@
         },
     };
 
+    function getHoodieType() {
+        return $('[name="hoodie-type"]:checked').val();
+    }
+
+    function getHoodieSize() {
+        return $('[name="hoodie-size"]').val();
+    }
+
+    function getSizeType() {
+        return $('[name="size-type"]:checked').val();
+    }
+
+    function getSelectedColor() {
+        return $('[name="hoodie-color"] > option:selected');
+    }
+
+    function getLogoPosition() {
+        return $('[name="logo-pos"]:checked').val();
+    }
+
+    function getLogoColor() {
+        return $('[name="logo-color"] > option:selected').val();
+    }
+
+    function getCustomText() {
+        return $('[name="print-name"]').val();
+    }
+
+    function getDiscountCode() {
+        return $('#discount-code').val();
+    }
+
     $(() => {
         var logoPrint = $('[name="logo-pos"][value="printed"]');
         var logoEmbroidered =  $('[name="logo-pos"][value="embroidered"]');
         var optionSizeXS = $('#option-size-xs');
         var supplierLink = $('.supplier-url');
         var colorSelect = $('[name="hoodie-color"]');
-
-        function getHoodieType() {
-            return $('[name="hoodie-type"]:checked').val();
-        }
-
-        function getSizeType() {
-            return $('[name="size-type"]:checked').val();
-        }
-
-        function getSelectedColor() {
-            return $('[name="hoodie-color"] > option:selected');
-        }
-
-        function getLogoPosition() {
-            return $('[name="logo-pos"]:checked').val();
-        }
-
-        function getLogoColor() {
-            return $('[name="logo-color"] > option:selected').val();
-        }
 
         function updateSize() {
             var isZoodie = getHoodieType() == "zoodie";
@@ -187,8 +199,6 @@
             supplierLink.text(info.code);
             $(".supplier-url-no-text").attr("href", url);
 
-            $('[name="hoodie-code"]').val(info.code);
-
             var selectedColor = getSelectedColor().val();
 
             colorSelect.children().remove();
@@ -257,48 +267,123 @@
             updateLogo();
         });
 
+        $('#btn-start-purchase').click(() => {
+            // Hide customise pane
+            $('#panel-customise').hide();
+
+            // Show purchase details pane
+            $('#panel-purchase-details').fadeIn();
+
+            // Start kitting up the table for our final output (for our wonderful API)
+            const hoodieType = getHoodieType();
+            const sizeType = getSizeType();
+            const info = hoodies[hoodieType][sizeType];
+
+            // Hoodie code is derived from hoodie-type (regular or zipped?)
+            // and also derived from size-type (unisex or womens?)
+            $('#opt-code').text(info.code);
+
+            // Visual zip info
+            $("#vis-zip").text(
+                (hoodieType === "zoodie") ?
+                "has zip" :
+                "no zip"
+            );
+
+            // Visual size type
+            $("#vis-size-type").text(sizeType);
+
+            // Load the actual form size
+            $("#opt-size").text(getHoodieSize());
+
+            // Load the actual hoodie colour
+            $("#opt-hoodie-color").text(getSelectedColor().text());
+
+            // Load the actual logo position
+            $("#opt-logo").text(
+                (getLogoPosition() === "embroidered") ?
+                "Left Breast Embroidery" : "Front Print"
+            );
+
+            // Determine the supplier's logo color
+            // this is the color of the logo, we
+            // need to convert it to something supplier suitable
+            const compsocColor = getLogoColor();
+            let logoColor = "";
+            if (compsocColor === "Mono") {
+                logoColor = "Black & White";
+            } else if (compsocColor === "Regular") {
+                logoColor = "Black & Red";
+            } else if (compsocColor === "Inverse") {
+                logoColor = "White & Red";
+            }
+
+            // Load the actual logo colour
+            $("#opt-logo-color").text(logoColor);
+
+            // Load the custom text
+            if (getCustomText() !== "") {
+                $("#vis-custom-text").show();
+                $("#opt-custom-text").text(getCustomText());
+            } else {
+                $("#vis-custom-text").hide();
+                $("#opt-custom-text").text("");
+            }
+        });
+
+        $('#btn-go-back').click(() => {
+            console.log("wtf click?")
+            $('#panel-purchase-details').hide();
+            $('#panel-customise').fadeIn();
+            return false;
+        });
+
+        $('[data-toggle="tooltip"]').tooltip()
+        $('#discount-code').focusout(() => { checkCoupon() });
+        $('#discount-code').on('input', e => {
+            $("#btn-start-checkout").prop("disabled", e.target.value !== "");
+        });
+
+        $("#btn-start-checkout").click(() => {
+            startCheckout(false);
+        });
+
         updateHoodieInfo();
     });
-
-    $('[data-toggle="tooltip"]').tooltip()
-    $('[name="discount-code"]').focusout(function(){ checkCoupon() });
-
-    function loadPurchaseDetailsPanel() {
-        $('#purchaseStartPanel').fadeOut();
-        $('#purchaseDetailsPanel').fadeIn();
-    }
 
     var checkout;
     var req;
     var resp;
 
     function startCheckout(apialive) {
-        
         if (!apialive){
             $.ajax({
                 url: 'http://sales.comp-soc.com:8123/api/alive',
                 type: 'GET',
                 dataType: 'json',
-                error: function(textStatus) { ajaxFailure(["Unable to connect to API endpoint."]); },
+                error: function(textStatus) {
+                    ajaxFailure(["Unable to connect to API endpoint."]);
+                },
                 success: function(data) { 
                     console.log(data);
                     if (data.alive){
                         startCheckout(true);
+                    } else {
+                        ajaxFailure("API endpoint unresponsive.");
                     }
-                    else { ajaxFailure("API endpoint unresponsive."); }
                 },
-                timeout: 3000
+                timeout: 3000,
             });
             return;
         }
         
-        var coupon = $('[name="discount-code"]').val();
-        if ($('[name="discount-alert"]').hasClass("alert-danger")) {
+        var coupon = $('#discount-code').val();
+        if ($('#discount-alert').hasClass("alert-danger")) {
             paymentFail("Your coupon is invalid. Please enter a valid coupon or leave the field blank.");
             return;
         }
         var prod = buildProduct();
-        var coupon = $('[name="discount-code"]').val();
+        var coupon = $('#discount-code').val();
         var amount;
         if (prod.zip) {
             amount = 2700;
@@ -314,20 +399,16 @@
     }
 
     function buildProduct() {
-        var product = { };
-        
-        if ($('[name="hoodie-type"]:checked').val() == "zoodie") { product.zip = true; }
-        else { product.zip = false; }
+        const product = {};
 
-        product.code = $('[name="hoodie-code"]').val();
-        product.logo_position = $('[name="logo-pos"]:checked').val();
-        product.style = $('[name="size-type"]:checked').val();
-        product.size = $('[name="hoodie-size"]').val();
-        product.colour = $('[name="hoodie-color"]').val();
-        product.logo_color = $('[name="logo-color"]').val();
-        product.back_print_color = $('[name="print-color"]:checked').val();;
-        product.name = $('[name="print-name"]').val();
-        product.customer = $('[name="purchaser-name"]').val();
+        product.code = $('#opt-code').text();
+        product.size = $('#opt-size').text();
+        product.hoodie_color = $('#opt-hoodie-color').text();
+        product.logo_position = $('#opt-logo').text();
+        product.logo_color = $('#opt-logo-color').text();
+        product.back_print_color = $('#opt-back-print-color').text();;
+        product.custom_text = $('#opt-custom-text').text();
+        product.customer = $('#opt-purchaser-name').text();
         product.description = "CompSoc custom hoodie";
 
         return product;
@@ -394,54 +475,65 @@
     }
 
     function checkCoupon() {
-        var request = {
+        const request = {
             item: "hoodie",
-            coupon: $('[name="discount-code"]').val()
-        }
+            coupon: getDiscountCode(),
+        };
 
-        if (request.coupon != (null || "") ){
-            $.ajax({
-                url: 'http://sales.comp-soc.com:8123/api/sales/coupon',
-                type: 'POST',
-                data: JSON.stringify(request),
-                contentType: 'application/json',
-                dataType: 'json',
-                error: function(textStatus) { 
-                    console.error("AJAX coupon check failed.");
-                    $('[name="discount-alert"]').removeClass("alert-success alert-danger alert-light")
-                        .addClass("alert-light")
-                        .html("Unable to check that coupon at the moment. Error communicating with API. Sorry.")
-                        .fadeIn();
-                    return;
-                    },
-                success: function(data) {
-                    if (!data.success) {
-                        $('[name="discount-alert"]').removeClass("alert-success alert-danger alert-light")
-                            .addClass("alert-light")
-                            .html("Unable to check that coupon at the moment. Sorry.")
-                            .fadeIn();
-                        return;
-                    }
-                    if (data.valid) {
-                        $('[name="discount-alert"]').removeClass("alert-success alert-danger alert-light")
-                            .addClass("alert-success")
-                            .html("Good news! That coupon is valid.")
-                            .fadeIn();
-                        return;
-                    } else {
-                        $('[name="discount-alert"]').removeClass("alert-success alert-danger alert-light")
-                            .addClass("alert-danger")
-                            .html("Oh no. " + data.reason)
-                            .fadeIn();
-                        return;
-                    }
-                },
-                timeout: 3000
-            });
-        } else {
-            $('[name="discount-alert"]').fadeOut();
+        $("#btn-start-checkout").prop("disabled", true);
+
+        if (request.coupon === "") {
+            $("#btn-start-checkout").prop("disabled", false);
+            $('#discount-alert')
+                .removeClass("alert-success alert-danger alert-light")
+                .addClass("alert-light")
+                .hide();
+
             return;
         }
+
+        $.ajax({
+            url: 'http://sales.comp-soc.com:8123/api/sales/coupon',
+            type: 'POST',
+            data: JSON.stringify(request),
+            contentType: 'application/json',
+            dataType: 'json',
+            error: function(textStatus) {
+                console.error("AJAX coupon check failed.");
+
+                $('#discount-alert').removeClass("alert-success alert-danger alert-light")
+                    .addClass("alert-light")
+                    .html("Unable to check that coupon at the moment. Error communicating with API. Sorry.")
+                    .fadeIn();
+
+                return;
+            },
+            success: function(data) {
+                if (!data.success) {
+                    $('#discount-alert').removeClass("alert-success alert-danger alert-light")
+                        .addClass("alert-light")
+                        .html("Unable to check that coupon at the moment. Sorry.")
+                        .fadeIn();
+                    return;
+                }
+                if (data.valid) {
+                    $('#discount-alert').removeClass("alert-success alert-danger alert-light")
+                        .addClass("alert-success")
+                        .html("Good news! That coupon is valid.")
+                        .fadeIn();
+
+                    $("#btn-start-checkout").prop("disabled", false);
+                    return;
+                } else {
+                    $('#discount-alert').removeClass("alert-success alert-danger alert-light")
+                        .addClass("alert-danger")
+                        .html("Oh no. " + data.reason)
+                        .fadeIn();
+                    return;
+                }
+            },
+            timeout: 3000
+        });
     }
     
     window.addEventListener('popstate', function() {
