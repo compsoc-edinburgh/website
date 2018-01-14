@@ -413,7 +413,7 @@
         product.logo_color = $('#opt-logo-color').text();
         product.back_print_color = $('#opt-back-print-color').text();;
         product.custom_text = $('#opt-custom-text').text();
-        product.customer = $('#opt-purchaser-name').text();
+        product.customer = $('#opt-purchaser-name').val(); // because this needs val() for some reason
         product.description = "CompSoc custom hoodie";
 
         return product;
