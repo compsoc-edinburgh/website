@@ -1,56 +1,59 @@
 <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-label="Congrats!" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Congrats! You're done :D</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title">Congrats! You're done :D</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-              </button>
+                </button>
             </div>
             <div class="modal-body modal-md">
-              <h3>That's it!</h3>
-              <p>
-                Your payment of £<span id="successModalValueField">[value]</span> with card ending 
-                <span id="successModalLast4Field">####</span> should now have gone through, and your
-                order has been placed. You will recieve an email confirmation of your purchase from
-                our payment processor Stripe.
-              </p>
-              <p>
-                CompSoc <span class="heart">♥</span> You</span>!
-              </p>
-              <p class="text-muted">Transaction charge id: <span id="successModalChargeId">n/a</span>. <span id="successModalMessage"></span></p>
+                <h3>That's it!</h3>
+                <p>
+                    Your payment of £<span id="successModalValueField">[value]</span> with card ending 
+                    <span id="successModalLast4Field">####</span> should now have gone through, and your
+                    order has been placed. You will recieve an email confirmation of your purchase from
+                    our payment processor Stripe.
+                </p>
+                <p>
+                    CompSoc <span class="heart">♥</span> You</span>!
+                </p>
+                <p class="text-muted">Transaction charge id:
+                    <span id="successModalChargeId">n/a</span>.
+                    <span id="successModalMessage"></span>
+                </p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Thanks!</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Thanks!</button>
             </div>
-          </div>
         </div>
-      </div>
-      
-      <div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="Oh dear." aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
+    </div>
+</div>
+    
+<div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="Oh dear." aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Oops... That's not right.</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title">Oops... That's not right.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-              </button>
+                </button>
             </div>
             <div class="modal-body modal-md">
-              <h3>Something's gone wrong. :(</h3>
-              <p>
+                <h3>Something's gone wrong. :(</h3>
+                <p>
                 We've had an issue processing your order. Here's some more information:
-              </p>
-              <p>
+                </p>
+                <p>
                 <code id="failModalDebugInfo">There's nothing here...</code>              
-              </p>
+                </p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Sorry!</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Sorry!</button>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
