@@ -355,8 +355,8 @@
     var req;
     var resp;
 
-    function startCheckout(apialive) {
-        if (!apialive){
+    function startCheckout(public_key) {
+        if (!public_key){
             $.ajax({
                 url: 'http://sales.comp-soc.com:8123/api/alive',
                 type: 'GET',
@@ -366,8 +366,9 @@
                 },
                 success: function(data) { 
                     console.log(data);
+
                     if (data.alive){
-                        startCheckout(true);
+                        startCheckout(data.pk);
                     } else {
                         ajaxFailure("API endpoint unresponsive.");
                     }
@@ -385,17 +386,18 @@
         var prod = buildProduct();
         var coupon = $('#discount-code').val();
         var amount;
-        if (prod.zip) {
-            amount = 2700;
-        } else {
+        if (prod.code === "JH01F" || prod.code === "JH001") {
             amount = 2500;
+        } else {
+            amount = 2700;
         }
-        if (coupon != "") {
+        if (coupon !== "") {
             amount = amount - 500;
         }
-        $('#purchaseDetailsPanel').fadeOut();
-        $('#purchaseStripeCalledPanel').fadeIn();
-        callStripe(amount, coupon, prod);
+
+        $('#panel-purchase-details').hide();
+        $('#panel-stripe-called').fadeIn();
+        callStripe(amount, coupon, prod, public_key);
     }
 
     function buildProduct() {
@@ -414,12 +416,12 @@
         return product;
     }
 
-    function callStripe(amount, coupon, prod) {
+    function callStripe(amount, coupon, prod, public_key) {
         var meta = prod;
         meta.product = "hoodie";
         if (checkout == null) {
         checkout = StripeCheckout.configure({
-            key: 'pk_test_U9KiI5HDACIVfnnghbHqyD3u',
+            key: public_key,
             image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
             locale: 'auto',
             allowRememberMe: false,
