@@ -338,15 +338,32 @@
             return false;
         });
 
+        let discountTimeout = null;
+
         $('[data-toggle="tooltip"]').tooltip()
-        $('#discount-code').focusout(() => { checkCoupon() });
         $('#discount-code').on('input', e => {
-            $("#btn-start-checkout").prop("disabled", e.target.value !== "");
+            if (discountTimeout !== null) {
+                clearTimeout(discountTimeout);
+                console.log("Cleared timeout.")
+            }
+
+            console.log("Setting timeout.")
+            discountTimeout = setTimeout(() => {
+                console.log("Checking coupon...")
+                checkCoupon();
+            }, 500);
         });
 
         $("#btn-start-checkout").click(() => {
             startCheckout(false);
         });
+
+        let params = (new URL(document.location)).searchParams;
+        let name = params.get("code");
+        if (name !== "") {
+            $('#discount-code').val(name);
+            checkCoupon();
+        }
 
         updateHoodieInfo();
     });
