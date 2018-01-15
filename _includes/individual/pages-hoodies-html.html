@@ -2,18 +2,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Congrats! You're done :D</h5>
+                <h5 class="modal-title">Order successful</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body modal-md">
-                <h3>That's it!</h3>
                 <p>
-                    Your payment of £<span id="successModalValueField">[value]</span> with card ending 
-                    <span id="successModalLast4Field">####</span> should now have gone through, and your
-                    order has been placed. You will recieve an email confirmation of your purchase from
-                    our payment processor Stripe.
+                    Your £<span id="successModalValueField">[value]</span> order has been placed.
+                    You will find a receipt of your hoodie in your inbox.
                 </p>
                 <p>
                     CompSoc <span class="heart">♥</span> You</span>!
@@ -40,7 +37,7 @@
                 </button>
             </div>
             <div class="modal-body modal-md">
-                <h3>Something's gone wrong. :(</h3>
+                <h3>Order unsuccessful</h3>
                 <p>
                 We've had an issue processing your order. Here's some more information:
                 </p>
@@ -413,8 +410,8 @@
         product.logo_color = $('#opt-logo-color').text();
         product.back_print_color = $('#opt-back-print-color').text();;
         product.custom_text = $('#opt-custom-text').text();
-        product.customer = $('#opt-purchaser-name').val(); // because this needs val() for some reason
-        product.description = "CompSoc custom hoodie";
+        product.customer = $('#opt-purchaser-name').val();
+        product.description = "CompSoc Hoodie";
 
         return product;
     }
@@ -438,7 +435,11 @@
             amount: amount,
             currency: 'GBP',
             opened: function() { },
-            closed: function() { checkout = null; }
+            closed: function() {
+                checkout = null;
+                $('#panel-purchase-details').fadeIn();
+                $('#panel-stripe-called').hide();
+            }
         })
     }
     function commitPayment(amount, token, coupon, prod) {
@@ -465,14 +466,11 @@
         console.error("AJAX API request failed.");
         $('#failModal').modal('show');
         $('#failModalDebugInfo').text("AJAX request to API failed: " + textStatus[0]);
-
-        $('#panel-purchase-details').fadeIn();
-        $('#panel-stripe-called').hide();
     }
     function ajaxSuccess(data) {
         console.log("AJAX API request successful with result '" + data.result + "'");
         if (data.result != "charge") {
-            paymentFail("Order processing failed - " + data.err_type + ": " + data.err_msg);
+            paymentFail(data.err_type + ": " + data.err_msg);
         } else {
             if (data.success) {
                 paymentSuccess(data.amount, data.last4, data.id, data.message);
