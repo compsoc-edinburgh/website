@@ -252,6 +252,15 @@ has_include: true
             <div class="form-group row">
                 <div class="form-group col-md-6">
                     <button type="button" class="btn btn-primary btn-lg" id="btn-start-checkout">Let's go!</button>
+                    <div id="paymentRequestBlock" style="display: none">
+                        <p>
+                            Great news! You can pay in one click using the Payment Request API. Click the button
+                            below to launch Apple Pay/Google Pay.
+                        </p>
+                        <div id="payment-request-button">
+                            <!-- A Stripe Element will be inserted here. -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

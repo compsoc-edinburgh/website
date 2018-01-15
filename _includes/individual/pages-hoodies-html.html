@@ -53,6 +53,7 @@
 </div>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
 
 <script>
     var hoodies = {
@@ -436,14 +437,49 @@
     function callStripe(amount, coupon, prod, public_key) {
         var meta = prod;
         meta.product = "hoodie";
-        if (checkout == null) {
-        checkout = StripeCheckout.configure({
-            key: public_key,
-            image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
-            locale: 'auto',
-            allowRememberMe: false,
-            token: function(token) { commitPayment(amount, token, coupon, meta) }
+
+        var stripe = Stripe(public_key);
+
+        var paymentRequest = stripe.paymentRequest({
+            country: 'GB',
+            currency: 'gbp',
+            total: {
+                label: 'CompSoc Hoodie',
+                amount: amount,
+            },
         });
+
+        var elements = stripe.elements();
+        var prButton = elements.create('paymentRequestButton', {
+            paymentRequest: paymentRequest
+        });
+
+        paymentRequest.on('token', function(ev) {
+            commitPayment(amount, ev.token, coupon, prod);
+        });
+
+        // Check the availability of the Payment Request API first.
+        paymentRequest.canMakePayment().then(function(result) {
+            if (result) {
+                prButton.mount('#payment-request-button');
+                $('#btn-start-checkout').fadeOut();
+                $('#paymentRequestBlock').fadeIn();
+            } else {
+                document.getElementById('payment-request-button').style.display = 'none';
+                callLegacyCheckout(amount, coupon, prod, public_key);
+            }
+        });
+    }
+
+    function callLegacyCheckout(amount, coupon, prod, public_key) {
+        if (checkout == null) {
+            checkout = StripeCheckout.configure({
+                key: public_key,
+                image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
+                locale: 'auto',
+                allowRememberMe: false,
+                token: function(token) { commitPayment(amount, token, coupon, meta) }
+            });
         }
         checkout.open({
             name: 'CompSoc Hoodie',
@@ -459,6 +495,8 @@
             }
         })
     }
+
+
     function commitPayment(amount, token, coupon, prod) {
         console.log("Committing payment of £" + (amount/100) + " to API\nToken: " + token.id );
         var request = {
