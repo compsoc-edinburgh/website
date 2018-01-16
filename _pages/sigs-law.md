@@ -8,7 +8,7 @@ LATG is a Special Interest Group of CompSoc, covering the topic of Law and Techn
 [This group](http://comp-soc.com/team#law-and-technology-group-latg) was formed in December 2017.
 
 The first event will be about AI, Justice, Cybersecurity and the law.
-Join us at **Appleton Tower Lecture Theatre 3, Thursday 25th January, 6:30pm**.
+<br>Join us at **Appleton Tower Lecture Theatre 3, Thursday 25th January, 6:30pm**.
 
 Our event is a talk by two speakers:
 
