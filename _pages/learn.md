@@ -7,6 +7,8 @@ permalink: /learn
 
 So you're interested in learning more about the field of Informatics? We support some amazing initiatives that can help build your knowledge, no matter your skill level.
 
+### [CompSoc Library]((/library)
+
 ### Learning how to code
 
 Becoming a programmer isn't something that can just be taught: you need to put a lot of your own personal time into it.
