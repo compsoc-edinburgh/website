@@ -375,7 +375,7 @@
     function startCheckout(public_key) {
         if (!public_key){
             $.ajax({
-                url: 'http://sales.comp-soc.com:8123/api/alive',
+                url: 'https://sales.comp-soc.com/api/alive',
                 type: 'GET',
                 dataType: 'json',
                 error: function(textStatus) {
@@ -469,7 +469,7 @@
             token: token
         };
         $.ajax({
-            url: 'http://sales.comp-soc.com:8123/api/sales/charge',
+            url: 'https://sales.comp-soc.com/api/sales/charge',
             type: 'POST',
             data: JSON.stringify(request),
             contentType: 'application/json',
@@ -519,7 +519,7 @@
         }
 
         $.ajax({
-            url: 'http://sales.comp-soc.com:8123/api/sales/coupon',
+            url: 'https://sales.comp-soc.com/api/sales/coupon',
             type: 'POST',
             data: JSON.stringify(request),
             contentType: 'application/json',
