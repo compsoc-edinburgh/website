@@ -7,7 +7,14 @@ permalink: /learn
 
 So you're interested in learning more about the field of Informatics? We support some amazing initiatives that can help build your knowledge, no matter your skill level.
 
+
 ### [CompSoc Library](/library)
+
+We have many books, and many of these books are suitable for courses taken throughout your degree.
+
+### [Programming Club](https://progclub.inf.ed.ac.uk)
+
+This is where you can work on various projects. Aimed at first and second year students, but available to everyone.
 
 ### Learning how to code
 
