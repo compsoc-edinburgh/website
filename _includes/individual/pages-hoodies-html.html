@@ -365,6 +365,11 @@
             checkCoupon();
         }
 
+        let email = params.get("email");
+        if (name !== "") {
+            $('#opt-email').val(email);
+        }
+
         updateHoodieInfo();
     });
 
@@ -412,9 +417,11 @@
             amount = amount - 500;
         }
 
+        const email = $("#opt-email").val();
+
         $('#panel-purchase-details').hide();
         $('#panel-stripe-called').fadeIn();
-        callStripe(amount, coupon, prod, public_key);
+        callStripe(amount, coupon, prod, public_key, email);
     }
 
     function buildProduct() {
@@ -433,7 +440,7 @@
         return product;
     }
 
-    function callStripe(amount, coupon, prod, public_key) {
+    function callStripe(amount, coupon, prod, public_key, email) {
         var meta = prod;
         meta.product = "hoodie";
         if (checkout == null) {
@@ -450,6 +457,7 @@
             description: 'CompSoc branded custom hoodie.',
             zipCode: true,
             amount: amount,
+            email: email,
             currency: 'GBP',
             opened: function() { },
             closed: function() {
