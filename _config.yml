@@ -4,7 +4,7 @@ sass:
    sourcemap: true
 
 url: "https://comp-soc.com"
-baseurl: "" # does not include hostname
+baseurl: "/" # does not include hostname
 
 plugins_dir: [jekyll-paginate]
 paginate: 5
