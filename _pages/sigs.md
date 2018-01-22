@@ -15,6 +15,11 @@ CompSoc offers SIGs promotion, some money, support, and a place on the committee
             <img src="{{ site.baseurl }}/static/img/sigs/sigint-logo.png" height="200px" class="float-left" />
         </a>
     </div>
+    <a href="http://hacktheburgh.com" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
+        <div class="d-block">
+            <h1>HackSIG</h1>
+        </div>
+    </a>
     <a href="{{ site.baseurl }}/sigs/sigweb" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
         <div class="d-block">
             <h1>SIG</h1>
