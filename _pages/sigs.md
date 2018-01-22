@@ -18,6 +18,7 @@ CompSoc offers SIGs promotion, some money, support, and a place on the committee
     <a href="http://hacktheburgh.com" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
         <div class="d-block">
             <h1>HackSIG</h1>
+            <p>hackathons and hackathon organisation</p>
         </div>
     </a>
     <a href="{{ site.baseurl }}/sigs/sigweb" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
