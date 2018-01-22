@@ -55,3 +55,59 @@ teams:
       - name: Nicholas Lynch
         role: Hacking Officer
         img: sigint-1.png
+
+  - name: Hackathons (HackSIG)
+    members:
+      - name: Viktorija Lukošiūtė
+        role: Head Organiser
+
+      - name: Qais Patankar
+        role: Organiser (and technical work)
+
+      - name: Connor Lurring
+        role: Organiser (and sponsorship)
+
+      - name: Elena Lape
+        role: Organiser
+
+      - name: João Catarino
+        role: Organiser (and catering)
+
+      - name: Markus 
+        role: Organiser (and catering)
+
+      - name: Santi Guillen
+        role: Organiser (and catering)
+
+      - name: Vaida Plankyte
+        role: Organiser (and graphic design)
+
+      - name: Kristjan Erik Liive
+        role: Organiser (and volunteer management)
+
+      - name: Ginte Petrulionyte
+        role: Organiser (and under 18s organiser)
+
+      - name: Bianca Burtoiu
+        role: Organiser
+
+      - name: Ojasvi
+        role: Organiser
+
+      - name: Andreea Cucu
+        role: Volunteer
+
+      - name: Arthur Wilcke
+        role: Volunteer
+
+      - name: Elitsa Bankova
+        role: Volunteer
+
+      - name: Katie Worton
+        role: Volunteer
+
+      - name: Sami Alabed
+        role: Volunteer
+
+      - name: Sara Decova
+        role: Volunteer
