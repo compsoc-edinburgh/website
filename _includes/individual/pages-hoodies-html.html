@@ -379,7 +379,7 @@
                 type: 'GET',
                 dataType: 'json',
                 error: function(textStatus) {
-                    ajaxFailure(["Unable to connect to API endpoint."]);
+                    ajaxFailure("Unable to connect to API endpoint.");
                 },
                 success: function(data) { 
                     console.log(data);
@@ -474,15 +474,15 @@
             data: JSON.stringify(request),
             contentType: 'application/json',
             dataType: 'json',
-            error: function(textStatus) { ajaxFailure(textStatus) },
+            error: function( jqXHR, textStatus ) { ajaxFailure(textStatus) },
             success: function(data) { ajaxSuccess(data) },
-            timeout: 3000
+            timeout: 5000
         });
     }
     function ajaxFailure(textStatus) {
         console.error("AJAX API request failed.");
         $('#failModal').modal('show');
-        $('#failModalDebugInfo').text("AJAX request to API failed: " + textStatus[0]);
+        $('#failModalDebugInfo').text("AJAX request to API failed: " + textStatus);
     }
     function ajaxSuccess(data) {
         console.log("AJAX API request successful with result '" + data.result + "'");
