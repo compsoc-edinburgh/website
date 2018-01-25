@@ -2,14 +2,269 @@
 permalink: /hoodies
 title: "Hoodies"
 layout: default
-has_include: false
+has_include: true
 ---
 
 <h1 class="text-center">Customise your CompSoc hoodie!</h1>
 
-<div class="alert alert-warning mt-5" role="alert">
-    <h4 class="alert-heading">Oh no!</h4>
-    <p>
-        Apologies, hoodies purchasing is temporarily unavailable. We'll be back soon!
-    </p>
-</div>
+<style>
+    .hoodie-images svg {
+        max-height: 200px;
+    }
+
+    #himg-logo > svg {
+        max-width: 250px;
+        display: block;
+        margin: auto;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<form id="hoodie-configurator">
+    <div class="row">
+        <div class="col-md-5 order-md-2 mb-4">
+            <div class="hoodies">
+                <h4>Preview</h4>
+                <div class="hoodie-images">
+                    <span id="himg-logo">
+                        {% include hoodies/logo.svg %}
+                    </span>
+                    <span id="himg-zoodie">
+                        {% include hoodies/zip.svg %}
+                    </span>
+                    <span id="himg-college">
+                        {% include hoodies/front.svg %}
+                    </span>
+                    {% include hoodies/back.svg %}
+                </div>
+                <div class="text-center">
+                    <a href="" target="_blank" class="btn btn-info supplier-url-no-text">View on supplier's website</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="panel-customise" class="col-md-7">
+            <h4>Customise</h4>
+            <div class="form-group row">
+                <label class="col-md-4">Hoodie type</label>
+                <div class="col-sm-8">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input checked class="form-check-input" type="radio" name="hoodie-type" value="college">
+                            Regular hoodie
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="hoodie-type" value="zoodie">
+                            Zipped hoodie
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-4">Logo position</label>
+                <div class="col-sm-8">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input checked class="form-check-input" type="radio" name="logo-pos" value="embroidered">
+                            Left breast embroidery
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="logo-pos" value="printed">
+                            Front print
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-4">Size type</label>
+                <div class="col-sm-8">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input checked class="form-check-input" type="radio" name="size-type" value="unisex">
+                            Unisex
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="size-type" value="womens">
+                            Womens
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row" id="colorform-unisex-nozip">
+                <label class="col-md-4 col-form-label">Size</label>
+                <div class="col-sm-8">
+                    <select name="hoodie-size" class="form-control">
+                        <option id="option-size-xs">XS</option>
+                        <option id="option-size-s">S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                    <small class="form-text text-muted">
+                        If you would like a size not listed here, but listed on the above page, please send us an email.
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-group row" id="colorform-unisex-nozip">
+                <label class="col-md-4 col-form-label">Hoodie colour</label>
+                <div class="col-sm-8">
+                    <select name="hoodie-color" class="form-control">
+                        <!-- Autopopulated -->
+                    </select>
+                    <small class="form-text text-muted">
+                        <strong>Visit the supplier website for true representation of colour.</strong>
+                        Colours may be different IRL.
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-group row" id="colorform-unisex-nozip">
+                <label class="col-md-4 col-form-label">Logo colour</label>
+                <div class="col-sm-8">
+                    <select name="logo-color" class="form-control">
+                        <option value="Mono">Black with white filled</option>
+                        <option value="Regular">Black and red</option>
+                        <option value="Inverse" >Inverse (white and red)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-4">Back print colour</label>
+                <div class="col-sm-8">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input checked class="form-check-input" type="radio" name="print-color" value="black">
+                            Black
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="print-color" value="white">
+                            White
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-4 col-form-label">Name on back</label>
+                <div class="col-sm-8">
+                    <input type="text" name="print-name" class="form-control" placeholder="(optional)">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <button class="btn btn-primary btn-lg btn-block" type="button" id="btn-start-purchase">
+                    Buy your hoodie!
+                    <span name="hoodie-price-discounted">£xx.xx</span>
+                    <small>
+                        (<span name="hoodie-price">£xx.xx</span>
+                        for non-members)
+                    </small>
+                </button>
+                <small class="form-text text-muted"></small>
+            </div>
+        </div>
+
+
+        <div class="col-md-7" id="panel-stripe-called" style="display: none">
+            <div class="alert alert-info">
+                Hang on a sec. We're just launching the Stripe payment flow to grab your card details.
+            </div>
+        </div>
+
+        <div class="col-md-7" id="panel-purchase-details" style="display: none;">
+            <h4>
+                Your Details
+                <button class="float-right btn btn-sm btn-secondary" type="button" id="btn-go-back">Return to customise</button>
+            </h4>
+            <table class="table table-sm">
+                <tbody>
+                    <tr>
+                        <th scope="row">Hoodie</th>
+                        <td><span id="opt-code"></span>: <span id="vis-zip"></span>, <span id="vis-size-type">Unisex</span>, <span id="opt-size">XS</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hoodie colour</th>
+                        <td id="opt-hoodie-color"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Logo</th>
+                        <td id="opt-logo"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Logo colour</th>
+                        <td id="opt-logo-color"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Back print</th>
+                        <td>ATAT in <span id="opt-back-print-color">white</span></td>
+                    </tr>
+                    <tr id="vis-custom-text">
+                        <th scope="row">Custom text</th>
+                        <td id="opt-custom-text"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-warning">
+                <strong>The colour shown on the preview is just an estimate.</strong>
+                <br>
+                Please double-check the colour you have selected against the
+                list <a class="supplier-url-no-text">here</a>.
+            </div>
+
+            <p>We need some details from you before we pass you to our payment provider.</p>
+
+            <div class="form-group row">
+                <label for="purchaser-name" class="col-md-4 col-form-label">Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="opt-purchaser-name" placeholder="Namey McNameface">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <p class="form-text"><span style="text-decoration: underline dotted;" data-toggle="tooltip" title="" data-placement="right" data-original-title="Members registered before 10th January 2018 are eligible to receive a coupon code."
+                        >Have a coupon code?</span></p>
+                </div>
+                <div class="col-sm-8">
+                    <input autocomplete="off" type="text" class="form-control" id="discount-code" placeholder="Discount code">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <p class="form-text">Email address</p>
+                </div>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="opt-email" placeholder="hello@comp-soc.com">
+                </div>
+            </div>
+
+            <div class="alert alert-light" role="alert" id="discount-alert" style="display: none">
+                <!-- Placeholder content -->
+            </div>
+
+            <div class="form-group row">
+                <div class="form-group col-md-6">
+                    <button type="button" class="btn btn-primary btn-lg" id="btn-start-checkout">Let's go!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js" integrity="sha384-8WfvGT4Eaax9aydJKPwo8urxfPKf0rvWe9FwoNxz4kD1iG9upxs9667qzL1AK4Lk" crossorigin="anonymous"></script>
