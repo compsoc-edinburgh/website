@@ -109,6 +109,10 @@
         return $('[name="logo-color"] > option:selected').val();
     }
 
+    function getBackPrintColor() {
+        return $('[name="print-color"]:checked').val();
+    }
+
     function getCustomText() {
         return $('[name="print-name"]').val();
     }
@@ -158,7 +162,7 @@
         }
 
         function onPrintColorUpdate() {
-            var color = $('[name="print-color"]:checked').val();
+            let color = getBackPrintColor();
             $("#himg-text-item > path, #himg-atat path").css("fill", color);
         }
 
@@ -329,6 +333,9 @@
                 $("#vis-custom-text").hide();
                 $("#opt-custom-text").text("");
             }
+
+            // Load the back print color
+            $("#opt-back-print-color").text(getBackPrintColor());
         });
 
         $('#btn-go-back').click(() => {
