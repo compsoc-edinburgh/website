@@ -40,6 +40,12 @@ CompSoc offers SIGs promotion, some money, support, and a place on the committee
             <p>Law and Technology</p>
         </div>
     </a>
+    <a href="{{ site.baseurl }}/sigs/sigcoin" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
+        <div class="d-block">
+            <h1>SIGCoin</h1>
+            <p>Blockchain and Cryptocurrency</p>
+        </div>
+    </a>
 </div>
 
 ### Defunct SIGs

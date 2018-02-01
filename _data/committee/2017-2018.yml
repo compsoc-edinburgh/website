@@ -108,3 +108,14 @@ teams:
 
       - name: Constanza Cecchetti
         role: Communications Director
+
+  - name: Blockchain and Cryptocurrency (SIGCoin)
+    members:
+      - name: Nikita Samarin
+        role: President
+
+      - name: Lorenzo Martinico
+        role: Vice President
+
+      - name: Martin Georgiev
+        role: Creative Director
