@@ -2,6 +2,23 @@
 permalink: /special-interest-groups
 longtitle: "Special Interest Groups"
 title: "SIGs"
+
+quicksigs:
+    - title: SIGWeb
+      description: Website Development
+      slug: sigweb
+
+    - title: SIGnet
+      description: Computer Networking
+      slug: signet
+
+    - title: LATG
+      description: Law and Technology
+      slug: law
+
+    - title: SIGCoin
+      description: Blockchain and Cryptocurrency
+      slug: sigcoin
 ---
 
 Are you and your friends interested in a particular field of Informatics? Start a SIG!
@@ -21,31 +38,14 @@ CompSoc offers SIGs promotion, some money, support, and a place on the committee
             <p>Go to hackathons and throw hackathons!</p>
         </div>
     </a>
-    <a href="{{ site.baseurl }}/sigs/sigweb" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
+    {% for sig in page.quicksigs %}
+    <a href="{{ site.baseurl }}/sigs/{{ sig.slug }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
         <div class="d-block">
-            <h1>SIG</h1>
-            <h1>Web</h1>
-            <p>Website Development</p>
+            <h1>{{ sig.title }}</h1>
+            <p>{{ sig.description }}</p>
         </div>
     </a>
-    <a href="{{ site.baseurl }}/sigs/signet" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
-        <div class="d-block">
-            <h1>SIGnet</h1>
-            <p>Computer Networking</p>
-        </div>
-    </a>
-    <a href="{{ site.baseurl }}/sigs/law" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
-        <div class="d-block">
-            <h1>LATG</h1>
-            <p>Law and Technology</p>
-        </div>
-    </a>
-    <a href="{{ site.baseurl }}/sigs/sigcoin" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
-        <div class="d-block">
-            <h1>SIGCoin</h1>
-            <p>Blockchain and Cryptocurrency</p>
-        </div>
-    </a>
+    {% endfor %}
 </div>
 
 ### Defunct SIGs
