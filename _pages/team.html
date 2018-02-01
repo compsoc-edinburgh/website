@@ -81,10 +81,12 @@ title: "The Team"
 										<img src="/static/img/pattern-{{ dummy-img }}" width=100 height=100 class="team-avatar" alt="{{ member.name }}">
 									{% endif %}
 									<div class="d-flex flex-column ml-4 justify-content-center">
-										<h5 class="card-title"><strong>{{ member.role }}</strong></h5>
-										<p class="card-text">
-											{{ member.name }}
+										<h5 class="card-title">
+											<strong>{{ member.name }}</strong>
 											{% if member.url %}<a class="fa fa-globe text-dark" href="{{ member.url }}"></a>{% endif %}
+										</h5>
+										<p class="card-text">
+											{{ member.role }}
 										</p>
 									</div>
 								</span>
