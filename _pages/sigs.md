@@ -18,20 +18,20 @@ CompSoc offers SIGs promotion, some money, support, and a place on the committee
     <a href="http://hacktheburgh.com" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
         <div class="d-block">
             <h1>HackSIG</h1>
-            <p>hackathons and hackathon organisation</p>
+            <p>Go to hackathons and throw hackathons!</p>
         </div>
     </a>
     <a href="{{ site.baseurl }}/sigs/sigweb" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
         <div class="d-block">
             <h1>SIG</h1>
             <h1>Web</h1>
-            <p>(webdev)</p>
+            <p>Website Development</p>
         </div>
     </a>
     <a href="{{ site.baseurl }}/sigs/signet" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
         <div class="d-block">
             <h1>SIGnet</h1>
-            <p>(Networking)</p>
+            <p>Computer Networking</p>
         </div>
     </a>
     <a href="{{ site.baseurl }}/sigs/law" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
