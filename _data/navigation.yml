@@ -4,9 +4,6 @@
 - text: Events
   url: "/events"
 
-- text: Hoodies
-  url: "/hoodies"
-
 - text: News
   url: "/blog/"
 
