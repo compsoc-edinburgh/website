@@ -1,0 +1,166 @@
+<script>
+    
+    $(() => {
+
+        var modal = $("#paymentModal");
+        var form = $("#payment-form");
+        var example = form;
+        var error = form.find('#card-input-error');
+
+        var stripe = Stripe('pk_test_U9KiI5HDACIVfnnghbHqyD3u');
+        var elements = stripe.elements({
+            fonts: [
+                {
+                    cssSrc: "https://rsms.me/inter/inter-ui.css"
+                }
+            ]
+        });
+
+        function enableInputs() {
+            form.find(
+                "input[type='text'], input[type='email'], input[type='checkbox'], input[type='radio'], #payment-submit"
+            ).attr('disabled', false);
+        }
+
+        function disableInputs() {
+            form.find(
+                "input[type='text'], input[type='email'], input[type='checkbox'], input[type='radio'], #payment-submit"
+            ).attr('disabled', true);
+        }
+
+        /**
+        * Card Element
+        */
+        var card = elements.create("card", {
+            style: {
+                base: {
+                    color: "#32325D",
+                    fontWeight: 500,
+                    fontFamily: "Inter UI, Open Sans, Segoe UI, sans-serif",
+                    fontSize: "15px",
+                    fontSmoothing: "antialiased",
+
+                    "::placeholder": {
+                        color: "#CFD7DF"
+                    }
+                },
+                invalid: {
+                    color: "#E25950"
+                }
+            }
+        });
+
+        card.mount("#payment-card");
+
+        /**
+        * Payment Request Element
+        */
+        var paymentRequest = stripe.paymentRequest(
+            {
+                country: "GB",
+                currency: "gbp",
+                total: {
+                amount: 4000,
+                label: "Informatics Ball 2018"
+            }
+        });
+
+        paymentRequest.on("token", function(result) {
+            modal.find(".token").text(result.token.id);
+            modal.modal("show");
+            result.complete("success");
+        });
+
+        var paymentRequestElement = elements.create("paymentRequestButton",
+            {
+                paymentRequest: paymentRequest,
+                style: {
+                    paymentRequestButton: {
+                        type: "buy",
+                        theme: "light-outline"
+                    }
+                }
+            }
+        );
+
+        paymentRequest.canMakePayment().then(result => {
+            if (result) {
+                $(".card-only").addClass("d-none");
+                $(".payment-request-available").removeClass("d-none");
+                paymentRequestElement.mount("#payment-request-button");
+            }
+        });
+
+        // Listen on the form's 'submit' handler...
+        form.on('submit', e => {
+            e.preventDefault();
+
+            // Show a loading screen...
+            console.log("Submitting...")
+
+            // Disable all inputs.
+            disableInputs();
+
+            // Gather additional customer data we have collected in our form.
+            var name = form.find('#cardholder-name').text();
+            // var uun = form.find('#uun').text();
+            // var email = form.find('#email').text();
+            // var underage = form.find('#underage').is(":checked");
+            var additionalData = {
+                name
+            };
+
+            // Use Stripe.js to create a token. We only need to pass in one Element
+            // from the Element group in order to create a token. We can also pass
+            // in the additional customer data we collected in our form.
+            stripe.createToken(card, additionalData).then(result => {
+                // Stop loading!
+                console.log("No longer loading...");
+                console.log(result);
+
+                if (result.token) {
+                    // If we received a token, show the token ID.
+                    modal.find('.token').text(result.token.id);
+                    modal.modal("show");
+                } else {
+                    // Otherwise, un-disable inputs.
+                    enableInputs();
+                }
+            });
+        });
+
+        // Listen for errors from each Element, and show error messages in the UI.
+        var savedErrors = {};
+        [card, paymentRequestElement].forEach((element, idx) => {
+            element.on('change', event => {
+                if (event.error) {
+                    error.removeClass('d-none');
+                    savedErrors[idx] = event.error.message;
+                    error.text(event.error.message);
+                    console.log("Error:", event.error, error)
+                } else {
+                    console.log("No new error!")
+                    savedErrors[idx] = null;
+
+                    // Loop over the saved errors and find the first one, if any.
+                    var nextError = Object.keys(savedErrors)
+                        .sort()
+                        .reduce(function(maybeFoundError, key) {
+                            return maybeFoundError || savedErrors[key];
+                        },
+                        null
+                    );
+
+                    if (nextError) {
+                        // Now that they've fixed the current error, show another one.
+                        error.text(nextError);
+                    } else {
+                        // The user fixed the last error; no more errors.
+                        error.addClass('d-none');
+                    }
+                }
+            });
+        });
+    })
+
+</script>
