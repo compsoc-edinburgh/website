@@ -74,13 +74,13 @@ has_include: true
                     <div class="form-group row">
                         <label for="fullname" class="col-sm-4 col-form-label">Full name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="fullname" placeholder="Infer Matics" required>
+                            <input value="test patankar" type="text" class="form-control" id="fullname" placeholder="Infer Matics" required>
                         </div>
                     </div>
                     <div class="form-group row mb-1">
                         <label for="uun" class="col-sm-4 col-form-label">University Username (UUN)</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="uun">
+                            <input value="s1620280" type="text" class="form-control" id="uun">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -95,7 +95,7 @@ has_include: true
                             Email address
                         </label>
                         <div class="col-sm-8">
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="everyone@inf.ed.ac.uk" required>
+                            <input value="qaisjp+test@gmail.com" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="everyone@inf.ed.ac.uk" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -165,7 +165,7 @@ has_include: true
                         <label>Starter</label>
                         <div>
                             <div class="form-check">
-                                <input required class="form-check-input" type="radio" name="starterRadio" id="starterRadio1" value="soup">
+                                <input checked required class="form-check-input" type="radio" name="starterRadio" id="starterRadio1" value="soup">
                                 <label class="form-check-label" for="starterRadio1">
                                     Leek, Potato and Truffle Soup
                                 </label>
@@ -190,7 +190,7 @@ has_include: true
                         <label>Main</label>
                         <div>
                             <div class="form-check">
-                                <input required class="form-check-input" type="radio" name="mainRadio" id="mainRadio1" value="beef">
+                                <input checked required class="form-check-input" type="radio" name="mainRadio" id="mainRadio1" value="beef">
                                 <label class="form-check-label" for="mainRadio1">
                                     Braised Blade of Scottish Beef, with Horseradish Mash, Red Wine Jus and Braised Roots
                                 </label>
@@ -221,7 +221,7 @@ has_include: true
                         <label>Dessert</label>
                         <div>
                             <div class="form-check">
-                                <input required class="form-check-input" type="radio" name="dessertRadio" id="dessertRadio1" value="brownie">
+                                <input checked required class="form-check-input" type="radio" name="dessertRadio" id="dessertRadio1" value="brownie">
                                 <label class="form-check-label" for="dessertRadio1">
                                     Double Chocolate Brownie with Vanilla Ice-Cream
                                 </label>
@@ -238,7 +238,7 @@ has_include: true
                     <!-- Special -->
                     <div class="form-group">
                         <label for="specialReqs">Other notes</label>
-                        <textarea id="specialReqs" rows=3 class="form-control"
+                        <textarea id="specialReqs" rows=3 class="form-control" maxlength="500"
                             placeholder="Please tell us if you have any allergies or any other special requirements."
                         ></textarea>
                     </div>
@@ -292,7 +292,6 @@ has_include: true
                 <p>
                     See you in April!
                 </p>
-                <small>debug: <span class="token">no-token-generated-yet</span></small>
             </div>
             <div class="modal-footer justify-content-between">
                 <span>CompSoc &hearts; You!</span>

@@ -28,6 +28,74 @@
             ).attr('disabled', true);
         }
 
+        const ENDPOINT_BASE = 'http://infball.comp-soc.com:8080';
+        const ENDPOINT_CHARGE = ENDPOINT_BASE + '/charge';
+
+        function showError(text, forceEnabled) {
+            // Hide error
+            if (text == null) {
+                error.addClass('d-none');
+                $("#payment-submit").attr("disabled", false);
+                return;
+            }
+
+            error.removeClass('d-none');
+            error.text(text);
+            if (!forceEnabled) {
+                $("#payment-submit").attr("disabled", true);
+            }
+        }
+
+        function onTokenReceived(result) {
+            console.log("result", result);
+            console.log("result.token", result.token);
+
+            const FullName = $("#fullname").val();
+            const UUN = $("#uun").val();
+            const Email = $("#email").val();
+            const Underage = $("#underage").is(":checked");
+            const Starter = $("input[name='starterRadio']:checked").val();
+            const Main = $("input[name='mainRadio']:checked").val();
+            const Dessert = $("input[name='dessertRadio']:checked").val();
+            const SpecialReqs = $("#specialReqs").val();
+
+            const data = {
+                Token: result.token.id,
+                FullName, UUN, Email, Underage,
+                Starter, Main, Dessert,
+                SpecialReqs,
+            }
+
+            $.ajax({
+                url: ENDPOINT_CHARGE,
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                dataType: 'json',
+                error: function(resp, textStatus) {
+                    console.log("error", resp, textStatus);
+                    enableInputs();
+
+                    if (resp.responseJSON) {
+                        showError(resp.responseJSON.message, true);
+                    }
+
+                    if (result.complete) {
+                        result.complete("fail");
+                    }
+                },
+                success: function(data) {
+                    console.log("success", data);
+                    modal.modal("show");
+
+                    if (result.complete) {
+                        result.complete("success");
+                    }
+                },
+                timeout: 30000
+            });
+        }
+
         /**
         * Card Element
         */
@@ -66,9 +134,7 @@
         });
 
         paymentRequest.on("token", function(result) {
-            modal.find(".token").text(result.token.id);
-            modal.modal("show");
-            result.complete("success");
+            onTokenReceived(result);
         });
 
         var paymentRequestElement = elements.create("paymentRequestButton",
@@ -120,8 +186,7 @@
 
                 if (result.token) {
                     // If we received a token, show the token ID.
-                    modal.find('.token').text(result.token.id);
-                    modal.modal("show");
+                    onTokenReceived(result);
                 } else {
                     // Otherwise, un-disable inputs.
                     enableInputs();
@@ -134,10 +199,8 @@
         [card, paymentRequestElement].forEach((element, idx) => {
             element.on('change', event => {
                 if (event.error) {
-                    error.removeClass('d-none');
                     savedErrors[idx] = event.error.message;
-                    error.text(event.error.message);
-                    console.log("Error:", event.error, error)
+                    showError(event.error.message);
                 } else {
                     console.log("No new error!")
                     savedErrors[idx] = null;
@@ -153,10 +216,10 @@
 
                     if (nextError) {
                         // Now that they've fixed the current error, show another one.
-                        error.text(nextError);
+                        showError(nextError);
                     } else {
                         // The user fixed the last error; no more errors.
-                        error.addClass('d-none');
+                        showError(null);
                     }
                 }
             });
