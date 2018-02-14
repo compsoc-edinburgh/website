@@ -47,9 +47,6 @@
         }
 
         function onTokenReceived(result) {
-            console.log("result", result);
-            console.log("result.token", result.token);
-
             const FullName = $("#fullname").val();
             const UUN = $("#uun").val();
             const Email = $("#email").val();
@@ -168,7 +165,7 @@
             disableInputs();
 
             // Gather additional customer data we have collected in our form.
-            var name = form.find('#cardholder-name').text();
+            var name = form.find('#cardholder-name').val();
             // var uun = form.find('#uun').text();
             // var email = form.find('#email').text();
             // var underage = form.find('#underage').is(":checked");
@@ -182,7 +179,6 @@
             stripe.createToken(card, additionalData).then(result => {
                 // Stop loading!
                 console.log("No longer loading...");
-                console.log(result);
 
                 if (result.token) {
                     // If we received a token, show the token ID.
