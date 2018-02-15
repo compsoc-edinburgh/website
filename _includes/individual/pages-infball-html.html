@@ -3,6 +3,7 @@
     $(() => {
 
         var modal = $("#paymentModal");
+        const loadingModal = $("#processingModal");
         var form = $("#payment-form");
         var example = form;
         var error = form.find('#card-input-error');
@@ -18,24 +19,28 @@
 
         function enableInputs() {
             form.find(
-                "input[type='text'], input[type='email'], input[type='checkbox'], input[type='radio'], #payment-submit"
+                "input, textarea, #payment-submit"
             ).attr('disabled', false);
+
+            form.find(".alwaysDisabled").attr("disabled", true);
         }
 
         function disableInputs() {
             form.find(
-                "input[type='text'], input[type='email'], input[type='checkbox'], input[type='radio'], #payment-submit"
+                "input, textarea, #payment-submit"
             ).attr('disabled', true);
         }
 
-        const ENDPOINT_BASE = 'http://infball.comp-soc.com:8080';
+        const ENDPOINT_BASE = '{{ site.data.settings.infball_endpoint }}';
         const ENDPOINT_CHARGE = ENDPOINT_BASE + '/charge';
 
         function showError(text, forceEnabled) {
             // Hide error
             if (text == null) {
                 error.addClass('d-none');
-                $("#payment-submit").attr("disabled", false);
+                if (!forceEnabled) {
+                    $("#payment-submit").attr("disabled", false);
+                }
                 return;
             }
 
@@ -47,6 +52,8 @@
         }
 
         function onTokenReceived(result) {
+            loadingModal.modal("show");
+
             const FullName = $("#fullname").val();
             const UUN = $("#uun").val();
             const Email = $("#email").val();
@@ -63,19 +70,25 @@
                 SpecialReqs,
             }
 
+            showError(null, true);
+
             $.ajax({
                 url: ENDPOINT_CHARGE,
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: 'application/json',
                 dataType: 'json',
-                error: function(resp, textStatus) {
-                    console.log("error", resp, textStatus);
+                error: function(resp, textStatus, errorThrown) {
+                    console.log("error", resp, textStatus, errorThrown);
                     enableInputs();
 
                     if (resp.responseJSON) {
                         showError(resp.responseJSON.message, true);
+                    } else {
+                        showError(errorThrown, true);
                     }
+
+                    loadingModal.modal("hide");
 
                     if (result.complete) {
                         result.complete("fail");
@@ -83,13 +96,16 @@
                 },
                 success: function(data) {
                     console.log("success", data);
+
+                    $("#infball-ticket-button").attr("href", "{{ site.baseurl }}/infball-ticket?id=" + data.data);
                     modal.modal("show");
+                    loadingModal.modal("hide");
 
                     if (result.complete) {
                         result.complete("success");
                     }
                 },
-                timeout: 30000
+                timeout: 60000
             });
         }
 
@@ -160,6 +176,7 @@
 
             // Show a loading screen...
             console.log("Submitting...")
+            loadingModal.modal("show");
 
             // Disable all inputs.
             disableInputs();

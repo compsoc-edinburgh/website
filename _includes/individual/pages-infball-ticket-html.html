@@ -1,0 +1,126 @@
+<script>
+    const ENDPOINT_BASE = '{{ site.data.settings.infball_endpoint }}';
+    const ENDPOINT_TICKET = ENDPOINT_BASE + '/ticket';
+
+    function showError(text) {
+        const error = $("#infball-ticket #ticket-page-error");
+
+        // Hide error
+        if (text == null) {
+            error.addClass('d-none');
+            return;
+        }
+
+        error.removeClass('d-none');
+        error.text(text);
+    }
+
+    function showLoading(state) {
+        const ele = $("#infball-ticket #infball-loading")
+        if (state) {
+            ele.removeClass("d-none");
+        } else {
+            ele.addClass("d-none");
+        }
+    }
+
+    function showSave(state) {
+        const ele = $("#infball-ticket #infball-save")
+        if (state) {
+            ele.removeClass("d-none");
+        } else {
+            ele.addClass("d-none");
+        }
+    }
+
+    function disableInputs() {
+        $("#infball-ticket input, #infball-ticket button, #infball-ticket textarea").attr('disabled', true);
+    }
+
+    function enableInputs() {
+        $("#infball-ticket input, #infball-ticket button, #infball-ticket textarea").attr('disabled', false);
+        $("#infball-ticket .alwaysDisabled").attr("disabled", true);
+    }
+
+    function onSubmit(e) {
+        const authCode = window.prompt("Please enter the authentication code from your email to make changes.");
+
+        const currentOwner = $("#current-owner-email").val();
+        const ownerEmail = $("#owner-email").val();
+
+        if (currentOwner !== ownerEmail) {
+            const confirm = window.confirm(`You want to change the owner of your ticket to ${ownerEmail}. This will change your authentication code and send a new one to the new owner. Are you sure?`);
+            if (!confirm) {
+                return;
+            }
+        }
+    }
+
+    const starters = ["soup", "salmon", "pork"];
+    const mains = ["beef", "salmon", "chicken", "mushrooms"];
+    const desserts = ["brownie", "toffee"];
+
+    function updateFields(data) {
+        const valid = desserts.includes(data.meal_dessert) && mains.includes(data.meal_main) && starters.includes(data.meal_starter);
+        if (!valid) {
+            console.log(data);
+            showError("Invalid meal combination sent from the server.");
+            return;
+        }
+
+        $(`[name="starterRadio"][value="${data.meal_starter}"]`).attr('checked', true)
+        $(`[name="mainRadio"][value="${data.meal_main}"]`).attr('checked', true)
+        $(`[name="dessertRadio"][value="${data.meal_dessert}"]`).attr('checked', true)
+
+        $("#purchaser-email").val(data.purchaser_email);
+        $("#purchaser-name").val(data.purchaser_name);
+        $("#email").val(data.owner_email);
+        $("#current-owner-email").val(data.owner_email);
+        $("#fullname").val(data.owner_name);
+        $("#uun").val(data.uun);
+        $("#underage").attr('checked', data.underage === "true");
+        $("#specialReqs").val(data.special_requests);
+    }
+    
+    $(() => {
+        disableInputs();
+
+        let params = (new URL(location)).searchParams;
+        const orderID = params.get('id');
+        if (orderID == null) {
+            showError("A ticket ID was not provided. Email infball@comp-soc.com for assistance.");
+
+            showLoading(false);
+            showSave(false);
+            return;
+        }
+
+        $.ajax({
+            url: ENDPOINT_TICKET,
+            type: 'GET',
+            data: {
+                id: orderID,
+            },
+            error: function(resp, textStatus, errorThrown) {
+                console.log("error", resp, textStatus);
+
+                if (resp.responseJSON) {
+                    showError(resp.responseJSON.message);
+                } else {
+                    showError(errorThrown, true);
+                }
+
+                showLoading(false);
+                showSave(true);
+            },
+            success: function(data) {
+                updateFields(data.data);
+                showLoading(false);
+                showSave(true);
+                enableInputs();
+            },
+        });
+
+        $("#infball-ticket-form").on("submit", onSubmit);
+    });
+</script>
