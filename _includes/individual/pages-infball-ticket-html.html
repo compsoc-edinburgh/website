@@ -51,6 +51,9 @@
         e.preventDefault();
 
         const AuthToken = window.prompt("Please enter the authentication token from your email to make changes.");
+        if (!AuthToken) {
+            return;
+        }
 
         const currentOwner = $("#current-owner-email").val();
         const ownerEmail = $("#email").val();
