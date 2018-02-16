@@ -40,14 +40,14 @@
 
     <div class="form-group mb-1">
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="underage">
-            <label for="underage" class="form-check-label">I am under 18.</label>
+            <input type="checkbox" class="form-check-input" id="over18">
+            <label for="over18" class="form-check-label">I declare that I am atleast 18 years of age. <small class="text-muted">ID will be checked at the door.</small></label>
         </div>
     </div>
     <div class="form-group row">
         <div class="col">
             <small id="emailHelp" class="form-text text-muted mt-0 col-form-label">
-                We need to know if you are under 18.
+                Unfortunately under 18s may not attend this event.
             </small>
         </div>
     </div>
@@ -172,7 +172,7 @@
 
     <!-- Special -->
     <div class="form-group">
-        <label for="specialReqs">Other notes</label>
+        <label for="specialReqs">Other notes {% unless infball_payment %}<small class="text-muted">if you would like to change this please email us ASAP</small>{% endunless %}</label>
         <textarea id="specialReqs" rows=3 class="form-control" maxlength="500"
             placeholder="Please tell us if you have any allergies or any other special requirements."
         ></textarea>

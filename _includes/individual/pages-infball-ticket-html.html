@@ -34,26 +34,82 @@
     }
 
     function disableInputs() {
-        $("#infball-ticket input, #infball-ticket button, #infball-ticket textarea").attr('disabled', true);
+        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18").attr('disabled', true);
     }
 
     function enableInputs() {
-        $("#infball-ticket input, #infball-ticket button, #infball-ticket textarea").attr('disabled', false);
+        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18").attr('disabled', false);
         $("#infball-ticket .alwaysDisabled").attr("disabled", true);
     }
 
+    function getOrderID() {
+        let params = (new URL(location)).searchParams;
+        return params.get('id');
+    }
+
     function onSubmit(e) {
-        const authCode = window.prompt("Please enter the authentication code from your email to make changes.");
+        e.preventDefault();
+
+        const AuthToken = window.prompt("Please enter the authentication token from your email to make changes.");
 
         const currentOwner = $("#current-owner-email").val();
-        const ownerEmail = $("#owner-email").val();
+        const ownerEmail = $("#email").val();
 
         if (currentOwner !== ownerEmail) {
-            const confirm = window.confirm(`You want to change the owner of your ticket to ${ownerEmail}. This will change your authentication code and send a new one to the new owner. Are you sure?`);
+            const confirm = window.confirm(`Are you sure you want to change the owner of your ticket to "${ownerEmail}". This will change your authentication code and send a new one to the new owner.`);
             if (!confirm) {
                 return;
             }
         }
+
+        const Email = $("#email").val();
+        const FullName = $("#fullname").val();
+        const UUN = $("#uun").val();
+        const OrderID = getOrderID();
+        const Over18 = $("#over18").is(":checked");
+
+        const data = {
+            OrderID, AuthToken,
+            Email, FullName, UUN,
+            Over18,
+        }
+
+        showError(null);
+        showSave(false);
+        showLoading(true);
+        disableInputs();
+
+        $.ajax({
+            url: ENDPOINT_TICKET,
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            dataType: 'json',
+            error: function(resp, textStatus, errorThrown) {
+                console.log("ENDPOINT_TICKET error", resp, textStatus, errorThrown);
+
+                showSave(true);
+                showLoading(false);
+                enableInputs();
+
+                if (resp.responseJSON) {
+                    showError(resp.responseJSON.message);
+                } else {
+                    showError("Unknown error / network error.");
+                }
+            },
+            success: function(data) {
+                console.log("success", data);
+
+                showSave(true);
+                showLoading(false);
+                enableInputs();
+
+                window.alert("Details have been updated.");
+                location.reload();
+            },
+            timeout: 60000
+        });
     }
 
     const starters = ["soup", "salmon", "pork"];
@@ -78,15 +134,18 @@
         $("#current-owner-email").val(data.owner_email);
         $("#fullname").val(data.owner_name);
         $("#uun").val(data.uun);
-        $("#underage").attr('checked', data.underage === "true");
+        $("#over18").attr('checked', data.over18 === "true");
         $("#specialReqs").val(data.special_requests);
     }
     
     $(() => {
+        // Disable our inputs
         disableInputs();
 
-        let params = (new URL(location)).searchParams;
-        const orderID = params.get('id');
+       // Disable everything
+        $("#infball-ticket input, #infball-ticket button, #infball-ticket textarea").attr('disabled', true);
+
+        const orderID = getOrderID();
         if (orderID == null) {
             showError("A ticket ID was not provided. Email infball@comp-soc.com for assistance.");
 
@@ -107,7 +166,7 @@
                 if (resp.responseJSON) {
                     showError(resp.responseJSON.message);
                 } else {
-                    showError(errorThrown, true);
+                    showError("Unknown error / network error.", true);
                 }
 
                 showLoading(false);

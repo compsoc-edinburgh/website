@@ -1,4 +1,8 @@
 <script>
+
+    function isOver18() {
+        return $("#over18").is(":checked");
+    }
     
     $(() => {
 
@@ -52,25 +56,31 @@
         }
 
         function onTokenReceived(result) {
-            loadingModal.modal("show");
-
             const FullName = $("#fullname").val();
             const UUN = $("#uun").val();
             const Email = $("#email").val();
-            const Underage = $("#underage").is(":checked");
+            const Over18 = isOver18();
             const Starter = $("input[name='starterRadio']:checked").val();
             const Main = $("input[name='mainRadio']:checked").val();
             const Dessert = $("input[name='dessertRadio']:checked").val();
             const SpecialReqs = $("#specialReqs").val();
 
+            if (!Over18) {
+                enableInputs();
+                showError("You must be atleast 18 years of age to attend.", true);
+                return;
+            }
+
+            let timeout = setTimeout(() => loadingModal.modal("show"), 500);
+
             const data = {
                 Token: result.token.id,
-                FullName, UUN, Email, Underage,
+                FullName, UUN, Email, Over18,
                 Starter, Main, Dessert,
                 SpecialReqs,
             }
 
-            showError(null, true);
+            showError(null, true)
 
             $.ajax({
                 url: ENDPOINT_CHARGE,
@@ -79,16 +89,21 @@
                 contentType: 'application/json',
                 dataType: 'json',
                 error: function(resp, textStatus, errorThrown) {
-                    console.log("error", resp, textStatus, errorThrown);
+                    console.log("ENDPOINT_CHARGE error", resp, textStatus, errorThrown);
                     enableInputs();
+
+                    if (timeout != null) {
+                        clearTimeout(timeout);
+                        timeout = null;
+                    }
+                    loadingModal.modal("hide");
 
                     if (resp.responseJSON) {
                         showError(resp.responseJSON.message, true);
                     } else {
-                        showError(errorThrown, true);
+                        showError("Unknown error / network error. Your card has not been charged.", true);
                     }
 
-                    loadingModal.modal("hide");
 
                     if (result.complete) {
                         result.complete("fail");
@@ -99,6 +114,12 @@
 
                     $("#infball-ticket-button").attr("href", "{{ site.baseurl }}/infball-ticket?id=" + data.data);
                     modal.modal("show");
+
+                    if (timeout != null) {
+                        clearTimeout(timeout);
+                        timeout = null;
+                    }
+
                     loadingModal.modal("hide");
 
                     if (result.complete) {
@@ -175,17 +196,13 @@
             e.preventDefault();
 
             // Show a loading screen...
-            console.log("Submitting...")
-            loadingModal.modal("show");
+            console.log("Requestng token...")
 
             // Disable all inputs.
             disableInputs();
 
             // Gather additional customer data we have collected in our form.
             var name = form.find('#cardholder-name').val();
-            // var uun = form.find('#uun').text();
-            // var email = form.find('#email').text();
-            // var underage = form.find('#underage').is(":checked");
             var additionalData = {
                 name
             };
@@ -195,7 +212,7 @@
             // in the additional customer data we collected in our form.
             stripe.createToken(card, additionalData).then(result => {
                 // Stop loading!
-                console.log("No longer loading...");
+                console.log("Token received!");
 
                 if (result.token) {
                     // If we received a token, show the token ID.
