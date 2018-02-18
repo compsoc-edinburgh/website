@@ -55,6 +55,12 @@
             }
         }
 
+        function completeResult(result, status) {
+            if (result.complete) {
+                result.complete(status);
+            }
+        }
+
         function onTokenReceived(result) {
             const FullName = $("#fullname").val();
             const UUN = $("#uun").val();
@@ -104,10 +110,7 @@
                         showError("Unknown error / network error. Your card has not been charged.", true);
                     }
 
-
-                    if (result.complete) {
-                        result.complete("fail");
-                    }
+                    completeResult(result, "fail");
                 },
                 success: function(data) {
                     console.log("success", data);
@@ -122,9 +125,7 @@
 
                     loadingModal.modal("hide");
 
-                    if (result.complete) {
-                        result.complete("success");
-                    }
+                    completeResult(result, "success")
                 },
                 timeout: 60000
             });
