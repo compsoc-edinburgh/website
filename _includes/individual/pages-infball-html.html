@@ -71,8 +71,6 @@
             const Dessert = $("input[name='dessertRadio']:checked").val();
             const SpecialReqs = $("#specialReqs").val();
 
-            let timeout = setTimeout(() => loadingModal.modal("show"), 500);
-
             const data = {
                 Token: result.token.id,
                 FullName, UUN, Email, Over18,
@@ -81,6 +79,7 @@
             }
 
             showError(null, true)
+            loadingModal.show();
 
             $.ajax({
                 url: ENDPOINT_CHARGE,
@@ -96,7 +95,7 @@
                         clearTimeout(timeout);
                         timeout = null;
                     }
-                    loadingModal.modal("hide");
+                    loadingModal.hide();
 
                     if (resp.responseJSON) {
                         showError(resp.responseJSON.message, true);
@@ -116,7 +115,7 @@
                         timeout = null;
                     }
 
-                    loadingModal.modal("hide");
+                    loadingModal.hide();
 
                     modal.modal("show");
 

@@ -181,6 +181,15 @@
     </div>
 
     {% if infball_payment %}
+    <div id="processingModal" class="d-flex flex-column justify-content-center align-items-center" style="display: none;">
+        <h1 class="text-center pt-4">
+            <i id="infball-loading" class="fa fa-circle-o-notch fa-spin float-right"></i>
+        </h1>
+        <p class="pt-4">
+            Hold on, we're processing your order...
+        </p>
+    </div>
+
     <div class="form-group payment-wrapper">
         <div class="alert alert-danger d-none" id="card-input-error" role="alert"></div>
 
