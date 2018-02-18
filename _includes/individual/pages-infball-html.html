@@ -71,12 +71,6 @@
             const Dessert = $("input[name='dessertRadio']:checked").val();
             const SpecialReqs = $("#specialReqs").val();
 
-            if (!Over18) {
-                enableInputs();
-                showError("You must be atleast 18 years of age to attend.", true);
-                return;
-            }
-
             let timeout = setTimeout(() => loadingModal.modal("show"), 500);
 
             const data = {
