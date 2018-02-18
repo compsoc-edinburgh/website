@@ -93,7 +93,7 @@
                     enableInputs();
 
                     loadingModal.addClass("d-none");
-                    loadingModal.addClass("d-flex");
+                    loadingModal.removeClass("d-flex");
 
                     if (resp.responseJSON) {
                         showError(resp.responseJSON.message, true);
@@ -109,7 +109,7 @@
                     $("#infball-ticket-button").attr("href", "{{ site.baseurl }}/infball-ticket?id=" + data.data);
 
                     loadingModal.addClass("d-none");
-                    loadingModal.addClass("d-flex");
+                    loadingModal.removeClass("d-flex");
 
                     modal.modal("show");
 
