@@ -110,7 +110,6 @@
                     console.log("success", data);
 
                     $("#infball-ticket-button").attr("href", "{{ site.baseurl }}/infball-ticket?id=" + data.data);
-                    modal.modal("show");
 
                     if (timeout != null) {
                         clearTimeout(timeout);
@@ -118,6 +117,8 @@
                     }
 
                     loadingModal.modal("hide");
+
+                    modal.modal("show");
 
                     completeResult(result, "success")
                 },
