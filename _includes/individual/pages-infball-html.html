@@ -92,10 +92,6 @@
                     console.log("ENDPOINT_CHARGE error", resp, textStatus, errorThrown);
                     enableInputs();
 
-                    if (timeout != null) {
-                        clearTimeout(timeout);
-                        timeout = null;
-                    }
                     loadingModal.addClass("d-none");
                     loadingModal.addClass("d-flex");
 
@@ -111,11 +107,6 @@
                     console.log("success", data);
 
                     $("#infball-ticket-button").attr("href", "{{ site.baseurl }}/infball-ticket?id=" + data.data);
-
-                    if (timeout != null) {
-                        clearTimeout(timeout);
-                        timeout = null;
-                    }
 
                     loadingModal.addClass("d-none");
                     loadingModal.addClass("d-flex");
