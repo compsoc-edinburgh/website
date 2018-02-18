@@ -79,7 +79,8 @@
             }
 
             showError(null, true)
-            loadingModal.show();
+            loadingModal.removeClass("d-none");
+            loadingModal.addClass("d-flex");
 
             $.ajax({
                 url: ENDPOINT_CHARGE,
@@ -95,7 +96,8 @@
                         clearTimeout(timeout);
                         timeout = null;
                     }
-                    loadingModal.hide();
+                    loadingModal.addClass("d-none");
+                    loadingModal.addClass("d-flex");
 
                     if (resp.responseJSON) {
                         showError(resp.responseJSON.message, true);
@@ -115,7 +117,8 @@
                         timeout = null;
                     }
 
-                    loadingModal.hide();
+                    loadingModal.addClass("d-none");
+                    loadingModal.addClass("d-flex");
 
                     modal.modal("show");
 
