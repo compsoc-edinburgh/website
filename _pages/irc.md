@@ -8,13 +8,14 @@ so feel free to join one rather than the other, or both!
 
 We have multiple channels on ImaginaryNet (our IRC server), but our primary channel is `#compsoc`.
 
-Other "channels" we recommend you to join include:
+The full list of "channels" we may want to join include:
 
+- `#compsoc`
 - `#inf1`, `#inf2`, `#inf3`, or `#inf4` (depending on your academic year)
+- `#cs-sigint`, `#networking` and `#sigweb`, for our Special Interest Groups.
+- `#minecraft` - we have a Minecraft server!
 - `#tardis` is a student research project: lets do cool server stuff!
-- `#sigint` and `#sigweb`, two of our main SIGs
-
-A list of other channels can be found in the topic of the `#compsoc` channel!
+- Extra: `#cricket`, `#cooking`
 
 ## Joining IRC <a href="https://www.irccloud.com/invite?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1" target="_blank"><img src="https://www.irccloud.com/invite-svg?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1"  height="18"></a>
 
