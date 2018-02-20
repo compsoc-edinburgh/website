@@ -71,9 +71,9 @@ title: "The Team"
 							{% endif %}
 						</div>
 
-						<div class="d-flex flex-column align-items-baseline">
+						<div class="d-flex flex-wrap justify-content-around align-items-baseline">
 							{% for member in team.members %}
-								<span class='d-flex justify-content-center justify-content-md-start mt-3'>
+								<span class='d-flex justify-content-center justify-content-md-start m-4'>
 									{% if member.img %}
 										<img src="/static/img/team/{{ member.img }}" width=100 height=100 class="team-avatar" alt="{{ member.name }}">
 									{% else %}
