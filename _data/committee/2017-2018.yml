@@ -94,9 +94,6 @@ teams:
 
   - name: Law and Technology Group (LATG)
     members:
-      - name: Katharine Brown
-        role: President
-
       - name: Cathal Lynam
         role: Treasurer
 
