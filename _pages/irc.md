@@ -12,7 +12,13 @@ The full list of "channels" we may want to join include:
 
 - `#compsoc`
 - `#inf1`, `#inf2`, `#inf3`, or `#inf4` (depending on your academic year)
-- `#cs-sigint`, `#networking` and `#sigweb`, for our Special Interest Groups.
+- For our Special Interest Groups:
+  - `#cs-sigint`
+  - `#networking`
+  - `#hacksig`
+  - `#sigweb`
+  - `#lawtech`
+  - `#sigcoin`
 - `#minecraft` - we have a Minecraft server!
 - `#tardis` is a student research project: lets do cool server stuff!
 - Extra: `#cricket`, `#cooking`
