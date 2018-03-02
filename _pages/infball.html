@@ -7,6 +7,13 @@ has_include: true
 {% capture infball_payment %}true{% endcapture %}
 
 {% include infball/head.html infball_payment=infball_payment %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="alert alert-warning mt-4 text-center" style="display:none;" id="tickets-left">
+            <h1 id="tickets-counter"></h1>
+        </div>
+    </div>
+</div>
 
 <div class="row justify-content-center mt-4">
     <div class="col-lg-8">
