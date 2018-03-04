@@ -107,11 +107,13 @@
             const Main = $("input[name='mainRadio']:checked").val();
             const Dessert = $("input[name='dessertRadio']:checked").val();
             const SpecialReqs = $("#specialReqs").val();
+            const StaffCode = $("#staffCode").val();
 
             const data = {
                 Token: result.token.id,
                 FullName, UUN, Email, Over18,
                 Starter, Main, Dessert,
+                StaffCode,
                 SpecialReqs,
             }
 
