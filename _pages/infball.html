@@ -9,13 +9,14 @@ has_include: true
 {% include infball/head.html infball_payment=infball_payment %}
 <div class="row justify-content-center">
     <div class="col-lg-8">
-        <div class="alert alert-warning mt-4 text-center" style="display:none;" id="tickets-left">
-            <h1 id="tickets-counter"></h1>
+        <!-- <div class="alert alert-warning mt-4 text-center" style="display:none;" id="tickets-left"> -->
+        <div class="alert alert-danger mt-4 text-center" id="tickets-left">
+        <h1 id="tickets-counter">Sold out!</h1>
         </div>
-        <div class="alert alert-info mt-4">
+        <!-- <div class="alert alert-info mt-4">
             Tickets for students have sold out, but there are still tickets available for staff!
             Please enter the code provided to you in your email.
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -74,7 +75,7 @@ has_include: true
     </div>
 </div>
 
-<div class="row justify-content-center mt-4">
+<div class="row justify-content-center mt-4 d-none"> <!-- !!!!! FORM DISABLED -->
     <div class="col-lg-8">
         <form class='card' id="payment-form">
             <div class="card-header">

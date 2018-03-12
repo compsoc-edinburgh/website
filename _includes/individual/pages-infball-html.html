@@ -39,41 +39,41 @@
         const ENDPOINT_CHARGE = ENDPOINT_BASE + '/charge';
         const ENDPOINT_STATS = ENDPOINT_BASE + '/stats';
 
-        let checkTimeout;
-        function checkState() {
-            $.ajax({
-                url: ENDPOINT_STATS,
-                type: 'GET',
-                contentType: 'application/json',
-                dataType: 'json',
-                error: function(resp, textStatus, errorThrown) {
-                    $("#tickets-left").fadeOut();
-                },
-                success: function(data) {
-                    console.log("result", data);
+        // let checkTimeout;
+        // function checkState() {
+        //     $.ajax({
+        //         url: ENDPOINT_STATS,
+        //         type: 'GET',
+        //         contentType: 'application/json',
+        //         dataType: 'json',
+        //         error: function(resp, textStatus, errorThrown) {
+        //             $("#tickets-left").fadeOut();
+        //         },
+        //         success: function(data) {
+        //             console.log("result", data);
 
-                    let text = data.Quantity + " tickets left!";
-                    if (data.Quantity === 1) {
-                        text = data.Quantity + " ticket left!";
-                    } else if (data.Quantity === 0) {
-                        text = "ALL SOLD OUT!";
-                        $("#payment-form").remove();
-                        clearInterval(checkTimeout);
-                    }
-                    $("#tickets-counter").text(text);
+        //             let text = data.Quantity + " tickets left!";
+        //             if (data.Quantity === 1) {
+        //                 text = data.Quantity + " ticket left!";
+        //             } else if (data.Quantity === 0) {
+        //                 text = "ALL SOLD OUT!";
+        //                 $("#payment-form").remove();
+        //                 clearInterval(checkTimeout);
+        //             }
+        //             $("#tickets-counter").text(text);
 
-                    if (data.Quantity <= 5) {
-                        $("#tickets-left").removeClass("alert-warning");
-                        $("#tickets-left").addClass("alert-danger");
-                    }
-                    $("#tickets-left").fadeIn();
-                },
-                timeout: 60000
-            });
-        }
+        //             if (data.Quantity <= 5) {
+        //                 $("#tickets-left").removeClass("alert-warning");
+        //                 $("#tickets-left").addClass("alert-danger");
+        //             }
+        //             $("#tickets-left").fadeIn();
+        //         },
+        //         timeout: 60000
+        //     });
+        // }
 
-        checkState();
-        checkTimeout = setInterval(checkState, 5000);
+        // checkState();
+        // checkTimeout = setInterval(checkState, 5000);
 
         function showError(text, forceEnabled) {
             // Hide error
