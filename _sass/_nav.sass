@@ -1,5 +1,34 @@
+// Smallest screens
 .navbar-brand > img
     height: 30px
+
+.navbar-nav
+    display: block
+
+.nav-item
+    display: inline-block
+    float: left
+    // Two items per line
+    width: 50%
+    padding: 0 1rem
+
+.navbar-wrapper
+    // Preserve old layout
+    display: flex
+
+.nav-link
+    // All texts in one line
+    white-space: nowrap
+
+// Small-ish screens
+@media (min-width: 330px)
+    .nav-item
+        width: 33.3%
+        width: calc(100% / 3)
+
+@media (min-width: 420px)
+    .nav-item
+        width: 25%
 
 // On smaller screens (but not smallest)
 @media (min-width: 576px)
@@ -10,11 +39,33 @@
         display: block
         margin: auto
 
+    .nav-item
+        width: 20%
+
+    .navbar-brand-wrapper
+        text-align: center
+
+    .navbar-wrapper
+        display: block
+        line-height: normal
+        width: 100%
+        margin-left: auto
+        margin-right: auto
+
 // On wide screens
 @media (min-width: 992px)
     .navbar-brand > img
         margin-left: -32px
         height: auto
+
+    // Make sure website layout not effected in higher resolutions
+    .navbar-nav
+        display: flex
+
+    .nav-item
+        display: list-item
+        width: auto
+        padding: inherit
 
     .navbar .nav-link
         position: relative
@@ -36,3 +87,8 @@
             -webkit-transform: scaleX(1)
             -ms-transform: scaleX(1)
             transform: scaleX(1)
+
+// A little extra margin to space out the logo and the nav links
+@media (min-width: 1200px)
+    .navbar-nav
+        margin-left: 1rem
