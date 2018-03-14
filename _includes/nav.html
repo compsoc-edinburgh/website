@@ -4,7 +4,11 @@
             {% assign navbar-class = "navbar-toggler-with-logo" %}
         {% endif %}
 
-        <div class="navbar-wrapper">
+        {% if page.url == "/" %}
+            {% assign navbar-wrapper-class = "navbar-wrapper-home" %}
+        {% endif %}
+
+        <div class="navbar-wrapper {{ navbar-wrapper-class }}">
             <button class="navbar-toggler {{ navbar-class }}" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
