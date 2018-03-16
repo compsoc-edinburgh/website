@@ -44,6 +44,56 @@ teams:
         role: Old Person Rep
         img: kit-and-craig-1.jpg
 
+  - name: Hackathons (HackSIG)
+    members:
+      - name: Qais Patankar
+        role: Co-director
+
+      - name: Elena Lape
+        role: Co-director
+
+      - name: Bianca Burtoiu
+        role: Senior Organiser
+
+      - name: Alan Paul
+        role: Organiser
+      
+      - name: Valentine Dragan
+        role: Organiser
+
+      - name: Andreea Cucu
+        role: Volunteer
+
+      - name: Anubhav Chakravarty
+        role: Volunteer
+
+      - name: Arthur Wilcke
+        role: Volunteer
+
+      - name: Athiya Deviyani
+        role: Volunteer
+
+      - name: Celina Dong Ye
+        role: Volunteer
+
+      - name: Ginte Petrulionyte
+        role: Volunteer
+
+      - name: Rares Tudorache
+        role: Volunteer
+
+      - name: Ricky Yuan
+        role: Volunteer
+
+      - name: Rob Phipps
+        role: Volunteer
+
+      - name: Sam Sucik
+        role: Volunteer
+
+      - name: Sami Alabed
+        role: Volunteer
+
   - name: Cyber Security Group (SIGINT)
     members:
       - name: "Harvey"
