@@ -4,9 +4,6 @@
 - text: Events
   url: "/events"
 
-- text: The Ball
-  url: "/infball"
-
 - text: News
   url: "/blog/"
 
