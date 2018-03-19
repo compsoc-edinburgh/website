@@ -103,16 +103,14 @@
             const UUN = $("#uun").val();
             const Email = $("#email").val();
             const Over18 = isOver18();
-            const Starter = $("input[name='starterRadio']:checked").val();
-            const Main = $("input[name='mainRadio']:checked").val();
-            const Dessert = $("input[name='dessertRadio']:checked").val();
+            const Meal = $("input[name='mealRadio']:checked").val();
             const SpecialReqs = $("#specialReqs").val();
             const StaffCode = $("#staffCode").val();
 
             const data = {
                 Token: result.token.id,
                 FullName, UUN, Email, Over18,
-                Starter, Main, Dessert,
+                Meal,
                 StaffCode,
                 SpecialReqs,
             }
