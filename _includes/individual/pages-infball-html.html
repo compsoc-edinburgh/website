@@ -12,7 +12,7 @@
         var example = form;
         var error = form.find('#card-input-error');
 
-        var stripe = Stripe('pk_live_yVNVW7q6Udv5y91W0XZrpr7E');
+        var stripe = Stripe('{{ site.data.settings.infball_stripe_pk }}');
         var elements = stripe.elements({
             fonts: [
                 {
