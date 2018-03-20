@@ -70,7 +70,7 @@
         const UUN = $("#uun").val();
         const OrderID = getOrderID();
         const Over18 = $("#over18").is(":checked");
-        const Meal = $("input[name='mealRadio']:checked").val();
+        const Meal = "1";
         const SpecialReqs = $("#specialReqs").val();
 
         const data = {
@@ -128,7 +128,7 @@
             return;
         }
 
-        $(`[name="mealRadio"][value="${data.meal}"]`).attr('checked', true);
+        // $(`[name="mealRadio"][value="${data.meal}"]`).attr('checked', true);
 
         $("#purchaser-email").val(data.purchaser_email);
         $("#purchaser-name").val(data.purchaser_name);
