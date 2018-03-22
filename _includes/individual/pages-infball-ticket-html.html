@@ -69,11 +69,16 @@
         const FullName = $("#fullname").val();
         const UUN = $("#uun").val();
         const OrderID = getOrderID();
-        const Over18 = $("#over18").is(":checked");
+        const Over18 = isOver18();
+        const Starter = $("input[name='starterRadio']:checked").val();
+        const Main = $("input[name='mainRadio']:checked").val();
+        const Dessert = $("input[name='dessertRadio']:checked").val();
+        const SpecialReqs = $("#specialReqs").val();
 
         const data = {
             OrderID, AuthToken,
             Email, FullName, UUN,
+            Starter, Main, Dessert, SpecialReqs,
             Over18,
         }
 
