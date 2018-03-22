@@ -34,11 +34,11 @@
     }
 
     function disableInputs() {
-        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18").attr('disabled', true);
+        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18, #infball-ticket input, #infball-ticket textarea").attr('disabled', true);
     }
 
     function enableInputs() {
-        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18").attr('disabled', false);
+        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18, #infball-ticket input, #infball-ticket textarea").attr('disabled', false);
         $("#infball-ticket .alwaysDisabled").attr("disabled", true);
     }
 
@@ -69,7 +69,7 @@
         const FullName = $("#fullname").val();
         const UUN = $("#uun").val();
         const OrderID = getOrderID();
-        const Over18 = isOver18();
+        const Over18 = $("#over18").is(":checked");
         const Starter = $("input[name='starterRadio']:checked").val();
         const Main = $("input[name='mainRadio']:checked").val();
         const Dessert = $("input[name='dessertRadio']:checked").val();
