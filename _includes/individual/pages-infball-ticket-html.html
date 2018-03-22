@@ -34,11 +34,11 @@
     }
 
     function disableInputs() {
-        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18, #infball-ticket input[name='mealRadio'], #infball-ticket textarea").attr('disabled', true);
+        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18").attr('disabled', true);
     }
 
     function enableInputs() {
-        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18, #infball-ticket input[name='mealRadio'], #infball-ticket textarea").attr('disabled', false);
+        $("#infball-ticket #fullname, #infball-ticket button, #infball-ticket #uun, #infball-ticket #email, #infball-ticket #over18").attr('disabled', false);
         $("#infball-ticket .alwaysDisabled").attr("disabled", true);
     }
 
@@ -70,13 +70,10 @@
         const UUN = $("#uun").val();
         const OrderID = getOrderID();
         const Over18 = $("#over18").is(":checked");
-        const Meal = $("input[name='mealRadio']:checked").val();
-        const SpecialReqs = $("#specialReqs").val();
 
         const data = {
             OrderID, AuthToken,
             Email, FullName, UUN,
-            Meal, SpecialReqs,
             Over18,
         }
 
@@ -118,17 +115,21 @@
         });
     }
 
-    const meals = ["1", "2", "3"];
+    const starters = ["soup", "salmon", "pork"];
+    const mains = ["beef", "salmon", "chicken", "mushrooms"];
+    const desserts = ["brownie", "toffee"];
 
     function updateFields(data) {
-        const valid = meals.includes(data.meal);
+        const valid = desserts.includes(data.meal_dessert) && mains.includes(data.meal_main) && starters.includes(data.meal_starter);
         if (!valid) {
             console.log(data);
             showError("Invalid meal combination sent from the server.");
             return;
         }
 
-        $(`[name="mealRadio"][value="${data.meal}"]`).attr('checked', true);
+        $(`[name="starterRadio"][value="${data.meal_starter}"]`).attr('checked', true)
+        $(`[name="mainRadio"][value="${data.meal_main}"]`).attr('checked', true)
+        $(`[name="dessertRadio"][value="${data.meal_dessert}"]`).attr('checked', true)
 
         $("#purchaser-email").val(data.purchaser_email);
         $("#purchaser-name").val(data.purchaser_name);
