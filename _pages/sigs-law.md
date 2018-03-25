@@ -1,10 +1,10 @@
 ---
 permalink: /sigs/law
 longtitle: "Law and Technology Group"
-title: "LATS"
+title: "LawTech"
 ---
 
-LATG is a Special Interest Group of CompSoc, covering the topic of Law and Technology.
+LawTech is a Special Interest Group of CompSoc, covering the topic of Law and Technology.
 [This group](http://comp-soc.com/team#law-and-technology-group-latg) was formed in December 2017.
 
 The first event will be about AI, Justice, Cyber Security and the law.
