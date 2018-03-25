@@ -12,7 +12,7 @@ quicksigs:
       description: Computer Networking
       slug: signet
 
-    - title: LATG
+    - title: LawTech
       description: Law and Technology
       slug: law
 
