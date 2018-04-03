@@ -20,7 +20,7 @@ The full list of "channels" we may want to join include:
   - `#lawtech`
   - `#sigcoin`
 - `#minecraft` - we have a Minecraft server!
-- `#tardis` is a student research project: lets do cool server stuff!
+- `#tardis` is a student research project: let's do cool server stuff!
 - Extra: `#cricket`, `#cooking`
 
 ## Joining IRC <a href="https://www.irccloud.com/invite?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1" target="_blank"><img src="https://www.irccloud.com/invite-svg?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1"  height="18"></a>
@@ -34,7 +34,7 @@ an IRC client installed on your device, just [click here](ircs://irc.imaginaryne
 The folks over at the [TARDIS project](https://tardis.ed.ac.uk/) also host a web client for you to use, called The Lounge (formerly _Shout_).
 [You can login or register on this server here](https://shout.tardis.ed.ac.uk).
 
-Be patient, with IRC you won't see any messages prior to the time you _connect_. Discord allows you to see the chat history prior to your _registration_.
+Be patient, with IRC you won't see any messages prior to the time you _connect_. Since Discord is bridged, you'll be able to see the chat history prior to your registration!
 
 ## Server details particulars
 
