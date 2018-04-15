@@ -25,6 +25,9 @@ has_include: true
               <!-- <a href="{{ sighref }}"> -->
                 <h1>{{ sig.title }}</h1>
                 <p>{{ sig.description }}</p>
+                {% if sig.image %}
+                  <img src="{{ site.baseurl }}/static/img/sigs/{{ sig.slug }}.png" class="sig-img" />
+                {% endif %}
               </a>
             </li>
           {% endfor %}
