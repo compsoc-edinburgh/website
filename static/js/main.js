@@ -24,9 +24,6 @@ jQuery(function($){
 			easing: 'easeOutExpo',
 			dragHandle: 1,
 			dynamicHandle: 1,
-			// Buttons
-			prev: $wrap.find('.prev'),
-			next: $wrap.find('.next')
 		});
 	}());
 });
