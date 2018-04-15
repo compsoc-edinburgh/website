@@ -10,20 +10,31 @@ has_include: true
     <hr class="my-4">
     <p class="lead">CompSoc is also home to the following <abbr title="Special Interest Groups">SIGs</abbr>:</p>
 
-    <div class="d-flex flex-wrap justify-content-center justify-content-sm-start mb-2">
-      {% for sig in site.data.sigs %}
-        {% if sig.url %}
-          {% assign sighref = sig.url %}
-        {% else %}
-          {% capture sighref %} {{ site.baseurl }}/sigs/{{ sig.slug }} {% endcapture %}
-        {% endif %}
-          <a href="{{ sighref }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
-            <div class="d-block">
+    <div class="wrap">
+      <div class="frame">
+        <ul class="slidee clearfix">
+        <!-- <div id="front-sigs" class="slidee d-flex flex-wrap justify-content-center justify-content-sm-start mb-2"> -->
+          {% for sig in site.data.sigs %}
+            {% if sig.url %}
+              {% assign sighref = sig.url %}
+            {% else %}
+              {% capture sighref %} {{ site.baseurl }}/sigs/{{ sig.slug }} {% endcapture %}
+            {% endif %}
+            <li>
+              <a href="{{ sighref }}" class="sigs-item list-group-item list-group-item-action align-items-center ">
+              <!-- <a href="{{ sighref }}"> -->
                 <h1>{{ sig.title }}</h1>
                 <p>{{ sig.description }}</p>
-            </div>
-        </a>
-      {% endfor %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="scrollbar">
+        	<div class="handle">
+            <div class="mousearea"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <hr class="my-4">
