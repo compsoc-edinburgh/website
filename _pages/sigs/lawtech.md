@@ -1,5 +1,4 @@
 ---
-permalink: /sigs/law
 longtitle: "Law and Technology Group"
 title: "LawTech"
 ---
@@ -14,9 +13,9 @@ Our event is a talk by two speakers:
 
 **Professor Burkhard Schafer**
 <br>Robotics and the Law Professor
-<br>Professor of Computational Legal Theory 
-<br>Director, SCRIPT Centre for IT and IP Law 
-<br>The University of Edinburgh 
+<br>Professor of Computational Legal Theory
+<br>Director, SCRIPT Centre for IT and IP Law
+<br>The University of Edinburgh
 <br>School of Law
 
 and

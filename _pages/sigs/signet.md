@@ -1,5 +1,4 @@
 ---
-permalink: /sigs/signet
 longtitle: "SIGnet (Special Interest Group)"
 title: "SIGnet"
 ---
