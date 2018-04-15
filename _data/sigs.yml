@@ -1,16 +1,23 @@
-sigs:
-  - title: SIGWeb
-    description: Website Development
-    slug: sigweb
+- title: SIGINT
+  description: Security
+  url: http://sigint.mx
 
-  - title: SIGnet
-    description: Computer Networking
-    slug: signet
+- title: HackSIG
+  description: Go to hackathons and throw hackathons!
+  url: http://hacktheburgh.com
 
-  - title: LawTech
-    description: Law and Technology
-    slug: law
+- title: SIGWeb
+  description: Website Development
+  slug: sigweb
 
-  - title: SIGCoin
-    description: Blockchain and Cryptocurrency
-    slug: sigcoin
+- title: SIGnet
+  description: Computer Networking
+  slug: signet
+
+- title: LawTech
+  description: Law and Technology
+  slug: lawtech
+
+- title: SIGCoin
+  description: Blockchain and Cryptocurrency
+  slug: sigcoin
