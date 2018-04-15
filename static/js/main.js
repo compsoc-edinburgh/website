@@ -4,7 +4,7 @@ jQuery(function($){
 	//   Centered Navigation
 	// -------------------------------------------------------------
 	(function () {
-		var $frame = $('#front-sigs');
+		var $frame = $('.frame');
 		var $wrap  = $frame.parent();
 
 		// Call Sly on frame
