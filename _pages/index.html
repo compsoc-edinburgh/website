@@ -17,7 +17,6 @@ has_include: true
         {% else %}
           {% capture sighref %} {{ site.baseurl }}/sigs/{{ sig.slug }} {% endcapture %}
         {% endif %}
-          <!-- <a href="{{ sig.url }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center"> -->
           <a href="{{ sighref }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
             <div class="d-block">
                 <h1>{{ sig.title }}</h1>
