@@ -10,20 +10,30 @@ jQuery(function($){
 		// Call Sly on frame
 		$frame.sly({
 			horizontal: 1,
+      // Item based navigation
 			itemNav: 'centered',
 			smart: 1,
 			activateOn: 'click',
+
+      // Scrolling
+      scrollBy: 1,
+
+      // Dragging
 			mouseDragging: 1,
 			touchDragging: 1,
 			releaseSwing: 1,
-			startAt: 1,
-			scrollBar: $wrap.find('.scrollbar'),
-			scrollBy: 1,
+      elasticBounds: 1,
+
+      // Scrollbar
+      scrollBar: $wrap.find('.scrollbar'),
+      dragHandle: 1,
+      dynamicHandle: 1,
+      clickBar: 1,
+
+      // Mixed options
 			speed: 300,
-			elasticBounds: 1,
 			easing: 'easeOutExpo',
-			dragHandle: 1,
-			dynamicHandle: 1,
+      startAt: 1,
 		});
 	}());
 });
