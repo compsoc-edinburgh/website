@@ -8,6 +8,24 @@ has_include: true
 
     <p class="lead">CompSoc is Scotland's <span style="text-decoration: underline dotted;" data-toggle="tooltip" title="[citation needed]" data-placement="bottom">best</span> and largest tech society. We do talks, workshops, and <em>plenty</em> of socials.</p>
     <hr class="my-4">
+    <p class="lead">CompSoc is also home to multiple SIGs:</p>
+
+    <div class="d-flex flex-wrap justify-content-center justify-content-sm-start mb-2">
+      {% for sig in site.data.sigs %}
+        {% if sig.url %}
+          <a href="{{ sig.url }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
+        {% else %}
+          <a href="{{ site.baseurl }}/sigs/{{ sig.slug }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
+        {% endif %}
+            <div class="d-block">
+                <h1>{{ sig.title }}</h1>
+                <p>{{ sig.description }}</p>
+            </div>
+        </a>
+      {% endfor %}
+    </div>
+
+    <hr class="my-4">
 
     <p class="lead">
         <a class="btn btn-primary btn-lg btn-success mb-2" href="{{ site.baseurl }}/events" role="button">View our events</a>
