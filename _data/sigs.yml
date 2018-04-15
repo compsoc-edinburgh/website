@@ -1,23 +1,29 @@
 - title: SIGINT
   description: Security
   url: http://sigint.mx
+  image: true
 
 - title: HackSIG
   description: Go to hackathons and throw hackathons!
   url: http://hacktheburgh.com
+  image:
 
 - title: SIGWeb
   description: Website Development
   slug: sigweb
+  image:
 
 - title: SIGnet
   description: Computer Networking
   slug: signet
+  image:
 
 - title: LawTech
   description: Law and Technology
   slug: lawtech
+  image:
 
 - title: SIGCoin
   description: Blockchain and Cryptocurrency
   slug: sigcoin
+  image:
