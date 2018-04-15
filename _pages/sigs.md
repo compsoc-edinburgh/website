@@ -2,23 +2,6 @@
 permalink: /special-interest-groups
 longtitle: "Special Interest Groups"
 title: "SIGs"
-
-quicksigs:
-    - title: SIGWeb
-      description: Website Development
-      slug: sigweb
-
-    - title: SIGnet
-      description: Computer Networking
-      slug: signet
-
-    - title: LawTech
-      description: Law and Technology
-      slug: law
-
-    - title: SIGCoin
-      description: Blockchain and Cryptocurrency
-      slug: sigcoin
 ---
 
 Are you and your friends interested in a particular field of Informatics? Start a SIG!

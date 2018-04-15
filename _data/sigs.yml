@@ -1,0 +1,16 @@
+sigs:
+  - title: SIGWeb
+    description: Website Development
+    slug: sigweb
+
+  - title: SIGnet
+    description: Computer Networking
+    slug: signet
+
+  - title: LawTech
+    description: Law and Technology
+    slug: law
+
+  - title: SIGCoin
+    description: Blockchain and Cryptocurrency
+    slug: sigcoin
