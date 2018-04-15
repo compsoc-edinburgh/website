@@ -13,10 +13,12 @@ has_include: true
     <div class="d-flex flex-wrap justify-content-center justify-content-sm-start mb-2">
       {% for sig in site.data.sigs %}
         {% if sig.url %}
-          <a href="{{ sig.url }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
+          {% assign sighref = sig.url %}
         {% else %}
-          <a href="{{ site.baseurl }}/sigs/{{ sig.slug }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
+          {% capture sighref %} {{ site.baseurl }}/sigs/{{ sig.slug }} {% endcapture %}
         {% endif %}
+          <!-- <a href="{{ sig.url }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center"> -->
+          <a href="{{ sighref }}" class="sigs-item d-flex list-group-item list-group-item-action align-items-center justify-content-center">
             <div class="d-block">
                 <h1>{{ sig.title }}</h1>
                 <p>{{ sig.description }}</p>
