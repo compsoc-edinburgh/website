@@ -1,11 +1,13 @@
 - title: SIGINT
   description: Cyber Security
   url: http://sigint.mx
+  slug: sigint
   image: true
 
 - title: HackSIG
   description: Go to hackathons and throw hackathons!
   url: http://hacktheburgh.com
+  slug: hacksig
   image:
 
 - title: SIGWeb
