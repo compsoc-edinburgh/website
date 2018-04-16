@@ -31,3 +31,4 @@ We have previously had special interest groups in these subject areas:
     <li>Electrical Engineering</li>
     <li>Robotics</li>
 </ul>
+`Note:` Given enough interest, defuncts SIGs have the possibility of being revived. If you feel like you would want to do so, use the same contact link above.
