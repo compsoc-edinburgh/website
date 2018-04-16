@@ -1,0 +1,50 @@
+<div class="owl-carousel">
+  <!-- <div id="front-sigs" class="slidee d-flex flex-wrap justify-content-center justify-content-sm-start mb-2"> -->
+  {% for sig in site.data.sigs %}
+    {% if sig.url %}
+      {% assign sighref = sig.url %}
+    {% else %}
+      {% capture sighref %} {{ site.baseurl }}/sigs/{{ sig.slug }} {% endcapture %}
+    {% endif %}
+    <div class="card sig-card">
+      <a href="{{ sighref }}" class="list-group-item-action">
+      <!-- <a href="{{ sighref }}"> -->
+        <h1>{{ sig.title }}</h1>
+        <p>{{ sig.description }}</p>
+        {% if sig.image %}
+          <img src="{{ site.baseurl }}/static/img/sigs/{{ sig.slug }}.png" class="sig-img"
+          style="background-color: {{ sig.colour }}; border-radius: {{ sig.radius }}"/>
+        {% endif %}
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/static/js/owl.carousel.min.js"></script>
+<script>
+  var owl = $('.owl-carousel');
+  owl.owlCarousel({
+    margin: 10,
+    loop: true,
+    autoWidth: true,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    smartSpeed: 1500,
+    fluidSpeed: 1,
+    dragEndSpeed: 200,
+    // responsive: {
+    //   0: {
+    //     items: 1
+    //   },
+    //   600: {
+    //     items: 3
+    //   },
+    //   1000: {
+    //     items: 6
+    //   }
+    // }
+  })
+</script>
