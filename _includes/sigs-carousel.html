@@ -26,28 +26,52 @@
 <script>
   var owl = $('.owl-carousel');
   owl.owlCarousel({
-    margin: 10,
-    items: 6,
-    center: true,
-    loop: true,
-    autoWidth: true,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true,
-    smartSpeed: 1500,
-    fluidSpeed: 1,
-    dragEndSpeed: 200,
-    // responsive: {
-    //   0: {
-    //     items: 1
-    //   },
-    //   600: {
-    //     items: 3
-    //   },
-    //   1000: {
-    //     items: 6
-    //   }
-    // }
-  })
+    // margin: 0,
+    // items: 4,
+    responsiveClass:true,
+    responsive: {
+      0: {
+        center: true,
+        autoplay: false,
+        items: 1.75,
+      },
+      576: {
+        center: true,
+        autoplay: false,
+        items: 2,
+      },
+      768: {
+        center: true,
+        autoplay: false,
+        items: 3,
+      },
+      992: {
+        center: true,
+        autoplay: false,
+        items: 4,
+      },
+      1200: {
+        autoWidth: true,
+        margin: 10,
+        rewind: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        navSpeed: 200,
+        smartSpeed: 1500,
+        // fluidSpeed: 400,
+        dragEndSpeed: 200,
+      },
+      dots: true,
+      responsiveRefreshRate: 100,
+    },
+  });
+  owl.on('mousewheel', '.owl-stage', function (e) {
+    if (e.deltaY>0) {
+        owl.trigger('next.owl');
+    } else {
+        owl.trigger('prev.owl');
+    }
+    e.preventDefault();
+  });
 </script>
