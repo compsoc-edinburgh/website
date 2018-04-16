@@ -1,5 +1,4 @@
 ---
-permalink: /sigs/sigweb
 longtitle: "SIG: Web (Special Interest Group)"
 title: "SIG: Web"
 ---

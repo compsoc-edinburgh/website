@@ -1,5 +1,4 @@
 ---
-permalink: /sigs/sigcoin
 longtitle: "SIGCoin (Special Interest Group)"
 title: "SIGCoin"
 ---
@@ -8,7 +7,7 @@ SIGCoin is a Special Interest Group of CompSoc, focusing on Blockchain & Cryptoc
 
 We aim to connect students, academics and professionals who are interested in the topics of blockchain technology, cryptocurrency trading, smart contracts and decentralized applications.
 
-Our group brings together members from various backgrounds, in order to explore the potential of blockchain applications from societal, technical and financial perspectives. 
+Our group brings together members from various backgrounds, in order to explore the potential of blockchain applications from societal, technical and financial perspectives.
 
 ### Our Goals
 - Raise awareness on the impact of blockchain applications and discuss innovations in the field.

@@ -1,0 +1,43 @@
+- title: SIGINT
+  description: Cyber Security
+  url: http://sigint.mx
+  slug: sigint
+  image: true
+  colour: '#333'
+  radius: 50%
+
+- title: HackSIG
+  description: Go to hackathons and throw hackathons!
+  url: http://hacktheburgh.com
+  slug: hacksig
+  image: true
+  colour: 'none'
+  radius: 0
+
+- title: SIGWeb
+  description: Website Development
+  slug: sigweb
+  image:
+  colour:
+  radius:
+
+- title: SIGnet
+  description: Computer Networking
+  slug: signet
+  image:
+  colour:
+  radius:
+
+- title: LawTech
+  description: Law and Technology
+  slug: lawtech
+  image:
+  colour:
+  radius:
+
+- title: SIGCoin
+  description: Blockchain and Cryptocurrency
+  slug: sigcoin
+  image:
+  colour:
+  radius:
