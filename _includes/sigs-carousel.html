@@ -1,4 +1,4 @@
-<div class="owl-carousel">
+<div class="owl-carousel owl-drag owl-theme">
   <!-- <div id="front-sigs" class="slidee d-flex flex-wrap justify-content-center justify-content-sm-start mb-2"> -->
   {% for sig in site.data.sigs %}
     {% if sig.url %}
@@ -6,7 +6,7 @@
     {% else %}
       {% capture sighref %} {{ site.baseurl }}/sigs/{{ sig.slug }} {% endcapture %}
     {% endif %}
-    <div class="card sig-card">
+    <div class="item card sig-card">
       <a href="{{ sighref }}" class="list-group-item-action">
       <!-- <a href="{{ sighref }}"> -->
         <h1>{{ sig.title }}</h1>
