@@ -1,5 +1,4 @@
 <div class="owl-carousel owl-drag owl-theme">
-  <!-- <div id="front-sigs" class="slidee d-flex flex-wrap justify-content-center justify-content-sm-start mb-2"> -->
   {% for sig in site.data.sigs %}
     {% if sig.url %}
       {% assign sighref = sig.url %}
@@ -8,7 +7,6 @@
     {% endif %}
     <div class="item card sig-card">
       <a href="{{ sighref }}" class="list-group-item-action">
-      <!-- <a href="{{ sighref }}"> -->
         <h1>{{ sig.title }}</h1>
         <p>{{ sig.description }}</p>
         {% if sig.image %}
@@ -26,8 +24,6 @@
 <script>
   var owl = $('.owl-carousel');
   owl.owlCarousel({
-    // margin: 0,
-    // items: 4,
     responsiveClass:true,
     responsive: {
       0: {
@@ -64,7 +60,6 @@
         autoplayHoverPause: true,
         navSpeed: 200,
         smartSpeed: 1500,
-        // fluidSpeed: 400,
         dragEndSpeed: 200,
       },
       dots: true,
@@ -72,7 +67,7 @@
     },
   });
   owl.on('mousewheel', '.owl-stage', function (e) {
-    if (e.deltaY>0) {
+    if (e.deltaY > 0) {
         owl.trigger('next.owl');
     } else {
         owl.trigger('prev.owl');
