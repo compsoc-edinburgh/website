@@ -1,0 +1,596 @@
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-label="Congrats!" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Order successful</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-md">
+                <p>
+                    Your £<span id="successModalValueField">[value]</span> order has been placed.
+                    You will find a receipt of your hoodie in your inbox.
+                </p>
+                <p>
+                    CompSoc <span class="heart">♥</span> You</span>!
+                </p>
+                <p class="text-muted">Transaction charge id:
+                    <span id="successModalChargeId">n/a</span>.
+                    <span id="successModalMessage"></span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Thanks!</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="Oh dear." aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Oops... That's not right.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-md">
+                <h3>Order unsuccessful</h3>
+                <p>
+                We've had an issue processing your order. Here's some more information:
+                </p>
+                <p>
+                <code id="failModalDebugInfo">There's nothing here...</code>              
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Sorry!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<script>
+    var hoodies = {
+        college: {
+            unisex: {
+                code: "JH001",
+                id: "3725",
+                colors: [["Airforce Blue","#919caa"],["Apple Green","#c1d1b9"],["Alien Green","#c2e3a6"],["Ash","#d5d4d9"],["Arctic White","#eae9ed"],["Baby Pink","#e0cfd4"],["Burnt Orange","#e4a893"],["Bottle Green","#8c9c91"],["Burgundy","#a67d88"],["Candyfloss Pink","#e0b0c2"],["Charcoal","#908e8e"],["Cornflower Blue","#adbcd0"],["Cranberry","#b7818c"],["Desert Sand","#d8cfc3"],["Sherbet Lemon","#f2da9b"],["Fire Red","#d08484"],["Gold","#e8c888"],["Hawaiian Blue","#9dc6d6"],["Heather Grey","#d1d0d7"],["Hot Chocolate","#8f8480"],["Hot Pink","#cf899d"],["Jade","#74a6a2"],["Jet Black","#5e5e5e"],["Kelly Green","#9bd8b8"],["Lavender","#d5c7d9"],["Lime Green","#adcd99"],["Lipstick Pink","#e095a0"],["Magenta Magic","#ac8fb2"],["Moondust Grey","#c3c2c6"],["Moss Green","#aec1bc"],["Orange Crush","#e2a371"],["Olive Green","#aca79e"],["Oxford Navy","#6b6a76"],["Peppermint","#bbd8d4"],["Plum","#a6889b"],["Pinky Purple","#d0a5c0"],["Purple","#9f91b3"],["Red Hot Chilli","#ce858c"],["Royal Blue","#7a84b8"],["Sapphire Blue","#8bb5d0"],["Sky Blue","#c6d0da"],["Sunset Red","#f47b71"],["Steel Grey","#979291"],["Storm Grey","#8b8188"],["Sun Yellow","#ecd885"],["Turquoise Surf","#a6cdd4"],["True Violet","#b6b7cf"],["Vanilla Milkshake","#dbd6cd"],["New French Navy","#6a6a70"],["Tropical Blue","#71aed4"],["Brick Red","#cc7d86"],["Denim Blue","#8285a2"],["Forest Green","#6e706c"],["Spring Green","#68cdb8"],["Ultra Violet","#807cac"],["Deep Sea Blue","#6d9dac"],["Nude","#cbc5bf"]]
+            },
+
+            womens: {
+                code: "JH01F",
+                id: "7200",
+                colors: [["Arctic White","#f2f2f2"],["Airforce Blue","#a1b4c5"],["Ash","#dddcdb"],["Bottle Green","#7a9994"],["Burgundy","#b67b90"],["Candyfloss Pink","#edb8d2"],["Charcoal","#818484"],["Fire Red","#e98a86"],["Hawaiian Blue","#7cc7da"],["Heather Grey","#d9dddf"],["Hot Pink","#e387bb"],["Jade","#7cbfb6"],["Jet Black","#5d5d5d"],["Kelly Green","#7ab194"],["Lime","#c7d5a6"],["New French Navy","#7a81a0"],["Orange Crush","#f2be84"],["Plum","#9f8396"],["Purple","#8a87a8"],["Red Hot Chilli","#c27a8e"],["Royal Blue","#7b9dbb"],["Sapphire Blue","#7bc4e1"],["Sky Blue","#bdd7eb"],["Sun Yellow","#f7ea7f"],["Turquoise Surf","#9dceda"],["Oxford Navy","#898990"]]
+            },
+        },
+
+        zoodie: {
+            unisex: {
+                code: "JH050",
+                id: "3739",
+                colors: [["Arctic White","#e3e2e6"],["Bottle Green","#809d90"],["Charcoal","#a3a1a2"],["Fire Red","#ea847e"],["Hawaiian Blue","#72d2e9"],["Heather Grey","#cccbd3"],["Hot Pink","#f09db6"],["Jet Black","#5c5c5c"],["Kelly Green","#76d0ad"],["Oxford Navy","#6c7087"],["Purple","#937ca0"],["Red Hot Chilli","#e27d80"],["Royal Blue","#94aad4"],["Sapphire Blue","#84c5e6"],["Steel Grey","#978f8e"],["New French Navy","#6b7076"],["Burgundy","#ad7d88"],["Forest Green","#6b7b75"],["Orange Crush","#e3a979"],["Sun Yellow","#f7e97a"],["Ash","#ccccd0"]]
+            },
+
+            womens: {
+                code: "JH055",
+                id: "3742",
+                colors: [["Arctic White","#e5e5e9"],["Baby Pink","#ecd8de"],["Candyfloss Pink","#e9bbca"],["Fire Red","#d78a8c"],["Hawaiian Blue","#92d1de"],["Heather Grey","#d9dbe2"],["Hot Pink","#dc97a9"],["Jet Black","#747371"],["Kelly Green","#7cc6a8"],["Purple","#a091ad"],["Sapphire Blue","#81b8d0"],["New French Navy","#788084"]]
+            },
+        },
+    };
+
+    function getHoodieType() {
+        return $('[name="hoodie-type"]:checked').val();
+    }
+
+    function getHoodieSize() {
+        return $('[name="hoodie-size"]').val();
+    }
+
+    function getSizeType() {
+        return $('[name="size-type"]:checked').val();
+    }
+
+    function getSelectedColor() {
+        return $('[name="hoodie-color"] > option:selected');
+    }
+
+    function getLogoPosition() {
+        return $('[name="logo-pos"]:checked').val();
+    }
+
+    function getLogoColor() {
+        return $('[name="logo-color"] > option:selected').val();
+    }
+
+    function getBackPrintColor() {
+        return $('[name="print-color"]:checked').val();
+    }
+
+    function getCustomText() {
+        return $('[name="print-name"]').val();
+    }
+
+    function getDiscountCode() {
+        return $('#discount-code').val();
+    }
+
+    $(() => {
+        var logoPrint = $('[name="logo-pos"][value="printed"]');
+        var logoEmbroidered =  $('[name="logo-pos"][value="embroidered"]');
+        var optionSizeXS = $('#option-size-xs');
+        var supplierLink = $('.supplier-url');
+        var colorSelect = $('[name="hoodie-color"]');
+
+        function updateSize() {
+            var isZoodie = getHoodieType() == "zoodie";
+            var isUnisex = getSizeType() == "unisex";
+            var disabled = isZoodie && isUnisex;
+
+            optionSizeXS.prop('disabled', disabled);
+            optionSizeXS.text(disabled ? "XS (unavailable for unisex zipped hoodies)" : "XS")
+            
+            // if XS selected, and we've disabled it, then
+            // select S
+            if (optionSizeXS.prop("selected") && disabled) {
+                $('#option-size-s').prop("selected", true);
+            }
+        }
+
+        function updateHoodieColor(color) {
+            $("#himg-logo > svg").css("background", color);
+
+            $("#college-fabric > path,#zoodie-fabric > path,#back-fabric > path").css("fill", color);
+
+            var color = "black";
+            if (tinycolor($("#college-fabric > path,#zoodie-fabric > path,#back-fabric > path").css("fill")).isDark()) {
+                color = "white";
+            }
+
+            $("#college-fabric > path,#zoodie-fabric > path,#back-fabric > path").css("stroke", color);
+        }
+
+        function onColorUpdate() {
+            var color = getSelectedColor().data("rgb");
+            updateHoodieColor(color);
+        }
+
+        function onPrintColorUpdate() {
+            let color = getBackPrintColor();
+            $("#himg-text-item > path, #himg-atat path").css("fill", color);
+        }
+
+        function updateLogo() {
+            // console.log(getHoodieType(), getLogoColor(), getLogoPosition())
+
+            $("#Mono, #Inverse, #Regular").hide();
+            $("#"+getLogoColor()).show();
+
+            // Gotta hide them all
+            $("#C-Mono, #C-Inverse, #C-Regular, #CE-Mono, #CE-Inverse, #CE-Regular, #ZE-Mono, #ZE-Inverse, #ZE-Regular").hide();
+
+            // Build className to show
+            var c = "#";
+            c += (getHoodieType() == "zoodie") ? "Z" : "C";
+
+            if (getLogoPosition() == "embroidered") {
+                c += "E"
+            }
+
+            c += "-";
+            c += getLogoColor();
+
+            // Show!
+            $(c).show();
+        }
+
+        function updateHoodieInfo() {
+            updateSize();
+
+            var hoodieType = getHoodieType();
+            var sizeType = getSizeType();
+            var info = hoodies[hoodieType][sizeType];
+
+            var url = "http://www.promotional-store.com/referredproduct.aspx?id=" + info.id;
+
+            supplierLink.attr("href", url);
+            supplierLink.text(info.code);
+            $(".supplier-url-no-text").attr("href", url);
+
+            var selectedColor = getSelectedColor().val();
+
+            colorSelect.children().remove();
+            info.colors.sort();
+            info.colors.forEach(color => {
+                $("<option></option>", {
+                    text: color[0],
+                    selected: selectedColor == color[0],
+                    value: color[0],
+                    "data-rgb": color[1],
+
+                }).appendTo(colorSelect);
+            });
+
+            onColorUpdate();
+            onPrintColorUpdate();
+
+            if (hoodieType == "zoodie") {
+                $("#himg-college").hide();
+                $("#himg-zoodie").show();
+
+                logoEmbroidered.prop("checked", true);
+
+                logoPrint.prop("disabled", true);
+                logoPrint.parent().parent().addClass("disabled");
+
+                $('[name="hoodie-price"]').html("£27");
+                $('[name="hoodie-price-discounted"]').html("£22");
+            } else {
+                $("#himg-zoodie").hide();
+                $("#himg-college").show();
+
+                logoPrint.prop("disabled", false);
+                logoPrint.parent().parent().removeClass("disabled");
+
+                $('[name="hoodie-price"]').html("£25");
+                $('[name="hoodie-price-discounted"]').html("£20");
+            }
+
+            updateLogo();
+        }
+
+        // zoodies only support embroidered
+        // also update size (XS)
+        $('[name="hoodie-type"]').change(() => {
+            updateHoodieInfo();
+        });
+
+        $('[name="size-type"]').change(() => {
+            updateHoodieInfo();
+        });
+
+        $('[name="hoodie-color"]').change(() => {
+            onColorUpdate();
+        });
+
+        $('[name="print-color"]').change(() => {
+            onPrintColorUpdate();
+        });
+
+        $('[name="logo-pos"]').change(() => {
+            updateLogo();
+        });
+
+        $('[name="logo-color"]').change(() => {
+            updateLogo();
+        });
+
+        $('#btn-start-purchase').click(() => {
+            // Hide customise pane
+            $('#panel-customise').hide();
+
+            // Show purchase details pane
+            $('#panel-purchase-details').fadeIn();
+
+            // Start kitting up the table for our final output (for our wonderful API)
+            const hoodieType = getHoodieType();
+            const sizeType = getSizeType();
+            const info = hoodies[hoodieType][sizeType];
+
+            // Hoodie code is derived from hoodie-type (regular or zipped?)
+            // and also derived from size-type (unisex or womens?)
+            $('#opt-code').text(info.code);
+
+            // Visual zip info
+            $("#vis-zip").text(
+                (hoodieType === "zoodie") ?
+                "has zip" :
+                "no zip"
+            );
+
+            // Visual size type
+            $("#vis-size-type").text(sizeType);
+
+            // Load the actual form size
+            $("#opt-size").text(getHoodieSize());
+
+            // Load the actual hoodie colour
+            $("#opt-hoodie-color").text(getSelectedColor().text());
+
+            // Load the actual logo position
+            $("#opt-logo").text(
+                (getLogoPosition() === "embroidered") ?
+                "Left Breast Embroidery" : "Front Print"
+            );
+
+            // Determine the supplier's logo color
+            // this is the color of the logo, we
+            // need to convert it to something supplier suitable
+            const compsocColor = getLogoColor();
+            let logoColor = "";
+            if (compsocColor === "Mono") {
+                logoColor = "Black & White";
+            } else if (compsocColor === "Regular") {
+                logoColor = "Black & Red";
+            } else if (compsocColor === "Inverse") {
+                logoColor = "White & Red";
+            }
+
+            // Load the actual logo colour
+            $("#opt-logo-color").text(logoColor);
+
+            // Load the custom text
+            if (getCustomText() !== "") {
+                $("#vis-custom-text").show();
+                $("#opt-custom-text").text(getCustomText());
+            } else {
+                $("#vis-custom-text").hide();
+                $("#opt-custom-text").text("");
+            }
+
+            // Load the back print color
+            $("#opt-back-print-color").text(getBackPrintColor());
+        });
+
+        $('#btn-go-back').click(() => {
+            console.log("wtf click?")
+            $('#panel-purchase-details').hide();
+            $('#panel-customise').fadeIn();
+            return false;
+        });
+
+        let discountTimeout = null;
+
+        $('[data-toggle="tooltip"]').tooltip()
+        $('#discount-code').on('input', e => {
+            if (discountTimeout !== null) {
+                clearTimeout(discountTimeout);
+                console.log("Cleared timeout.")
+            }
+
+            console.log("Setting timeout.")
+            discountTimeout = setTimeout(() => {
+                console.log("Checking coupon...")
+                checkCoupon();
+            }, 500);
+        });
+
+        $("#btn-start-checkout").click(() => {
+            startCheckout(false);
+        });
+
+        let params = (new URL(document.location)).searchParams;
+        let name = params.get("code");
+        if (name !== "") {
+            $('#discount-code').val(name);
+            checkCoupon();
+        }
+
+        let email = params.get("email");
+        if (name !== "") {
+            $('#opt-email').val(email);
+        }
+
+        updateHoodieInfo();
+    });
+
+    var checkout;
+    var req;
+    var resp;
+
+    function startCheckout(public_key) {
+        if (!public_key){
+            $.ajax({
+                url: 'https://sales.comp-soc.com/api/alive',
+                type: 'GET',
+                dataType: 'json',
+                error: function(textStatus) {
+                    ajaxFailure("Unable to connect to API endpoint.");
+                },
+                success: function(data) { 
+                    console.log(data);
+
+                    if (data.alive){
+                        startCheckout(data.pk);
+                    } else {
+                        ajaxFailure("API endpoint unresponsive.");
+                    }
+                },
+                timeout: 3000,
+            });
+            return;
+        }
+        
+        var coupon = $('#discount-code').val();
+        if ($('#discount-alert').hasClass("alert-danger")) {
+            paymentFail("Your coupon is invalid. Please enter a valid coupon or leave the field blank.");
+            return;
+        }
+        var prod = buildProduct();
+        var coupon = $('#discount-code').val();
+        var amount;
+        if (prod.code === "JH01F" || prod.code === "JH001") {
+            amount = 2500;
+        } else {
+            amount = 2700;
+        }
+        if (coupon !== "") {
+            amount = amount - 500;
+        }
+
+        const email = $("#opt-email").val();
+
+        $('#panel-purchase-details').hide();
+        $('#panel-stripe-called').fadeIn();
+        callStripe(amount, coupon, prod, public_key, email);
+    }
+
+    function buildProduct() {
+        const product = {};
+
+        product.code = $('#opt-code').text();
+        product.size = $('#opt-size').text();
+        product.hoodie_color = $('#opt-hoodie-color').text();
+        product.logo_position = $('#opt-logo').text();
+        product.logo_color = $('#opt-logo-color').text();
+        product.back_print_color = $('#opt-back-print-color').text();;
+        product.custom_text = $('#opt-custom-text').text();
+        product.customer = $('#opt-purchaser-name').val();
+        product.description = "CompSoc Hoodie";
+
+        return product;
+    }
+
+    function callStripe(amount, coupon, prod, public_key, email) {
+        var meta = prod;
+        meta.product = "hoodie";
+        if (checkout == null) {
+        checkout = StripeCheckout.configure({
+            key: public_key,
+            image: '{{ site.baseurl }}/static/img/compsoc-icon.png',
+            locale: 'auto',
+            allowRememberMe: false,
+            token: function(token) { commitPayment(amount, token, coupon, meta) }
+        });
+        }
+        checkout.open({
+            name: 'CompSoc Hoodie',
+            description: 'CompSoc branded custom hoodie.',
+            zipCode: true,
+            amount: amount,
+            email: email,
+            currency: 'GBP',
+            opened: function() { },
+            closed: function() {
+                checkout = null;
+                $('#panel-purchase-details').fadeIn();
+                $('#panel-stripe-called').hide();
+            }
+        })
+    }
+    function commitPayment(amount, token, coupon, prod) {
+        console.log("Committing payment of £" + (amount/100) + " to API\nToken: " + token.id );
+        var request = {
+            amount: amount,
+            coupon: coupon,
+            product: 'hoodie',
+            productData: prod,
+            token: token
+        };
+        $.ajax({
+            url: 'https://sales.comp-soc.com/api/sales/charge',
+            type: 'POST',
+            data: JSON.stringify(request),
+            contentType: 'application/json',
+            dataType: 'json',
+            error: function( jqXHR, textStatus ) { ajaxFailure(textStatus) },
+            success: function(data) { ajaxSuccess(data) },
+            timeout: 30000
+        });
+    }
+    function ajaxFailure(textStatus) {
+        console.error("AJAX API request failed.");
+        $('#failModal').modal('show');
+        $('#failModalDebugInfo').text("AJAX request to API failed: " + textStatus);
+    }
+    function ajaxSuccess(data) {
+        console.log("AJAX API request successful with result '" + data.result + "'");
+        if (data.result != "charge") {
+            paymentFail(data.err_type + ": " + data.err_msg);
+        } else {
+            if (data.success) {
+                paymentSuccess(data.amount, data.last4, data.id, data.message);
+            } else {
+                paymentFail("Stripe charge ID " + data.id + " failed with error code \"" + data.failcode + ": " + data.message);
+            }
+        }
+
+        $('#panel-purchase-details').fadeIn();
+        $('#panel-stripe-called').hide();
+    }
+
+    function checkCoupon() {
+        const request = {
+            item: "hoodie",
+            coupon: getDiscountCode(),
+        };
+
+        $("#btn-start-checkout").prop("disabled", true);
+
+        if (request.coupon === "") {
+            $("#btn-start-checkout").prop("disabled", false);
+            $('#discount-alert')
+                .removeClass("alert-success alert-danger alert-light")
+                .addClass("alert-light")
+                .hide();
+
+            return;
+        }
+
+        $.ajax({
+            url: 'https://sales.comp-soc.com/api/sales/coupon',
+            type: 'POST',
+            data: JSON.stringify(request),
+            contentType: 'application/json',
+            dataType: 'json',
+            error: function(textStatus) {
+                console.error("AJAX coupon check failed.");
+
+                $('#discount-alert').removeClass("alert-success alert-danger alert-light")
+                    .addClass("alert-light")
+                    .html("Unable to check that coupon at the moment. Error communicating with API. Sorry.")
+                    .fadeIn();
+
+                return;
+            },
+            success: function(data) {
+                if (!data.success) {
+                    $('#discount-alert').removeClass("alert-success alert-danger alert-light")
+                        .addClass("alert-light")
+                        .html("Unable to check that coupon at the moment. Sorry.")
+                        .fadeIn();
+                    return;
+                }
+                if (data.valid) {
+                    $('#discount-alert').removeClass("alert-success alert-danger alert-light")
+                        .addClass("alert-success")
+                        .html("Good news! That coupon is valid.")
+                        .fadeIn();
+
+                    $("#btn-start-checkout").prop("disabled", false);
+                    return;
+                } else {
+                    $('#discount-alert').removeClass("alert-success alert-danger alert-light")
+                        .addClass("alert-danger")
+                        .html("Oh no. " + data.reason)
+                        .fadeIn();
+                    return;
+                }
+            },
+            timeout: 3000
+        });
+    }
+    
+    window.addEventListener('popstate', function() {
+        handler.close();
+    });
+
+    function paymentSuccess(value, last4, chargeId, msg) {
+        $('#successModal').modal('show');
+        $('#successModalValueField').text(value/100);
+        $('#successModalLast4Field').text(last4);
+        $('#successModalChargeId').text(chargeId);
+        $('#successModalMessage').text(msg);
+    }
+    function paymentFail(text) {
+        $('#failModal').modal('show');
+        $('#failModalDebugInfo').text(text);
+    }
+
+</script>

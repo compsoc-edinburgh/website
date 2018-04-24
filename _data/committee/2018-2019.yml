@@ -1,0 +1,36 @@
+year: 2018 - 2019
+teams:
+  - members:
+      - name: Findlay Smith
+        role: President
+        url: https://tardis.ed.ac.uk/~findoslice/
+
+      - name: Rokas Gudavičius
+        role: Vice President
+        url: https://roxerg.github.io
+
+      - name: Joao Maio
+        role: Treasurer
+
+      - name: Caterina Mrose
+        role: Secretary
+
+      - name: Elena Lapė
+        role: Hackathon Secretary
+        url: http://elenalape.com
+
+      - name: Qais Patankar
+        role: Technical Secretary
+        url: https://qaisjp.com
+
+      - name: Elizabeth Bell
+        role: Social Secretary
+
+      - name: Dylan Oshima
+        role: 2<sup>nd</sup> Year Rep
+
+      - name: Likhitha Sai
+        role: 3<sup>rd</sup> Year Rep
+
+      - name: Craig Snowden
+        role: Old Person Rep

@@ -1,0 +1,102 @@
+---
+title: "Manifestos for March AGM"
+author: qaisjp
+roles:
+    - title: President
+      people:
+        - name: Findlay Smith, 1st year
+          url: https://drive.google.com/open?id=1JxmgGp_jKWhE-J9zz9JTHFaltBrPriFV
+        - name: Ege Elgun, 1st year
+          url: https://drive.google.com/open?id=0BwDda2PoGbNNelFyNWh6X184SXhCbWNBX0huX0g0NmtJa0k4
+        - name: Gurz Singh, 2nd year
+          url: https://drive.google.com/open?id=17_Y0MMpAYzzRoXLm62xDHon4s9gqCF_e
+    - title: Vice-President
+      people:
+        - name: Alan Savio Paul, 1st year
+          url: https://drive.google.com/open?id=17nGyCLZgLFpBwpbv0HGc6a9fy2B4yYuW
+        - name: Rokas Gudavicius, 1st year
+          url: https://drive.google.com/open?id=1eYn8uaKrS6zWK_lHowN-ymmH6T4lh48a
+    - title: Secretary
+      people:
+        - name: Caterina Mrose, 1st year
+          url: https://drive.google.com/open?id=1yRvaoysyhC4Y0gjTgU8nOQ75Z1Odf4Ex
+        - name: Valentine Dragan, 1st year
+          url: https://drive.google.com/open?id=1_h7sN2V3IG7S3GndkEwyksSa9tV5NNvb
+    - title: Treasurer
+      people:
+        - name: Joao Maio, 2nd year
+          url: https://drive.google.com/open?id=1RLwDB1vUa3oNz_fkDSfgtVQSMhkXUvUP
+    - title: HackSec
+      people:
+        - name: Elena Lape, 2nd year
+          url: https://drive.google.com/open?id=1VHuA-uCZwXyFV0GiuzLrd5wKjkxoAjlp
+    - title: TechSec
+      people:
+        - name: Michael (Mikey), 1st year
+          url: https://drive.google.com/open?id=1Zy4yJfWn2ewiU74_rvUZonUYLxaSolfq
+        - name: Qais Patankar, 2nd year
+          url: https://drive.google.com/open?id=1l75igPg3ghS_EHS6VZ42wKzcVpLjbjy7
+    - title: SocialSec
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: 2nd Year Rep
+      people:
+        - name: Dylan Oshima, 1st year
+          url: https://drive.google.com/open?id=1Y5Siw6C7HpEZH6hqKrjE4N2P5JihjLIw
+    - title: 3rd Year Rep
+      people:
+        - name: Likhitha Modalavalasa, 2nd year
+          url: https://drive.google.com/file/d/1mOfiZTe-LfG_vdFzayy-6cx2XpQA26pf/view?usp=sharing
+    - title: Final Year Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: Postgraduate Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: Old Person Rep
+      people:
+        - name: Kit Barnes
+          url: https://drive.google.com/open?id=18lLUAfPrTr6_7ZXiBjbONeMktrkZUXkz
+    
+
+---
+
+<p>On Wednesday at 6pm we have our monthly Student Tech Meetup as well as our Annual General Meeting.
+Mark yourself as going <a href="https://www.facebook.com/events/408493869580985/?ref=46">on Facebook</a> so we have enough food for you, and drop us a message if you have any special requirements.
+</p>
+<p>
+We have a good number of people running for election, so once you've <a href="/elections">reviewed the various positions</a>, take a look at who is running for election!
+</p>
+<p>
+  If you haven't submitted a manifesto and would still like to run for election, please read <a href="/elections">the elections page</a>.
+</p>
+
+<table>
+{% for role in page.roles %}
+
+<tr><td colspan=2><strong>{{ role.title }}</strong></td></tr>
+
+{% for person in role.people %}
+
+<tr>
+  <td>{{ person.name }} {% if person.url %}</td>
+  <td>
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>{% endif %}
+  </td>
+</tr>
+
+{% endfor %}
+{% endfor %}
+</table>
+
+<br>
+<p>
+  We hope you think carefully about who you choose to elect tomorrow — please vote based on manifestos and speeches! Note that you may also vote for Ron (reopen nominations) for all positions.
+</p>
+<p>
+  Election candidates - please remember that if you are running for President, VP, Secretary or Treasurer, your speech may be up to 2 minutes. Other roles have up to 1 minute. If you haven't bought membership yet, do that now.
+</p>
+
+<p>See you tomorrow,</p>
+
+<p>CompSoc &lt;3 You!</p>

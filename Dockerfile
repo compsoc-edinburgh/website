@@ -1,4 +1,4 @@
-FROM grahamc/jekyll:latest
+FROM jekyll/jekyll:latest
 
 # Install whatever is in your Gemfile
 WORKDIR /tmp

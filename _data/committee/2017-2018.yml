@@ -1,40 +1,168 @@
 year: 2017 - 2018
-members:
-  - name: Qais Patankar
-    role: President
-    url: "https://qaisjp.com"
+teams:
+  - members:
+      - name: Qais Patankar
+        role: President
+        url: "https://qaisjp.com"
+        img: qais-2.jpg
 
-  - name: Elena Lapė
-    role: Vice President
-    url: "http://elenala.pe"
+      - name: Elena Lapė
+        role: Vice President
+        url: "http://elenalape.com"
+        img: elena-1.jpg
 
-  - name: Angus Shaw
-    role: Secretary
+      - name: Viktorija Lukošiūtė
+        role: Treasurer
+        img: vik-3.jpg
 
-  - name: Viktorija Lukošiūtė
-    role: Treasurer
+      - name: Angus Shaw
+        role: Secretary
+        img: angus-shaw-1.jpg
 
-  - name: Harry Reeder
-    role: Technical Secretary
-    url: "http://harryreeder.co.uk/"
+      - name: Harry Reeder
+        role: Technical Secretary
+        url: "http://harryreeder.co.uk/"
+        img: harry-1.png
 
-  - name: Nicholas Lynch
-    role: Social Secretary
-    
-  - name: Joshua Green
-    role: SIGINT
-    
-  - name: Cameron Sharp
-    role: SIGnet President
+      - name: Nicholas Lynch
+        role: Social Secretary
+        img: nick-lynch-1.jpg
 
-  - name: Dylan Oshima
-    role: 1<sup>st</sup> Year Rep
+      - name: Dylan Oshima
+        role: 1<sup>st</sup> Year Rep
+        img: dylan-oshima-1.jpg
 
-  - name: Ginte Petrulionytė
-    role: 2<sup>nd</sup> Year Rep
+      - name: Ginte Petrulionytė
+        role: 2<sup>nd</sup> Year Rep
+        img: ginte-1.jpg
 
-  - name: William Mathewson
-    role: 4<sup>th</sup> Year Rep
+      - name: William Mathewson
+        role: 4<sup>th</sup> Year Rep
+        img: will-1.jpg
 
-  - name: "Kit Barnes (c/o Craig Snowden)"
-    role: Old Person Rep
+      - name: "Kit Barnes (c/o Craig Snowden)"
+        role: Old Person Rep
+        img: kit-and-craig-1.jpg
+
+  - name: Hackathons (HackSIG)
+    members:
+      - name: Qais Patankar
+        role: Co-director
+
+      - name: Elena Lape
+        role: Co-director
+
+      - name: Bianca Burtoiu
+        role: Senior Organiser
+
+      - name: Alan Paul
+        role: Organiser
+      
+      - name: Valentine Dragan
+        role: Organiser
+
+      - name: Andreea Cucu
+        role: Volunteer
+
+      - name: Anubhav Chakravarty
+        role: Volunteer
+
+      - name: Arthur Wilcke
+        role: Volunteer
+
+      - name: Athiya Deviyani
+        role: Volunteer
+
+      - name: Celina Dong Ye
+        role: Volunteer
+
+      - name: Ginte Petrulionyte
+        role: Volunteer
+
+      - name: Rares Tudorache
+        role: Volunteer
+
+      - name: Ricky Yuan
+        role: Volunteer
+
+      - name: Rob Phipps
+        role: Volunteer
+
+      - name: Sam Sucik
+        role: Volunteer
+
+      - name: Sami Alabed
+        role: Volunteer
+
+  - name: Cyber Security Group (SIGINT)
+    members:
+      - name: "Harvey"
+        role: President
+        img: sigint-1.png
+
+      - name: Oliver Piggott
+        role: Vice President
+        img: sigint-1.png
+
+      - name: Joshua Green
+        role: Secretary
+        img: josh-3.jpg
+
+      - name: Nicholas Lynch
+        role: Hacking Officer
+        img: sigint-1.png
+
+      - name: Antonio Guterres
+        role: Chief Skiddie
+        img: antonio-1.jpg
+
+      - name: Dylan
+        role: Organiser
+        img: sigint-1.png
+
+      - name: Guneet
+        role: Organiser
+        img: sigint-1.png
+
+      - name: Gwion
+        role: Organiser
+        img: sigint-1.png
+
+      - name: Jorge
+        role: Organiser
+        img: sigint-1.png
+
+      - name: Wojciech
+        role: Organiser
+        img: sigint-1.png
+
+  - name: Networking Group (SIGnet)
+    members:
+      - name: Cameron Sharp
+        role: Leader
+        img: cameron-1.jpg
+
+  - name: Law and Technology Group (LATG)
+    members:
+      - name: Cathal Lynam
+        role: Treasurer
+
+      - name: Daniella Negri
+        role: Secretary
+
+      - name: Faye Saunders
+        role: Commercial Director
+
+      - name: Constanza Cecchetti
+        role: Communications Director
+
+  - name: Blockchain and Cryptocurrency (SIGCoin)
+    members:
+      - name: Nikita Samarin
+        role: President
+
+      - name: Lorenzo Martinico
+        role: Vice President
+
+      - name: Martin Georgiev
+        role: Creative Director

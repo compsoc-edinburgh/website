@@ -1,22 +1,23 @@
 year: 2013 - 2014
-members:
-  - name: Paul M Scherer
-    role: President
+teams:
+  - members:
+    - name: Paul M Scherer
+      role: President
 
-  - name: Chris Swart
-    role: Vice President
+    - name: Chris Swart
+      role: Vice President
 
-  - name: Kimberley McCann
-    role: Secretary
+    - name: Kimberley McCann
+      role: Secretary
 
-  - name: Martin Husbyn
-    role: Treasurer
+    - name: Martin Husbyn
+      role: Treasurer
 
-  - name: Rikki "Teh Numbers" Guy
-    role: Technical Secretary
+    - name: Rikki "Teh Numbers" Guy
+      role: Technical Secretary
 
-  - name: Craig Ross
-    role: Social Secretary
+    - name: Craig Ross
+      role: Social Secretary
 
-  - name: Aseem Narang
-    role: 1<sup>st</sup> Year Rep
+    - name: Aseem Narang
+      role: 1<sup>st</sup> Year Rep

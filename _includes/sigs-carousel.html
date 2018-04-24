@@ -1,0 +1,77 @@
+<div class="owl-carousel owl-drag owl-theme">
+  {% for sig in site.data.sigs %}
+    {% if sig.url %}
+      {% assign sighref = sig.url %}
+    {% else %}
+      {% capture sighref %} {{ site.baseurl }}/sigs/{{ sig.slug }} {% endcapture %}
+    {% endif %}
+    <div class="item card sig-card">
+      <a href="{{ sighref }}" class="list-group-item-action">
+        <h1>{{ sig.title }}</h1>
+        <p>{{ sig.description }}</p>
+        {% if sig.image %}
+          <img src="{{ site.baseurl }}/static/img/sigs/{{ sig.slug }}.png" class="sig-img"
+          style="background-color: {{ sig.colour }}; border-radius: {{ sig.radius }}"/>
+        {% endif %}
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/static/js/jquery.mousewheel.min.js"></script>
+<script src="{{ site.baseurl }}/static/js/owl.carousel.min.js"></script>
+<script>
+  var owl = $('.owl-carousel');
+  owl.owlCarousel({
+    responsiveClass:true,
+    responsive: {
+      0: {
+        center: true,
+        autoplay: false,
+        items: 1,
+      },
+      400: {
+        center: true,
+        autoplay: false,
+        items: 1.5,
+      },
+      576: {
+        center: true,
+        autoplay: false,
+        items: 2,
+      },
+      768: {
+        center: true,
+        autoplay: false,
+        items: 3,
+      },
+      992: {
+        center: true,
+        autoplay: false,
+        items: 4,
+      },
+      1200: {
+        autoWidth: true,
+        margin: 10,
+        rewind: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        navSpeed: 200,
+        smartSpeed: 1500,
+        dragEndSpeed: 200,
+      },
+      dots: true,
+      responsiveRefreshRate: 100,
+    },
+  });
+  owl.on('mousewheel', '.owl-stage', function (e) {
+    if (e.deltaY > 0) {
+        owl.trigger('next.owl');
+    } else {
+        owl.trigger('prev.owl');
+    }
+    e.preventDefault();
+  });
+</script>

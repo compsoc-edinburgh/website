@@ -1,0 +1,216 @@
+<div>
+    <div class="form-group row">
+        <label for="fullname" class="col-sm-4 col-form-label">Full name</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="fullname" placeholder="Infer Matics" required>
+        </div>
+    </div>
+
+    <div class="form-group row mb-1">
+        <label for="uun" class="col-sm-4 col-form-label">University Username (UUN)</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="uun">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col">
+            <small id="emailHelp" class="form-text text-muted mt-0 col-form-label">
+                You do not need to provide your UUN if you are not a member of The University of Edinburgh.
+            </small>
+        </div>
+    </div>
+
+    <div class="form-group row mb-1">
+        <label for="email" class="col-sm-4 col-form-label">
+            Email address
+        </label>
+        <div class="col-sm-8">
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="everyone@gmail.com" required>
+        </div>
+    </div>
+    {% if infball_payment %}
+    <div class="form-group row">
+        <div class="col">
+            <small id="emailHelp" class="form-text text-muted mt-0 col-form-label">
+                We will only share this email address with our payment provider.
+            </small>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="form-group mb-1">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="over18">
+            <label for="over18" class="form-check-label">I declare that I am at least 18 years of age. <small class="text-muted">ID will be checked at the door.</small></label>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col">
+            <small id="emailHelp" class="form-text text-muted mt-0 col-form-label">
+                Unfortunately under 18s may not attend this event.
+            </small>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Included in ticket -->
+    {% if infball_payment %}
+    <fieldset class="form-group">
+        <label><strong>Included in your £40 ticket</strong></label>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input alwaysDisabled" type="checkbox" checked disabled>
+                    <label class="form-check-pabel">
+                        <strong>Glass of prosecco on arrival</strong>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input alwaysDisabled" type="checkbox" checked disabled>
+                    <label class="form-check-pabel">
+                        <strong>Another drink of your choice</strong>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input alwaysDisabled" type="checkbox" checked disabled>
+                    <label class="form-check-pabel">
+                        <strong>Ceilidh</strong>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input alwaysDisabled" type="checkbox" checked disabled>
+                    <label class="form-check-pabel">
+                        <strong>Photography</strong>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col">
+                <small class="form-text text-muted mt-0 col-form-label">
+                    Soft drinks are available, and soft-drink alternatives will be provided.
+                </small>
+            </div>
+        </div>
+    </fieldset>
+    {% endif %}
+
+    <!-- Starters -->
+    <fieldset class="form-group">
+        <label>Starter</label>
+        <div>
+            <div class="form-check">
+                <input required class="form-check-input" type="radio" name="starterRadio" id="starterRadio1" value="soup">
+                <label class="form-check-label" for="starterRadio1">
+                    Leek, Potato and Truffle Soup
+                </label>
+            </div>
+            <div class="form-check">
+                <input required class="form-check-input" type="radio" name="starterRadio" id="starterRadio3" value="pork">
+                <label class="form-check-label" for="starterRadio3">
+                    Rustic Pork Terrine with Piccalilli
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <!-- Main -->
+    <fieldset class="form-group">
+        <label>Main</label>
+        <div>
+            <div class="form-check">
+                <input required class="form-check-input" type="radio" name="mainRadio" id="mainRadio1" value="beef">
+                <label class="form-check-label" for="mainRadio1">
+                    Braised Blade of Scottish Beef, with Horseradish Mash, Red Wine Jus and Braised Roots
+                </label>
+            </div>
+            <div class="form-check">
+                <input required class="form-check-input" type="radio" name="mainRadio" id="mainRadio4" value="mushrooms">
+                <label class="form-check-label" for="mainRadio4">
+                    Risotto of Wild Mushrooms, Pea Shoots, Brown Butter Vinaigrette and Parmesan
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <!-- Desserts -->
+    <fieldset class="form-group mb-0">
+        <label>Dessert</label>
+        <div>
+            <div class="form-check">
+                <input required class="form-check-input" type="radio" name="dessertRadio" id="dessertRadio1" value="brownie">
+                <label class="form-check-label" for="dessertRadio1">
+                    Double Chocolate Brownie with Vanilla Ice-Cream
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group row">
+        <div class="col">
+            <small id="emailHelp" class="form-text text-muted mt-0 col-form-label">
+                An alternative will be given to those with vegan/gluten-free requirements.
+            </small>
+        </div>
+    </div>
+
+    <!-- Special -->
+    <div class="form-group">
+        <label for="specialReqs">Other notes {% unless infball_payment %}<small class="text-muted">if you would like to change this please email us ASAP</small>{% endunless %}</label>
+        <textarea id="specialReqs" rows=3 class="form-control" maxlength="500"
+            placeholder="Please tell us if you have any allergies or any other special requirements. If you would like your food to be vegan-friendly or gluten-free, just mention it here!"
+        ></textarea>
+    </div>
+    <div class="form-group row">
+        <div class="col">
+            <small id="emailHelp" class="form-text text-muted mt-0 col-form-label">
+                Tickets are non-refundable. Tickets are transferrable.
+            </small>
+        </div>
+    </div>
+
+    {% if infball_payment %}
+    <!-- Staff code -->
+    <div class="form-group">
+        <label for="staffCode">Invite code</label>
+        <input id="staffCode" class="form-control" maxlength="50" placeholder="The ball is now invite-only. Please enter the special code provided to you."></input>
+    </div>
+
+    <div id="processingModal" class="d-none flex-column justify-content-center align-items-center">
+        <h1 class="text-center pt-4">
+            <i id="infball-loading" class="fa fa-circle-o-notch fa-spin float-right"></i>
+        </h1>
+        <p class="pt-4">
+            Hold on, we're processing your order...
+        </p>
+    </div>
+
+    <div class="form-group payment-wrapper">
+        <div class="alert alert-danger d-none" id="card-input-error" role="alert"></div>
+
+        <div id="payment-request-button">
+            <!--Stripe paymentRequestButton Element inserted here-->
+        </div>
+
+        <fieldset class='mt-3'>
+            <legend class="card-only">Pay with card</legend>
+            <legend class="payment-request-available d-none">Or enter card details</legend>
+
+            <input type="text" class="form-control mb-1" id="cardholder-name" placeholder="Cardholder name" required>
+            <div class="container">
+                <div id="payment-card" style="min-height: 44px"></div>
+                <button id="payment-submit" type="submit" class="btn btn-primary btn-block">Pay £40</button>
+            </div>
+        </fieldset>
+    </div>
+    {% endif %}
+
+</div>

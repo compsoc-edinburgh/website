@@ -53,7 +53,7 @@ layout: default
             {% include navigate-collection.html %}
         </div>
         <h1>{% if page.longtitle %}{{ page.longtitle }}{% else %}{{ page.title }}{% endif %}</h5>
-        <h5>{{ page.date | date_to_string }}</h3>
+        <h5>Published {{ page.date | date_to_string }}</h3>
 
         <div class="blog-content">
             {{ content }}

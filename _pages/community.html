@@ -26,14 +26,14 @@ title: Community
 
                     <!-- CompSoc Offers -->
                     <a class="list-group-item list-group-item-action" href="https://facebook.com/groups/compsoc.offers">
-                        <h5 class="mb-1">CompSoc Offers &raquo;</h5>
+                        <h5 class="mb-1">CompSoc Careers &raquo;</h5>
                         <p class="mb-0">For people looking for offers for jobs, internships, and placements.</p>
                     </a>
 
                     <!-- School of Informatics -->
                     <a class="list-group-item list-group-item-action" href="https://facebook.com/groups/informatics.uoe">
                         <h5 class="mb-1">School of Informatics &raquo;</h5>
-                        <p class="mb-0">Solely for the School of Informatics' students and staff.</p>
+                        <p class="mb-0">For Informatics' students and staff. Visit Better Informatics for yearly Informatics groups (Class of {{ site.time | date: '%Y' }}).</p>
                     </a>
                 </ul>
             </div>
@@ -59,6 +59,13 @@ title: Community
                 </a>
             </div>
 
+            <!-- Informatics Football -->
+            <div class="card mb-3 text-center">
+                <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#footieModal" style="cursor: pointer;">
+                    Informatics Football <i class="fa fa-futbol-o"></i>
+                </button>
+            </div>
+
             <!-- Steam -->
             <!-- <div class="card mb-3 text-center">
                 <a href="https://steamcommunity.com/groups/compsoc-edinburgh" class="btn btn-steam btn-lg btn-block"><i class="fa fa-steam pr-4"></i>Steam</a>
@@ -81,28 +88,21 @@ title: Community
 
                     <!-- CompSoc -->
                     <a class="list-group-item list-group-item-action" style="color: rgb(59, 148, 217)" href="https://twitter.com/compsoc">
-                        <img src="https://pbs.twimg.com/profile_images/506603183498485760/iZY-bL-6_400x400.png" class="img img-fluid" style="border-radius: 50%; width: 25%; margin-right: 10px; max-width: 100px;"></img>
+                        <img src="{{ site.baseurl }}/static/img/twitter-profiles/compsoc.png" class="img img-fluid" style="border-radius: 50%; width: 25%; margin-right: 10px; max-width: 100px;"></img>
                         <h5>@CompSoc</h5>
                     </a>
 
                     <!-- Hacktheburgh -->
                     <a class="list-group-item list-group-item-action" style="color: rgb(59, 148, 217)" href="https://twitter.com/hacktheburgh">
-                        <img src="https://pbs.twimg.com/profile_images/843977653732495360/RLdA8AiG_400x400.jpg" class="img img-fluid" style="border-radius: 50%; width: 25%; margin-right: 10px; max-width: 100px"></img>
+                        <img src="{{ site.baseurl }}/static/img/twitter-profiles/hacktheburgh.jpg" class="img img-fluid" style="border-radius: 50%; width: 25%; margin-right: 10px; max-width: 100px"></img>
                         <h5>@hacktheburgh</h5>
                     </a>
                     <!-- SIGINT -->
                     <a class="list-group-item list-group-item-action" style="color: rgb(59, 148, 217)" href="https://twitter.com/siginthq">
-                        <img src="https://pbs.twimg.com/profile_images/788344487613493248/7iK1n0GW_400x400.jpg" class="img img-fluid sigint-logo-community" />
+                        <img src="{{ site.baseurl }}/static/img/twitter-profiles/siginthq.jpg" class="img img-fluid sigint-logo-community" />
                         <h5>@SIGINThq</h5>
                     </a>
                 </div>
-            </div>
-
-            <!-- Informatics Football -->
-            <div class="card mb-3 text-center">
-                <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#footieModal" style="cursor: pointer;">
-                    Informatics Football <i class="fa fa-futbol-o"></i>
-                </button>
             </div>
         </div>
     </div>
@@ -114,32 +114,33 @@ title: Community
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="footieModalLabel">Informatics Football <i class="fa fa-futbol-o"></i></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style = "cursor: pointer;">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
             <div class="modal-body">
                 Come and join in with the Informatics Football fun.
+
+                <div class="d-flex d-flex-wrap">
+                    <!-- Facebook -->
+                    <a class="btn btn-primary mt-1 mr-1" href="http://football.inf.ed.ac.uk">
+                        <i class='fa fa-globe'></i>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a class="btn btn-primary mt-1 mr-1" href="https://facebook.com/groups/108750762505809">
+                        <i class='fa fa-facebook'></i>
+                    </a>
+
+                    <!-- Mailing list -->
+                    <a class="btn btn-primary mt-1 mr-1" href="http://lists.inf.ed.ac.uk/mailman/listinfo/informatics-football">
+                        <i class='fa fa-rss'></i>
+                    </a>
+                </div>
             </div>
 
-            <!-- Facebook -->
-            <a class="list-group-item list-group-item-action" href="http://football.inf.ed.ac.uk">
-                <h5 class="mb-1">Visit football.inf.ed.ac.uk website &raquo;</h5>
-                <p class="mb-0">Find more information about Informatics Football here.</p>
-            </a>
-
-            <!-- Facebook -->
-            <a class="list-group-item list-group-item-action" href="https://facebook.com/groups/108750762505809">
-                <h5 class="mb-1">Facebook: Informatics Football &raquo;</h5>
-                <p class="mb-0">A group for those who enjoy a variety of competitive and friendly football and futsal.</p>
-            </a>
-
-            <!-- Mailing list -->
-            <a class="list-group-item list-group-item-action" href="http://lists.inf.ed.ac.uk/mailman/listinfo/informatics-football">
-                <h5 class="mb-1">Join mailing list &raquo;</h5>
-                <p class="mb-0">Here's how you can get all the news about where and when we play.</p>
-            </a>
+            <img class='img-fluid' src="{{ site.baseurl }}/static/img/informatics-football.jpg">
         </div>
     </div>
 </div>

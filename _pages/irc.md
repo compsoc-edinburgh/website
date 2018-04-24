@@ -8,13 +8,20 @@ so feel free to join one rather than the other, or both!
 
 We have multiple channels on ImaginaryNet (our IRC server), but our primary channel is `#compsoc`.
 
-Other "channels" we recommend you to join include:
+The full list of "channels" we may want to join include:
 
+- `#compsoc`
 - `#inf1`, `#inf2`, `#inf3`, or `#inf4` (depending on your academic year)
-- `#tardis` is a student research project: lets do cool server stuff!
-- `#sigint` and `#sigweb`, two of our main SIGs
-
-A list of other channels can be found in the topic of the `#compsoc` channel!
+- For our Special Interest Groups:
+  - `#cs-sigint`
+  - `#networking`
+  - `#hacksig`
+  - `#sigweb`
+  - `#lawtech`
+  - `#sigcoin`
+- `#minecraft` - we have a Minecraft server!
+- `#tardis` is a student research project: let's do cool server stuff!
+- Extra: `#cricket`, `#cooking`
 
 ## Joining IRC <a href="https://www.irccloud.com/invite?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1" target="_blank"><img src="https://www.irccloud.com/invite-svg?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1"  height="18"></a>
 
@@ -27,7 +34,7 @@ an IRC client installed on your device, just [click here](ircs://irc.imaginaryne
 The folks over at the [TARDIS project](https://tardis.ed.ac.uk/) also host a web client for you to use, called The Lounge (formerly _Shout_).
 [You can login or register on this server here](https://shout.tardis.ed.ac.uk).
 
-Be patient, with IRC you won't see any messages prior to the time you _connect_. Discord allows you to see the chat history prior to your _registration_.
+Be patient, with IRC you won't see any messages prior to the time you _connect_. Since Discord is bridged, you'll be able to see the chat history prior to your registration!
 
 ## Server details particulars
 
