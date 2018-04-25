@@ -26,16 +26,7 @@ DO NOT REMOVE WITHOUT READING ABOVE NOTE
 -->
 
 <p class="float-right">
-    <a class="btn btn-primary {% unless prevurl %} disabled {% endunless %}"
-        {% if prevurl %}
-            href="{{ site.baseurl }}{{ prevurl }}"
-        {% else %}
-            aria-disabled="true"
-        {% endif %}
-    >
-        &laquo; Previous
-    </a>
-
+	
     <a class="btn btn-primary {% unless nexturl %} disabled {% endunless %}"
         {% if nexturl %}
             href="{{ site.baseurl }}{{ nexturl }}"
@@ -43,6 +34,17 @@ DO NOT REMOVE WITHOUT READING ABOVE NOTE
             aria-disabled="true"
         {% endif %}
     >
-        Next &raquo;
+        &laquo; Next
     </a>
+	
+    <a class="btn btn-primary {% unless prevurl %} disabled {% endunless %}"
+        {% if prevurl %}
+            href="{{ site.baseurl }}{{ prevurl }}"
+        {% else %}
+            aria-disabled="true"
+        {% endif %}
+    >
+        Previous &raquo;
+    </a>
+
 </p>
