@@ -21,6 +21,7 @@ The full list of "channels" we may want to join include:
   - `#sigcoin`
 - `#minecraft` - we have a Minecraft server!
 - `#tardis` is a student research project: let's do cool server stuff!
+- `#random` we aren't sure what goes on here either
 - Extra: `#cricket`, `#cooking`
 
 ## Joining IRC <a href="https://www.irccloud.com/invite?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1" target="_blank"><img src="https://www.irccloud.com/invite-svg?channel=%23sigweb&amp;hostname=irc.imaginarynet.uk&amp;port=6697&amp;ssl=1"  height="18"></a>
