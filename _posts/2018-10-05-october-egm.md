@@ -9,7 +9,7 @@ During [this month's stmu](https://www.facebook.com/events/2191698291111220/) (6
 - Secretary
   - Responsible for general society administration and communications
   - Writes social media posts, email newsletters, blog posts
-  - Rrites agendas and minutes for committee meetings
+  - Writes agendas and minutes for committee meetings
   - Responsible for society merchandise
 - Technical Secretary
   - Handles technical setup for events
