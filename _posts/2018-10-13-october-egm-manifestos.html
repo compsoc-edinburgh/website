@@ -1,0 +1,62 @@
+---
+author: findoslice
+title: "Manifestos for October EGM"
+manifestos:
+    - title: Secretary
+      people:
+        - name: Mohammad Javad, 2nd year
+          url: https://drive.google.com/file/d/0BwDda2PoGbNNNWstNWgtRnU2OFJHZUtUZThqVERHNGc0dU9F/view?usp=sharing
+        - name: RON, ReOpen Nominations
+
+    - title: Technical Secretary
+      people:
+        - name: Patrick Kage, 2nd year
+          url: https://drive.google.com/file/d/0BwDda2PoGbNNOTcycmQyMW1OX1hOYXJFR190aHVOR0RNUTcw/view?usp=sharing
+        - name: RON, ReOpen Nominations
+
+    - title: Social Secretary
+      people:
+        - name: No manifestos here! Why don't you send one in and change that?
+
+    - title: First Year Rep.
+      people:
+        - name: Vivek Raja first year (obviously)
+          url: https://drive.google.com/file/d/0BwDda2PoGbNNbkRlYmFmRm5EOVR5MVFZQWNseTlmRm9FVUhV/view?usp=sharing
+        - name: RON, ReOpen Nominations
+
+    - title: Fourth Year Rep.
+      people:
+        - name: No manifestos here! Why don't you send one in and change that?
+    
+---
+
+<p>
+On Wednesday the 17th of October we have our Extraordinary General Meeting (EGM)! Mark yourself as going <a href=https://www.facebook.com/events/2191698291111220/>on Facebook</a> so we know how many to expect and let us know if you have any special requirements! 
+</p>
+<p>
+We would ordinarily just be electing a first year rep. and any positions that weren't filled in our March AGM, however due to some resignations we are also reelecting our Secretary, TechSec, and SocialSec. Once you've looked over our <a href = "/elections">positions guidelines</a> take a look at the manifestos of who's standing below!
+</p>
+<p>
+Want to stand for something but haven't submitted a manifesto? Not to fear! You can send a manifesto to our <a href="mailto:vicepresident@comp-soc.com">Vice President</a> up until 3pm on Wednesday the 16th of October and we'll post it here as soon as we get it! Just take a look over our <a href="/elections">election guidelines</a> to decide if you want to stand! If you don't make the manifesto deadline, you can still stand on the night.
+</p>
+<p>
+If you want to vote in the EGM or stand for a position you need to <b><a href="https://www.eusa.ed.ac.uk/activities/societies/society/compsoc/">make sure that you're a member</a></b> or you won't be able to do so.
+</p>
+
+<table>
+    {% for role in page.manifestos %}
+
+    <tr><td colspan=2><strong>{{ role.title }}</strong></td></tr>
+    
+    {% for person in role.people %}
+    <tr>
+        <td>{{ person.name }} </td>
+        {% if person.url %}
+        <td>
+          <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>
+        </td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    {% endfor %}
+</table>
