@@ -3,7 +3,7 @@ teams:
   - members:
       - name: Findlay Smith
         role: President
-        url: https://tardis.ed.ac.uk/~findoslice/
+        url: https://findoslice.com
 
       - name: Rokas Gudavičius
         role: Vice President
@@ -12,18 +12,18 @@ teams:
       - name: Joao Maio
         role: Treasurer
 
-      - name: Caterina Mrose
+      - name: Joe Bloggs
         role: Secretary
 
       - name: Elena Lapė
         role: Hackathon Secretary
         url: http://elenalape.com
 
-      - name: Qais Patankar
+      - name: Joe Bloggs
         role: Technical Secretary
         url: https://qaisjp.com
 
-      - name: Elizabeth Bell
+      - name: Joe Bloggs
         role: Social Secretary
 
       - name: Dylan Oshima
