@@ -3,7 +3,7 @@ teams:
   - members:
       - name: Findlay Smith
         role: President
-        url: https://findoslice.com
+        url: http://findoslice.com
 
       - name: Rokas Gudavičius
         role: Vice President
@@ -12,18 +12,23 @@ teams:
       - name: Joao Maio
         role: Treasurer
 
-      - name: Joe Bloggs
+      - name: Mo Javad
         role: Secretary
+        url: https://mojavad.com
 
       - name: Elena Lapė
         role: Hackathon Secretary
         url: http://elenalape.com
 
-      - name: Joe Bloggs
+      - name: Patrick Kage
         role: Technical Secretary
+        url: https://kagelabs.org
 
-      - name: Joe Bloggs
+      - name: Tony Duggan
         role: Social Secretary
+
+      - name: Kyle Cotton
+        role: 1<sup>st</sup> Year Rep
 
       - name: Dylan Oshima
         role: 2<sup>nd</sup> Year Rep
