@@ -9,6 +9,10 @@ DO NOT REMOVE WITHOUT READING ABOVE NOTE
 	{% assign  document = site[the_collection] %}
 {% endif %}
 
+{% if page.collection == 'posts' %}
+	{% assign  document = site[the_collection] | reverse %}
+{% endif %}
+
 {% for links in document %}
   {% if links.title == page.title %}
     {% unless forloop.first %}
@@ -24,27 +28,16 @@ DO NOT REMOVE WITHOUT READING ABOVE NOTE
 
 DO NOT REMOVE WITHOUT READING ABOVE NOTE
 -->
-
 <p class="float-right">
-	
-    <a class="btn btn-primary {% unless nexturl %} disabled {% endunless %}"
-        {% if nexturl %}
-            href="{{ site.baseurl }}{{ nexturl }}"
-        {% else %}
-            aria-disabled="true"
-        {% endif %}
-    >
-        &laquo; Next
+
+    <a class="btn btn-primary {% unless prevurl %} disabled {% endunless %}" {% if prevurl %} href="{{ site.baseurl }}{{ prevurl }}"
+        {% else %} aria-disabled="true" {% endif %}>
+        &laquo; Previous
     </a>
-	
-    <a class="btn btn-primary {% unless prevurl %} disabled {% endunless %}"
-        {% if prevurl %}
-            href="{{ site.baseurl }}{{ prevurl }}"
-        {% else %}
-            aria-disabled="true"
-        {% endif %}
-    >
-        Previous &raquo;
+
+    <a class="btn btn-primary {% unless nexturl %} disabled {% endunless %}" {% if nexturl %} href="{{ site.baseurl }}{{ nexturl }}"
+        {% else %} aria-disabled="true" {% endif %}>
+        Next &raquo;
     </a>
 
 </p>

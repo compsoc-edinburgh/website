@@ -2,27 +2,26 @@
 -
   - url: https://careers.jpmorgan.com/
     img: static/img/partners/jpmorgan.png
-    maxwidth: 390px
+    maxwidth: 320px
+
+  - url: http://www.squarepoint-capital.com/
+    img: static/img/partners/squarepoint.png
+    maxwidth: 380px
 
 -
-  - url: https://google.com
-    img: static/img/partners/google.png
-    maxwidth: 270px
-
--
-  - url: https://careers.microsoft.com/
-    img: static/img/partners/microsoft.png
-    maxwidth: 315px
-
   - url: https://www.bloomberg.com/careers/
     img: static/img/partners/bloomberg.svg
-    maxwidth: 280px
+    maxwidth: 240px
+
+  - url: https://google.com
+    img: static/img/partners/google.png
+    maxwidth: 240px
+
+  - url: https://careers.microsoft.com/
+    img: static/img/partners/microsoft.png
+    maxwidth: 275px
 
 -
-  - url: https://www.blackrock.com/
-    img: static/img/partners/blackrock.png
-    maxwidth: 220px
-
-  - url: https://www.amazon.jobs/
-    img: static/img/partners/amazon.png
-    maxwidth: 220px
+  - url: https://www.metaswitch.com/
+    img: static/img/partners/metaswitch.svg
+    maxwidth: 200px
