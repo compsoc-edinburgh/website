@@ -23,3 +23,6 @@
 
 
 -
+  - url: https://www.metaswitch.com/
+    img: static/img/partners/metaswitch.svg
+    maxwidth: 200px
