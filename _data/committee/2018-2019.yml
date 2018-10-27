@@ -22,7 +22,7 @@ teams:
       - name: Elena Lapė
         role: Hackathon Secretary
         url: http://elenalape.com
-        img: elena-1.jpg
+        img: elena-2.jpg
 
       - name: Patrick Kage
         role: Technical Secretary
@@ -43,6 +43,7 @@ teams:
 
       - name: Likhitha Sai
         role: 3<sup>rd</sup> Year Rep
+        img: likhitha-1.jpg
 
       - name: Craig Snowden
         role: Old Person Rep
