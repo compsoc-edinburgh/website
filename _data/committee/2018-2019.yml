@@ -13,6 +13,7 @@ teams:
 
       - name: Joao Maio
         role: Treasurer
+        img: joao-1.jpg
 
       - name: Mo Javad
         role: Secretary
@@ -47,3 +48,4 @@ teams:
 
       - name: Craig Snowden
         role: Old Person Rep
+        img: craig-1.jpg
