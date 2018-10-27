@@ -28,8 +28,8 @@ We are eternally grateful for their support over the years.
 {% endfor %}
 
 <div class="mt-5 pt-5">
-	<center>This year we also have a partnered pub: Whistle Stop Barber Shop.</center>
+	<center>This year we also have a partnered pub, Bar 50</center>
 	<div class="partners mt-0">
-		<a href="https://www.whistlestopedinburgh.co.uk/"><img src="{{ site.baseurl }}/static/img/partners/whistle.png" style="max-width: 200px"></a>
+		<a href="http://www.bar-50.co.uk/"><img src="{{ site.baseurl }}/static/img/partners/bar-50.png" style="max-width: 200px"></a>
 	</div>
 </div>
