@@ -2,7 +2,7 @@
 -
   - url: https://careers.jpmorgan.com/
     img: static/img/partners/jpmorgan.png
-    maxwidth: 390px
+    maxwidth: 320px
 
   - url: http://www.squarepoint-capital.com/
     img: static/img/partners/squarepoint.png
@@ -15,12 +15,11 @@
 
   - url: https://google.com
     img: static/img/partners/google.png
-    maxwidth: 270px
+    maxwidth: 240px
 
   - url: https://careers.microsoft.com/
     img: static/img/partners/microsoft.png
-    maxwidth: 315px
-
+    maxwidth: 275px
 
 -
   - url: https://www.metaswitch.com/
