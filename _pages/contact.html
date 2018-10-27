@@ -1,0 +1,173 @@
+---
+title: "Contact"
+longtitle: "The CompSoc Community"
+---
+
+<p>{% include snippets/join-us.html %}</p>
+
+<div class="container" id="community">
+    <div class="row facebook-parent">
+        <!-- First column: CompSoc Members and CompSoc Offers -->
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <ul class="list-group">
+                    <!-- Header -->
+                    <li class="list-group-item text-center text-white" style="background-color: #4267b2;">
+                        <h3 class="mb-1 w-100">Facebook Groups</h3>
+                        <small class="w-100">suitable for members and non-members</small>
+                    </li>
+
+                    <!-- CompSoc Members -->
+                    <a class="list-group-item list-group-item-action" href="https://facebook.com/groups/compsocedinburgh">
+                        <h5 class="mb-1">CompSoc Members &raquo;</h5>
+                        <p class="mb-0">For everyone who would like to join the CompSoc community.</p>
+                    </a>
+
+                    <!-- CompSoc Offers -->
+                    <a class="list-group-item list-group-item-action" href="https://facebook.com/groups/compsoc.offers">
+                        <h5 class="mb-1">CompSoc Careers &raquo;</h5>
+                        <p class="mb-0">For people looking for offers for jobs, internships, and placements.</p>
+                    </a>
+
+                    <!-- School of Informatics -->
+                    <a class="list-group-item list-group-item-action" href="https://facebook.com/groups/informatics.uoe">
+                        <h5 class="mb-1">School of Informatics &raquo;</h5>
+                        <p class="mb-0">For Informatics' students and staff. Visit Better Informatics for yearly Informatics groups (Class of {{ site.time | date: '%Y' }}).</p>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Centre column: Discord, IRC, and BI -->
+        <div class="col-lg-4">
+            <!-- Discord -->
+            <div class="card mb-3 text-center">
+                <a href="{{ site.baseurl }}/chat" class="btn btn-discord btn-block" data-toggle="modal" data-target="#chatModal">
+                    <img src="{{ site.baseurl }}/static/img/Discord-Logo+Wordmark-White.svg" style="height: 90px; max-width: 100%">
+                    <p>Chat with our community</p>
+                    <p>We use Discord and IRC.</p>
+                </a>
+            </div>
+
+            <!-- Better Informatics -->
+            <div class="card mb-3">
+                <a class="btn btn-betterinf" href="https://betterinformatics.com/">
+                    <h4 class="card-title">Better Informatics</h4>
+                    <img src="{{ site.baseurl }}/static/img/better-informatics-thumb.png" style="max-width: 100%">
+                    <p class="card-text">Academic support and information</p>
+                </a>
+            </div>
+
+            <!-- Informatics Football -->
+            <div class="card mb-3 text-center">
+                <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#footieModal" style="cursor: pointer;">
+                    Informatics Football <i class="fa fa-futbol-o"></i>
+                </button>
+            </div>
+
+            <!-- Steam -->
+            <!-- <div class="card mb-3 text-center">
+                <a href="https://steamcommunity.com/groups/compsoc-edinburgh" class="btn btn-steam btn-lg btn-block"><i class="fa fa-steam pr-4"></i>Steam</a>
+            </div> -->
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card mb-3 text-center">
+                <a href="https://fb.me/compsoc" class="btn btn-lg btn-facebook btn-block">Follow us on Facebook</a>
+            </div>
+
+            <div class="card mb-3">
+                <div class="list-group twitter-links">
+                    <!-- Header -->
+                    <div class="list-group-item header">
+                        <div class="d-flex justify-content-center w-100">
+                            <h5 class="mb-0">Follow us on Twitter</h5>
+                        </div>
+                    </div>
+
+                    <!-- CompSoc -->
+                    <a class="list-group-item list-group-item-action" style="color: rgb(59, 148, 217)" href="https://twitter.com/compsoc">
+                        <img src="{{ site.baseurl }}/static/img/twitter-profiles/compsoc.png" class="img img-fluid" style="border-radius: 50%; width: 25%; margin-right: 10px; max-width: 100px;"></img>
+                        <h5>@CompSoc</h5>
+                    </a>
+
+                    <!-- Hacktheburgh -->
+                    <a class="list-group-item list-group-item-action" style="color: rgb(59, 148, 217)" href="https://twitter.com/hacktheburgh">
+                        <img src="{{ site.baseurl }}/static/img/twitter-profiles/hacktheburgh.jpg" class="img img-fluid" style="border-radius: 50%; width: 25%; margin-right: 10px; max-width: 100px"></img>
+                        <h5>@hacktheburgh</h5>
+                    </a>
+                    <!-- SIGINT -->
+                    <a class="list-group-item list-group-item-action" style="color: rgb(59, 148, 217)" href="https://twitter.com/siginthq">
+                        <img src="{{ site.baseurl }}/static/img/twitter-profiles/siginthq.jpg" class="img img-fluid sigint-logo-community" />
+                        <h5>@SIGINThq</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Informatics Football Modal -->
+<div class="modal fade" id="footieModal" tabindex="-1" role="dialog" aria-labelledby="footieModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="footieModalLabel">Informatics Football <i class="fa fa-futbol-o"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style = "cursor: pointer;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                Come and join in with the Informatics Football fun.
+
+                <div class="d-flex d-flex-wrap">
+                    <!-- Facebook -->
+                    <a class="btn btn-primary mt-1 mr-1" href="http://football.inf.ed.ac.uk">
+                        <i class='fa fa-globe'></i>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a class="btn btn-primary mt-1 mr-1" href="https://facebook.com/groups/108750762505809">
+                        <i class='fa fa-facebook'></i>
+                    </a>
+
+                    <!-- Mailing list -->
+                    <a class="btn btn-primary mt-1 mr-1" href="http://lists.inf.ed.ac.uk/mailman/listinfo/informatics-football">
+                        <i class='fa fa-rss'></i>
+                    </a>
+                </div>
+            </div>
+
+            <img class='img-fluid' src="{{ site.baseurl }}/static/img/informatics-football.jpg">
+        </div>
+    </div>
+</div>
+
+
+<!-- Chat Modal -->
+<div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="chatModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="chatModalLabel">Chat with CompSoc</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                {% capture modal %}true{% endcapture %}
+                {% include chat.html modal=modal %}
+                <a class="small text-muted" href="/chat">Permalink</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<p>Do you have any questions, or suggestions? You can send us a message at <a href="mailto:committee@comp-soc.com">committee@comp-soc.com</a> — we're happy to help!</p>
+
+<p>You can also contact us via [social media]({{ site.baseurl }}/community). You can get in touch with our members via the CompSoc Members group. Promotions and advertisements should be sent via the CompSoc Offers group, not the CompSoc Members group.</p>
+
+<p>If you're eager to sponsor and become a partner of one of the best societies in Informatics, you can also get in touch at <a href="mailto:partners@comp-soc.com">partners@comp-soc.com</a>.</p>

@@ -1,14 +1,14 @@
 - text: Home
   url: "/"
 
+- text: About
+  url: "/about"
+
 - text: Events
   url: "/events"
 
 - text: News
   url: "/blog/"
-
-- text: Community
-  url: "/community"
 
 - text: SIGs
   url: "/special-interest-groups"
