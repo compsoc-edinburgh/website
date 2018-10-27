@@ -4,38 +4,49 @@ teams:
       - name: Findlay Smith
         role: President
         url: http://findoslice.com
+        img: findlay-1.jpg
 
       - name: Rokas Gudavičius
         role: Vice President
         url: https://roxerg.github.io
+        img: rokas-1.jpg
 
       - name: Joao Maio
         role: Treasurer
         url: https://jmaio.github.io/
+        img: joao-1.jpg
 
       - name: Mo Javad
         role: Secretary
         url: http://mojavad.com
+        img: mo-1.jpg
 
       - name: Elena Lapė
         role: Hackathon Secretary
         url: http://elenalape.com
+        img: elena-2.jpg
 
       - name: Patrick Kage
         role: Technical Secretary
         url: https://kagelabs.org
+        img: patrick-1.jpg
 
       - name: Tony Duggan
         role: Social Secretary
+        img: tony-1.jpg
 
       - name: Kyle Cotton
         role: 1<sup>st</sup> Year Rep
+        img: kyle-1.jpg
 
       - name: Dylan Oshima
         role: 2<sup>nd</sup> Year Rep
+        img: dylan-oshima-1.jpg
 
       - name: Likhitha Sai
         role: 3<sup>rd</sup> Year Rep
+        img: likhitha-1.jpg
 
       - name: Craig Snowden
         role: Old Person Rep
+        img: craig-1.jpg
