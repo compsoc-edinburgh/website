@@ -4,6 +4,10 @@
     img: static/img/partners/jpmorgan.png
     maxwidth: 390px
 
+  - url: http://www.squarepoint-capital.com/
+    img: static/img/partners/squarepoint.png
+    maxwidth: 380px
+
 -
   - url: https://google.com
     img: static/img/partners/google.png
