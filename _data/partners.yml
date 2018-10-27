@@ -17,7 +17,6 @@
     img: static/img/partners/google.png
     maxwidth: 270px
 
--
   - url: https://careers.microsoft.com/
     img: static/img/partners/microsoft.png
     maxwidth: 315px
