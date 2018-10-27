@@ -9,6 +9,10 @@
     maxwidth: 380px
 
 -
+  - url: https://www.bloomberg.com/careers/
+    img: static/img/partners/bloomberg.svg
+    maxwidth: 240px
+
   - url: https://google.com
     img: static/img/partners/google.png
     maxwidth: 270px
@@ -18,9 +22,6 @@
     img: static/img/partners/microsoft.png
     maxwidth: 315px
 
-  - url: https://www.bloomberg.com/careers/
-    img: static/img/partners/bloomberg.svg
-    maxwidth: 280px
 
 -
   - url: https://www.blackrock.com/
