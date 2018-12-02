@@ -4,8 +4,7 @@ title: "Local Hack Day 2018"
 ---
 
 <img src="https://compsoc-edinburgh.github.io/uploads/2018-12-01-LHD/everyone.jpeg" alt="Local Hack Day 2018" class="img-fluid">
-
-On the first day of December, CompSoc hosted the annual Local Hack Day. 
+On the first day of December, CompSoc hosted the annual Local Hack Day.
 
 Despite the imminent exams breathing down their necks, over 20 passionate hackers dedicated their day to come into AT and create something exciting and new. 
 
