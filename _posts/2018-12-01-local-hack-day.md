@@ -8,7 +8,7 @@ On the first day of December, CompSoc hosted the annual Local Hack Day.
 
 Despite the imminent exams breathing down their necks, over 20 passionate hackers dedicated their day to come into AT and create something exciting and new. 
 
-The team **“It’s Easy!”** tackled the website redesign challenge, adding a little twist – Using the provided Azure credits, they implemented facial recognition for members of their concept site! They make it look so… well, easy!
+The team **“It’s Easy!”** tackled the website redesign challenge, adding a little twist – using the provided Azure credits, they implemented facial recognition for members of their concept site! They make it look so… well, easy!
 
 <img src="https://compsoc-edinburgh.github.io/uploads/2018-12-01-LHD/itsEasyTeam.jpg" alt="Team It's Easy" class="img-fluid">
 
@@ -32,7 +32,7 @@ Team **"ChachaVidhayak"** developed AlcoMender, which picks an alcoholic beverag
 
 <img src="https://compsoc-edinburgh.github.io/uploads/2018-12-01-LHD/teamChachaVidhayak.jpg" alt="Team ChachaVidhayak" class="img-fluid">
 
-Finally, after going through countless bags of chips, liters of Irn Bru and a dozen pizzas, the winners of our Local Hack Day challenges emerged:
+Finally, after going through countless bags of crisps, litres of Irn Bru and a dozen pizzas, the winners of our Local Hack Day challenges emerged:
 
 ### Best Overall Hack
 <img src="https://compsoc-edinburgh.github.io/uploads/2018-12-01-LHD/overallWinners.jpeg" alt="Best Overall Hack" class="img-fluid">
