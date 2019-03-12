@@ -44,4 +44,4 @@ If you already know your way around IRC, here are the connection details:
 * Server: `irc.imaginarynet.uk`
 * SSL: `yes`
 * Port: `6697`
-* Channel: `#compsoc,#sigint,#tardis`
+* Channel: `#compsoc,#networking,#sigint,#tardis`
