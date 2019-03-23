@@ -1,0 +1,37 @@
+year: 2019 - 2020
+teams:
+  - members:
+      - name: Kyle Cotton
+        role: President
+        img: kyle-1.jpg
+
+      - name: Dee Yeum
+        role: Vice President
+
+      - name: Findlay Smith
+        role: Treasurer
+        url: http://findoslice.com
+        img: findlay-1.jpg
+
+      - name: Lars Thalian Morstad
+        role: Secretary
+
+      - name: Patrick Kage
+        role: Technical Secretary
+        url: https://kagelabs.org
+        img: patrick-1.jpg
+
+      - name: Lorenzo Baldini
+        role: Social Secretary
+
+      - name: Yannik Nelson
+        role: 2<sup>nd</sup> Year Rep
+
+      - name: Rokas Gudavičius
+        role: 3<sup>rd</sup> Year Rep
+        url: https://roxerg.github.io
+        img: rokas-1.jpg
+        
+      - name: Tony Dugan
+        role: 4<sup>th</sup> Year Rep
+        img: tony-1.jpg
