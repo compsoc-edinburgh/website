@@ -20,7 +20,14 @@
   image: true
   colour: 'none'
   radius: 0
-
+  
+- title: SIGWeb
+  description: Website Development
+  slug: sigweb
+  image: true
+  colour:
+  radius:
+  
 - title: LawTech
   description: Law and Technology
   slug: lawtech
@@ -35,10 +42,5 @@
   colour:
   radius:
 
-- title: SIGWeb
-  description: Website Development
-  slug: sigweb
-  image:
-  colour:
-  radius:
+
 
