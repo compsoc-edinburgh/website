@@ -12,7 +12,7 @@ teams:
 
       - name: Findlay Smith
         role: Treasurer
-        url: http://findoslice.com
+        url: https://findoslice.com
         img: findlay-1.jpg
 
       - name: Lars Thalian Morstad
