@@ -3,18 +3,21 @@ teams:
   - members:
       - name: Kyle Cotton
         role: President
-        img: kyle-1.jpg
+        url: https://kylecotton.github.io
+        img: kyle-2.jpg
 
       - name: Dee Yeum
         role: Vice President
+        img: dee-1.jpg
 
       - name: Findlay Smith
         role: Treasurer
-        url: http://findoslice.com
+        url: https://findoslice.com
         img: findlay-1.jpg
 
       - name: Lars Thalian Morstad
         role: Secretary
+        img: lars-1.jpg
 
       - name: Patrick Kage
         role: Technical Secretary
@@ -23,9 +26,11 @@ teams:
 
       - name: Lorenzo Baldini
         role: Social Secretary
+        img: lorenzo-1.jpg
 
       - name: Yannik Nelson
         role: 2<sup>nd</sup> Year Rep
+        img: yannik-1.jpg
 
       - name: Rokas Gudavičius
         role: 3<sup>rd</sup> Year Rep
