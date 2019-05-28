@@ -3,6 +3,7 @@ teams:
   - members:
       - name: Kyle Cotton
         role: President
+        url: https://kylecotton.github.io
         img: kyle-2.jpg
 
       - name: Dee Yeum
