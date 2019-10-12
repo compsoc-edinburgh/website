@@ -28,8 +28,8 @@ We are eternally grateful for their support over the years.
 {% endfor %}
 
 <div class="mt-5 pt-5">
-	<center>This year we also have a partnered pub, Bar 50</center>
+	<center>This year we also have a partnered pub, Revolution!</center>
 	<div class="partners mt-0">
-		<a href="http://www.bar-50.co.uk/"><img src="{{ site.baseurl }}/static/img/partners/bar-50.png" style="max-width: 200px"></a>
+		<a href="https://www.revolution-bars.co.uk/bar/edinburgh/"><img src="{{ site.baseurl }}/static/img/partners/revolution.svg" style="min-width: 150px; max-width: 500px"></a>
 	</div>
 </div>

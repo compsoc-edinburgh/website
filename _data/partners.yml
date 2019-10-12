@@ -1,17 +1,8 @@
 # Use maxwidth to deal with discrepencies in logo whitespace
 -
-  - url: https://careers.jpmorgan.com/
-    img: static/img/partners/jpmorgan.png
+  - url: https://www.gresearch.co.uk/
+    img: static/img/partners/gresearch.svg
     maxwidth: 320px
-
-  - url: http://www.squarepoint-capital.com/
-    img: static/img/partners/squarepoint.png
-    maxwidth: 380px
-
--
-  - url: https://www.bloomberg.com/careers/
-    img: static/img/partners/bloomberg.svg
-    maxwidth: 240px
 
   - url: https://google.com
     img: static/img/partners/google.png
@@ -22,6 +13,7 @@
     maxwidth: 275px
 
 -
-  - url: https://www.metaswitch.com/
-    img: static/img/partners/metaswitch.svg
-    maxwidth: 200px
+  - url: https://www.facebook.com/careers/
+    img: static/img/partners/facebook.svg
+    maxwidth: 240px
+
