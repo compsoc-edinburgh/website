@@ -1,0 +1,52 @@
+---
+title: "EGM 2019"
+author: Dee Yeum 
+roles:
+    - title: First year Representative 
+      people:
+        - name: Tudor Finaru
+          url:  
+        - name: Irina Gubaciova 
+          url:  
+        - name: Alexandra Purcărea 
+          url:  
+    - title: Graphic Designer 
+      people:
+---       
+
+<p>
+  CompSoc will be electing new positions in the next <a href="https://www.facebook.com/events/396779284353051/")>EGM</a> (6PM 16th October 2019 at AT LT1). The positions available are as follows:
+</p>
+
+<table>
+{% for role in page.roles %}
+
+<tr><td colspan=2><strong>{{ role.title }}</strong></td></tr>
+
+{% for person in role.people %}
+
+<tr>
+  <td>{{ person.name }} {% if person.url %}</td>
+  <td>
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>{% endif %}
+  </td>
+</tr>
+
+{% endfor %}
+{% endfor %}
+</table>
+
+<br>
+<p>
+Running for a position?
+- Send vicepresident@comp-soc.com your manifesto (PDF of max 200 words) <b>by the end of Tuesday 15th October 2019</b>
+- Make sure you have CompSoc membership. You cannot run or vote for election without membership.
+- Prepare a 1 minute long speech (and a portfolio in the case of graphic designer)
+</p>
+
+<p>
+There will also be votes for any constitutional amendments required by EUSA, including the new position of Graphic Designer.
+The proposed changes can be found <a href="https://github.com/compsoc-edinburgh/constitution/pulls">here</a>.
+</p>
+
+<p>CompSoc &lt;3 You!</p>
