@@ -32,4 +32,4 @@ We have previously had special interest groups in these subject areas:
     <li>Robotics</li>
 </ul>
 
-**Note:** Given enough interest, defuncts SIGs have the possibility of being revived. If you feel like you would want to do so, [let us know]({{ site.baseurl }}/contact)!
+**Note:** Given enough interest, defunct SIGs have the possibility of being revived. If you feel like you would want to do so, [let us know]({{ site.baseurl }}/contact)!
