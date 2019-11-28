@@ -12,6 +12,10 @@
     img: static/img/partners/microsoft.png
     maxwidth: 275px
 
+  - url: https://www.optiver.com/eu/en/job-opportunities
+    img: static/img/partners/optiver.png
+    maxwidth: 275px
+
 -
   - url: https://www.facebook.com/careers/
     img: static/img/partners/facebook.svg
