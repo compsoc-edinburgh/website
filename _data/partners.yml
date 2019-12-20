@@ -16,8 +16,13 @@
     img: static/img/partners/optiver.png
     maxwidth: 275px
 
+
 -
   - url: https://www.facebook.com/careers/
     img: static/img/partners/facebook.svg
+    maxwidth: 240px
+
+  - url: https://www.modulrfinance.com/careers
+    img: static/img/partners/modulr.png
     maxwidth: 240px
 
