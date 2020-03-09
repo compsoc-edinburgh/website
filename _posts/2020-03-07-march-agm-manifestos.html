@@ -1,0 +1,82 @@
+---
+title: "March AGM Manifestos"
+author: rokasg
+roles:
+    - title: President
+      people:
+        - name: Alexandra Purcărea
+          url: https://drive.google.com/open?id=1-N3bfKeYZ4dhvlzgSX7Xsm6Li1tXHTCR 
+    - title: Vice-President
+      people:
+        - name: Tudor Finaru 
+          url: https://drive.google.com/open?id=1PE2dMAc93dEn5w4u_ChmxCRxUKOo4TJG 
+    - title: Secretary
+      people:
+        - name: Ananya Majumdar
+          url: https://drive.google.com/open?id=1dB2sdD6-5q3j0RN--tVrRi6mzaNf4J4v 
+    - title: Treasurer
+      people:
+        - name: Mattias Formo 
+          url: https://drive.google.com/open?id=1bbU22lHJEnuQKWm0aGCKtEfEN87CJdQa 
+    - title: TechSec
+      people:
+        - name: Samuel MacLeod 
+          url: https://drive.google.com/open?id=1tdUTrW3JORYiq4cOBuUiFA0q7I7fdKwk 
+    - title: SocialSec
+      people:
+        - name: Daniel Kirkman 
+          url: https://drive.google.com/open?id=1Eq-p0e7de4GTe4my1g5LOhuxrkhmmqup 
+    - title: 2nd Year Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: 3rd Year Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: Final Year Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: Postgraduate Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: Old Person Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+---       
+
+<p>On Wednesday at 6pm we have our monthly Student Tech Meetup as well as our Annual General Meeting.
+Mark yourself as going <a href="https://www.facebook.com/events/511212792850976/">on Facebook</a> so we have enough food for you!
+</p>
+
+<p>
+  If you haven't submitted a manifesto and would still like to run for election, please read <a href="https://comp-soc.com/blog/2020/02/12/march-agm.html">the elections page</a>.
+</p>
+
+<table>
+{% for role in page.roles %}
+
+<tr><td colspan=2><strong>{{ role.title }}</strong></td></tr>
+
+{% for person in role.people %}
+
+<tr>
+  <td>{{ person.name }} {% if person.url %}</td>
+  <td>
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>{% endif %}
+  </td>
+</tr>
+
+{% endfor %}
+{% endfor %}
+</table>
+
+<br>
+<p>
+  We hope you think carefully about who you choose to elect — please vote based on manifestos and speeches! Note that you may also vote for Ron (reopen nominations) for all positions.
+</p>
+<p>
+  Election candidates - please remember that if you are running for President, VP, Secretary or Treasurer, your speech may be up to 2 minutes. Other roles have up to 1 minute. If you haven't bought membership yet, do that now.
+</p>
+
+<p>See you then!</p>
+
+<p>CompSoc &lt;3 You!</p>
