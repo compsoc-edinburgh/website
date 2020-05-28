@@ -1,0 +1,46 @@
+
+teams:
+  - members:
+      - name: Alexandra Purcarea 
+        role: President
+        # url: 
+        # img: 
+
+      - name: Tudor Finaru
+        role: Vice President
+        # url: 
+        # img: 
+
+      - name: Mattias Formo
+        role: Treasurer
+        # url: 
+        # img: 
+
+      - name: Ananya Majumdar
+        role: Secretary
+        # img: 
+
+      - name: Samuel Macleod 
+        role: Technical Secretary
+        # url: 
+        # img: 
+
+      - name: Daniel Kirkman 
+        role: Social Secretary
+        # url: 
+        # img: 
+
+      - name: Advaith Sai 
+        role: 2<sup>nd</sup> Year Rep
+        # url: 
+        # img: 
+
+      - name: Findlay Smith 
+        role: 3<sup>rd</sup> Year Rep
+        url: https://findoslice.com
+        img: findlay-1.jpg
+
+      - name: Rokas Gudavičius
+        role: 4<sup>rd</sup> Year Rep
+        url: https://roxerg.github.io
+        img: rokas-1.jpg
