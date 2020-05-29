@@ -3,8 +3,8 @@ teams:
   - members:
       - name: Alexandra Purcarea 
         role: President
-        # url: https://www.linkedin.com/in/alexandra-purcarea/
-        # img: alexandra-1.jpeg
+        url: https://www.linkedin.com/in/alexandra-purcarea/
+        img: alexandra-1.jpeg
 
       - name: Tudor Finaru
         role: Vice President
