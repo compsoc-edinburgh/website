@@ -30,6 +30,11 @@ teams:
         url: https://djkirkman.github.io
         img: daniel-1.jpg
 
+      - name: Ryan Schuller
+        role: Graphic Designer
+        # url: 
+        img: ryan-1.jpg
+
       - name: Advaith Sai 
         role: 2<sup>nd</sup> Year Rep
         # url: 

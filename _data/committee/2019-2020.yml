@@ -29,6 +29,11 @@ teams:
         role: Social Secretary
         img: lorenzo-1.jpg
 
+      - name: Ryan Schuller
+        role: Graphic Designer
+        # url: 
+        img: ryan-1.jpg
+
       - name: Yannik Nelson
         role: 2<sup>nd</sup> Year Rep
         img: yannik-1.jpg
