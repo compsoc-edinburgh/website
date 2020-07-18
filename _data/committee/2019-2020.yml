@@ -31,7 +31,7 @@ teams:
 
       - name: Ryan Schuller
         role: Graphic Designer
-        # url: 
+        url: https://ryanschuller.com
         img: ryan-1.jpg
 
       - name: Yannik Nelson
