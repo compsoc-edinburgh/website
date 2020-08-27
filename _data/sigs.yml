@@ -16,6 +16,7 @@
 
 - title: SIGCoin
   description: Blockchain and Cryptocurrency
+  url: https://www.facebook.com/SIGCoinEdinburgh
   slug: sigcoin
   image: true
   colour: 'none'
@@ -51,4 +52,10 @@
   colour: 
   radius:
 
-
+- title: AlgoSIG
+  description: An algorithmic trading group
+  url: 
+  slug: algosig
+  image: true
+  colour: 
+  radius:
