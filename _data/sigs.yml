@@ -51,4 +51,10 @@
   colour: 
   radius:
 
-
+- title: AlgoSIG
+  description: An algorithmic trading group
+  url: 
+  slug: algosig
+  image: true
+  colour: 
+  radius:
