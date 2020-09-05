@@ -23,7 +23,7 @@ Becoming a programmer isn't something that can just be taught: you need to put a
 There are plenty of places where you can get help, and in addition to the Cascaders Evenings, we're happy to answer any questions you have [online](/community).
 
 - [Codecademy](https://www.codecademy.com/) has some excellent free courses for learning how to code. Great languages to start out with would be Python or JavaScript.
-- [W3Schools](https://www.w3schools.com/) another great free resource with tutorials and reference materials for both frontend, and backend web development.
+- [MDN](https://developer.mozilla.org) another great free resource with tutorials and reference materials for both frontend, and backend web development.
 - [/r/learnprogramming](https://www.reddit.com/r/learnprogramming/comments/61oly8/new_read_me_first/) - a community on reddit
 - ["Become a Programmer"](https://www.lynda.com/learning-paths/Developer/become-a-programmer) - this is a Lynda course (you have a free membership through myEd)
 
