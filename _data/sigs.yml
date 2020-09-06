@@ -59,3 +59,11 @@
   image: true
   colour: 
   radius:
+  
+  - title: GameDevSIG
+  description: Game development
+  url: https://www.facebook.com/groups/gamedevsocedi
+  slug: gamedevsig
+  image: true
+  colour: 
+  radius:
