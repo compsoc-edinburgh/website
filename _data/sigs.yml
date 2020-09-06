@@ -60,7 +60,7 @@
   colour: 
   radius:
   
-  - title: GameDevSIG
+- title: GameDevSIG
   description: Game development
   url: https://www.facebook.com/groups/gamedevsocedi
   slug: gamedevsig
