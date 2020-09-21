@@ -1,28 +1,25 @@
 # Use maxwidth to deal with discrepencies in logo whitespace
 -
-  - url: https://www.gresearch.co.uk/
-    img: static/img/partners/gresearch.svg
-    maxwidth: 320px
-
-  - url: https://google.com
-    img: static/img/partners/google.png
-    maxwidth: 240px
-
-  - url: https://careers.microsoft.com/
-    img: static/img/partners/microsoft.png
-    maxwidth: 275px
-
   - url: https://www.optiver.com/eu/en/job-opportunities
     img: static/img/partners/optiver.png
     maxwidth: 275px
-
+    
+-
+  - url: https://www.gresearch.co.uk/
+    img: static/img/partners/gresearch.svg
+    maxwidth: 320px
 
 -
   - url: https://www.facebook.com/careers/
     img: static/img/partners/facebook.svg
     maxwidth: 240px
 
-  - url: https://www.modulrfinance.com/careers
-    img: static/img/partners/modulr.png
+  - url: https://www.bloomberg.com/company/early-career/
+    img: static/img/partners/bloomberg.svg
+    maxwidth: 240px
+    
+-
+  - url: https://google.com
+    img: static/img/partners/google.png
     maxwidth: 240px
 
