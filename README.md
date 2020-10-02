@@ -1,4 +1,4 @@
-# SIG: Web - website2017
+# SIG: Web - website2017 - an amazing project
 This is [CompSoc Edinburgh](https://comp-soc.com)'s website, built by SIG: Web.
 
 ## How to test
