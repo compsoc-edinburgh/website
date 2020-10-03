@@ -8,6 +8,10 @@
   - url: https://www.gresearch.co.uk/
     img: static/img/partners/gresearch.svg
     maxwidth: 320px
+    
+  - url: https://thoughtmachine.net/careers
+    img: static/img/partners/thoughtmachine.png
+    maxwidth: 320px
 
 -
   - url: https://www.facebook.com/careers/
@@ -19,6 +23,10 @@
     maxwidth: 240px
     
 -
+  - url: https://www.transferwise.jobs/
+    img: static/img/partners/transferwise.png
+    maxwidth: 240px
+    
   - url: https://google.com
     img: static/img/partners/google.png
     maxwidth: 240px
