@@ -6,7 +6,7 @@ title: "SIGs"
 
 Are you and your friends interested in a particular field of Informatics? Start a SIG!
 
-CompSoc offers SIGs promotion, some money, support, and a place on the committee. [Send us an email]({{ site.baseurl }}/contact) if you're interested in forming a SIG.
+CompSoc offers SIGs promotion, some money, support, and a place on the committee. [Send us an email](mailto:hello@comp-soc.com?subject=Forming%20a%20new%20SIG) if you're interested in forming a SIG.
 
 ### Our SIGs
 <div class="sigs__grid">
