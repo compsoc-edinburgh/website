@@ -11,21 +11,22 @@ teams:
         url: https://www.linkedin.com/in/tudor-finaru-b1239a194/
         img: tudor-1.jpg 
 
-      - name: Mattias Formo
+      - name: Anabel Yong
         role: Treasurer
         # url: 
         # img: 
 
       - name: Ananya Majumdar
         role: Secretary
-        # img: 
+        # url:
+        img: ananya-1.jpg
 
-      - name: Samuel Macleod 
+      - name: Samuel Macleod
         role: Technical Secretary
-        # url: 
+        # url:
         img: samuel-1.jpg
 
-      - name: Daniel Kirkman 
+      - name: Daniel Kirkman
         role: Social Secretary
         url: https://djkirkman.github.io
         img: daniel-1.jpg
@@ -35,12 +36,17 @@ teams:
         url: https://ryanschuller.com
         img: ryan-1.jpg
 
-      - name: Advaith Sai 
-        role: 2<sup>nd</sup> Year Rep
-        # url: 
-        # img: 
+      - name: Artemis Livingstone
+        role: 1<sup>st</sup> Year Rep
+        # url:
+        # img:
 
-      - name: Findlay Smith 
+      - name: Advaith Sai
+        role: 2<sup>nd</sup> Year Rep
+        # url:
+        # img:
+
+      - name: Findlay Smith
         role: 3<sup>rd</sup> Year Rep
         url: https://findoslice.com
         img: findlay-1.jpg
@@ -49,4 +55,3 @@ teams:
         role: 4<sup>rd</sup> Year Rep
         url: https://roxerg.github.io
         img: rokas-1.jpg
-
