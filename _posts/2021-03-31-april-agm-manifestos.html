@@ -1,0 +1,86 @@
+---
+title: "April AGM Manifestos"
+author: tudorfinaru
+roles:
+    - title: President
+      people:
+        - name: Artemis Livingstone
+          url: https://drive.google.com/file/d/1wJtcWn0bZR2RU7CbhjAjtpPOwPzujUdj/view?usp=sharing
+    - title: Vice-President
+      people:
+        - name: Andi Dicu 
+          url: https://drive.google.com/file/d/1TPnZEznZh7hHzIr7XLn3sz-vhlhMe0au/view?usp=sharing
+    - title: Secretary
+      people:
+        - name: Alexandra Purcarea
+          url: https://drive.google.com/file/d/1razIEGpwzU_n_3Uftn7SiDuGrDMMcOP_/view?usp=sharing
+    - title: Treasurer
+      people:
+        - name: Karthik Narayanan
+          url: https://drive.google.com/file/d/1XyNDMmBAYlymGjTTlNkZL2WSu03h4CpG/view?usp=sharing
+    - title: TechSec
+      people:
+        - name: Yuto Takano
+          url: https://drive.google.com/file/d/1Ng0yN6KYwqTFWO3FlzmpJ0f1KtAvtVsA/view?usp=sharing
+        - name: Jacob Walters
+          url: https://drive.google.com/file/d/1XTlMBw5chzVyL8JbTmDkLKAsNxw199kl/view?usp=sharing
+    - title: SocialSec
+      people:
+        - name: Paula Sparrow
+          url: https://drive.google.com/file/d/15hJ7Vl_Cb4NxyEk1rYRqC9OaPVhfYQc2/view?usp=sharing
+    - title: 2nd Year Rep
+      people:
+        - name: Paula Sparrrow
+          url: https://drive.google.com/file/d/15Sp5c-Ma_PqO4SDLkcoP4l7DWW7yY6V6/view?usp=sharing
+    - title: 3rd Year Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: Final Year Rep
+      people:
+        - name: Mikey Andrejczuk
+        - url: https://drive.google.com/file/d/1ATqZIgPX5CQIBQPA3_CtmHVd13hErohG/view?usp=sharing
+    - title: Postgraduate Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: Old Person Rep
+      people:
+        - name: Rokas Gudavicius
+          url: https://drive.google.com/file/d/1eRSX3viV7dS9t3lgOHNzBtQ6hWK1Lb2r/view?usp=sharing
+    - title: Graphic Designer 
+      people:
+        - name: Callum Leask
+          url: https://drive.google.com/file/d/12fAiv6UBXx4fSX4Rz8xSt64QyhT2N_ok/view?usp=sharing
+---       
+
+<p>On Friday at 6pm we are holding our Annual General Meeting. These are the candidates' manifestos - please read them carefully and attend the event to hear their speeches!
+</p>
+
+<table>
+{% for role in page.roles %}
+
+<tr><td colspan=2><strong>{{ role.title }}</strong></td></tr>
+
+{% for person in role.people %}
+
+<tr>
+  <td>{{ person.name }} {% if person.url %}</td>
+  <td>
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>{% endif %}
+  </td>
+</tr>
+
+{% endfor %}
+{% endfor %}
+</table>
+
+<br>
+<p>
+  We hope you think carefully about who you choose to elect — please vote based on manifestos and speeches! Note that you may also vote for Ron (reopen nominations) for all positions.
+</p>
+<p>
+  Election candidates - please remember that if you are running for President, VP, Secretary or Treasurer, your speech may be up to 2 minutes long. Other roles have up to 1 minute. If you haven't bought membership yet, it's completely free :)
+</p>
+
+<p>See you then!</p>
+
+<p>CompSoc &lt;3 You!</p>
