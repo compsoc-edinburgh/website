@@ -13,3 +13,4 @@ If you have `bundler` installed, type:
 
 - `bundle`, to install the Gemfile packages
 - `bundle exec jekyll serve` to host a local server that will watch the directory for changes
+- 
