@@ -27,7 +27,7 @@ teams:
         img: yuto-1.jpg
 
       - name: Paula Sparrow
-        role: Social Secretary
+        role: Social Secretary, 2<sup>nd</sup> Year Rep
         # url:
         # img:
 
@@ -41,8 +41,8 @@ teams:
         # url:
         # img:
 
-      - name: Paula Sparrow
-        role: 2<sup>nd</sup> Year Rep
+      # - name:
+      #   role: 2<sup>nd</sup> Year Rep
         # url:
         # img:
 
