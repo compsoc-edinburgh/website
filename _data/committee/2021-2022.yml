@@ -1,0 +1,62 @@
+year: 2021 - 2022
+teams:
+  - members:
+      - name: Artemis Livingstone
+        role: President
+        # url:
+        # img:
+
+      # - name:
+      #   role: Vice President
+      #   url:
+      #   img:
+
+      - name: Karthik Narayanan
+        role: Treasurer
+        # url:
+        # img:
+
+      - name: Alexandra Purcarea
+        role: Secretary
+        url: https://www.linkedin.com/in/alexandra-purcarea/
+        img: alexandra-1.JPEG
+
+      - name: Yuto Takano
+        role: Technical Secretary
+        url: https://www.linkedin.com/in/yuto-takano/
+        img: yuto-1.jpg
+
+      - name: Paula Sparrow
+        role: Social Secretary, 2<sup>nd</sup> Year Rep
+        # url:
+        # img:
+
+      - name: Callum Leask
+        role: Graphic Designer
+        # url:
+        # img:
+
+      # - name:
+        # role: 1<sup>st</sup> Year Rep
+        # url:
+        # img:
+
+      # - name:
+      #   role: 2<sup>nd</sup> Year Rep
+        # url:
+        # img:
+
+      # - name:
+      #   role: 3<sup>rd</sup> Year Rep
+      #   url:
+      #   img:
+
+      - name: Mikey Andrejczuk
+        role: 4<sup>th</sup> Year Rep
+        url:
+        img:
+
+      - name: Rokas Gudavičius
+        role: Old Person Rep
+        url: https://roxerg.github.io
+        img: rokas-1.jpg
