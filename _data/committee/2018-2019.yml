@@ -4,7 +4,6 @@ teams:
       - name: Findlay Smith
         role: President
         url: http://findoslice.com
-        img: findlay-1.jpg
 
       - name: Rokas Gudavičius
         role: Vice President
