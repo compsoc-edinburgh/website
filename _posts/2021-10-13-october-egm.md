@@ -27,8 +27,6 @@ During this year's first Student Tech Meet-up (29th October 2021 at 6PM BST), we
 - [Make sure you have CompSoc membership.](/join) You cannot run for election without membership.
 - Prepare a speech! Up to 2 minutes for the vice president role, and 1 minute for the rep roles.
 
-There will also be votes for any constitutional amendments, which can be found here: <https://github.com/compsoc-edinburgh/constitution/pulls>.
-
 See you soon,
 
 CompSoc <3 You!
