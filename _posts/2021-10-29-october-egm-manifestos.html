@@ -1,0 +1,102 @@
+---
+title: "Manifestos and Details for Oct EGM"
+author: yutotakano
+manifestos:
+    - title: Vice President
+      people:
+        - name: Bence Szilagyi
+          url: https://drive.google.com/open?id=1N6tOM8uD_e5MqoW5VFzMlOcYLMBCx6Bt
+        - name: Enes Aydogan
+          url: https://drive.google.com/open?id=1GnwxAigln6-cg5hPDg4L55FCikeoF0R8
+        - name: Matyas Zsoldos
+          url: https://drive.google.com/open?id=1nOyPokCfU-n6JzcRmwZdZa8R_KEqHnmd
+        - name: Oscar Shrimpton
+          url: https://drive.google.com/open?id=1xBNy6M6oXh-ufuA444uu45ZTSmfbTAsT
+        - name: Pardis Farahi
+          url: https://drive.google.com/open?id=1X1Ji6RyqCnRma48QwbIQ8aApLjHvGD-B
+    - title: 1st Year Representative
+      people:
+        - name: Arthur Pan
+          url: https://drive.google.com/open?id=1IrNn5pCRffJ_v4CC5x3MXp1KX_Yh0OzK
+        - name: Benjamin McConville
+          url: https://drive.google.com/open?id=1Ym-8FeGFTF-BopWMCBR3OhbKsGFYfIu9
+        - name: Charlotte Ausel
+          url: https://drive.google.com/open?id=14UCtQYD8mW02n-8smZ4owhufz0GVpQ9H
+        - name: Eren Mendi
+          url: https://drive.google.com/open?id=1exMg_eCgX-UdLzED68xyd5hhzDCQA2en
+        - name: Jack McPake
+          url: https://drive.google.com/open?id=1gcyT8u6w6vg_shu0VSaiUVmFbWOKIlVK
+        - name: Kshitij Sharma
+          url: https://drive.google.com/open?id=17J2ORrLTtXFJAOZxrugPFcmmBxQ7ebA6
+        - name: Selina Xu
+          url: https://drive.google.com/open?id=1bMqsH2mwzhY7GDvreTrDDfvoHpo_G8Y-
+    - title: 3rd Year Representative
+      people:
+        - name: Ashley Roberts
+          url: https://drive.google.com/open?id=1wwvGJCtTZbokCXhytnAX4Z_QhziZARii
+
+---
+
+<p>
+    On Friday (today) at 18:30 we have this year's first monthly Student Tech Meetup as well as our Emergency General Meeting to elect some new committee members!
+</p>
+<dl>
+    <dt>Venue</dt>
+    <dd style="margin-left: 1rem">Online (on <a href="https://www.twitch.tv/compsocedinburgh" title="Click to go to the CompSoc Twitch page">Twich</a> and <a href="https://www.youtube.com/channel/UCOEMTnIKR29AnSVVdLQZg3Q" title="Click to go to the CompSoc YouTube channel">YouTube</a>). No tickets required!</dd>
+    <dt>Time</dt>
+    <dd style="margin-left: 1rem">18:30 - est. 20:00 BST</dd>
+    <dt>Programme</dt>
+    <dd style="margin-left: 1rem">
+        <details open>
+            <summary><b>Dylan Thinnes</b> - Why We Learn Languages</summary>
+            <quote style="font-style: italic; display: block; padding-left: 2rem">
+                Our programming languages are Turing-complete, meaning they all can solve the same problems - so why do we bother to learn more than one?<br>
+                In this talk, we'll go over how programming languages shape (for better or worse) the way we think about problems.<br>
+                We'll go over languages you have heard of, some that are more obscure, and even some "joke" languages, and see what they all bring to the table.
+            </quote>
+        </details>
+        <details open>
+            <summary><b>CompSoc Commitee</b> - Election</summary>
+            <quote style="display: block; padding-left: 2rem">
+                We're holding an election to elect a new Vice President, 1st Year Representative, and 3rd Year Representative.<br>
+                Candidates will give 1 minute speeches (2 minutes for VP), and the audience may be ask questions.<br>
+                See below for details.
+            </quote>
+        </details>
+    </dd>
+</dl>
+
+<h2>Election Details</h2>
+<p>
+    If you want to vote in the EGM, you need to <b><a href="/join" title="Click to go to the EUSA CompSoc membership page.">make sure you have CompSoc membership</a></b>.
+</p>
+
+<table>
+    {% for role in page.manifestos %}
+
+    <tr><td colspan=2><strong>{{ role.title }}</strong></td></tr>
+
+    {% for person in role.people %}
+    <tr>
+        <td>{{ person.name }} </td>
+        {% if person.url %}
+        <td style="padding-left: 2rem">
+          <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>
+        </td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    {% endfor %}
+</table>
+
+<br>
+<p>
+    We hope you think carefully about who you choose to elect — please vote based on manifestos and speeches! Note that you may also vote for Ron (reopen nominations) for all positions.
+</p>
+<p>
+    Election candidates - please remember that if you are running for VP, your speech may be up to 2 minutes. Other roles have up to 1 minute. If you haven't gotten membership yet, do that now.
+</p>
+
+<p>See you then!</p>
+
+<p>CompSoc &lt;3 You!</p>
