@@ -1,7 +1,7 @@
 ---
 url: /elections
 title: CompSoc Elections
-redirect: https://comp-soc.com/blog/2018/10/05/october-egm.html
+redirect: https://comp-soc.com/blog/2021/10/28/october-egm-manifestos.html
 ---
 
 Redirecting...
