@@ -2,6 +2,32 @@
   rel="stylesheet"
   href="{{ site.baseurl }}/static/fullcalendar/fullcalendar.min.css"
 />
+<style>
+/* Events with URL are rendered with pointer cursor by default -- unset that*/
+.fc .fc-list-event.fc-event-forced-url {
+  cursor: unset;
+}
+
+/* All URLs within a event description are underlined when event hovered --
+we only want the hovered link to be underlined. */
+.fc .fc-list-event.fc-event-forced-url:hover a {
+  text-decoration: unset;
+}
+
+.fc .fc-list-event.fc-event-forced-url a:hover,
+.fc .fc-list-event.fc-event-forced-url:hover .eventTitle {
+  text-decoration: underline;
+}
+
+.fc .fc-list-event-title .eventDescription a {
+  color: #007bff;
+}
+
+.fc .fc-list-event .eventTitle {
+  font-weight: bold;
+}
+
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="{{ site.baseurl }}/static/fullcalendar/fullcalendar.min.js"></script>
 <script src="{{ site.baseurl }}/static/fullcalendar/gcal.min.js"></script>
@@ -20,7 +46,29 @@
         end: moment().add(1, "months").toISOString()
       },
       headerToolbar: false,
-      height: "auto"
+      height: "auto",
+      eventContent: function(arg, createElement) {
+        return createElement(
+          "div",
+          { className: "event" },
+          createElement(
+            "a",
+            { className: "eventTitle", href: arg.event.url, target: "_blank" },
+            arg.event.title
+          ),
+          createElement(
+            "div",
+            {
+              className: "eventDescription",
+              dangerouslySetInnerHTML: { __html: arg.event.extendedProps.description }
+            },
+            null
+          )
+        );
+      },
+      eventClick: function(info) {
+        info.jsEvent.preventDefault();
+      }
     });
     calendar.render();
   });
