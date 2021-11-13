@@ -7,20 +7,21 @@
 <script src="{{ site.baseurl }}/static/fullcalendar/gcal.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function () {
-    $("#calendar").fullCalendar({
+    var calendar = new FullCalendar.Calendar($("#calendar")[0], {
       googleCalendarApiKey: "AIzaSyAnUQX9d7j3_d5wlJF_PvM02eHOMFbDedw",
       events: {
         googleCalendarId:
           "comp-soc.com_1k2f1gda8js9nav1ilr5g5h6vk@group.calendar.google.com"
       },
 
-      defaultView: "list",
+      initialView: "list",
       visibleRange: {
-        start: moment(),
-        end: moment().add(1, "months")
+        start: moment().toISOString(),
+        end: moment().add(1, "months").toISOString()
       },
-      header: false,
+      headerToolbar: false,
       height: "auto"
     });
+    calendar.render();
   });
 </script>
