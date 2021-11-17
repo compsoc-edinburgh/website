@@ -1,33 +1,23 @@
-# Use maxwidth to deal with discrepencies in logo whitespace
+# Use maxwidth to deal with discrepancies in logo whitespace
 -
-  - url: https://www.optiver.com/eu/en/job-opportunities
+  - name: Optiver
+    url: https://www.optiver.com/eu/en/job-opportunities
     img: static/img/partners/optiver.png
     maxwidth: 275px
-    
--
-  - url: https://www.gresearch.co.uk/
-    img: static/img/partners/gresearch.svg
-    maxwidth: 320px
-    
-  - url: https://thoughtmachine.net/careers
-    img: static/img/partners/thoughtmachine.png
-    maxwidth: 320px
 
--
-  - url: https://www.facebook.com/careers/
-    img: static/img/partners/facebook.svg
-    maxwidth: 240px
-
-  - url: https://www.bloomberg.com/company/early-career/
-    img: static/img/partners/bloomberg.svg
-    maxwidth: 240px
-    
--
-  - url: https://www.transferwise.jobs/
-    img: static/img/partners/transferwise.png
-    maxwidth: 240px
-    
-  - url: https://google.com
+  - name: Google
+    url: https://google.com
     img: static/img/partners/google.png
+    maxwidth: 240px
+
+-
+  - name: AND Digital
+    url: https://www.and.digital/join/open-roles
+    img: static/img/partners/anddigital.svg
+    maxwidth: 240px
+
+  - name: Bloomberg
+    url: https://www.bloomberg.com/company/early-career/
+    img: static/img/partners/bloomberg.svg
     maxwidth: 240px
 
