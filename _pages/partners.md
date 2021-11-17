@@ -2,11 +2,14 @@
 title: "Partners"
 ---
 
-Here at CompSoc we are supported by some great companies that are passionate about engaging in student life.
-We are eternally grateful for their support over the years.
+Many of our activities at CompSoc wouldn't be possible without the support we receive from our wonderful partners. We are eternally grateful for their support over the years.
+
+Our partners get access to opportunities for advertising jobs and events, holding engaging talks at monthly Student Tech Meet-ups, and connecting with the 1000+ members of CompSoc through a variety of other events we host, like Hackathons or CTFs.
+
+We are always welcoming new partnerships and opportunities. If you are interested in partnering with CompSoc, please reach out to us at <a href="mailto:partners@comp-soc.com">partners@comp-soc.com</a>.
 
 {% for group in site.data.partners %}
-<div class="partners">
+<div class="mt-2 partners">
 	{% for partner in group %}
 		{% assign imgStart = partner.img | slice: 0, 4 %}
 		{% assign img = partner.img %}
@@ -15,21 +18,16 @@ We are eternally grateful for their support over the years.
 		{% unless imgStart == "http" %}
 			{% capture img %}{{ site.baseurl }}/{{ img }}{% endcapture %}
 		{% endunless %}
-
+        <div class="partner">
 		{% unless partner.url == "" %}
-			<a href="{{ partner.url}}" {{ width }}>
+			<a href="{{ partner.url }}" {{ width }} title="Click to visit {{ partner.name }}'s website">
 		{% endunless %}
-				<img src="{{ img }}" {{ width }}>
+				<img src="{{ img }}" {{ width }} alt="Logo of {{ partner.name }}">
 		{% unless partner.url == "" %}
 			</a>
 		{% endunless %}
+            <span>{{ partner.name }}</span>
+        </div>
 	{% endfor %}
 </div>
 {% endfor %}
-
-<div class="mt-5 pt-5">
-	<center>This year we also have a partnered pub, Revolution!</center>
-	<div class="partners mt-0">
-		<a href="https://www.revolution-bars.co.uk/bar/edinburgh/"><img src="{{ site.baseurl }}/static/img/partners/revolution.svg" style="min-width: 150px; max-width: 500px"></a>
-	</div>
-</div>
