@@ -8,7 +8,7 @@ excerpt_separator: "<!--See More-->"
 <dl><!--The following dt/dd are on one line to make the automatically generated excerpt (meta-description tag) cleaner-->
     <dt>Venue:</dt> <dd style="margin-left: 1rem"><a href="https://www.google.com/maps/place/Teviot+Row+House/@55.9450239,-3.1890559,18.61z/data=!4m9!1m2!2m1!1sTeviot+study+room!3m5!1s0x4887c7849d6aa7c9:0xddf6a9cb45ba732a!8m2!3d55.9450989!4d-3.1886356!15sChFUZXZpb3Qgc3R1ZHkgcm9vbVoTIhF0ZXZpb3Qgc3R1ZHkgcm9vbZIBDXN0dWRlbnRfdW5pb26aASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTlJOM0JMTFd0blJSQUI?hl=en">Teviot Row House (Study Room)</a>. Simulcast stream on <a href="https://www.youtube.com/channel/UCOEMTnIKR29AnSVVdLQZg3Q" title="Click to go to the CompSoc YouTube channel">YouTube</a>. No tickets required!</dd>
     <dt>Time:</dt> <dd style="margin-left: 1rem">18:45 - est. 20:45 GMT</dd>
-    <dt>Food:</dt> <dd style="margin-left: 1rem">Free <a href="https://www.papajohns.co.uk/" title="Click to go to the Papa John's website">Papa John's</a> pizza</dd>
+    <dt>Food:</dt> <dd style="margin-left: 1rem">Free Teviot pizza</dd>
     <dt>Programme:</dt>
     <!--See More-->
     <dd style="margin-left: 1rem">
