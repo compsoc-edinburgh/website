@@ -1,5 +1,5 @@
 ---
-title: "Events"
+title: "Event Calendar"
 has_include: true
 # Note that you may also need to edit the above include
 ---
