@@ -3,18 +3,18 @@ teams:
   - members:
       - name: Artemis Livingstone
         role: President
-        # url:
-        # img:
+        url: https://github.com/social-anthrax
+        img: artemis-1.jpeg
 
       - name: Oscar Shrimpton
         role: Vice President
-      #   url:
+        url: https://www.linkedin.com/in/oscar-shrimpton-07b62a1a5
       #   img:
 
       - name: Karthik Narayanan
         role: Treasurer
-        # url:
-        # img:
+        url: https://www.linkedin.com/in/karthik-narayanan-6ab503202
+        img: karthik-1.jpeg
 
       - name: Alexandra Purcarea
         role: Secretary
@@ -28,7 +28,7 @@ teams:
 
       - name: Paula Sparrow
         role: Social Secretary, 2<sup>nd</sup> Year Rep
-        # url:
+        url: https://www.linkedin.com/in/paula-sparrow-mu%C3%B1oz-270488204
         # img:
 
       - name: Callum Leask
@@ -38,7 +38,7 @@ teams:
 
       - name: Benjamin McConville
         role: 1<sup>st</sup> Year Rep
-        # url:
+        url: https://www.linkedin.com/in/benjamin-mcconville-3a1198227
         # img:
 
       # - name:
@@ -48,13 +48,13 @@ teams:
 
       - name: Ashley Roberts
         role: 3<sup>rd</sup> Year Rep
-      #   url:
+        url: https://www.linkedin.com/in/ashley-roberts-57b028213
       #   img:
 
       - name: Mikey Andrejczuk
         role: 4<sup>th</sup> Year Rep
-        url:
-        img:
+        url: https://www.linkedin.com/in/michael-andrejczuk/
+        # img:
 
       - name: Rokas Gudavičius
         role: Old Person Rep
