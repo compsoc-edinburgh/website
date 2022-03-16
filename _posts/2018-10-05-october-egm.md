@@ -1,6 +1,6 @@
 ---
 title: October EGM + STMU
-author: findoslice
+author: himmelmaus
 ---
 
 During [this month's stmu](https://www.facebook.com/events/2191698291111220/) (6pm, 17th of October) we need to elect some new committee members! The roles up for election are:

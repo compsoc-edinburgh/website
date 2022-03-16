@@ -1,5 +1,5 @@
 ---
-author: findoslice
+author: himmelmaus
 title: "EGM Results!"
 ---
 

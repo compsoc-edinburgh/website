@@ -11,9 +11,9 @@ teams:
         url: https://chefyeum.com
         img: dee-1.jpg
 
-      - name: Findlay Smith
+      - name: Elspeth Smith
         role: Treasurer
-        url: https://findoslice.com
+        img: elspeth-1.jpg
 
       - name: Lars Thalian Morstad
         role: Secretary
