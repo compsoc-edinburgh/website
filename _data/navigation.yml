@@ -4,8 +4,8 @@
 - text: About
   url: "/about"
 
-- text: Events
-  url: "/events"
+- text: Calendar
+  url: "/calendar"
 
 - text: News
   url: "/blog/"

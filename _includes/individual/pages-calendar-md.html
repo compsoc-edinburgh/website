@@ -53,7 +53,7 @@ we only want the hovered link to be underlined. */
           { className: "event" },
           createElement(
             "a",
-            { className: "eventTitle", href: arg.event.url, target: "_blank" },
+            { className: "eventTitle", href: arg.event.url },
             arg.event.title
           ),
           createElement(
@@ -67,7 +67,11 @@ we only want the hovered link to be underlined. */
         );
       },
       eventClick: function(info) {
-        info.jsEvent.preventDefault();
+        if (info.jsEvent.target.tagName == "A" && info.jsEvent.target.href) {
+            info.jsEvent.stopImmediatePropagation();
+        } else {
+            info.jsEvent.preventDefault();
+        }
       }
     });
     calendar.render();
