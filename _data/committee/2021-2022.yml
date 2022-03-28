@@ -9,7 +9,7 @@ teams:
       - name: Oscar Shrimpton
         role: Vice President
         url: https://www.linkedin.com/in/oscar-shrimpton-07b62a1a5
-      #   img:
+        img: oscar-1.png
 
       - name: Karthik Narayanan
         role: Treasurer
