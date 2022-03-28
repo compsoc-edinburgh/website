@@ -1,0 +1,118 @@
+---
+title: "Manifestos for 2022 March AGM"
+author: tcmal
+excerpt_separator: "<!--See More-->"
+roles:
+    - title: President
+      people:
+        - name: Ben Mcconville
+          url: https://drive.google.com/file/d/1v-8qVjA54eogGSR0-Hk5ddOKhX2qXxkz/view?usp=sharing
+        - name: Japjot Singh
+          url: https://drive.google.com/file/d/1vkmOlf_ipCPkV0hbai1uT6vbg6496h6d/view?usp=sharing
+        - name: Matyas Zsoldos
+          url: https://drive.google.com/file/d/13reSwzL-ULALZcAMmxpfftzbSGUZuZ49/view?usp=sharing
+    - title: Vice-President
+      people:
+        - name: Nobody has run for this position. You can still run on the night!
+    - title: Secretary
+      people:
+        - name: Kshitij Sharma
+          url: https://drive.google.com/file/d/1rjdBtMVyn3abnn1AjSQ4zVN5zobRnmo9/view?usp=sharing
+    - title: Treasurer
+      people:
+        - name: Anant Kumar Gupta
+          url: https://docs.google.com/document/d/1dZAtE_Z1NAKXahjNk5PNXkjwC_21h6XL/edit?usp=sharing&ouid=104228964260875901956&rtpof=true&sd=true
+        - name: Sophie Bata-Madden
+          url: https://drive.google.com/file/d/1L14ur0sqEEva7oo6c7Gkm7OpAAy4pk4N/view?usp=sharing
+    - title: Graphic Designer
+      people:
+        - name: Margo Tsugorka
+          url: https://drive.google.com/file/d/1ZYyV4ymquExw9jdotU_rhuOQkmsanRX8/view?usp=sharing
+    - title: TechSec
+      people:
+        - name: Nobody has run for this position. You can still run on the night!
+    - title: SocialSec
+      people:
+        - name: Nobody has run for this position. You can still run on the night!
+    - title: 2nd Year Rep
+      people:
+        - name: Nobody has run for this position. You can still run on the night!
+    - title: 3rd Year Rep
+      people:
+        - name: Nobody has run for this position. You can still run on the night!
+    - title: Final Year Rep
+      people:
+        - name: Nobody has run for this position. You can still run on the night!
+    - title: Postgraduate Rep
+      people:
+        - name: Nobody has run for this position. You could stand for election!
+    - title: Old Person Rep
+      people:
+        - name: Dylan Thinnes
+          url: https://drive.google.com/file/d/1N2LIqE1FQrAAKzqTVRQsJaXvHBi1JVid/view?usp=sharing
+---
+
+<p>On <time datetime="2022-03-29 18:00Z">Tuesday at 18:00</time> we'll have this year's Annual General Meeting, as well as our Student Tech Meetup. Here are the session details, and the election manifestos.</p>
+<dl><!--The following dt/dd are on one line to make the automatically generated excerpt (meta-description tag) cleaner-->
+    <dt>Venue:</dt> <dd style="margin-left: 1rem"><a href="https://goo.gl/maps/wxeVFKbh24Z2g9v16">TechCube Zero</a>, or Online (on <a href="https://www.twitch.tv/compsocedinburgh" title="Click to go to the CompSoc Twitch page">Twich</a> and <a href="https://www.youtube.com/channel/UCOEMTnIKR29AnSVVdLQZg3Q" title="Click to go to the CompSoc YouTube channel">YouTube</a>). No tickets required!</dd>
+    <dt>Time:</dt> <dd style="margin-left: 1rem">18:00 - est. 20:30 BST</dd>
+    <dt>Food:</dt> <dd style="margin-left: 1rem">Free fancy <a href="https://www.civerinosslice.com/" title="Click to go to the Civerinos website">Civerinos</a> pizza</dd>
+    <dt>Programme:</dt>
+    <!--See More-->
+    <dd style="margin-left: 1rem">
+        <details open>
+            <summary><b>Dietmar Kuhl, Senior Engineer at Bloomberg</b> - Quicker Sorting</summary>
+            <quote style="font-style: italic; display: block; padding-left: 2rem">
+                Quicksort is a well-known sorting algorithm used to implement sort functionality in many libraries, but a text-book implementation of the algorithm is actually not that quick.<br>
+                Some small additions can improve the implementation significantly. This presentation starts with a simple implementation and makes incremental improvements to eventually yield a proper generic and fast sorting function. <br>
+                All code will be in C++ but it should be possible to follow the majority of the reasoning with knowledge of another programming language.
+            </quote>
+        </details>
+        <details open>
+            <summary><b>CompSoc</b> - Committee Elections and Votes on Constitutional Amendments</summary>
+            <quote style="display: block; padding-left: 2rem">
+                We're holding an election to elect a new committee.<br>
+                Candidates will give 1-minute speeches (2 minutes for President, Secretary, and Treasurer), and the audience may ask questions.<br>
+                We'll also vote on some constitutional amendments. See below for details.
+            </quote>
+        </details>
+    </dd>
+</dl>
+
+<h2>Election Details</h2>
+<p>
+    If you want to vote in the EGM, you need to <b><a href="/join" title="Click to go to the EUSA CompSoc membership page.">make sure you have CompSoc membership</a></b>.
+</p>
+<p>
+    We also allow people to run on the night, if you did not have time to create manifestos.
+</p>
+
+<table>
+{% for role in page.roles %}
+
+<tr><td colspan=2 style="padding-top:1rem"><strong>{{ role.title }}</strong></td></tr>
+
+{% for person in role.people %}
+
+<tr>
+  <td>{{ person.name }} {% if person.url %}</td>
+  <td>
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>{% endif %}
+  </td>
+</tr>
+
+{% endfor %}
+{% endfor %}
+</table>
+
+<br>
+<p>
+  We hope you think carefully about who you choose to elect tomorrow — please vote based on manifestos and speeches! Note that you may also vote for Ron (reopen nominations) for all positions. You also need EUSA CompSoc membership.
+</p>
+<p>
+  Election candidates - please remember that if you are running for President, VP, Secretary or Treasurer, your speech may be up to 2 minutes. Other roles have up to 1 minute. If you haven't gotten membership yet, do that now!
+</p>
+
+<p>See you tomorrow,</p>
+
+<p>CompSoc &lt;3 You!</p>
