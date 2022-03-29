@@ -33,13 +33,13 @@ roles:
           url: https://drive.google.com/file/d/1ZYyV4ymquExw9jdotU_rhuOQkmsanRX8/view?usp=sharing
     - title: TechSec
       people:
-        - name: Nobody has run for this position. You can still run on the night!
+        - name: Arjun Naha
     - title: SocialSec
       people:
         - name: Nobody has run for this position. You can still run on the night!
     - title: 2nd Year Rep
       people:
-        - name: Nobody has run for this position. You can still run on the night!
+        - name: Charlotte Ausel
     - title: 3rd Year Rep
       people:
         - name: Enes Aydogan
@@ -58,7 +58,7 @@ roles:
 
 <p>On <time datetime="2022-03-29 18:00Z">Tuesday at 18:00</time> we'll have this year's Annual General Meeting, as well as our Student Tech Meetup. Here are the session details, and the election manifestos.</p>
 <dl><!--The following dt/dd are on one line to make the automatically generated excerpt (meta-description tag) cleaner-->
-    <dt>Venue:</dt> <dd style="margin-left: 1rem"><a href="https://goo.gl/maps/wxeVFKbh24Z2g9v16">TechCube Zero</a>, or Online (on <a href="https://www.twitch.tv/compsocedinburgh" title="Click to go to the CompSoc Twitch page">Twich</a> and <a href="https://www.youtube.com/channel/UCOEMTnIKR29AnSVVdLQZg3Q" title="Click to go to the CompSoc YouTube channel">YouTube</a>). No tickets required!</dd>
+    <dt>Venue:</dt> <dd style="margin-left: 1rem"><a href="https://goo.gl/maps/wxeVFKbh24Z2g9v16">TechCube Zero</a>, or Online (on <s>Twich</s> and <a href="https://www.youtube.com/channel/UCOEMTnIKR29AnSVVdLQZg3Q" title="Click to go to the CompSoc YouTube channel">YouTube</a>). No tickets required!</dd>
     <dt>Time:</dt> <dd style="margin-left: 1rem">18:00 - est. 20:30 BST</dd>
     <dt>Food:</dt> <dd style="margin-left: 1rem">Free fancy <a href="https://www.civerinosslice.com/" title="Click to go to the Civerinos website">Civerinos</a> pizza</dd>
     <dt>Programme:</dt>
@@ -99,9 +99,13 @@ roles:
 {% for person in role.people %}
 
 <tr>
-  <td>{{ person.name }} {% if person.url %}</td>
+  <td>{{ person.name }}</td>
   <td>
-    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>{% endif %}
+    {% if person.url %}
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>
+    {% else %}
+    <a href="#" target=_blank aria-disabled="true" class="disabled btn btn-info btn-sm">no manifesto has been submitted</a>
+    {% endif %}
   </td>
 </tr>
 
