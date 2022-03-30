@@ -6,7 +6,7 @@ author: tcmal
 Thank you to everyone who came to our AGM+STMU yesterday, hopefully you enjoyed it as much as we did!
 We're proud to announce our new committee!
 
-![Image of new committee]()
+<img src="/static/img/team/2022-agm.jpg" alt="Image of new committee" style="width: 100%">
 
   - **President** - Ben McConville
   - **Vice President** - Krzysztof Grykiel
