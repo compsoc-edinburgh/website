@@ -6,11 +6,65 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Glitch&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@300;400&display=swap');
 
 body {
     background-color: #202124;
     background-image: none !important;
     overflow-x: hidden;
+    font-family:
+        "Tomorrow",
+        // Safari for macOS and iOS (San Francisco)
+        -apple-system,
+        // Chrome < 56 for macOS (San Francisco)
+        BlinkMacSystemFont,
+        // Windows
+        "Segoe UI",
+        // Android
+        Roboto,
+        // Basic web fallback
+        "Helvetica Neue", Arial,
+        // Linux
+        "Noto Sans",
+        "Liberation Sans",
+        // Sans serif fallback
+        sans-serif,
+        // Emoji fonts
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.display-1,
+.display-3 {
+    text-shadow: 0 0 7px #3cce5d;
+    color: rgba(255, 255, 255, 0.87);
+    font-family:
+        "Rubik Glitch",
+        "Outfit",
+        // Safari for macOS and iOS (San Francisco)
+        -apple-system,
+        // Chrome < 56 for macOS (San Francisco)
+        BlinkMacSystemFont,
+        // Windows
+        "Segoe UI",
+        // Android
+        Roboto,
+        // Basic web fallback
+        "Helvetica Neue", Arial,
+        // Linux
+        "Noto Sans",
+        "Liberation Sans",
+        // Sans serif fallback
+        sans-serif,
+        // Emoji fonts
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.display-1 {
+    @include font-size(6rem);
+}
+
+.display-3 {
+    @include font-size(4.5rem);
 }
 
 .navbar-nav .active > .nav-link,
@@ -29,16 +83,12 @@ body {
 }
 
 #index-freshers-landing h1.freshers-title-text {
-    font-family: 'Rubik Glitch', cursive;
-    @include font-size(6rem);
-    text-shadow: 0 0 7px #3cce5d;
-    color: rgba(255, 255, 255, 0.87);
     letter-spacing: 0.4rem;
 }
 
 #index-freshers-landing div.freshers-title-img {
     img {
-        max-width: 90%;
+        max-width: 100%;
     }
 }
 

@@ -2,6 +2,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script>
     $(document).ready(function(){
+        $("#index-freshers-datetime")
+            .attr("datetime", moment().format())
+            .text(moment().format("dddd, MMMM Do YYYY"));
+
         $(".events-carousel").slick({
             accessibility: true,
             arrows: true,
