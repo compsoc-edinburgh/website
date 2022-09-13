@@ -1,6 +1,7 @@
 ---
 ---
 
+@import "utils";
 @import "rfs";
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Glitch&display=swap');
@@ -45,3 +46,32 @@ body {
 }
 
 
+.sigs__sig {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-desktop {
+        flex-direction: row;
+    }
+    padding: 10px;
+
+    text-decoration: none !important;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #343a3f;
+
+    &:hover {
+        color: rgba(255, 255, 255, 1);
+        background-color: #343a3f;
+    }
+}
+
+.sigs__sigtext {
+    text-align: center;
+
+    @include media-desktop {
+        text-align: left;
+    }
+
+}
