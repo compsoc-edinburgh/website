@@ -42,7 +42,21 @@
         fetch("https://www.googleapis.com/calendar/v3/calendars/comp-soc.com_1k2f1gda8js9nav1ilr5g5h6vk%40group.calendar.google.com/events?key=AIzaSyAnUQX9d7j3_d5wlJF_PvM02eHOMFbDedw")
             .then(response => response.json())
             .then(response => {
-                // response.items are ordered by calendar order of the start time.
+                // response.items are ordered by creation time, NOT calendar time.
+                // We therefore sort it first by the start time.
+                // On the way, we also filter out events with no start/end time
+                // (yes, they exist and we have some).
+                response.items = response.items
+                    .filter(item => {
+                        return item.start !== undefined && item.end !== undefined
+                    })
+                    .sort((a, b) => {
+                        const a_start = moment(a.start.dateTime || a.start.date);
+                        const b_start = moment(b.start.dateTime || b.start.date);
+                        return b_start < a_start ? 1 :
+                               b_start > a_start ? -1 :
+                               0;
+                    });
 
                 // Maintain the index of the first carousel event that has not yet
                 // ended
@@ -50,8 +64,6 @@
 
                 // Add the carousel items
                 response.items.forEach(event => {
-                    if (event.start === undefined || event.end === undefined) return;
-
                     const start = moment(event.start.dateTime || event.start.date);
                     const end = moment(event.end.dateTime || event.end.date);
 
