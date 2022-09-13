@@ -27,10 +27,6 @@ body {
     color: rgba(255,255,255,.5) !important;
 }
 
-#index-freshers-landing > .row {
-    min-height: 100vh;
-}
-
 #index-freshers-landing h1.freshers-title-text {
     font-family: 'Rubik Glitch', cursive;
     @include font-size(6rem);
