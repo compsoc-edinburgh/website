@@ -13,10 +13,12 @@
             draggable: true,
             infinite: false,
             initialSlide: 0,
-            slidesToShow: 3,
+            slidesToShow: 3, // 3 by default, less on smaller screens
             slidesToScroll: 1,
             focusOnSelect: true,
-            fade: false,
+            fade: false, // fade does not work with slidesToShow > 1
+            autoplay: false,
+            adaptiveHeight: true, // for single-slide (mobile) carousels, use adaptive height for compactness
             responsive: [
                 {
                     breakpoint: 1140,
@@ -36,14 +38,22 @@
             ]
         });
 
+        // Dynamically create the events using Google Calendar API
         fetch("https://www.googleapis.com/calendar/v3/calendars/comp-soc.com_1k2f1gda8js9nav1ilr5g5h6vk%40group.calendar.google.com/events?key=AIzaSyAnUQX9d7j3_d5wlJF_PvM02eHOMFbDedw")
             .then(response => response.json())
             .then(response => {
+                // response.items are ordered by calendar order of the start time.
+
+                // Maintain the index of the first carousel event that has not yet
+                // ended
+                let startIndex = 0;
+
+                // Add the carousel items
                 response.items.forEach(event => {
                     if (event.start === undefined || event.end === undefined) return;
 
-                    let start = moment(event.start.dateTime || event.start.date);
-                    let end = moment(event.end.dateTime || event.end.date);
+                    const start = moment(event.start.dateTime || event.start.date);
+                    const end = moment(event.end.dateTime || event.end.date);
 
                     // If end date is before 09/12, ignore
                     if (end < moment("2022-09-12")) {
@@ -55,17 +65,22 @@
                         return;
                     }
 
-                    let locationPresent = event.location !== undefined;
-                    let locationIsLink = locationPresent && event.location.startsWith("http");
+                    // If a location is present, check if it's a link (e.g. online location)
+                    // If it's a Physical Location, make it a Google Maps link
+                    const locationPresent = event.location !== undefined;
+                    const locationIsLink = locationPresent && event.location.startsWith("http");
                     let locationLink = event.location;
                     if (locationPresent && !locationIsLink) {
                         locationLink = "http://maps.google.com/?q=" + event.location;
                     }
 
-                    let isFinished = end < moment();
+                    // Find out if the event is already finished, and lower their
+                    // visibility.
+                    const alreadyFinished = end < moment();
+                    const ongoing = start < moment() && end > moment();
 
-                    let item = `
-                    <div class="card text-white bg-dark freshers-event-item mx-3">
+                    const item = `
+                    <div class="card text-white bg-dark freshers-event-item ` + (alreadyFinished ? "disabled " : "") + (ongoing ? "active ": "") + `mx-3">
                         <div class="card-body">
                         <h5 class="card-title">` + event.summary.toUpperCase() + `</h5>
                         <h6 class="card-subtitle mb-2 text-muted">` + start.calendar() + ` – ` + end.format("LT") + `</h6>
@@ -75,7 +90,22 @@
                     </div>
                     `;
                     $("#freshers-events").slick("slickAdd", item);
+
+                    if (alreadyFinished) {
+                        // If event is already finished, the next one would be
+                        // the first item that's not yet ended.
+                        startIndex++;
+                    }
                 });
+
+                // Scroll past all the past events by default.
+                // We use a timeout for this, since on smaller dimensions (when
+                // the responsive breakpoints hit), there seems to be a small
+                // setup delay before slickGoTo can be used.
+                // Issue: https://github.com/kenwheeler/slick/issues/1288
+                setTimeout(() => {
+                    $("#freshers-events").slick("slickGoTo", startIndex);
+                }, 500);
             });
         $('[data-toggle="tooltip"]').tooltip();
     });
