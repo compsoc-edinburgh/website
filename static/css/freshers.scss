@@ -1,0 +1,47 @@
+---
+---
+
+@import "rfs";
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Glitch&display=swap');
+
+
+body {
+    background-color: #202124;
+    background-image: none !important;
+}
+
+.navbar-nav .active > .nav-link,
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show,
+.navbar-nav .show > .nav-link {
+    color: #fff !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,.5) !important;
+}
+
+#index-freshers-landing > .row {
+    min-height: 100vh;
+}
+
+#index-freshers-landing h1.freshers-title-text {
+    font-family: 'Rubik Glitch', cursive;
+    @include font-size(6rem);
+    text-shadow: 0 0 7px #3cce5d;
+    color: rgba(255, 255, 255, 0.87);
+    letter-spacing: 0.4rem;
+}
+
+#index-freshers-landing div.freshers-title-img {
+    img {
+        max-width: 90%;
+    }
+}
+
+

@@ -1,5 +1,85 @@
+<script src="{{ site.baseurl }}/static/js/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+    $(document).ready(function(){
+        $(".events-carousel").slick({
+            accessibility: true,
+            arrows: true,
+            dots: true,
+            draggable: true,
+            infinite: false,
+            initialSlide: 0,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            focusOnSelect: true,
+            fade: false,
+            responsive: [
+                {
+                    breakpoint: 1140,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 540,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 0,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+        fetch("https://www.googleapis.com/calendar/v3/calendars/comp-soc.com_1k2f1gda8js9nav1ilr5g5h6vk%40group.calendar.google.com/events?key=AIzaSyAnUQX9d7j3_d5wlJF_PvM02eHOMFbDedw")
+            .then(response => response.json())
+            .then(response => {
+                response.items.forEach(event => {
+                    if (event.start === undefined || event.end === undefined) return;
+
+                    let start = moment(event.start.dateTime || event.start.date);
+                    let end = moment(event.end.dateTime || event.end.date);
+
+                    // If end date is before 09/12, ignore
+                    if (end < moment("2022-09-12")) {
+                        return;
+                    }
+
+                    // If stuff is after 09/19, ignore
+                    if (start > moment("2022-09-19")) {
+                        return;
+                    }
+
+                    let locationPresent = event.location !== undefined;
+                    let locationIsLink = locationPresent && event.location.startsWith("http");
+                    let locationLink = event.location;
+                    if (locationPresent && !locationIsLink) {
+                        locationLink = "http://maps.google.com/?q=" + event.location;
+                    }
+
+                    let isFinished = end < moment();
+
+                    let item = `
+                    <div class="card text-white bg-dark freshers-event-item mx-3">
+                        <div class="card-body">
+                        <h5 class="card-title">` + event.summary.toUpperCase() + `</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">` + start.calendar() + ` – ` + end.format("LT") + `</h6>
+                        <p class="card-text">` + event.description + `</p>
+                        ` + (locationPresent ? `<a href="` + locationLink + `" class="card-link">` + event.location + `</a>` : "") + `
+                        </div>
+                    </div>
+                    `;
+                    $("#freshers-events").slick("slickAdd", item);
+                });
+            });
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 </script>

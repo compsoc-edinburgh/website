@@ -3,18 +3,57 @@ permalink: /
 layout: default
 has_include: true
 custom_css:
-  - owl.carousel.min
-  - owl.theme.default.min
+  - freshers
+  - slick
+  - slick-theme
 ---
-<div id="index-jumbotron" class="jumbotron text-center pt-0">
-    <img src="{{ site.baseurl }}/static/img/compsoc-profile-white-nomargin.png" class="img-fluid" alt="CompSoc Edinburgh Logo"
-    style="max-height: 300px; padding: 40px 30px">
+<div id="index-freshers-landing" class="text-light container-fluid d-flex justify-content-center">
+    <div class="row flex-fill">
+        <div class="col-12 h-100">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="freshers-title-img"><img src="{{ site.baseurl }}/static/img/compsoc-glowing.png" alt="CompSoc Logo" /></div>
+                        <h1 class="freshers-title-text display-1"><strong>WELCOMES<br/>YOU.</strong></h1>
+                    </div>
+                </div>
+                <div class="row mt-5 pt-5">
+                    <div class="col-12">
+                        <div class="container">
+                            <h2 class="text-light mb-4">Fresher's Week Events</h2>
+                            <div class="events-carousel" id="freshers-events">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <p class="lead" style="white-space: pre-line;">CompSoc is Scotland's <span style="text-decoration: underline dotted;" data-toggle="tooltip" title="[citation needed]" data-placement="bottom">best</span> and largest tech society.
-      We do talks, workshops, and <em>plenty</em> of socials.
-    </p>
+<div class="container text-light pt-5 mt-5">
+    <h2 class="mb-3">About Us</h2>
 
-    <hr class="my-4">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <p class="lead" style="white-space: pre-line;">
+                CompSoc is Edinburgh University's technology society! We're Scotland's <span style="text-decoration: underline dotted;" data-toggle="tooltip" title="[citation needed]" data-placement="bottom">best</span> and largest of its kind, and form one of the largest societies within the university.
+
+                We have an active online chatroom with discussions about tech careers, meetups, and any techy nerdy interests. We also frequently hold talks (inviting industry professionals or academic researchers) and do socials.
+
+                Membership is free! We won't be checking them often, but you must have one to vote in elections or run for positions. 
+
+                Tickets are not necessary to attend any of our events (including Fresher's Week ones), although it would help immensely if you could show interest in EUSA, FaceBook, or Discord to help us prepare for a rough headcount.
+            </p>
+        </div>
+        <div class="col-12 col-md-6">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQzTkOEYSW1-55j8-g9-eKb_wouXYC1Yp1LzLGU0BreIT1nKu8Uv-wzvoHhDaCv1mjQpJCK2z_mYBQt/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+    </div>
+
+</div>
+
+<div class="container text-light pt-5 mt-5">
+    <h2 class="mb-3">SIGs</h2>
 
     <p class="lead">CompSoc is also home to the following <span style="text-decoration: underline dotted;" data-toggle="tooltip" title="Special Interest Groups" data-placement="bottom">SIGs</span>:</p>
 
@@ -22,15 +61,14 @@ custom_css:
 
     <hr class="my-4">
 
+</div>
+
+<div class="container text-light text-center pt-5 mt-5">
     <p class="lead" id="community">
-        <a class="btn btn-primary btn-lg btn-success mb-2" href="{{ site.baseurl }}/events" role="button">View our events</a>
+        <a class="btn btn-primary btn-lg btn-success mb-2" href="{{ site.baseurl }}/calendar" role="button">View our events</a>
         <a class="btn btn-primary btn-lg btn-info mb-2" href="{{ site.baseurl }}/community" role="button">Meet the community</a>
         <a class="btn btn-primary btn-lg btn-discord mb-2" href="{{ site.baseurl }}/chat" role="button">Join our Discord</a>
         <a class="btn btn-primary btn-lg btn-danger mb-2" href="https://www.eusa.ed.ac.uk/activities/view/compsoc" role="button">Become a member</a>
-    </p>
-
-    <p>
-        Interested in our events? <a href="http://eepurl.com/cjv1qj">Join the mailing list.</a> Most of our events do not require you to be a member.
     </p>
 
     <small>Have any questions or suggestions? Interested in becoming a partner? <a href="{{ site.baseurl }}/contact">Get in touch</a>.</small>
