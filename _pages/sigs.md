@@ -9,25 +9,8 @@ Are you and your friends interested in a particular field of Informatics? Start 
 CompSoc offers SIGs promotion, some money, support, and a place on the committee. [Send us an email]({{ site.baseurl }}/contact) if you're interested in forming a SIG.
 
 ### Our SIGs
-<div class="sigs__grid">
-    {% for sig in site.data.sigs %}
-        {% if sig.url %}
-            {% assign sighref = sig.url %}
-        {% else %}
-            {% capture sighref %} {{ site.baseurl }}/sigs/{{ sig.slug }} {% endcapture %}
-        {% endif %}
-    <a href="{{ sighref }}" class="sigs__sig">
-        <div class="sigs__sigtext">
-            <h1>{{ sig.title }}</h1>
-            <p>{{ sig.description }}</p>
-        </div>
-        {% if sig.image %}
-        <img src="{{ site.baseurl }}/static/img/sigs/{{ sig.slug }}.png" class="sigs__img"
-                                                                         style="background-color: {{ sig.colour }}; border-radius: {{ sig.radius }}"/>
-        {% endif %}
-    </a>
-    {% endfor %}
-</div>
+
+{% include sigs-carousel.html %}
 
 ### Defunct SIGs
 We have previously had special interest groups in these subject areas:
