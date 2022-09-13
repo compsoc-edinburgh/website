@@ -14,6 +14,21 @@
   colour: 'none'
   radius: 0
 
+- title: GameDevSIG
+  description: Game development
+  slug: gamedevsig
+  image: true
+  colour: 
+  radius:
+
+- title: ZINESIG
+  description: ZIG in Newspaper Environment - Zine publishing
+  url: https://www.facebook.com/groups/gamedevsocedi
+  slug: gamedevsig
+  image: true
+  colour: 
+  radius:
+
 - title: SIGCoin
   description: Blockchain and Cryptocurrency
   url: https://www.facebook.com/SIGCoinEdinburgh
@@ -23,7 +38,7 @@
   radius: 0
   
 - title: SIGWeb
-  description: Website Development
+  description: CompSoc-related Services Development and Maintenance
   slug: sigweb
   image: true
   colour:
@@ -34,13 +49,6 @@
   url: https://www.facebook.com/LawTechUoE/
   slug: lawtech
   image: true
-  colour:
-  radius:
-
-- title: SIGnet
-  description: Computer Networking
-  slug: signet
-  image:
   colour:
   radius:
 
@@ -56,14 +64,6 @@
   description: An algorithmic trading group
   url: https://www.facebook.com/algosigEdinburgh
   slug: algosig
-  image: true
-  colour: 
-  radius:
-  
-- title: GameDevSIG
-  description: Game development
-  url: https://www.facebook.com/groups/gamedevsocedi
-  slug: gamedevsig
   image: true
   colour: 
   radius:
