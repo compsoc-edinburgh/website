@@ -1,0 +1,45 @@
+#index-landing div.title-img {
+    img {
+        max-width: 100%;
+    }
+}
+
+/* Setting a maximum boundary for this carousel makes sure the Slick library
+doesn't behave weirdly on mobile. */
+div#index-events-carousel {
+    max-width: 100vw;
+    width: 100%;
+}
+
+div.index-events-event-item {
+    /* add space on top of items so that the active item glow isn't cut off */
+    margin-top: 5px;
+}
+
+div.index-events-event-item.disabled {
+    opacity: 0.2;
+}
+
+div.index-events-event-item.active {
+    border: 1px solid #3cce5d;
+    -webkit-box-shadow:0px 0px 4px 2px rgba(60, 206, 93, 0.6);
+    -moz-box-shadow: 0px 0px 4px 2px rgba(60, 206, 93, 0.6);
+    box-shadow: 0px 0px 4px 2px rgba(60, 206, 93, 0.6);
+}
+
+/* iFrames don't have aspect ratios so they can stretch or pull. We want to
+keep them 16:9, so we use some bottom padding to force the aspect ratio.
+https://faq.dailymotion.com/hc/en-us/articles/360022841393-How-to-preserve-the-player-aspect-ratio-on-a-responsive-page
+*/
+#index-about-iframewrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+}
+
+#index-about-iframewrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

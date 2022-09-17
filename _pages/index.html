@@ -3,30 +3,29 @@ permalink: /
 layout: default
 has_include: true
 custom_css:
-  - freshers
   - slick
   - slick-theme
 ---
-<div id="index-freshers-landing" class="text-light container-fluid text-center pb-5">
-    <div class="freshers-title-img"><img src="{{ site.baseurl }}/static/img/compsoc-glowing.png" alt="CompSoc Logo" /></div>
-    <h1 class="freshers-title-text display-1"><strong>WELCOMES<br/>YOU.</strong></h1>
+<div id="index-landing" class="container-fluid text-center pb-5">
+    <div class="title-img"><img src="{{ site.baseurl }}/static/img/compsoc-glowing.png" alt="CompSoc Logo" /></div>
+    <h1 class="title-text display-1"><strong>WELCOMES<br/>YOU.</strong></h1>
     <a class="btn btn-outline-danger btn-lg mt-4" href="https://www.eusa.ed.ac.uk/activities/view/compsoc" role="button">Become a member</a>
 </div>
 
-<div class="container text-light pt-5 mt-5">
-    <h2 class="mb-4 display-3">Fresher's Week Events</h2>
+<div class="container pt-5 mt-5">
+    <h2 class="mb-4 display-3">Upcoming Events</h2>
 
     <div class="row">
         <div class="col-12">
-            <div class="events-carousel" id="freshers-events">
+            <div id="index-events-carousel">
             </div>
         </div>
     </div>
 
-    <p class="text-muted">* All dates and times relative to today, <time id="index-freshers-datetime" datetime=""></time></p>
+    <p class="text-muted">* All dates and times relative to today, <time id="index-events-datetime" datetime=""></time></p>
 </div>
 
-<div class="container text-light mt-5">
+<div class="container mt-5">
     <h2 class="mb-3 display-3">About Us</h2>
 
     <div class="row">
@@ -34,15 +33,15 @@ custom_css:
             <p class="lead" style="white-space: pre-line;">
                 CompSoc is Edinburgh University's technology society! We're Scotland's <span style="text-decoration: underline dotted;" data-toggle="tooltip" title="[citation needed]" data-placement="bottom">best</span> and largest of its kind, and form one of the largest societies within the university.
 
-                We have an active online chatroom with discussions about tech careers, meetups, and any techy nerdy interests. We also frequently hold talks (inviting industry professionals or academic researchers) and do socials.
+                We have an active online chatroom with discussions about tech careers, meetups, and any techy nerdy interests. We are also home to several SIGs (see below). For events, CompSoc frequently has socials and holds talks (inviting industry professionals or academic researchers).
 
-                Membership is free! We won't be checking them often, but you must have one to vote in elections or run for positions. 
+                Membership is free! We won't be checking them often, but you must have one to vote in elections or run for positions.
 
-                Tickets are not necessary to attend any of our events (including Fresher's Week ones), although it would help immensely if you could show interest in EUSA, FaceBook, or Discord to help us prepare for a rough headcount.
+                Tickets are not necessary to attend any of our events, although it would help immensely if you could show interest in EUSA, FaceBook, or Discord to help us prepare for a rough headcount.
             </p>
         </div>
         <div class="col-12 col-md-6">
-            <div id="index-freshers-iframewrapper">
+            <div id="index-about-iframewrapper">
                 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQzTkOEYSW1-55j8-g9-eKb_wouXYC1Yp1LzLGU0BreIT1nKu8Uv-wzvoHhDaCv1mjQpJCK2z_mYBQt/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
             </div>
         </div>
@@ -50,10 +49,10 @@ custom_css:
 
 </div>
 
-<div class="container text-light pt-5 mt-5">
+<div class="container pt-5 mt-5">
     <h2 class="mb-3 display-3">SIGs</h2>
 
-    <p class="lead">CompSoc is also home to the following <span style="text-decoration: underline dotted;" data-toggle="tooltip" title="Special Interest Groups" data-placement="bottom">SIGs</span>:</p>
+    <p class="lead">CompSoc is home to the following <span style="text-decoration: underline dotted;" data-toggle="tooltip" title="Special Interest Groups" data-placement="bottom">SIGs</span>:</p>
 
     {% include sigs-carousel.html %}
 
@@ -61,7 +60,7 @@ custom_css:
 
 </div>
 
-<div class="container text-light text-center pt-5 mt-5">
+<div class="container text-center pt-5 mt-5">
     <p class="lead" id="community">
         <a class="btn btn-primary btn-lg btn-success mb-2" href="{{ site.baseurl }}/calendar" role="button">View our events</a>
         <a class="btn btn-primary btn-lg btn-info mb-2" href="{{ site.baseurl }}/community" role="button">Meet the community</a>

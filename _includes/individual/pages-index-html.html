@@ -2,11 +2,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script>
     $(document).ready(function(){
-        $("#index-freshers-datetime")
+        $("#index-events-datetime")
             .attr("datetime", moment().format())
             .text(moment().format("dddd, MMMM Do YYYY"));
 
-        $(".events-carousel").slick({
+        $("#index-events-carousel").slick({
             accessibility: true,
             arrows: true,
             dots: true,
@@ -92,7 +92,7 @@
                     const ongoing = start < moment() && end > moment();
 
                     const item = `
-                    <div class="card text-white bg-dark freshers-event-item ` + (alreadyFinished ? "disabled " : "") + (ongoing ? "active ": "") + `mx-3">
+                    <div class="card index-events-event-item ` + (alreadyFinished ? "disabled " : "") + (ongoing ? "active ": "") + `mx-3">
                         <div class="card-body">
                         <h5 class="card-title">` + event.summary.toUpperCase() + `</h5>
                         <h6 class="card-subtitle mb-2 text-muted">` + start.calendar() + ` – ` + end.format("LT") + `</h6>
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     `;
-                    $("#freshers-events").slick("slickAdd", item);
+                    $("#index-events-carousel").slick("slickAdd", item);
 
                     if (alreadyFinished) {
                         // If event is already finished, the next one would be
@@ -116,7 +116,7 @@
                 // setup delay before slickGoTo can be used.
                 // Issue: https://github.com/kenwheeler/slick/issues/1288
                 setTimeout(() => {
-                    $("#freshers-events").slick("slickGoTo", startIndex);
+                    $("#index-events-carousel").slick("slickGoTo", startIndex);
                 }, 500);
             });
         $('[data-toggle="tooltip"]').tooltip();
