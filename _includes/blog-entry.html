@@ -3,18 +3,18 @@
 
 <div class="mt-4">
     <h2 class="card-title mb-0">
-        <a href="{{ url }}" style="color: black;">{{ post.title }}</a>
+        <a href="{{ url }}" class="text-body">{{ post.title }}</a>
     </h2>
     <small>
-        <a href="{{ author.uri }}" class="text-muted">{{ author.name }}</a>
-        |
-        <a href="{{ url }}" class="text-muted">{{ post.date | date_to_string }}</a>
+        <a href="{{ author.uri }}" class="text-info">{{ author.name }}</a>
+        <span class="text-muted"> | </span>
+        <a href="{{ url }}" class="text-info">{{ post.date | date_to_string }}</a>
     </small>
     <p class="card-text">
         {{ post.excerpt }}
 
-        <a href="{{ url }}" class="text-muted">Read on &raquo;</a>
+        <a href="{{ url }}" class="btn btn-outline-primary">Read on &raquo;</a>
     </p>
 </div>
 
-<hr>
+<hr />

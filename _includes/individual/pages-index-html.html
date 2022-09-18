@@ -2,11 +2,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script>
     $(document).ready(function(){
-        $("#index-freshers-datetime")
+        $("#index-events-datetime")
             .attr("datetime", moment().format())
             .text(moment().format("dddd, MMMM Do YYYY"));
 
-        $(".events-carousel").slick({
+        $("#index-events-carousel").slick({
             accessibility: true,
             arrows: true,
             dots: true,
@@ -67,13 +67,13 @@
                     const start = moment(event.start.dateTime || event.start.date);
                     const end = moment(event.end.dateTime || event.end.date);
 
-                    // If end date is before 09/12, ignore
-                    if (end < moment("2022-09-12")) {
+                    // If end date is more than a week ago, ignore
+                    if (end < moment().subtract(7, "days")) {
                         return;
                     }
 
-                    // If stuff is after 09/19, ignore
-                    if (start > moment("2022-09-19")) {
+                    // If stuff is more than 3 months into the future, ignore
+                    if (start > moment().add(3, "months")) {
                         return;
                     }
 
@@ -92,7 +92,7 @@
                     const ongoing = start < moment() && end > moment();
 
                     const item = `
-                    <div class="card text-white bg-dark freshers-event-item ` + (alreadyFinished ? "disabled " : "") + (ongoing ? "active ": "") + `mx-3">
+                    <div class="card index-events-event-item ` + (alreadyFinished ? "disabled " : "") + (ongoing ? "active ": "") + `mx-3">
                         <div class="card-body">
                         <h5 class="card-title">` + event.summary.toUpperCase() + `</h5>
                         <h6 class="card-subtitle mb-2 text-muted">` + start.calendar() + ` – ` + end.format("LT") + `</h6>
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     `;
-                    $("#freshers-events").slick("slickAdd", item);
+                    $("#index-events-carousel").slick("slickAdd", item);
 
                     if (alreadyFinished) {
                         // If event is already finished, the next one would be
@@ -116,7 +116,21 @@
                 // setup delay before slickGoTo can be used.
                 // Issue: https://github.com/kenwheeler/slick/issues/1288
                 setTimeout(() => {
-                    $("#freshers-events").slick("slickGoTo", startIndex);
+                    // slickGoTo will not work if the specified index is within
+                    // the last few that are displayed together. I.e., if 3 slides
+                    // are shown simultaneously, slickToGo for the last 2 indices
+                    // will not work.
+                    // Issue: https://github.com/kenwheeler/slick/issues/3195
+                    // To circumvent this, we reduce the index if required by
+                    // getting the current total number of slides, and the number
+                    // of slides shown at the initial breakpoint.
+                    let numberOfSlides = $("#index-events-carousel").slick("getSlick").slideCount;
+                    let slidesToShow = $("#index-events-carousel").slick("slickGetOption", "slidesToShow");
+                    if (startIndex > numberOfSlides - slidesToShow) {
+                        startIndex = numberOfSlides - slidesToShow;
+                    }
+
+                    $("#index-events-carousel").slick("slickGoTo", startIndex);
                 }, 500);
             });
         $('[data-toggle="tooltip"]').tooltip();
