@@ -52,7 +52,7 @@ layout: default
         <div class="d-none d-xl-block">
             {% include navigate-collection.html %}
         </div>
-        <h1>{% if page.longtitle %}{{ page.longtitle }}{% else %}{{ page.title }}{% endif %}</h5>
+        <h1 class="text-bold">{% if page.longtitle %}{{ page.longtitle }}{% else %}{{ page.title }}{% endif %}</h5>
         <h5>Published {{ page.date | date_to_string }}</h3>
 
         <div class="blog-content">
