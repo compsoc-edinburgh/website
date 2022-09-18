@@ -18,15 +18,12 @@
   description: Game development
   slug: gamedevsig
   image: true
-  colour: 
   radius:
 
 - title: ZINESIG
   description: ZIG in Newspaper Environment - Zine publishing
-  url: https://www.facebook.com/groups/gamedevsocedi
-  slug: gamedevsig
-  image: true
-  colour: 
+  slug: zinesig
+  colour: '#333'
   radius:
 
 - title: SIGCoin
