@@ -3,75 +3,84 @@
   href="{{ site.baseurl }}/static/fullcalendar/fullcalendar.min.css"
 />
 <style>
-/* Events with URL are rendered with pointer cursor by default -- unset that*/
-.fc .fc-list-event.fc-event-forced-url {
-  cursor: unset;
-}
-
-/* All URLs within a event description are underlined when event hovered --
-we only want the hovered link to be underlined. */
-.fc .fc-list-event.fc-event-forced-url:hover a {
-  text-decoration: unset;
-}
-
-.fc .fc-list-event.fc-event-forced-url a:hover,
-.fc .fc-list-event.fc-event-forced-url:hover .eventTitle {
-  text-decoration: underline;
-}
-
-.fc .fc-list-event-title .eventDescription a {
-  color: #007bff;
-}
-
-.fc .fc-list-event .eventTitle {
-  font-weight: bold;
+@media (prefers-color-scheme: dark) {
+    .fc .fc-scrollgrid-section-sticky > * {
+        /* Override the default light-theme oriented table head colours */
+        background: #2f3237;
+    }
 }
 
 </style>
+
+<div class="modal fade" id="fullcalendar-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="fullcalendar-event-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="fullcalendar-event-description">Modal body text goes here.</p>
+        <hr>
+        <span class="small">
+          <i class="fa-solid fa-clock fa-fw mr-2"></i><span id="fullcalendar-event-dates">Dates go here</span>
+          <br />
+          <i class="fa-solid fa-location-dot fa-fw mr-2"></i></i><span id="fullcalendar-event-location">Location goes here</span>
+        </span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a type="button" class="btn btn-primary" id="fullcalendar-event-link">View on Google Calendar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<noscript>
+  It looks like you don't have JavaScript enabled. The calendar requires JavaScript to display itself.
+</noscript>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="{{ site.baseurl }}/static/fullcalendar/fullcalendar.min.js"></script>
 <script src="{{ site.baseurl }}/static/fullcalendar/gcal.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function () {
+    $("#fullcalendar-modal").modal({ show: false });
+
     var calendar = new FullCalendar.Calendar($("#calendar")[0], {
       googleCalendarApiKey: "AIzaSyAnUQX9d7j3_d5wlJF_PvM02eHOMFbDedw",
       events: {
         googleCalendarId:
           "comp-soc.com_1k2f1gda8js9nav1ilr5g5h6vk@group.calendar.google.com"
       },
-
-      initialView: "list",
-      visibleRange: {
-        start: moment().toISOString(),
-        end: moment().add(1, "months").toISOString()
-      },
-      headerToolbar: false,
+      initialView: "dayGridMonth",
+      themeSystem: "bootstrap",
       height: "auto",
-      eventContent: function(arg, createElement) {
-        return createElement(
-          "div",
-          { className: "event" },
-          createElement(
-            "a",
-            { className: "eventTitle", href: arg.event.url },
-            arg.event.title
-          ),
-          createElement(
-            "div",
-            {
-              className: "eventDescription",
-              dangerouslySetInnerHTML: { __html: arg.event.extendedProps.description }
-            },
-            null
-          )
-        );
+      eventDidMount: function(mountArg) {
+        let elem = $(mountArg.el);
+        elem.tooltip({
+          title: mountArg.event.title
+        });
       },
-      eventClick: function(info) {
-        if (info.jsEvent.target.tagName == "A" && info.jsEvent.target.href) {
-            info.jsEvent.stopImmediatePropagation();
-        } else {
-            info.jsEvent.preventDefault();
-        }
+      eventDataTransform: function(event) {
+        // FullCalendar is very annoying and tries very hard to navigate users
+        // to Google Calendar upon eventClick. preventDefault(), stopImmediatePropagation,
+        // cancelBubble, return false, all of these have been tried in the
+        // eventClick handler but it won't work. The only workaround really is
+        // to not make the event a link in the first place:
+        // https://stackoverflow.com/a/66269855
+        event.extendedProps.link = event.url;
+        event.url = "";
+        return event;
+      },
+      eventClick: function(clickArg) {
+        console.log(clickArg.event);
+        $("#fullcalendar-event-title").text(clickArg.event.title);
+        $("#fullcalendar-event-description").html(clickArg.event.extendedProps.description || "no content");
+        $("#fullcalendar-event-link").attr("href", clickArg.event.extendedProps.link);
+        $("#fullcalendar-event-dates").text(clickArg.event.start.toLocaleString() + " – " + clickArg.event.end.toLocaleString());
+        $("#fullcalendar-event-location").text(clickArg.event.extendedProps.location);
+        $("#fullcalendar-modal").modal("show");
       }
     });
     calendar.render();
