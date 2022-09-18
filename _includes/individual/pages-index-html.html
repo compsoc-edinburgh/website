@@ -107,11 +107,11 @@
                     })
 
                     // We do the same for the end datetime, but if it ends
-                    // within the same day, just show the time.
+                    // within 24 hours, just show the time.
                     let endDateFormatted = end.calendar(null, {
                         sameElse: "DD/MM/YYYY LT"
                     });
-                    if (moment.calendarFormat(end, start) == "sameDay") {
+                    if (end.diff(start, "hours", true) < 24) {
                         endDateFormatted = end.format("LT");
                     }
 
