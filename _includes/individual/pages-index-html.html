@@ -38,8 +38,19 @@
             ]
         });
 
-        // Dynamically create the events using Google Calendar API
-        fetch("https://www.googleapis.com/calendar/v3/calendars/comp-soc.com_1k2f1gda8js9nav1ilr5g5h6vk%40group.calendar.google.com/events?key=AIzaSyAnUQX9d7j3_d5wlJF_PvM02eHOMFbDedw")
+        let eventEndTimeLowerBound = moment().subtract(7, "days");
+        let eventStartTimeUpperBound = moment().add(2, "months");
+
+        // Dynamically create the events using Google Calendar API.
+        //
+        // By default the API will only return 250 events. Since we won't need
+        // events older than the lower bound anyway, specify the timeMin param
+        // using our bound.
+        //
+        // We use singleEvents=true to create one-off events for every occurence
+        // of a recurring event. This can create lots of events in the future, so
+        // we make sure to limit the timeMax as well.
+        fetch(`https://www.googleapis.com/calendar/v3/calendars/comp-soc.com_1k2f1gda8js9nav1ilr5g5h6vk%40group.calendar.google.com/events?key=AIzaSyAnUQX9d7j3_d5wlJF_PvM02eHOMFbDedw&singleEvents=true&timeMin=${encodeURIComponent(eventEndTimeLowerBound.format())}&timeMax=${encodeURIComponent(eventStartTimeUpperBound.format())}`)
             .then(response => response.json())
             .then(response => {
                 // response.items are ordered by creation time, NOT calendar time.
@@ -68,14 +79,10 @@
                     const end = moment(event.end.dateTime || event.end.date);
 
                     // If end date is more than a week ago, ignore
-                    if (end < moment().subtract(7, "days")) {
-                        return;
-                    }
+                    if (end < eventEndTimeLowerBound) return; 
 
                     // If stuff is more than 3 months into the future, ignore
-                    if (start > moment().add(3, "months")) {
-                        return;
-                    }
+                    if (start > eventStartTimeUpperBound) return;
 
                     // If a location is present, check if it's a link (e.g. online location)
                     // If it's a Physical Location, make it a Google Maps link
@@ -91,13 +98,30 @@
                     const alreadyFinished = end < moment();
                     const ongoing = start < moment() && end > moment();
 
+                    // By default, moment.calendar() displays no time for events
+                    // that can't conveniently be expressed with words (e.g.
+                    // "today"). Most of the time, the time is important though,
+                    // so we configure it to display that.
+                    const startDateFormatted = start.calendar(null, {
+                        sameElse: "DD/MM/YYYY LT"
+                    })
+
+                    // We do the same for the end datetime, but if it ends
+                    // within the same day, just show the time.
+                    let endDateFormatted = end.calendar(null, {
+                        sameElse: "DD/MM/YYYY LT"
+                    });
+                    if (moment.calendarFormat(end, start) == "sameDay") {
+                        endDateFormatted = end.format("LT");
+                    }
+
                     const item = `
-                    <div class="card index-events-event-item ` + (alreadyFinished ? "disabled " : "") + (ongoing ? "active ": "") + `mx-3">
+                    <div class="card index-events-event-item ${alreadyFinished ? "disabled" : ""} ${ongoing ? "active ": ""} mx-3">
                         <div class="card-body">
-                        <h5 class="card-title">` + event.summary.toUpperCase() + `</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">` + start.calendar() + ` – ` + end.format("LT") + `</h6>
-                        <p class="card-text">` + event.description + `</p>
-                        ` + (locationPresent ? `<a href="` + locationLink + `" class="card-link">` + event.location + `</a>` : "") + `
+                        <h5 class="card-title">${event.summary.toUpperCase()}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${startDateFormatted} – ${endDateFormatted}</h6>
+                        <p class="card-text">${event.description}</p>
+                        ` + (locationPresent ? `<a href="${locationLink}" class="card-link">${event.location}</a>` : "") + `
                         </div>
                     </div>
                     `;
