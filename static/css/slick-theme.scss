@@ -1,5 +1,7 @@
 ---
-# Modified on 2022/09/18 by Yuto to add font-display: swap on icon fonts
+# Modified on 2022/09/18 by Yuto:
+# - added font-display: swap on icon fonts
+# - added $slick-dot-dark-color since dots are too dark in dark mode
 ---
 
 @charset "UTF-8";
@@ -16,7 +18,9 @@ $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
 $slick-arrow-color: white !default;
 $slick-dot-color: black !default;
+$slick-dot-dark-color: white !default;
 $slick-dot-color-active: $slick-dot-color !default;
+$slick-dot-dark-color-active: $slick-dot-dark-color !default;
 $slick-prev-character: "\2190" !default;
 $slick-next-character: "\2192" !default;
 $slick-dot-character: "\2022" !default;
@@ -189,11 +193,19 @@ $slick-opacity-not-active: 0.25 !default;
                 opacity: $slick-opacity-not-active;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
+
+                @media (prefers-color-scheme: dark) {
+                    color: $slick-dot-dark-color;
+                }
             }
         }
         &.slick-active button:before {
             color: $slick-dot-color-active;
             opacity: $slick-opacity-default;
+
+            @media (prefers-color-scheme: dark) {
+                color: $slick-dot-dark-color-active;
+            }
         }
     }
 }
