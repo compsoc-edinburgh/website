@@ -11,8 +11,11 @@
             <p>{{ sig.description }}</p>
         </div>
         {% if sig.image %}
-        <img src="{{ site.baseurl }}/static/img/sigs/{{ sig.slug }}.png" class="sigs__img"
-                                                                         style="background-color: {{ sig.colour }}; border-radius: {{ sig.radius }}"/>
+        <picture>
+            <source srcset="{{ site.baseurl }}/static/img/sigs/{{ sig.slug }}.webp" type="image/webp"/>
+            <source srcset="{{ site.baseurl }}/static/img/sigs/{{ sig.slug }}.png" type="image/png">
+            <img src="{{ site.baseurl }}/static/img/sigs/{{ sig.slug }}.png" alt="{{ sig.slug }} Logo" class="sigs__img" style="background-color: {{ sig.colour }}; border-radius: {{ sig.radius }}">
+        </picture>
         {% endif %}
     </a>
     {% endfor %}
