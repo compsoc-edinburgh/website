@@ -1,0 +1,65 @@
+---
+title: "Manifestos for 2022 October EGM"
+author: greg
+excerpt_separator: "<!--See More-->"
+roles:
+    - title: Secretary
+      people:
+        - name: Dorna Hamed Barghi
+          url: https://drive.google.com/file/d/1xzsDYD9NbmukIYHDOXvx5aCAGiX4hq65/view?usp=sharing
+    - title: First Year Representative
+      people:
+        - name: Rongxuan Tian
+          url: https://drive.google.com/file/d/1GV2XJFsXn9PXGFO0GT4TElrSGu2j9ZLt/view?usp=sharing
+    - title: Fourth Year Representative
+      people: 
+        - name: Nobody has run for this position. You can still run on the night!
+    - title: Postgrad Representative
+      people:
+        - name: Nobody has run for this position. You can still run on the night!
+    - title: Old Person Representative
+      people:
+        - name: Nobody has run for this position. You can still run on the night!
+---
+
+<h2>Election Details</h2>
+<p>
+    If you want to vote in the EGM, you need to <b><a href="/join" title="Click to go to the EUSA CompSoc membership page.">make sure you have CompSoc membership</a></b>.
+</p>
+<p>
+    We also allow people to run on the night, if you did not have time to create manifestos.
+</p>
+
+<table>
+{% for role in page.roles %}
+
+<tr><td colspan=2 style="padding-top:1rem"><strong>{{ role.title }}</strong></td></tr>
+
+{% for person in role.people %}
+
+<tr>
+  <td>{{ person.name }}</td>
+  <td>
+    {% if person.url %}
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>
+    {% else %}
+    <a href="#" target=_blank aria-disabled="true" class="disabled btn btn-info btn-sm">no manifesto has been submitted</a>
+    {% endif %}
+  </td>
+</tr>
+
+{% endfor %}
+{% endfor %}
+</table>
+
+<br>
+<p>
+  We hope you think carefully about who you choose to elect tomorrow — please vote based on manifestos and speeches! Note that you may also vote for RON (reopen nominations) for any position. You also need <a href="https://www.eusa.ed.ac.uk/activities/view/compsoc">EUSA CompSoc membership</a>.
+</p>
+<p>
+  Election candidates - please remember that if you are running for President, VP, Secretary or Treasurer, your speech may be up to 2 minutes. Other roles have up to 1 minute. If you haven't gotten membership yet, <b>do that now</b>!
+</p>
+
+<p>See you tomorrow,</p>
+
+<p>CompSoc &lt;3 You!</p>
