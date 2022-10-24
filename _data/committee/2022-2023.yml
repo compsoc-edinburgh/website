@@ -24,7 +24,7 @@ teams:
       - name: Jacob Walters / greg
         role: Technical Secretary
         url: https://jacobwalte.rs
-        #img:
+        img: greg-1.png
 
       - name: Amy Yin
         role: Social Secretary
