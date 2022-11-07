@@ -16,9 +16,9 @@ teams:
         #url:
         #img:
 
-      - name: Kshitij Sharma
+      - name: Maya Copeland
         role: Secretary
-        #url:
+        url: https://maya.cx
         #img:
 
       - name: Jacob Walters / greg
@@ -36,8 +36,8 @@ teams:
         #url:
         #img:
 
-      #- name:
-        #role: 1<sup>st</sup> Year Rep
+      - name: Fergus White
+        role: 1<sup>st</sup> Year Rep
         #url:
         #img:
 
@@ -51,12 +51,12 @@ teams:
         #url:
         #img:
 
-      #- name:
-         #role: 4<sup>th</sup> Year Rep
+      - name: Dee Yeum
+        role: 4<sup>th</sup> Year Rep
          #url:
          #img:
 
-      #- name:
-         #role: Old Person Rep
+      - name: Siang Jun Teo
+        role: Old Person Rep
          #url:
          #img;
