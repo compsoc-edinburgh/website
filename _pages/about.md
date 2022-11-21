@@ -8,7 +8,7 @@ Our society is a diverse community of computer scientists, programmers, and peop
 
 We host monthly Student Tech Meetups, regular workshops, and quite a few social events with a touch of Computer Science culture. CompSoc also organises one of the largest hackathons in the country, Hack the Burgh - with over 150 attendees coming from around the world.
 
-We are closely linked to The University of Edinburgh’s School of Informatics, the largest in Britain, ranked the 4th best University in the UK for Computer Science by QS.
+We are closely linked to The University of Edinburgh (est. 1583) School of Informatics, the largest in Britain, ranked the 4th best University in the UK for Computer Science by QS.
 
 <div>
     <a href="https://github.com/compsoc-edinburgh/constitution" class="btn btn-secondary d-inline">Constitution</a>
