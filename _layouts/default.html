@@ -40,5 +40,76 @@
             ga('send', 'pageview');
         </script>
 
+        <!-- Secret code... what does this do? -->
+        <script src="https://unpkg.com/konami@1.6.3/konami.js" integrity="sha384-UG4AKFJlHd8qSt0ySKu311rnWtCkyoDIkNr2MFOAonsO5xot36S+QI/gz3Fd94nH" crossorigin="anonymous"></script>
+        <svg width="0" height="0">
+            <filter id="kill">
+              <feColorMatrix type="matrix" 
+                result="red_"             
+                values="4 0 0 0 0
+                        0 0 0 0 0 
+                        0 0 0 0 0 
+                        0 0 0 1 0"/>
+              <feOffset in="red_" dx="2" dy="0" result="red"/>
+              <feColorMatrix type="matrix" 
+                in="SourceGraphic"             
+                result="blue_"             
+                values="0 0 0 0 0
+                        0 3 0 0 0 
+                        0 0 10 0 0 
+                        0 0 0 1 0"/>
+              <feOffset in="blue_" dx="-3" dy="0" result="blue"/>    
+              <feBlend mode="screen" in="red" in2="blue"/>
+            </filter>
+        </svg>
+        <style>
+            @keyframes eggy {
+                0% {
+                    transform: rotate(0deg);
+                    -webkit-transform: rotate(0deg);
+                    -moz-transform: rotate(0deg);
+                    -o-transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    -moz-transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                }
+            }
+        </style>
+        <script>
+            const body = document.getElementsByTagName("body")[0];
+            const imgs = document.getElementsByTagName("img");
+            const containers = document.getElementsByClassName("container");
+            const kcColor = ["deeppink", "orange", "yellow", "lime", "cyan", "blue", "fuchsia", "purple"];
+            let kcIndex = 0;
+            let kcCount = 0;
+            function rainb() {
+                body.style.background = kcColor[kcIndex];
+                kcIndex++;
+                kcIndex = kcIndex % kcColor.length;
+            }
+            const egg = new Konami(() => {
+                if (kcCount == 0) {
+                    // first time
+                    body.style.webkitFilter = "url(#kill)";
+                    body.style.filter = "url(#kill)";
+                    window.setInterval("rainb()", 1000);
+                    rainb();
+                    body.style.textTransform = "uppercase";
+                    Array.from(document.getElementsByTagName("iframe")).forEach(e => e.style.display = "none");
+                }
+                body.style.animation = Math.round(18000 / Math.exp(0.3 * kcCount)) + "ms linear infinite eggy";
+                Array.from(imgs).forEach((e) => {
+                    e.style.animation = Math.round(18000 / Math.exp(0.3 * kcCount)) + "ms linear infinite reverse eggy";
+                });
+                Array.from(containers).forEach(e => {
+                    e.style.animation = Math.round(9000 / Math.exp(0.3 * kcCount)) + "ms linear infinite eggy";
+                });
+                kcCount++;
+            });
+        </script>
+
     </body>
 </html>
