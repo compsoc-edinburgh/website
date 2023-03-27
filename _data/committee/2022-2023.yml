@@ -14,7 +14,7 @@ teams:
       - name: Sophie Bata-Madden
         role: Treasurer
         #url:
-        #img:
+        img: sophie-1.png
 
       - name: Maya Copeland
         role: Secretary
@@ -29,7 +29,7 @@ teams:
       - name: Amy Yin
         role: Social Secretary
         #url:
-        #img:
+        img: amy-1.jpg
 
       - name: Margo Tsugorka
         role: Graphic Designer
@@ -44,7 +44,7 @@ teams:
       - name: Charlotte Ausel
         role: 2<sup>nd</sup> Year Rep
         #url:
-        #img:
+        img: charlotte-1.jpg
 
       - name: Enes Aydogan
         role: 3<sup>rd</sup> Year Rep
