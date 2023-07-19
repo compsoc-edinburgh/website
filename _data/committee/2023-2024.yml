@@ -1,0 +1,52 @@
+year: 2023 - 2024
+teams:
+  - members:
+      - name: Fergus White
+        role: President
+        url: https://www.linkedin.com/in/fergus-white-699546214/
+        img: fergus-1.png
+
+      - name: Ali Abdelaal
+        role: Vice President
+        #url:
+        img: ali-1.jpg
+
+      - name: Sophie Bata-Madden
+        role: Treasurer
+        #url:
+        img: sophie-1.png
+
+      - name: Maya Copeland
+        role: Secretary
+        url: https://maya.cx
+        img: maya-1.png
+
+      - name: Adam Calvert
+        role: Technical Secretary
+        url: https://acal17.github.io/
+        img: adam-1.png
+
+      - name: Charlotte Ausel
+        role: Social Secretary
+        #url:
+        img: charlotte-1.jpg
+
+      - name: Yuto Takano
+        role: Graphic Designer
+        url: https://www.linkedin.com/in/yuto-takano/
+        img: yuto-1.jpg
+
+      - name: Arin Mukhopadhyay
+        role: 2<sup>nd</sup> Year Rep
+        #url:
+        img: arin-1.jpg
+
+      - name: Tomas Maillo
+        role: 3<sup>rd</sup> Year Rep
+        url: https://tomasmaillo.com/
+        img: tomas-1.png
+
+      - name: Krzysztof Grykiel
+        role: 4<sup>th</sup> Year Rep
+        #url:
+        #img:

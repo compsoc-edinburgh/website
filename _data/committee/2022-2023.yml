@@ -19,7 +19,7 @@ teams:
       - name: Maya Copeland
         role: Secretary
         url: https://maya.cx
-        #img:
+        img: maya-1.png
 
       - name: Jacob Walters / greg
         role: Technical Secretary
