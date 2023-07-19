@@ -16,6 +16,7 @@ CompSoc offers SIGs promotion, some money, support, and a place on the committee
 We have previously had special interest groups in these subject areas:
 <ul>
     <li>Audio Engineering</li>
+    <li>Blockchain</li>
     <li>Electrical Engineering</li>
     <li>Robotics</li>
 </ul>

@@ -6,61 +6,40 @@
   colour: '#333'
   radius: 50%
 
-- title: HackSIG
-  description: Go to hackathons and throw hackathons!
+- title: GameDevSIG
+  description: Game Development
+  slug: gamedevsig
+  image: true
+  colour: 'none'
+  radius: 50%
+
+- title: ZINESIG
+  description: Magazine Writing and Publishing
+  slug: zinesig
+  image: true
+  color: 'none'
+  radius: 0
+
+- title: Project Share
+  description: Share what you are building
+  url: https://projectshare.comp-soc.com/
+  slug: projectshare
+  image: true
+  colour: '#fff'
+  radius: 0
+
+- title: Hack the Burgh
+  description: Hackathon Planning
   url: http://hacktheburgh.com
   slug: hacksig
   image: true
   colour: 'none'
   radius: 0
 
-- title: GameDevSIG
-  description: Game development
-  slug: gamedevsig
-  image: true
-  radius:
-
-- title: ZINESIG
-  description: CompSoc Magazine Writing and Publishing
-  slug: zinesig
-  colour: '#333'
-  radius:
-
-- title: SIGCoin
-  description: Blockchain and Cryptocurrency
-  url: https://www.facebook.com/SIGCoinEdinburgh
-  slug: sigcoin
+- title: Tardis Project
+  description: Hosting and Server Maintenance
+  url: https://tardisproject.uk/
+  slug: tardis
   image: true
   colour: 'none'
   radius: 0
-  
-- title: SIGWeb
-  description: CompSoc-related Services Development and Maintenance
-  slug: sigweb
-  image: true
-  colour:
-  radius:
-  
-- title: LawTech
-  description: Law and Technology
-  url: https://www.facebook.com/LawTechUoE/
-  slug: lawtech
-  image: true
-  colour:
-  radius:
-
-- title: ScotQuan
-  description: A data science social enterprise
-  url: https://www.scotquan.com
-  slug: scotquan
-  image: true
-  colour: 
-  radius:
-
-- title: AlgoSIG
-  description: An algorithmic trading group
-  url: https://www.facebook.com/algosigEdinburgh
-  slug: algosig
-  image: true
-  colour: 
-  radius:
