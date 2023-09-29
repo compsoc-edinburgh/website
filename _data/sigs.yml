@@ -28,6 +28,13 @@
   colour: '#fff'
   radius: 0
 
+- title: TypeSig
+  description: Type Theory and related fields
+  slug: typesig
+  image: true
+  colour: '#fff'
+  radius: 50%
+
 - title: Hack the Burgh
   description: Hackathon Planning
   url: http://hacktheburgh.com
