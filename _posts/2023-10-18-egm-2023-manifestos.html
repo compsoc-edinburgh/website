@@ -1,0 +1,66 @@
+---
+title: "Manifestos for October 2023 EGM"
+author: charlotteausel
+roles:
+    - title: 1st Year Rep
+      people:
+      - name: Ryan Tsui
+        url: https://drive.google.com/file/d/1XqyKkdVJPgW9In7TrW9RL7GwYVBFNqtb/view?usp=sharing
+      - name: Vincent Danys
+        url: https://drive.google.com/file/d/1-zB6kSdMOCM4XiKn8Sylo-EI26xXA_MJ/view?usp=sharing
+    - title: Old Person Rep
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+excerpt_separator: "<!--See More-->"
+---
+
+<h2>Election Details</h2>
+<p>
+  Our October EGM is happening at <time datetime="2023-10-25 18:00Z">18:00 Wednesday 25th October</time>! After our first talk (and pizza), we'll have speeches and voting!
+</p>
+<p>
+    If you want to vote in the EGM, you need to <b><a href="/join" title="Click to go to the EUSA CompSoc membership page.">make sure you have CompSoc membership</a></b>.
+</p>
+<p>
+    We also allow people to run on the night, if you did not have time to create manifestos.
+</p>
+<!--See More-->
+<table>
+{% for role in page.roles %}
+
+<tr><td colspan=2 style="padding-top:1rem"><strong>{{ role.title }}</strong></td></tr>
+
+{% for person in role.people %}
+
+<tr>
+  <td>{{ person.name }}</td>
+  <td>
+    {% if person.url %}
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>
+    {% endif %}
+  </td>
+</tr>
+
+{% endfor %}
+{% endfor %}
+</table>
+
+<br>
+<p>
+  We hope you think carefully about who you choose to elect — please vote based on manifestos and speeches! Note that you may also vote for RON (reopen nominations) for all positions. You also need EUSA CompSoc membership.
+</p>
+<p>
+  Election candidates - please remember that your speech may be up to 1 minute in length. If you haven't gotten membership yet, <b>do that now</b>!
+</p>
+
+<h2>Constitutional Amendments</h2>
+
+<p>We also have the following constitutional amendment to vote on:</p>
+
+<ul>
+  <li><a href="https://github.com/compsoc-edinburgh/constitution/pull/40">Update the SIG member minimum to 10</a></li>
+</ul>
+
+<p>See you on the night,</p>
+
+<p>CompSoc &lt;3 You!</p>
