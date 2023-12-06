@@ -36,6 +36,13 @@
   colour: '#fff'
   radius: 50%
 
+- title: AI SIG
+  description: Artificial Intelligence
+  slug: aisig
+  image: false
+  colour: '#fff'
+  radius: 50%
+
 - title: Hack the Burgh
   description: Hackathon Planning
   url: http://hacktheburgh.com
