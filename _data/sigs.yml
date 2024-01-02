@@ -1,6 +1,6 @@
 - title: SIGINT
   description: Cyber Security
-  url: http://sigint.mx
+  url: https://sigint.mx
   slug: sigint
   image: true
   colour: '#333'
@@ -45,7 +45,7 @@
 
 - title: Hack the Burgh
   description: Hackathon Planning
-  url: http://hacktheburgh.com
+  url: https://hacktheburgh.com
   slug: hacksig
   image: true
   colour: 'none'
