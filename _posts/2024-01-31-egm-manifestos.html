@@ -1,0 +1,66 @@
+---
+title: "Manifestos for January 2024 EGM"
+author: VinceKaj
+roles:
+    - title: Treasurer
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+    - title: Technical Secretary
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+excerpt_separator: "<!--See More-->"
+---
+
+<h2>Election Details</h2>
+<p>
+  Our October EGM is happening at <time datetime="2024-01-31 18:00Z">18:00 Wednesday 31st January</time>! After our first talk (and pizza), we'll have speeches and voting!
+</p>
+<p>
+    If you want to vote in the EGM, you need to <b><a href="/join" title="Click to go to the EUSA CompSoc membership page.">make sure you have CompSoc membership</a></b>.
+</p>
+<p>
+    We also allow people to run on the night, if you did not have time to create manifestos.
+</p>
+<p><i>
+  The views expressed on the following manifestos are the candidates' own and do not represent those of CompSoc. They are hosted here for the purposes of facilitating EUSA elections.
+</p></i>
+<!--See More-->
+<table>
+{% for role in page.roles %}
+
+<tr><td colspan=2 style="padding-top:1rem"><strong>{{ role.title }}</strong></td></tr>
+
+{% for person in role.people %}
+
+<tr>
+  <td>{{ person.name }}</td>
+  <td>
+    {% if person.url %}
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>
+    {% endif %}
+  </td>
+</tr>
+
+{% endfor %}
+{% endfor %}
+</table>
+
+<br>
+<p>
+  We hope you think carefully about who you choose to elect — please vote based on manifestos and speeches! Note that you may also vote for RON (reopen nominations) for all positions. You also need EUSA CompSoc membership.
+</p>
+<p>
+  Election candidates - please remember the time limit for your speeches (1 minute for technical secretary, 2 minutes for treasurer). If you haven't gotten membership yet, <b>do that now</b>!
+</p>
+
+<h2>Constitutional Amendments</h2>
+
+<p>We also have the following constitutional amendment to vote on:</p>
+
+<ul>
+  <li><a href="https://github.com/compsoc-edinburgh/constitution/pull/41">Change the EDI rep to an elected position</a></li>
+</ul>
+
+<p>See you on the night,</p>
+
+<p>CompSoc &lt;3 You!</p>
