@@ -14,7 +14,7 @@ DO NOT REMOVE WITHOUT READING ABOVE NOTE
 {% endif %}
 
 {% for links in document %}
-  {% if links.title == page.title %}
+  {% if links.url == page.url %}
     {% unless forloop.first %}
       {% assign prevurl = prev.url %}
     {% endunless %}
