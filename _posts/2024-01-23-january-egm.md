@@ -7,7 +7,7 @@ Hey, everyone! First STMU of 2024 is here! On Wednesday, 31st of January at 18:0
 
 ### Manifestos
 
-Manifestos for the two positions are now live! [Click here to view them.](https://comp-soc.com/blog/2023/10/18/2024-01-23-egm-manifestos.html)
+Manifestos for the two positions are now live! [Click here to view them.](https://comp-soc.com/blog/2024/01/23/january-egm-manifestos.html)
 
 Please read on to find out how to add your own, if you are interested.
 
