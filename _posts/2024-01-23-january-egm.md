@@ -7,7 +7,7 @@ Hey, everyone! First STMU of 2024 is here! On Wednesday, 31st of January at 18:0
 
 ### Manifestos
 
-Manifestos for the two positions are now live! [Click here to view them.](https://comp-soc.com/blog/2023/10/18/2024-01-31-egm-manifestos.html)
+Manifestos for the two positions are now live! [Click here to view them.](https://comp-soc.com/blog/2023/10/18/2024-01-23-egm-manifestos.html)
 
 Please read on to find out how to add your own, if you are interested.
 
@@ -16,14 +16,15 @@ Please read on to find out how to add your own, if you are interested.
 The positions we're electing are:
 
 - **Treasurer:**
-	- Accountable to the committee and members for the finances of the society
-	- Reimburses society members for expenses
-	- Writing annual financial report
-
+  
+  - Accountable to the committee and members for the finances of the society
+  - Reimburses society members for expenses
+  - Writing annual financial report
 - **Technical Secretary:**
-	- Maintains technical services (website & Google suite)
-	- In charge of technical setup for events
-	- Experience with server management is recommended
+  
+  - Maintains technical services (website & Google suite)
+  - In charge of technical setup for events
+  - Experience with server management is recommended
 
 If you are interested in applying for any of the two positions, you need to do two things:
 
@@ -49,3 +50,4 @@ We will be voting on an constitutional amendment, which is on our GitHub, see:
 - [Change the EDI rep to an elected position](https://github.com/compsoc-edinburgh/constitution/pull/41/)
 
 CompSoc <3 You!
+
