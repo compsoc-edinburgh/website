@@ -32,7 +32,7 @@ You need to write a manifesto which will convince everyone to vote for you. It m
 
 Although it is possible to run impromptu on the day, submitting a manifesto will typically give you much better chances to win.
 
-You also need to prepare a speech. Technical secretary has **1 minute** for the speech, treausrer has **2 minutes**. You may get questions asked afterwards.
+You also need to prepare a speech. Technical secretary has **1 minute** for the speech, treausrer has **3 minutes**. You may get questions asked afterwards.
 
 ### STMU
 
