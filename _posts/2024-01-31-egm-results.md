@@ -1,5 +1,5 @@
 ---
-title: "EGM 2024 - Results & Slides"
+title: "EGM Jan 2024 - Results"
 author: ali205412
 ---
 Thank you to everyone who came to our EGM+STMU, hopefully you enjoyed it as much as we did!
