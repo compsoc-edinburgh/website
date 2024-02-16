@@ -36,12 +36,13 @@
   colour: '#fff'
   radius: 50%
 
-- title: AI SIG
+- title: Edinburgh AI
   description: Artificial Intelligence
-  slug: aisig
-  image: false
-  colour: '#fff'
-  radius: 50%
+  url: https://edinburghai.org/
+  slug: edinburghai
+  image: true
+  colour: 'none'
+  radius: 0
 
 - title: Hack the Burgh
   description: Hackathon Planning
@@ -55,6 +56,20 @@
   description: Hosting and Server Maintenance
   url: https://tardisproject.uk/
   slug: tardis
+  image: true
+  colour: 'none'
+  radius: 0
+
+- title: QuantSIG
+  description: Finance and Trading
+  slug: quantsig
+  image: true
+  colour: 'none'
+  radius: 50%
+
+- title: CloudSIG
+  description: Cloud
+  slug: cloudsig
   image: true
   colour: 'none'
   radius: 0
