@@ -69,6 +69,7 @@
 
 - title: CloudSIG
   description: Cloud
+  url: https://www.meetup.com/aws-cloud-club-the-university-of-edinburgh/
   slug: cloudsig
   image: true
   colour: 'none'
