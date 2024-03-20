@@ -1,0 +1,106 @@
+---
+title: "Manifestos for 2024 April AGM"
+author: VinceKaj
+excerpt_separator: "<!--See More-->"
+roles:
+    - title: President
+      people:
+      - name: Nobody has run for this position. You could stand for election! 
+        url: 
+    - title: Vice-President
+      people: 
+      - name: Akrit Ghimire
+        url: https://drive.google.com/file/d/1W0d2S2EhC1yU-guPYMmcG4IaJf4CF9mW/view?usp=sharing
+    - title: Secretary
+      people:
+      - name: Nobody has run for this position. You could stand for election! 
+        url: 
+    - title: Treasurer
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+    - title: Graphic Designer
+      people: 
+      - name: Nobody has run for this position. You could stand for election!
+        url: 
+      - name: Nobody has run for this position. You could stand for election!
+        url: 
+    - title: TechSec
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+    - title: SocialSec
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+    - title: Social Media Officer
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+    - title: 2nd Year Rep
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+        url: 
+    - title: 3rd Year Rep
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+    - title: 4th Year Rep
+      people:
+      - name: 
+        url: Nobody has run for this position. You could stand for election!
+    - title: Old Person Rep
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+    - title: EDI Rep
+      people:
+      - name: Nobody has run for this position. You could stand for election!
+---
+
+<h2>Election Details</h2>
+<p>
+  Our AGM is happening on April 3rd, at <time datetime="2024-04-03 18:00Z">18:00</time> in **G.03** of the Informatics Forum. Yes, this is a different room, G.07 wasn't available. It's at the back-right as you enter. You won't miss on the day!
+</p>
+<p>
+    If you want to vote in the AGM, you need to <b><a href="/join" title="Click to go to the EUSA CompSoc membership page.">make sure you have CompSoc membership</a></b>.
+</p>
+<p>
+    We also allow people to run on the night, if you did not have time to create manifestos. There are a few people who are running for positions, but aren't available for the AGM (primarily, they're studying abroad), so please read through the manifestos thoroughly!
+</p>
+<!--See More-->
+<table>
+{% for role in page.roles %}
+
+<tr><td colspan=2 style="padding-top:1rem"><strong>{{ role.title }}</strong></td></tr>
+
+{% for person in role.people %}
+
+<tr>
+  <td>{{ person.name }}</td>
+  <td>
+    {% if person.url %}
+    <a href="{{ person.url }}" target=_blank class="btn btn-info btn-sm">view manifesto</a>
+    {% else %}
+    <a href="#" target=_blank aria-disabled="true" class="disabled btn btn-info btn-sm">no manifesto has been submitted</a>
+    {% endif %}
+  </td>
+</tr>
+
+{% endfor %}
+{% endfor %}
+</table>
+
+<br>
+<p>
+  We hope you think carefully about who you choose to elect tonight — please vote based on manifestos and speeches! Note that you may also vote for RON (reopen nominations) for all positions. You also need EUSA CompSoc membership.
+</p>
+<p>
+  Election candidates - please remember that if you are running for President, Secretary or Treasurer, your speech may be up to 2 minutes. Other roles have up to 1 minute. If you haven't gotten membership yet, <b>do that now</b>!
+</p>
+
+<h2>Constitutional Amendments</h2>
+
+<p>We also have the constitutional amendment to vote on:</p>
+
+<ul>
+  <li><a href="https://github.com/compsoc-edinburgh/constitution/pull/42">Constitution changes</a></li>
+</ul>
+
+<p>See you on Wednesday,</p>
+
+<p>CompSoc &lt;3 You!</p>
