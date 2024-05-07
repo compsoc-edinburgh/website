@@ -34,7 +34,7 @@
   slug: typesig
   image: true
   colour: '#fff'
-  radius: 50%
+  radius: 0
 
 - title: Edinburgh AI
   description: Artificial Intelligence
