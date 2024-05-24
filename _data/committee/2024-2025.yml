@@ -1,0 +1,72 @@
+year: 2024 - 2025
+teams:
+  - members:
+      - name: Vincentas Danys
+        role: President
+        url: https://www.linkedin.com/in/vincentas-danys-9a28b921b/
+        img: vincentas-1.jpg
+
+      - name: Marton Nemeth
+        role: Vice President
+        url: https://www.linkedin.com/in/marton-csanad-nemeth-165a0822a/
+        img: marton-1.jpeg
+
+      - name: Elisa Fraticelli
+        role: Treasurer
+        url: https://www.linkedin.com/in/elisa-fraticelli-379626169/
+        img: elisa.jpg
+
+      - name: Godfrey Antomarlin
+        role: Secretary
+        url: https://www.linkedin.com/in/abhijit-godfrey-antomarlin/
+        img: godfrey-1.jpeg
+
+      - name: Cat M
+        role: Technical Secretary
+        url: https://www.linkedin.com/in/caterina-m/
+        img: cat-1.png
+
+      - name: Anastasia Trainor
+        role: Social Secretary
+        #url:
+        img: anastasia-1.png
+
+      - name: Agam Cohen
+        role: Social Media Officer
+        url: https://www.linkedin.com/in/agam-cohen-144427273/
+        img: agam-1.jpg
+
+      - name: Lewis Simpson
+        role: Graphic Designer
+        url: https://www.linkedin.com/in/lewis-simpson-05a983302/
+        img: lewis-1.jpg
+
+      # - name: 
+      #   role: 1<sup>st</sup> Year Rep
+      #   url: 
+      #   img: 
+
+      - name: Lucas Bruckbauer
+        role: 2<sup>nd</sup> Year Rep
+        url: https://www.linkedin.com/in/lucasbruckbauer/
+        img: lucas-1.png
+
+      - name: Fergus White
+        role: 3<sup>rd</sup> Year Rep
+        url: https://www.linkedin.com/in/fergus-white-699546214/
+        img: fergus-1.png
+
+      - name: Tomas Maillo
+        role: 4<sup>th</sup> Year Rep
+        url: https://tomasmaillo.com/
+        img: tomas-1.png
+
+      - name: Chris Grykiel
+        role: Old Person Rep
+        # url: 
+        # img:
+
+      - name: Charlotte Ausel
+        role: EDI Rep
+        # url:
+        img: charlotte-1.jpg

@@ -19,6 +19,7 @@ We have previously had special interest groups in these subject areas:
     <li>Blockchain</li>
     <li>Electrical Engineering</li>
     <li>Robotics</li>
-</ul>
+    <li>Zines</li>
+</ul> 
 
 **Note:** Given enough interest, defunct SIGs have the possibility of being revived. If you feel like you would want to do so, [let us know]({{ site.baseurl }}/contact)!

@@ -13,13 +13,6 @@
   colour: 'none'
   radius: 50%
 
-- title: ZINESIG
-  description: Magazine Writing and Publishing
-  slug: zinesig
-  image: true
-  color: 'none'
-  radius: 0
-
 - title: Project Share
   description: Share what you are building
   url: https://projectshare.comp-soc.com/
@@ -50,7 +43,7 @@
   slug: hacksig
   image: true
   colour: 'none'
-  radius: 0
+  radius: 50%
 
 - title: Tardis Project
   description: Hosting and Server Maintenance
@@ -74,3 +67,11 @@
   image: true
   colour: 'none'
   radius: 0
+
+- title: CCSIG
+  description: Competitive Programming
+  # url: 
+  slug: ccsig
+  image: true
+  colour: 'none'
+  radius: 50%
