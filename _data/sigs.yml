@@ -70,7 +70,7 @@
 
 - title: CCSIG
   description: Competitive Programming
-  # url: 
+  url: https://ccsig.comp-soc.com/
   slug: ccsig
   image: true
   colour: 'none'
