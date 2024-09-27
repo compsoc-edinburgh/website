@@ -1,4 +1,11 @@
-# SIG: Web - website2017
+# New Version Up
+
+> [!NOTE]  
+> This repo holds the old website to CompSoc. Check the [2024 repo](https://github.com/compsoc-edinburgh/comp-soc.com).
+
+
+
+## SIG: Web - website2017
 This is [CompSoc Edinburgh](https://comp-soc.com)'s website, built by SIG: Web.
 
 ## How to test
