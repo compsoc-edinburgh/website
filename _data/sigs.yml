@@ -76,11 +76,10 @@
   colour: 'none'
   radius: 50%
 
-- title: Pourover Leaf
+- title: pouroverleaf
   description: Coffee, research, and coffee research
   url: https://pouroverleaf.org/
   slug: pouroverleaf
   image: true
   colour: 'none'
   radius: 50%
-  card: caramel

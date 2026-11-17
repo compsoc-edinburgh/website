@@ -5,7 +5,7 @@
         {% else %}
             {% capture sighref %} {{ site.baseurl }}/sigs/{{ sig.slug }} {% endcapture %}
         {% endif %}
-    <a href="{{ sighref }}" class="sigs__sig{% if sig.card %} sigs__sig--{{ sig.card }}{% endif %}">
+    <a href="{{ sighref }}" class="sigs__sig">
         <div class="sigs__sigtext">
             <h1>{{ sig.title }}</h1>
             <p>{{ sig.description }}</p>
